@@ -51,6 +51,7 @@
 		D28F2EB91CDA18EB00AF605E /* zhengtuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zhengtuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28F2EBD1CDA18EB00AF605E /* zhengtuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zhengtuUITests.m; sourceTree = "<group>"; };
 		D28F2EBF1CDA18EB00AF605E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28F2ECB1CDA1AE800AF605E /* Global.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				D28F2E9B1CDA18EA00AF605E /* AppDelegate.h */,
+				D28F2ECB1CDA1AE800AF605E /* Global.pch */,
 				D28F2E9C1CDA18EA00AF605E /* AppDelegate.m */,
 				D28F2E9E1CDA18EA00AF605E /* ViewController.h */,
 				D28F2E9F1CDA18EA00AF605E /* ViewController.m */,
@@ -413,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/zhengtu/Global.pch";
 				INFOPLIST_FILE = zhengtu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.llz.net.zhengtu;
@@ -424,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/zhengtu/Global.pch";
 				INFOPLIST_FILE = zhengtu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.llz.net.zhengtu;
@@ -496,6 +500,7 @@
 				D28F2EC41CDA18EB00AF605E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D28F2EC51CDA18EB00AF605E /* Build configuration list for PBXNativeTarget "zhengtuTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +509,7 @@
 				D28F2EC71CDA18EB00AF605E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D28F2EC81CDA18EB00AF605E /* Build configuration list for PBXNativeTarget "zhengtuUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +518,7 @@
 				D28F2ECA1CDA18EB00AF605E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
