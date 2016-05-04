@@ -1,6 +1,6 @@
 //
-//  zhentuTests.m
-//  zhentuTests
+//  zhengtuTests.m
+//  zhengtuTests
 //
 //  Created by lcy on 16/5/4.
 //  Copyright © 2016年 llz. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface zhentuTests : XCTestCase
+@interface zhengtuTests : XCTestCase
 
 @end
 
-@implementation zhentuTests
+@implementation zhengtuTests
 
 - (void)setUp {
     [super setUp];

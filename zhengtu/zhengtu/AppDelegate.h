@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  zhentu
+//  zhengtu
 //
 //  Created by lcy on 16/5/4.
 //  Copyright © 2016年 llz. All rights reserved.
