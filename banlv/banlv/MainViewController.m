@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    //光棍节刚回家后
 }
 
 - (void)didReceiveMemoryWarning {
