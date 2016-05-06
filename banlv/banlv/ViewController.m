@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  zhengtu
+//  banlv
 //
-//  Created by lcy on 16/5/4.
+//  Created by lcy on 16/5/6.
 //  Copyright © 2016年 llz. All rights reserved.
 //
 
@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

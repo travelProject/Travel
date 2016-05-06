@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:zhengtu.xcodeproj">
+      location = "self:banlv.xcodeproj">
    </FileRef>
 </Workspace>

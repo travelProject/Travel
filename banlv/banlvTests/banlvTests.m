@@ -1,18 +1,18 @@
 //
-//  zhengtuTests.m
-//  zhengtuTests
+//  banlvTests.m
+//  banlvTests
 //
-//  Created by lcy on 16/5/4.
+//  Created by lcy on 16/5/6.
 //  Copyright © 2016年 llz. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface zhengtuTests : XCTestCase
+@interface banlvTests : XCTestCase
 
 @end
 
-@implementation zhengtuTests
+@implementation banlvTests
 
 - (void)setUp {
     [super setUp];
