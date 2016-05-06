@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2B97A12F1CDC264700B4989C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A12E1CDC264700B4989C /* main.m */; };
 		2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1311CDC264700B4989C /* AppDelegate.m */; };
-		2B97A13A1CDC264700B4989C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A1391CDC264700B4989C /* Assets.xcassets */; };
 		2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A13B1CDC264700B4989C /* LaunchScreen.storyboard */; };
 		2B97A1481CDC264700B4989C /* banlvTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1471CDC264700B4989C /* banlvTests.m */; };
 		2B97A1531CDC264700B4989C /* banlvUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1521CDC264700B4989C /* banlvUITests.m */; };
@@ -27,6 +26,7 @@
 		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
 		2B97A1991CDC361500B4989C /* CYPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1981CDC361500B4989C /* CYPartyViewController.m */; };
 		2B97A19C1CDC38CD00B4989C /* CYCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A19B1CDC38CD00B4989C /* CYCallViewController.m */; };
+		2B97A19E1CDC4E2200B4989C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A19D1CDC4E2200B4989C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,6 @@
 		2B97A12E1CDC264700B4989C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B97A1301CDC264700B4989C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B97A1311CDC264700B4989C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2B97A1391CDC264700B4989C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B97A13C1CDC264700B4989C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B97A13E1CDC264700B4989C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B97A1431CDC264700B4989C /* banlvTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = banlvTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +88,7 @@
 		2B97A1981CDC361500B4989C /* CYPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyViewController.m; sourceTree = "<group>"; };
 		2B97A19A1CDC38CD00B4989C /* CYCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCallViewController.h; sourceTree = "<group>"; };
 		2B97A19B1CDC38CD00B4989C /* CYCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCallViewController.m; sourceTree = "<group>"; };
+		2B97A19D1CDC4E2200B4989C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +148,8 @@
 				2B97A1611CDC2A4700B4989C /* 管理全局的类 */,
 				2B97A1601CDC270600B4989C /* CYGlobal.pch */,
 				2B97A1301CDC264700B4989C /* AppDelegate.h */,
+				2B97A19D1CDC4E2200B4989C /* Assets.xcassets */,
 				2B97A1311CDC264700B4989C /* AppDelegate.m */,
-				2B97A1391CDC264700B4989C /* Assets.xcassets */,
 				2B97A13B1CDC264700B4989C /* LaunchScreen.storyboard */,
 				2B97A13E1CDC264700B4989C /* Info.plist */,
 				2B97A12D1CDC264700B4989C /* Supporting Files */,
@@ -411,8 +411,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B97A19E1CDC4E2200B4989C /* Assets.xcassets in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
-				2B97A13A1CDC264700B4989C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

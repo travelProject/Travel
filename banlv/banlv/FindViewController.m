@@ -54,16 +54,24 @@
 }
 
 - (void)call:(id)sender{
-    CYCallViewController *new = [[CYCallViewController alloc] init];
+    CYCallViewController *newvc = [[CYCallViewController alloc] init];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:newvc];
     
-    [self.navigationController pushViewController:new animated:YES] ;
+    
+    
+    [window.rootViewController presentViewController:nav animated:YES completion:nil];
     
 }
 
 - (void)party:(id)sender{
-    CYPartyViewController *new = [[CYPartyViewController alloc] init];
+    CYPartyViewController *newvc = [[CYPartyViewController alloc] init];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:newvc];
     
-    [self.navigationController pushViewController:new animated:YES] ;
+    
+    
+    [window.rootViewController presentViewController:nav animated:YES completion:nil];
     
     
 }

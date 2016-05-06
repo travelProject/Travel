@@ -32,13 +32,13 @@
     
     self.tabBarItem = item;
     
-    [self addViewController:[[HomeViewController alloc]init] withImage:nil withSelectImage:nil withItemTitle:@"首页"];
+    [self addViewController:[[HomeViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"首页"];
     
-    [self addViewController:[[FindViewController alloc]init] withImage:nil withSelectImage:nil withItemTitle:@"发现"];
+    [self addViewController:[[FindViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"发现"];
     
-    [self addViewController:[[OrderViewController alloc]init] withImage:nil withSelectImage:nil withItemTitle:@"订单"];
+    [self addViewController:[[OrderViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"订单"];
     
-    [self addViewController:[[MainViewController alloc]init] withImage:nil withSelectImage:nil withItemTitle:@"我的"];
+    [self addViewController:[[MainViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"我的"];
     
     [self setValue:[[CYMyTabBar alloc] init]  forKey:@"tabBar"];
     
