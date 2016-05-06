@@ -51,6 +51,7 @@
 		2B97A14E1CDC264700B4989C /* banlvUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = banlvUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B97A1521CDC264700B4989C /* banlvUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = banlvUITests.m; sourceTree = "<group>"; };
 		2B97A1541CDC264700B4989C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B97A1601CDC270600B4989C /* CYGlobal.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYGlobal.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		2B97A12C1CDC264700B4989C /* banlv */ = {
 			isa = PBXGroup;
 			children = (
+				2B97A1601CDC270600B4989C /* CYGlobal.pch */,
 				2B97A1301CDC264700B4989C /* AppDelegate.h */,
 				2B97A1311CDC264700B4989C /* AppDelegate.m */,
 				2B97A1331CDC264700B4989C /* ViewController.h */,
@@ -415,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/banlv/CYGlobal.pch";
 				INFOPLIST_FILE = banlv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = llz.banlv;
@@ -426,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/banlv/CYGlobal.pch";
 				INFOPLIST_FILE = banlv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = llz.banlv;

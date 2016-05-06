@@ -1,0 +1,59 @@
+//
+//  CYGlobal.pch
+//  project1
+//
+//  Created by lcy on 16/4/13.
+//  Copyright © 2016年 scjy. All rights reserved.
+//
+
+#ifndef CYGlobal_pch
+#define CYGlobal_pch
+
+////定义输出
+//#ifdef DEBUG
+//#define CYLog(...) NSLog(__VA_ARGS__)
+//#else
+//
+//#define CYLog(...)
+//
+//#endif
+
+
+//定义单例
+#define kSharedObjWithClass  +(instancetype)allocWithZone:(struct _NSZone *)zone{\
+static id idValue = nil;\
+static dispatch_once_t onceToken;\
+dispatch_once(&onceToken, ^{\
+idValue = [super allocWithZone:zone];\
+});\
+return idValue;\
+}
+
+
+//屏幕宽高
+#define kScreenFrameW [UIScreen mainScreen].bounds.size.width
+
+#define kScreenFrameH [UIScreen mainScreen].bounds.size.height
+
+
+//加载IB
+#define kLoadViewWithNIB(nibName) [[[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil] lastObject]
+
+
+
+//注册通知
+#define kNotificationCenter [NSNotificationCenter defaultCenter]
+
+
+
+//字符串格式
+#define kStringFormat(...)  [NSString stringWithFormat:__VA_ARGS__]
+
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* CYGlobal_pch */
