@@ -44,7 +44,7 @@
         
         [searchBtn setImage:[UIImage imageNamed:@"tabbar_profile_s~iphone"] forState:UIControlStateSelected];
         
-        searchBtn.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+        searchBtn.frame = CGRectMake(0, - 20, image.size.width, image.size.height);
         [searchBtn addTarget:self action:@selector(searchClick:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:searchBtn];
@@ -64,7 +64,7 @@
     
     
     
-    [window.rootViewController presentViewController:nav animated:YES completion:nil];
+    [window.rootViewController presentViewController:nav animated:NO completion:nil];
 
     
 
