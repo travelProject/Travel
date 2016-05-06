@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  banlv
 //
 //  Created by lcy on 16/5/6.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainViewController : UIViewController
 
 @end
-

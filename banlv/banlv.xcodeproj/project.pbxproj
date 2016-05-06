@@ -9,12 +9,23 @@
 /* Begin PBXBuildFile section */
 		2B97A12F1CDC264700B4989C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A12E1CDC264700B4989C /* main.m */; };
 		2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1311CDC264700B4989C /* AppDelegate.m */; };
-		2B97A1351CDC264700B4989C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1341CDC264700B4989C /* ViewController.m */; };
 		2B97A1381CDC264700B4989C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A1361CDC264700B4989C /* Main.storyboard */; };
 		2B97A13A1CDC264700B4989C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A1391CDC264700B4989C /* Assets.xcassets */; };
 		2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A13B1CDC264700B4989C /* LaunchScreen.storyboard */; };
 		2B97A1481CDC264700B4989C /* banlvTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1471CDC264700B4989C /* banlvTests.m */; };
 		2B97A1531CDC264700B4989C /* banlvUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1521CDC264700B4989C /* banlvUITests.m */; };
+		2B97A1661CDC2A6300B4989C /* CYMyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1631CDC2A6300B4989C /* CYMyTabBar.m */; };
+		2B97A1671CDC2A6300B4989C /* CYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1651CDC2A6300B4989C /* CYTabBarController.m */; };
+		2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A16E1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m */; };
+		2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1711CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m */; };
+		2B97A17D1CDC2B0400B4989C /* UINavigationController+Jump.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1741CDC2B0400B4989C /* UINavigationController+Jump.m */; };
+		2B97A17E1CDC2B0400B4989C /* UIView+GroupAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1771CDC2B0400B4989C /* UIView+GroupAnimation.m */; };
+		2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A17A1CDC2B0400B4989C /* UIView+frame.m */; };
+		2B97A1871CDC2BC000B4989C /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1861CDC2BC000B4989C /* FindViewController.m */; };
+		2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1891CDC2BE200B4989C /* SearchViewController.m */; };
+		2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18C1CDC2BF900B4989C /* HomeViewController.m */; };
+		2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18F1CDC2C0E00B4989C /* MainViewController.m */; };
+		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +50,6 @@
 		2B97A12E1CDC264700B4989C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B97A1301CDC264700B4989C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B97A1311CDC264700B4989C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2B97A1331CDC264700B4989C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2B97A1341CDC264700B4989C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2B97A1371CDC264700B4989C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B97A1391CDC264700B4989C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B97A13C1CDC264700B4989C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +61,30 @@
 		2B97A1521CDC264700B4989C /* banlvUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = banlvUITests.m; sourceTree = "<group>"; };
 		2B97A1541CDC264700B4989C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B97A1601CDC270600B4989C /* CYGlobal.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYGlobal.pch; sourceTree = "<group>"; };
+		2B97A1621CDC2A6300B4989C /* CYMyTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyTabBar.h; sourceTree = "<group>"; };
+		2B97A1631CDC2A6300B4989C /* CYMyTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyTabBar.m; sourceTree = "<group>"; };
+		2B97A1641CDC2A6300B4989C /* CYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTabBarController.h; sourceTree = "<group>"; };
+		2B97A1651CDC2A6300B4989C /* CYTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYTabBarController.m; sourceTree = "<group>"; };
+		2B97A16D1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CustomButton.h"; sourceTree = "<group>"; };
+		2B97A16E1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CustomButton.m"; sourceTree = "<group>"; };
+		2B97A1701CDC2B0400B4989C /* UIStoryboard+IndentifierVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+IndentifierVC.h"; sourceTree = "<group>"; };
+		2B97A1711CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+IndentifierVC.m"; sourceTree = "<group>"; };
+		2B97A1731CDC2B0400B4989C /* UINavigationController+Jump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Jump.h"; sourceTree = "<group>"; };
+		2B97A1741CDC2B0400B4989C /* UINavigationController+Jump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Jump.m"; sourceTree = "<group>"; };
+		2B97A1761CDC2B0400B4989C /* UIView+GroupAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GroupAnimation.h"; sourceTree = "<group>"; };
+		2B97A1771CDC2B0400B4989C /* UIView+GroupAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GroupAnimation.m"; sourceTree = "<group>"; };
+		2B97A1791CDC2B0400B4989C /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
+		2B97A17A1CDC2B0400B4989C /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
+		2B97A1851CDC2BC000B4989C /* FindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindViewController.h; sourceTree = "<group>"; };
+		2B97A1861CDC2BC000B4989C /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
+		2B97A1881CDC2BE200B4989C /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		2B97A1891CDC2BE200B4989C /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		2B97A18B1CDC2BF900B4989C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		2B97A18C1CDC2BF900B4989C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		2B97A18E1CDC2C0E00B4989C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		2B97A18F1CDC2C0E00B4989C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		2B97A1911CDC2C4B00B4989C /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		2B97A1921CDC2C4B00B4989C /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +135,16 @@
 		2B97A12C1CDC264700B4989C /* banlv */ = {
 			isa = PBXGroup;
 			children = (
+				2B97A1841CDC2B5900B4989C /* 我的 */,
+				2B97A1831CDC2B5200B4989C /* 订单 */,
+				2B97A1821CDC2B4D00B4989C /* 搜索 */,
+				2B97A1811CDC2B4900B4989C /* 发现 */,
+				2B97A1801CDC2B3100B4989C /* 首页 */,
+				2B97A16B1CDC2B0400B4989C /* 类别 */,
+				2B97A1611CDC2A4700B4989C /* 管理全局的类 */,
 				2B97A1601CDC270600B4989C /* CYGlobal.pch */,
 				2B97A1301CDC264700B4989C /* AppDelegate.h */,
 				2B97A1311CDC264700B4989C /* AppDelegate.m */,
-				2B97A1331CDC264700B4989C /* ViewController.h */,
-				2B97A1341CDC264700B4989C /* ViewController.m */,
 				2B97A1361CDC264700B4989C /* Main.storyboard */,
 				2B97A1391CDC264700B4989C /* Assets.xcassets */,
 				2B97A13B1CDC264700B4989C /* LaunchScreen.storyboard */,
@@ -140,6 +178,127 @@
 				2B97A1541CDC264700B4989C /* Info.plist */,
 			);
 			path = banlvUITests;
+			sourceTree = "<group>";
+		};
+		2B97A1611CDC2A4700B4989C /* 管理全局的类 */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1681CDC2A7600B4989C /* tabbar */,
+			);
+			name = "管理全局的类";
+			sourceTree = "<group>";
+		};
+		2B97A1681CDC2A7600B4989C /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1621CDC2A6300B4989C /* CYMyTabBar.h */,
+				2B97A1631CDC2A6300B4989C /* CYMyTabBar.m */,
+				2B97A1641CDC2A6300B4989C /* CYTabBarController.h */,
+				2B97A1651CDC2A6300B4989C /* CYTabBarController.m */,
+			);
+			name = tabbar;
+			sourceTree = "<group>";
+		};
+		2B97A16B1CDC2B0400B4989C /* 类别 */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A16C1CDC2B0400B4989C /* CustomBarButton */,
+				2B97A16F1CDC2B0400B4989C /* GetVC-StoryBoard */,
+				2B97A1721CDC2B0400B4989C /* NavJump */,
+				2B97A1751CDC2B0400B4989C /* ViewAnimation */,
+				2B97A1781CDC2B0400B4989C /* ViewFrame */,
+			);
+			path = "类别";
+			sourceTree = "<group>";
+		};
+		2B97A16C1CDC2B0400B4989C /* CustomBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A16D1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.h */,
+				2B97A16E1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m */,
+			);
+			path = CustomBarButton;
+			sourceTree = "<group>";
+		};
+		2B97A16F1CDC2B0400B4989C /* GetVC-StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1701CDC2B0400B4989C /* UIStoryboard+IndentifierVC.h */,
+				2B97A1711CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m */,
+			);
+			path = "GetVC-StoryBoard";
+			sourceTree = "<group>";
+		};
+		2B97A1721CDC2B0400B4989C /* NavJump */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1731CDC2B0400B4989C /* UINavigationController+Jump.h */,
+				2B97A1741CDC2B0400B4989C /* UINavigationController+Jump.m */,
+			);
+			path = NavJump;
+			sourceTree = "<group>";
+		};
+		2B97A1751CDC2B0400B4989C /* ViewAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1761CDC2B0400B4989C /* UIView+GroupAnimation.h */,
+				2B97A1771CDC2B0400B4989C /* UIView+GroupAnimation.m */,
+			);
+			path = ViewAnimation;
+			sourceTree = "<group>";
+		};
+		2B97A1781CDC2B0400B4989C /* ViewFrame */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1791CDC2B0400B4989C /* UIView+frame.h */,
+				2B97A17A1CDC2B0400B4989C /* UIView+frame.m */,
+			);
+			path = ViewFrame;
+			sourceTree = "<group>";
+		};
+		2B97A1801CDC2B3100B4989C /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A18B1CDC2BF900B4989C /* HomeViewController.h */,
+				2B97A18C1CDC2BF900B4989C /* HomeViewController.m */,
+			);
+			name = "首页";
+			sourceTree = "<group>";
+		};
+		2B97A1811CDC2B4900B4989C /* 发现 */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1851CDC2BC000B4989C /* FindViewController.h */,
+				2B97A1861CDC2BC000B4989C /* FindViewController.m */,
+			);
+			name = "发现";
+			sourceTree = "<group>";
+		};
+		2B97A1821CDC2B4D00B4989C /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1881CDC2BE200B4989C /* SearchViewController.h */,
+				2B97A1891CDC2BE200B4989C /* SearchViewController.m */,
+			);
+			name = "搜索";
+			sourceTree = "<group>";
+		};
+		2B97A1831CDC2B5200B4989C /* 订单 */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1911CDC2C4B00B4989C /* OrderViewController.h */,
+				2B97A1921CDC2C4B00B4989C /* OrderViewController.m */,
+			);
+			name = "订单";
+			sourceTree = "<group>";
+		};
+		2B97A1841CDC2B5900B4989C /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A18E1CDC2C0E00B4989C /* MainViewController.h */,
+				2B97A18F1CDC2C0E00B4989C /* MainViewController.m */,
+			);
+			name = "我的";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +431,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B97A1351CDC264700B4989C /* ViewController.m in Sources */,
+				2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */,
+				2B97A17D1CDC2B0400B4989C /* UINavigationController+Jump.m in Sources */,
+				2B97A1661CDC2A6300B4989C /* CYMyTabBar.m in Sources */,
+				2B97A1871CDC2BC000B4989C /* FindViewController.m in Sources */,
+				2B97A1671CDC2A6300B4989C /* CYTabBarController.m in Sources */,
+				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
+				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
+				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,
+				2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */,
+				2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */,
+				2B97A17E1CDC2B0400B4989C /* UIView+GroupAnimation.m in Sources */,
+				2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
