@@ -26,6 +26,8 @@
 		2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18C1CDC2BF900B4989C /* HomeViewController.m */; };
 		2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18F1CDC2C0E00B4989C /* MainViewController.m */; };
 		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
+		2B97A1991CDC361500B4989C /* CYPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1981CDC361500B4989C /* CYPartyViewController.m */; };
+		2B97A19C1CDC38CD00B4989C /* CYCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A19B1CDC38CD00B4989C /* CYCallViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,10 @@
 		2B97A18F1CDC2C0E00B4989C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2B97A1911CDC2C4B00B4989C /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		2B97A1921CDC2C4B00B4989C /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		2B97A1971CDC361500B4989C /* CYPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPartyViewController.h; sourceTree = "<group>"; };
+		2B97A1981CDC361500B4989C /* CYPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyViewController.m; sourceTree = "<group>"; };
+		2B97A19A1CDC38CD00B4989C /* CYCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCallViewController.h; sourceTree = "<group>"; };
+		2B97A19B1CDC38CD00B4989C /* CYCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCallViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +276,10 @@
 			children = (
 				2B97A1851CDC2BC000B4989C /* FindViewController.h */,
 				2B97A1861CDC2BC000B4989C /* FindViewController.m */,
+				2B97A1971CDC361500B4989C /* CYPartyViewController.h */,
+				2B97A1981CDC361500B4989C /* CYPartyViewController.m */,
+				2B97A19A1CDC38CD00B4989C /* CYCallViewController.h */,
+				2B97A19B1CDC38CD00B4989C /* CYCallViewController.m */,
 			);
 			name = "发现";
 			sourceTree = "<group>";
@@ -439,10 +449,12 @@
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
+				2B97A19C1CDC38CD00B4989C /* CYCallViewController.m in Sources */,
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
 				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,
 				2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */,
 				2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */,
+				2B97A1991CDC361500B4989C /* CYPartyViewController.m in Sources */,
 				2B97A17E1CDC2B0400B4989C /* UIView+GroupAnimation.m in Sources */,
 				2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */,
 			);
