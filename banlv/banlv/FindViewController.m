@@ -6,11 +6,27 @@
 //  Copyright © 2016年 llz. All rights reserved.
 //
 
+#define kSegmentH 30
+
+#define kTableViewY 64
+
 #import "FindViewController.h"
-#import "CYPartyViewController.h"
-#import "CYCallViewController.h"
+#import "CYSegment.h"
+
+#import "CYMainTableView.h"
+#import "CYDizhuTableView.h"
+#import "CYPartyTableView.h"
+
+
+#import "UIView+frame.h"
 
 @interface FindViewController ()
+@property(nonatomic, strong)NSMutableArray *reuseTableViews;
+
+@property(nonatomic, strong)CYSegment *segment;
+
+@property(nonatomic, strong)CYDizhuTableView *dizhuTableView;
+@property(nonatomic, strong)CYPartyTableView *partyTableView;
 
 @end
 
@@ -24,58 +40,87 @@
     
     self.view.backgroundColor = [UIColor cyanColor];
     
-    UIButton *callBtn = [[UIButton alloc] init];
+    NSArray *arrItems = @[@"叫地主",@"聚会"];
     
-    callBtn.frame = CGRectMake(0, 44 + 10, kScreenFrameW, 200);
+    CYSegment *segment = [[CYSegment alloc] initWithFrame:CGRectMake(0, 64, self.view.width, 30) withItems:arrItems];
     
-    callBtn.backgroundColor = [UIColor redColor];
+    segment.segmentBgColor = [UIColor whiteColor];
     
-    [self.view addSubview:callBtn];
+    segment.defaultPerColor = [UIColor blackColor];
     
-    [callBtn addTarget:self action:@selector(call:) forControlEvents:UIControlEventTouchUpInside];
+    segment.perColor = [UIColor redColor];
     
+    segment.underLayerBackgroudColor = [UIColor redColor];
     
+    segment.selectIdx = 0;
     
-    UIButton *partyBtn = [[UIButton alloc] init];
+    [self.view addSubview:segment];
     
-    partyBtn.frame = CGRectMake(0,44 + 210, kScreenFrameW, 200);
+    self.segment = segment;
     
-    partyBtn.backgroundColor = [UIColor blueColor];
-    
-    [self.view addSubview:partyBtn];
-    
-    [partyBtn addTarget:self action:@selector(party:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
+    if (segment.selectIdx ==0) {
+        self.dizhuTableView = [self creatDizhuTableView];
+    }else{
+        self.partyTableView = [self creaPartyTableView];
+    }
     
     
     
 }
 
-- (void)call:(id)sender{
-    CYCallViewController *newvc = [[CYCallViewController alloc] init];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:newvc];
+- (NSMutableArray *)reuseTableViews{
+    if (!_reuseTableViews) {
+        _reuseTableViews = [[NSMutableArray alloc] initWithCapacity:0];
+    }
+    return _reuseTableViews;
+}
+
+- (CYDizhuTableView *)creatDizhuTableView{
+    CYDizhuTableView *dizhu = nil;
+    
+    
+    if (self.reuseTableViews.count > 0) {
+        dizhu = [self.reuseTableViews lastObject];
+        [self.reuseTableViews removeLastObject];
+    }else{
+        dizhu = [[CYDizhuTableView alloc] initWithFrame:CGRectMake(0, kTableViewY + kSegmentH, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH) style:UITableViewStylePlain];
+        
+        
+        
+        [self.view addSubview:dizhu];
+    }
+
     
     
     
-    [window.rootViewController presentViewController:nav animated:YES completion:nil];
+    return dizhu;
     
 }
 
-- (void)party:(id)sender{
-    CYPartyViewController *newvc = [[CYPartyViewController alloc] init];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:newvc];
+
+- (CYPartyTableView *)creaPartyTableView{
+    CYPartyTableView *party = nil;
+    
+    
+    if (self.reuseTableViews.count > 0) {
+        party = [self.reuseTableViews lastObject];
+        [self.reuseTableViews removeLastObject];
+    }else{
+        party = [[CYPartyTableView alloc] initWithFrame:CGRectMake(0, kTableViewY + kSegmentH, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH) style:UITableViewStylePlain];
+        
+        
+        
+        [self.view addSubview:party];
+    }
+    
+
     
     
     
-    [window.rootViewController presentViewController:nav animated:YES completion:nil];
     
+    return party;
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
