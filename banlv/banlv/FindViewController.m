@@ -13,17 +13,19 @@
 #import "FindViewController.h"
 #import "CYSegment.h"
 
-#import "CYMainTableView.h"
+
 #import "CYDizhuTableView.h"
 #import "CYPartyTableView.h"
 
 
 #import "UIView+frame.h"
 
-@interface FindViewController ()
-@property(nonatomic, strong)NSMutableArray *reuseTableViews;
+@interface FindViewController ()<UIScrollViewDelegate>
+
 
 @property(nonatomic, strong)CYSegment *segment;
+
+@property(nonatomic, strong)UIScrollView *mainScrollView;
 
 @property(nonatomic, strong)CYDizhuTableView *dizhuTableView;
 @property(nonatomic, strong)CYPartyTableView *partyTableView;
@@ -32,6 +34,8 @@
 
 @implementation FindViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -39,6 +43,50 @@
     [self.navigationItem setTitle:@"发现"];
     
     self.view.backgroundColor = [UIColor cyanColor];
+    
+    [self creatSegment];
+    
+    [self creatScrollView];
+    
+    [self creatDizhuTableView];
+    
+    [self creaPartyTableView];
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+}
+//contentOffset:滑动视图里面的内容的相对位置
+//contentInset:滑动视图在外面的相对位置
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSInteger pageNum = scrollView.contentOffset.x/kScreenFrameW;
+    self.segment.selectIdx =pageNum;
+}
+
+- (void)creatScrollView{
+    UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64+ kSegmentH, kScreenFrameW, kScreenFrameH)];
+//    mainScrollView.showsHorizontalScrollIndicator = NO;
+    self.mainScrollView = mainScrollView;
+    mainScrollView.delegate = self;
+    
+    mainScrollView.pagingEnabled = YES;
+    
+    mainScrollView.contentSize = CGSizeMake(kScreenFrameW *2, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH);
+    
+    mainScrollView.backgroundColor = [UIColor orangeColor];
+    
+    [self.view addSubview:mainScrollView];
+    
+}
+
+- (void)creatSegment{
     
     NSArray *arrItems = @[@"叫地主",@"聚会"];
     
@@ -57,70 +105,50 @@
     [self.view addSubview:segment];
     
     self.segment = segment;
-    
-    if (segment.selectIdx ==0) {
-        self.dizhuTableView = [self creatDizhuTableView];
-    }else{
-        self.partyTableView = [self creaPartyTableView];
-    }
-    
-    
+
     
 }
 
-- (NSMutableArray *)reuseTableViews{
-    if (!_reuseTableViews) {
-        _reuseTableViews = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    return _reuseTableViews;
-}
 
 - (CYDizhuTableView *)creatDizhuTableView{
-    CYDizhuTableView *dizhu = nil;
     
+    CYDizhuTableView *dizhuTableView = [[CYDizhuTableView alloc] init];
     
-    if (self.reuseTableViews.count > 0) {
-        dizhu = [self.reuseTableViews lastObject];
-        [self.reuseTableViews removeLastObject];
-    }else{
-        dizhu = [[CYDizhuTableView alloc] initWithFrame:CGRectMake(0, kTableViewY + kSegmentH, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH) style:UITableViewStylePlain];
-        
-        
-        
-        [self.view addSubview:dizhu];
-    }
+    dizhuTableView.frame = CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH);
+    [self.mainScrollView addSubview:dizhuTableView];
+    
+    dizhuTableView.backgroundColor = [UIColor redColor];
+    
+    self.dizhuTableView = dizhuTableView;
+    
 
     
     
     
-    return dizhu;
+    return dizhuTableView;
     
 }
 
 
 - (CYPartyTableView *)creaPartyTableView{
-    CYPartyTableView *party = nil;
     
+    CYPartyTableView *partyTableView = [[CYPartyTableView alloc] init];
+    partyTableView.frame = CGRectMake(kScreenFrameW, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH);
     
-    if (self.reuseTableViews.count > 0) {
-        party = [self.reuseTableViews lastObject];
-        [self.reuseTableViews removeLastObject];
-    }else{
-        party = [[CYPartyTableView alloc] initWithFrame:CGRectMake(0, kTableViewY + kSegmentH, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH) style:UITableViewStylePlain];
-        
-        
-        
-        [self.view addSubview:party];
-    }
+    [self.mainScrollView addSubview:partyTableView];
     
-
+    self.partyTableView = partyTableView;
     
     
     
     
-    return party;
+    
+    return partyTableView;
     
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
