@@ -24,6 +24,7 @@
 
 
 @property(nonatomic, strong)CYSegment *segment;
+@property(nonatomic,strong)UISegmentedControl *seg;
 
 @property(nonatomic, strong)UIScrollView *mainScrollView;
 
@@ -68,6 +69,7 @@
 {
     NSInteger pageNum = scrollView.contentOffset.x/kScreenFrameW;
     self.segment.selectIdx =pageNum;
+    self.seg.selectedSegmentIndex = pageNum;
 }
 
 - (void)creatScrollView{
@@ -91,6 +93,9 @@
     NSArray *arrItems = @[@"叫地主",@"聚会"];
     
     CYSegment *segment = [[CYSegment alloc] initWithFrame:CGRectMake(0, 64, self.view.width, 30) withItems:arrItems];
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:arrItems];
+    seg.frame = CGRectMake(0, 64, kScreenFrameW, 30);
+    seg.backgroundColor = [UIColor whiteColor];
     
     segment.segmentBgColor = [UIColor whiteColor];
     
@@ -102,7 +107,15 @@
     
     segment.selectIdx = 0;
     
-    [self.view addSubview:segment];
+    
+    seg.selectedSegmentIndex = 0;
+    [self.view addSubview:seg];
+    
+    self.seg = seg;
+    
+    
+    
+//    [self.view addSubview:segment];
     
     self.segment = segment;
 

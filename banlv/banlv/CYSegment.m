@@ -57,7 +57,7 @@
     self.selectIdx = point.x/self.perWidth;
     
     //tableView向右滑动
-    if (self.lastSelectIdx < self.selectIdx) {
+    if (self.lastSelectIdx <= self.selectIdx) {
         self.changeDirection(CYSegmentDirectionLeft);
     }
     //tableView向左滑动
