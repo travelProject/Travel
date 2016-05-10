@@ -41,9 +41,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    [self.navigationItem setTitle:@"发现"];
+
     
-    [self.navigationController.navigationBar addSubview:self.seg];
+    
     
     self.view.backgroundColor = [UIColor cyanColor];
     
@@ -55,7 +55,7 @@
     
     [self creaPartyTableView];
     
-    
+    [self.navigationController.navigationBar addSubview:self.seg];
    
     
     
@@ -75,16 +75,16 @@
 }
 
 - (void)creatScrollView{
-    UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64+ kSegmentH, kScreenFrameW, kScreenFrameH)];
+    UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, kScreenFrameH)];
 //    mainScrollView.showsHorizontalScrollIndicator = NO;
     self.mainScrollView = mainScrollView;
     mainScrollView.delegate = self;
     
     mainScrollView.pagingEnabled = YES;
     
-    mainScrollView.contentSize = CGSizeMake(kScreenFrameW *2, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH);
+    mainScrollView.contentSize = CGSizeMake(kScreenFrameW *2, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
     
-    mainScrollView.backgroundColor = [UIColor orangeColor];
+//    mainScrollView.backgroundColor = [UIColor orangeColor];
     
     [self.view addSubview:mainScrollView];
     
@@ -92,16 +92,16 @@
 
 - (void)creatSegment{
     
-    NSArray *arrItems = @[@"叫地主",@"聚会"];
+    NSArray *arrItems = @[@"叫地主",@"聚会&派对"];
     
   
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:arrItems];
-    seg.size = CGSizeMake(50, 20);
-    seg.center = CGPointMake(kScreenFrameW/2, 64/2);
+    seg.size = CGSizeMake(50, 10);
+    seg.center = CGPointMake(kScreenFrameW/2, 44/2);
     seg.backgroundColor = [UIColor whiteColor];
     
   
-    
+    [seg addTarget:self action:@selector(segAction:) forControlEvents:UIControlEventValueChanged];
    
     
     
@@ -113,10 +113,20 @@
     
     
     
-//    [self.view addSubview:segment];
-    
-   
 
+    
+}
+
+- (void)segAction:(id)sender{
+    
+    if (self.seg.selectedSegmentIndex == 0) {
+        self.mainScrollView.contentOffset = CGPointMake(kScreenFrameW, kScreenFrameH);
+    }else{
+        self.mainScrollView.contentOffset = CGPointMake(0, kScreenFrameH);
+    }
+    
+    
+    
     
 }
 
@@ -125,7 +135,7 @@
     
     CYDizhuTableView *dizhuTableView = [[CYDizhuTableView alloc] init];
     
-    dizhuTableView.frame = CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH);
+    dizhuTableView.frame = CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
     [self.mainScrollView addSubview:dizhuTableView];
     
     dizhuTableView.backgroundColor = [UIColor redColor];
@@ -144,7 +154,7 @@
 - (CYPartyTableView *)creaPartyTableView{
     
     CYPartyTableView *partyTableView = [[CYPartyTableView alloc] init];
-    partyTableView.frame = CGRectMake(kScreenFrameW, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY - kSegmentH);
+    partyTableView.frame = CGRectMake(kScreenFrameW, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
     
     [self.mainScrollView addSubview:partyTableView];
     
