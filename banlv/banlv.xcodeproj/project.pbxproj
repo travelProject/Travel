@@ -26,7 +26,6 @@
 		2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18F1CDC2C0E00B4989C /* MainViewController.m */; };
 		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
 		2B97A19E1CDC4E2200B4989C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A19D1CDC4E2200B4989C /* Assets.xcassets */; };
-		2BBE30FA1CDF5F390024F8E7 /* CYSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE30F91CDF5F390024F8E7 /* CYSegment.m */; };
 		2BBE30FD1CDF65800024F8E7 /* CYDizhuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE30FC1CDF65800024F8E7 /* CYDizhuTableView.m */; };
 		2BBE31001CDF659A0024F8E7 /* CYPartyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE30FF1CDF659A0024F8E7 /* CYPartyTableView.m */; };
 		CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworking.m */; };
@@ -88,8 +87,6 @@
 		2B97A1911CDC2C4B00B4989C /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		2B97A1921CDC2C4B00B4989C /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		2B97A19D1CDC4E2200B4989C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2BBE30F81CDF5F390024F8E7 /* CYSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYSegment.h; sourceTree = "<group>"; };
-		2BBE30F91CDF5F390024F8E7 /* CYSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYSegment.m; sourceTree = "<group>"; };
 		2BBE30FB1CDF65800024F8E7 /* CYDizhuTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuTableView.h; sourceTree = "<group>"; };
 		2BBE30FC1CDF65800024F8E7 /* CYDizhuTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuTableView.m; sourceTree = "<group>"; };
 		2BBE30FE1CDF659A0024F8E7 /* CYPartyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPartyTableView.h; sourceTree = "<group>"; };
@@ -288,8 +285,6 @@
 				2BBE30FC1CDF65800024F8E7 /* CYDizhuTableView.m */,
 				2BBE30FE1CDF659A0024F8E7 /* CYPartyTableView.h */,
 				2BBE30FF1CDF659A0024F8E7 /* CYPartyTableView.m */,
-				2BBE30F81CDF5F390024F8E7 /* CYSegment.h */,
-				2BBE30F91CDF5F390024F8E7 /* CYSegment.m */,
 			);
 			path = "发现";
 			sourceTree = "<group>";
@@ -560,7 +555,6 @@
 				CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworking.m in Sources */,
 				2B97A1871CDC2BC000B4989C /* FindViewController.m in Sources */,
 				2B97A1671CDC2A6300B4989C /* CYTabBarController.m in Sources */,
-				2BBE30FA1CDF5F390024F8E7 /* CYSegment.m in Sources */,
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
