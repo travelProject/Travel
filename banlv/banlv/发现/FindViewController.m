@@ -11,7 +11,7 @@
 #define kTableViewY 64
 
 #import "FindViewController.h"
-#import "CYSegment.h"
+
 
 
 #import "CYDizhuTableView.h"
@@ -23,7 +23,7 @@
 @interface FindViewController ()<UIScrollViewDelegate>
 
 
-@property(nonatomic, strong)CYSegment *segment;
+
 @property(nonatomic,strong)UISegmentedControl *seg;
 
 @property(nonatomic, strong)UIScrollView *mainScrollView;
@@ -41,7 +41,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.navigationItem setTitle:@"发现"];
+//    [self.navigationItem setTitle:@"发现"];
+    
+    [self.navigationController.navigationBar addSubview:self.seg];
     
     self.view.backgroundColor = [UIColor cyanColor];
     
@@ -68,7 +70,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     NSInteger pageNum = scrollView.contentOffset.x/kScreenFrameW;
-    self.segment.selectIdx =pageNum;
+    
     self.seg.selectedSegmentIndex = pageNum;
 }
 
@@ -92,20 +94,16 @@
     
     NSArray *arrItems = @[@"叫地主",@"聚会"];
     
-    CYSegment *segment = [[CYSegment alloc] initWithFrame:CGRectMake(0, 64, self.view.width, 30) withItems:arrItems];
+  
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:arrItems];
-    seg.frame = CGRectMake(0, 64, kScreenFrameW, 30);
+    seg.size = CGSizeMake(50, 20);
+    seg.center = CGPointMake(kScreenFrameW/2, 64/2);
     seg.backgroundColor = [UIColor whiteColor];
     
-    segment.segmentBgColor = [UIColor whiteColor];
+  
     
-    segment.defaultPerColor = [UIColor blackColor];
+   
     
-    segment.perColor = [UIColor redColor];
-    
-    segment.underLayerBackgroudColor = [UIColor redColor];
-    
-    segment.selectIdx = 0;
     
     
     seg.selectedSegmentIndex = 0;
@@ -117,7 +115,7 @@
     
 //    [self.view addSubview:segment];
     
-    self.segment = segment;
+   
 
     
 }
