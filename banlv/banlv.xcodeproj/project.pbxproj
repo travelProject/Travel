@@ -29,6 +29,7 @@
 		2BBE30FA1CDF5F390024F8E7 /* CYSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE30F91CDF5F390024F8E7 /* CYSegment.m */; };
 		2BBE30FD1CDF65800024F8E7 /* CYDizhuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE30FC1CDF65800024F8E7 /* CYDizhuTableView.m */; };
 		2BBE31001CDF659A0024F8E7 /* CYPartyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE30FF1CDF659A0024F8E7 /* CYPartyTableView.m */; };
+		CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworking.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		2BBE30FF1CDF659A0024F8E7 /* CYPartyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyTableView.m; sourceTree = "<group>"; };
 		32E8EF9BBE4402875978F035 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B32E114A75699846B69112 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CBE1DA9C1CE21A5E00B36A18 /* FYAFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAFNetworking.h; sourceTree = "<group>"; };
+		CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAFNetworking.m; sourceTree = "<group>"; };
 		F0AFC9F2EE209C0A3A7F964C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				2B97A1611CDC2A4700B4989C /* 管理全局的类 */,
+				CBE1DA991CE2191C00B36A18 /* 功能模块 */,
 				2B97A16B1CDC2B0400B4989C /* 类别 */,
 				CBE1DA961CE1FAB600B36A18 /* 其他 */,
 				2B97A1801CDC2B3100B4989C /* 首页 */,
@@ -345,6 +349,31 @@
 			path = "其他";
 			sourceTree = "<group>";
 		};
+		CBE1DA991CE2191C00B36A18 /* 功能模块 */ = {
+			isa = PBXGroup;
+			children = (
+				CBE1DA9A1CE2196800B36A18 /* 网络 */,
+				CBE1DA9B1CE2197E00B36A18 /* 数据库 */,
+			);
+			path = "功能模块";
+			sourceTree = "<group>";
+		};
+		CBE1DA9A1CE2196800B36A18 /* 网络 */ = {
+			isa = PBXGroup;
+			children = (
+				CBE1DA9C1CE21A5E00B36A18 /* FYAFNetworking.h */,
+				CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworking.m */,
+			);
+			path = "网络";
+			sourceTree = "<group>";
+		};
+		CBE1DA9B1CE2197E00B36A18 /* 数据库 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "数据库";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -528,6 +557,7 @@
 				2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */,
 				2B97A17D1CDC2B0400B4989C /* UINavigationController+Jump.m in Sources */,
 				2B97A1661CDC2A6300B4989C /* CYMyTabBar.m in Sources */,
+				CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworking.m in Sources */,
 				2B97A1871CDC2BC000B4989C /* FindViewController.m in Sources */,
 				2B97A1671CDC2A6300B4989C /* CYTabBarController.m in Sources */,
 				2BBE30FA1CDF5F390024F8E7 /* CYSegment.m in Sources */,
