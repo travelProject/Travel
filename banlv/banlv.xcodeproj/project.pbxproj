@@ -149,19 +149,14 @@
 		2B97A12C1CDC264700B4989C /* banlv */ = {
 			isa = PBXGroup;
 			children = (
-				2B97A1841CDC2B5900B4989C /* 我的 */,
-				2B97A1831CDC2B5200B4989C /* 订单 */,
-				2B97A1821CDC2B4D00B4989C /* 搜索 */,
-				2B97A1811CDC2B4900B4989C /* 发现 */,
-				2B97A1801CDC2B3100B4989C /* 首页 */,
-				2B97A16B1CDC2B0400B4989C /* 类别 */,
 				2B97A1611CDC2A4700B4989C /* 管理全局的类 */,
-				2B97A1601CDC270600B4989C /* CYGlobal.pch */,
-				2B97A1301CDC264700B4989C /* AppDelegate.h */,
-				2B97A19D1CDC4E2200B4989C /* Assets.xcassets */,
-				2B97A1311CDC264700B4989C /* AppDelegate.m */,
-				2B97A13B1CDC264700B4989C /* LaunchScreen.storyboard */,
-				2B97A13E1CDC264700B4989C /* Info.plist */,
+				2B97A16B1CDC2B0400B4989C /* 类别 */,
+				CBE1DA961CE1FAB600B36A18 /* 其他 */,
+				2B97A1801CDC2B3100B4989C /* 首页 */,
+				2B97A1811CDC2B4900B4989C /* 发现 */,
+				2B97A1821CDC2B4D00B4989C /* 搜索 */,
+				2B97A1831CDC2B5200B4989C /* 订单 */,
+				2B97A1841CDC2B5900B4989C /* 我的 */,
 				2B97A12D1CDC264700B4989C /* Supporting Files */,
 			);
 			path = banlv;
@@ -170,7 +165,9 @@
 		2B97A12D1CDC264700B4989C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2B97A13E1CDC264700B4989C /* Info.plist */,
 				2B97A12E1CDC264700B4989C /* main.m */,
+				2B97A1601CDC270600B4989C /* CYGlobal.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -198,7 +195,7 @@
 			children = (
 				2B97A1681CDC2A7600B4989C /* tabbar */,
 			);
-			name = "管理全局的类";
+			path = "管理全局的类";
 			sourceTree = "<group>";
 		};
 		2B97A1681CDC2A7600B4989C /* tabbar */ = {
@@ -209,7 +206,7 @@
 				2B97A1641CDC2A6300B4989C /* CYTabBarController.h */,
 				2B97A1651CDC2A6300B4989C /* CYTabBarController.m */,
 			);
-			name = tabbar;
+			path = tabbar;
 			sourceTree = "<group>";
 		};
 		2B97A16B1CDC2B0400B4989C /* 类别 */ = {
@@ -275,7 +272,7 @@
 				2B97A18B1CDC2BF900B4989C /* HomeViewController.h */,
 				2B97A18C1CDC2BF900B4989C /* HomeViewController.m */,
 			);
-			name = "首页";
+			path = "首页";
 			sourceTree = "<group>";
 		};
 		2B97A1811CDC2B4900B4989C /* 发现 */ = {
@@ -290,7 +287,7 @@
 				2BBE30F81CDF5F390024F8E7 /* CYSegment.h */,
 				2BBE30F91CDF5F390024F8E7 /* CYSegment.m */,
 			);
-			name = "发现";
+			path = "发现";
 			sourceTree = "<group>";
 		};
 		2B97A1821CDC2B4D00B4989C /* 搜索 */ = {
@@ -299,7 +296,7 @@
 				2B97A1881CDC2BE200B4989C /* SearchViewController.h */,
 				2B97A1891CDC2BE200B4989C /* SearchViewController.m */,
 			);
-			name = "搜索";
+			path = "搜索";
 			sourceTree = "<group>";
 		};
 		2B97A1831CDC2B5200B4989C /* 订单 */ = {
@@ -308,7 +305,7 @@
 				2B97A1911CDC2C4B00B4989C /* OrderViewController.h */,
 				2B97A1921CDC2C4B00B4989C /* OrderViewController.m */,
 			);
-			name = "订单";
+			path = "订单";
 			sourceTree = "<group>";
 		};
 		2B97A1841CDC2B5900B4989C /* 我的 */ = {
@@ -317,7 +314,7 @@
 				2B97A18E1CDC2C0E00B4989C /* MainViewController.h */,
 				2B97A18F1CDC2C0E00B4989C /* MainViewController.m */,
 			);
-			name = "我的";
+			path = "我的";
 			sourceTree = "<group>";
 		};
 		938E96DF1B047757F4B0CBE1 /* Frameworks */ = {
@@ -335,6 +332,17 @@
 				F0AFC9F2EE209C0A3A7F964C /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CBE1DA961CE1FAB600B36A18 /* 其他 */ = {
+			isa = PBXGroup;
+			children = (
+				2B97A1301CDC264700B4989C /* AppDelegate.h */,
+				2B97A1311CDC264700B4989C /* AppDelegate.m */,
+				2B97A19D1CDC4E2200B4989C /* Assets.xcassets */,
+				2B97A13B1CDC264700B4989C /* LaunchScreen.storyboard */,
+			);
+			path = "其他";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
