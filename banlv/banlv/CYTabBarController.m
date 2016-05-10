@@ -12,6 +12,7 @@
 
 #import "MainViewController.h"
 #import "OrderViewController.h"
+#import "SearchViewController.h"
 
 #import "FindViewController.h"
 #import "HomeViewController.h"
@@ -35,6 +36,8 @@
     [self addViewController:[[HomeViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"首页"];
     
     [self addViewController:[[FindViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"发现"];
+    
+    [self addViewController:[[SearchViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone"withItemTitle:@"搜索"];
     
     [self addViewController:[[OrderViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"订单"];
     
