@@ -9,14 +9,23 @@
 #ifndef CYGlobal_pch
 #define CYGlobal_pch
 
-////定义输出
-//#ifdef DEBUG
-//#define CYLog(...) NSLog(__VA_ARGS__)
-//#else
-//
-//#define CYLog(...)
-//
-//#endif
+//导入三方框架头文件
+#import <AFNetworking.h>
+#import <FMDB.h>
+#import <MJExtension.h>
+#import <MJRefresh.h>
+#import <UIImageView+WebCache.h>
+#import <SVProgressHUD.h>
+
+
+//定义输出
+#ifdef DEBUG
+#define CYLog(...) NSLog(__VA_ARGS__)
+#else
+
+#define CYLog(...)
+
+#endif
 
 
 //定义单例
@@ -35,6 +44,12 @@ return idValue;\
 
 #define kScreenFrameH [UIScreen mainScreen].bounds.size.height
 
+//导航栏高度
+#define NavH 64.f
+
+//TabBar高度
+#define TabBarH 49.f
+
 
 //加载IB
 #define kLoadViewWithNIB(nibName) [[[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil] lastObject]
@@ -50,10 +65,5 @@ return idValue;\
 #define kStringFormat(...)  [NSString stringWithFormat:__VA_ARGS__]
 
 
-
-
-
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #endif /* CYGlobal_pch */
