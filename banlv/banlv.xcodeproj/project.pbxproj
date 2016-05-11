@@ -10,6 +10,8 @@
 		127437573AB123E2BCE39558 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E8EF9BBE4402875978F035 /* libPods.a */; };
 		2B15B08F1CE354ED00BE5221 /* CYDizhuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B15B08E1CE354ED00BE5221 /* CYDizhuTableView.m */; };
 		2B15B0921CE3551B00BE5221 /* CYPartyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B15B0911CE3551B00BE5221 /* CYPartyTableView.m */; };
+		2B15B0991CE361AF00BE5221 /* CYDizhuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B15B0971CE361AF00BE5221 /* CYDizhuCell.m */; };
+		2B15B09A1CE361AF00BE5221 /* CYDizhuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B15B0981CE361AF00BE5221 /* CYDizhuCell.xib */; };
 		2B97A12F1CDC264700B4989C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A12E1CDC264700B4989C /* main.m */; };
 		2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1311CDC264700B4989C /* AppDelegate.m */; };
 		2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A13B1CDC264700B4989C /* LaunchScreen.storyboard */; };
@@ -53,6 +55,9 @@
 		2B15B08E1CE354ED00BE5221 /* CYDizhuTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuTableView.m; sourceTree = "<group>"; };
 		2B15B0901CE3551B00BE5221 /* CYPartyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPartyTableView.h; sourceTree = "<group>"; };
 		2B15B0911CE3551B00BE5221 /* CYPartyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyTableView.m; sourceTree = "<group>"; };
+		2B15B0961CE361AF00BE5221 /* CYDizhuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuCell.h; sourceTree = "<group>"; };
+		2B15B0971CE361AF00BE5221 /* CYDizhuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuCell.m; sourceTree = "<group>"; };
+		2B15B0981CE361AF00BE5221 /* CYDizhuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYDizhuCell.xib; sourceTree = "<group>"; };
 		2B97A12A1CDC264700B4989C /* banlv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = banlv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B97A12E1CDC264700B4989C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B97A1301CDC264700B4989C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,6 +134,9 @@
 			children = (
 				2B15B08D1CE354ED00BE5221 /* CYDizhuTableView.h */,
 				2B15B08E1CE354ED00BE5221 /* CYDizhuTableView.m */,
+				2B15B0961CE361AF00BE5221 /* CYDizhuCell.h */,
+				2B15B0971CE361AF00BE5221 /* CYDizhuCell.m */,
+				2B15B0981CE361AF00BE5221 /* CYDizhuCell.xib */,
 			);
 			path = "叫地主";
 			sourceTree = "<group>";
@@ -493,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
+				2B15B09A1CE361AF00BE5221 /* CYDizhuCell.xib in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +583,7 @@
 				2B97A1671CDC2A6300B4989C /* CYTabBarController.m in Sources */,
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
+				2B15B0991CE361AF00BE5221 /* CYDizhuCell.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
 				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,

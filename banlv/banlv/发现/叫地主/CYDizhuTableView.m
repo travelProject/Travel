@@ -7,8 +7,57 @@
 //
 
 #import "CYDizhuTableView.h"
+#import "CYDizhuCell.h"
+
+
+@interface CYDizhuTableView ()<UITableViewDelegate ,UITableViewDataSource>
+
+@end
 
 @implementation CYDizhuTableView
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.dataSource = self;
+        self.delegate = self;
+    }
+    return self;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    
+    
+    return 100;
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *indentifier = @"CYDizhuCell";
+    
+    
+    CYDizhuCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
+    
+    if (!cell) {
+        cell = kLoadViewWithNIB(indentifier);
+       
+        
+    }
+    cell.textLabel.text = @"rrrr";
+    
+    
+    return cell;
+}
+
+
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
