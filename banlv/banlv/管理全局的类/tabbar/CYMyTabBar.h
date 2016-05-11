@@ -10,4 +10,6 @@
 
 @interface CYMyTabBar : UITabBar
 
+@property (nonatomic,strong) UIButton *searchBtn;
+
 @end
