@@ -17,9 +17,6 @@
 #import "CYDizhuTableView.h"
 #import "CYPartyTableView.h"
 
-
-#import "UIView+frame.h"
-
 @interface FindViewController ()<UIScrollViewDelegate>
 
 
