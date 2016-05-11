@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UITabBarItem *item = [UITabBarItem appearance];
     
     NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:20],NSForegroundColorAttributeName:[UIColor brownColor]};
@@ -33,15 +34,13 @@
     
     self.tabBarItem = item;
     
-    [self addViewController:[[HomeViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"首页"];
+    [self addViewController:[[HomeViewController alloc]init] withImage:@"shouye" withSelectImage:@"shouye_click" withItemTitle:@"首页"];
     
-    [self addViewController:[[FindViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"发现"];
+    [self addViewController:[[FindViewController alloc]init] withImage:@"faxian" withSelectImage:@"faxian_click" withItemTitle:@"发现"];
     
-    [self addViewController:[[SearchViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone"withItemTitle:@"搜索"];
+    [self addViewController:[[OrderViewController alloc]init] withImage:@"dingdan" withSelectImage:@"dingdan_click" withItemTitle:@"订单"];
     
-    [self addViewController:[[OrderViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"订单"];
-    
-    [self addViewController:[[MainViewController alloc]init] withImage:@"tabbar_profile_n~iphone" withSelectImage:@"tabbar_profile_s~iphone" withItemTitle:@"我的"];
+    [self addViewController:[[MainViewController alloc]init] withImage:@"wode" withSelectImage:@"wode_click" withItemTitle:@"我的"];
     
     [self setValue:[[CYMyTabBar alloc] init]  forKey:@"tabBar"];
     
