@@ -1,8 +1,8 @@
 //
-//  FYHomeViewCell.m
+//  FYHomeViewCell1.m
 //  banlv
 //
-//  Created by lfy on 16/5/11.
+//  Created by lifeiyang on 16/5/11.
 //  Copyright © 2016年 llz. All rights reserved.
 //
 
@@ -10,22 +10,18 @@
 
 @interface FYHomeViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *cityPic;
-
 @property (weak, nonatomic) IBOutlet UILabel *chineseName;
 @property (weak, nonatomic) IBOutlet UILabel *englishName;
 
 @property (nonatomic,copy)NSString *cityId;
 
-
 @end
 
 @implementation FYHomeViewCell
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
-    
-    self.cityData = [[FYHomeViewCityData alloc] init];
+    // Initialization code
 }
 
 - (void)setCityData:(FYHomeViewCityData *)cityData
@@ -35,11 +31,19 @@
     [self.cityPic sd_setImageWithURL:[NSURL URLWithString:_cityData.mainPic] placeholderImage:nil options:SDWebImageProgressiveDownload];
     
     self.chineseName.text = _cityData.cityNameCh;
+    [self fontWithLab:self.chineseName];
     
     self.englishName.text = _cityData.cityNameEn;
+    [self fontWithLab:self.englishName];
     
     self.cityId = _cityData.ID;
     
+}
+
+- (void)fontWithLab:(UILabel *)label
+{
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont systemFontOfSize:14.f];
 }
 
 @end
