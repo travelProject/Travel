@@ -20,6 +20,9 @@
 //导入分类头文件
 #import "UIView+frame.h"
 
+//网络头文件
+#import "FYAFNetworkingManager.h"
+
 //定义输出
 #ifdef DEBUG
 #define CYLog(...) NSLog(__VA_ARGS__)

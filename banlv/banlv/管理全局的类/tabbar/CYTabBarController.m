@@ -42,7 +42,12 @@
     
     [self addViewController:[[MainViewController alloc]init] withImage:@"wode" withSelectImage:@"wode_click" withItemTitle:@"我的"];
     
-    [self setValue:[[CYMyTabBar alloc] init]  forKey:@"tabBar"];
+    CYMyTabBar *newTabBar = [[CYMyTabBar alloc] init];
+    
+    [newTabBar.searchBtn addTarget:self action:@selector(showSearchVC) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self setValue:newTabBar forKey:@"tabBar"];
+    
     
     
     
@@ -64,6 +69,27 @@
     [self addChildViewController:nav];
     
 }
+
+- (void)showSearchVC{
+    
+//    SearchViewController *new = [[SearchViewController alloc] init];
+//
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:new];
+//    
+//    [self setSelectedViewController:nav];
+    
+    SearchViewController *new = [[SearchViewController alloc] init];
+    
+    
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:new];
+    
+    [window.rootViewController presentViewController:nav animated:NO completion:nil];
+    
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

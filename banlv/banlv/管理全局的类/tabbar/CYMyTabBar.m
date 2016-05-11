@@ -15,8 +15,7 @@
 @interface CYMyTabBar ()
 
 @property(nonatomic,strong) UIView *searchView;
-@property(nonatomic,strong) UIView *btnBgView;
-@property (nonatomic,strong) UIButton *searchBtn;
+@property(nonatomic,strong) UIImageView *btnBgView;
 @property(nonatomic,strong) UILabel *searchLab;
 
 
@@ -30,10 +29,13 @@
 -(instancetype)init{
     self = [super init];
     if (self) {
+        
+        self.backgroundImage = [UIImage imageNamed:@"tabbar_bgd"];
 
         self.searchView = [[UIView alloc] init];
         
-        self.btnBgView = [[UIView alloc] init];
+        self.btnBgView = [[UIImageView alloc] init];
+        self.btnBgView.image = [UIImage imageNamed:@"tabbar_bgd"];
         
         self.searchLab = [[UILabel alloc] init];
         
@@ -41,30 +43,16 @@
         
         [self.searchBtn setBackgroundImage:[UIImage imageNamed:@"sousuo"] forState:UIControlStateNormal];
         
-        [self.searchBtn addTarget:self action:@selector(searchClick:) forControlEvents:UIControlEventTouchUpInside];
-        
         [self.searchView addSubview:self.btnBgView];
         [self.searchView addSubview:self.searchBtn];
         [self.searchView addSubview:self.searchLab];
-        [self insertSubview:self.searchView atIndex:100];
+        [self addSubview:self.searchView];
         
     }
     return self;
 }
 
-- (void)searchClick:(id)sender{
-    
-//    SearchViewController *new = [[SearchViewController alloc] init];
-    
-  
-//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:new];
 
-//    
-//    [window.rootViewController presentViewController:nav animated:NO completion:nil];
-
-    
-}
 - (void)layoutSubviews{
     [super layoutSubviews];
     
@@ -76,7 +64,6 @@
     self.searchView.frame = CGRectMake(space * 2, -10, space, TabBarH + 10);
     
     self.btnBgView.frame = CGRectMake((self.searchView.width - 45)/2, 0, 45, 45);
-    self.btnBgView.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0];
     self.btnBgView.layer.cornerRadius = 22.5f;
     self.btnBgView.layer.masksToBounds = YES;
     
@@ -96,7 +83,9 @@
     for (UIView *aView in self.subviews) {
         
         if ([aView isKindOfClass:[UIImageView class]] && aView.bounds.size.height <= 1) {
+            
             aView.hidden = YES;
+            
         }
         
         if ([aView isKindOfClass:NSClassFromString(@"UITabBarButton")]) {

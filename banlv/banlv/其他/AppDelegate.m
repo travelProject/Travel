@@ -19,18 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window makeKeyAndVisible];
-
-    CYTabBarController *tabBar = [[CYTabBarController alloc]init];
     
-   
+    CYTabBarController *tabBar = [[CYTabBarController alloc]init];
     
     self.window.rootViewController = tabBar;
 
-    
-    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
