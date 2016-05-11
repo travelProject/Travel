@@ -124,34 +124,34 @@
     
     
     
-    
 }
 
 
-- (CYDizhuTableView *)creatDizhuTableView{
+- (void)creatDizhuTableView{
     
     CYDizhuTableView *dizhuTableView = [[CYDizhuTableView alloc] init];
     
     dizhuTableView.frame = CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
     [self.mainScrollView addSubview:dizhuTableView];
     
-    dizhuTableView.backgroundColor = [UIColor redColor];
+    
+
     
     self.dizhuTableView = dizhuTableView;
     
 
     
-    
-    
-    return dizhuTableView;
+
     
 }
 
 
-- (CYPartyTableView *)creaPartyTableView{
+- (void)creaPartyTableView{
     
     CYPartyTableView *partyTableView = [[CYPartyTableView alloc] init];
     partyTableView.frame = CGRectMake(kScreenFrameW, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
+    
+    partyTableView.backgroundColor = [UIColor yellowColor];
     
     [self.mainScrollView addSubview:partyTableView];
     
@@ -161,7 +161,7 @@
     
     
     
-    return partyTableView;
+//    return partyTableView;
     
 }
 
