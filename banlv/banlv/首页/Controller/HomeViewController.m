@@ -26,6 +26,8 @@
 
 @property(nonatomic,strong)FYHomeViewData *homeViewData;
 
+@property(nonatomic,strong)UICollectionViewFlowLayout *flowLayout;
+
 @end
 
 @implementation HomeViewController
@@ -61,10 +63,10 @@
 //初始化collectionView
 - (void)initCollectionView
 {
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    self.flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - TabBarH) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - TabBarH) collectionViewLayout:self.flowLayout];
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.showsVerticalScrollIndicator = NO;
     
@@ -80,9 +82,9 @@
     //注册Footer
     [self.collectionView registerClass:[FYCollectionFooter class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionFooter" withReuseIdentifier:@"footer"];
     
-    flowLayout.headerReferenceSize = CGSizeMake(kScreenFrameW, 0.55f * kScreenFrameW);
+    self.flowLayout.headerReferenceSize = CGSizeMake(kScreenFrameW, 0.55f * kScreenFrameW);
     
-    flowLayout.footerReferenceSize = CGSizeMake(kScreenFrameW, 0.4526f * kScreenFrameW);
+    self.flowLayout.footerReferenceSize = CGSizeMake(kScreenFrameW, 0.4526f * kScreenFrameW);
     
     [self.view addSubview:self.collectionView];
     
@@ -192,6 +194,18 @@
 {
     return 3.f;
 }
+
+#pragma mark -- UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    CGFloat width =  self.flowLayout.headerReferenceSize.width;
+//    CGFloat height = self.flowLayout.headerReferenceSize.height;
+//    
+//    self.flowLayout.headerReferenceSize = CGSizeMake(width - scrollView.contentOffset.y, height -scrollView.contentOffset.y);
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning {

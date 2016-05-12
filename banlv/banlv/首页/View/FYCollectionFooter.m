@@ -17,7 +17,20 @@
         
         //不要忘记初始化（坑爹啊，xib习惯了）
         self.footImgView = [[UIImageView alloc] init];
+        
+        //打开响应链
+        self.footImgView.userInteractionEnabled = YES;
+        
+        //添加点击手势
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lookMoreCity)];
+        
+        [self.footImgView addGestureRecognizer:tap];
+        
         self.moreCity = [[UIButton alloc] init];
+        
+        //关闭响应链
+        self.moreCity.userInteractionEnabled = NO;
+        
         self.moreCity.frame = CGRectMake(kScreenFrameW / 2 - 60, 0.4526f * kScreenFrameW / 2 - 10, 120, 20);
         
         [self.moreCity setBackgroundColor:[UIColor blackColor]];
@@ -36,6 +49,12 @@
         
     }
     return self;
+}
+
+//查看更多城市
+- (void)lookMoreCity
+{
+    NSLog(@"查看更多城市");
 }
 
 - (void)setFooterPic:(NSString *)footerPic
