@@ -22,6 +22,8 @@
     if (self) {
         self.dataSource = self;
         self.delegate = self;
+//        [self registerNib:[UINib nibWithNibName:@"CYDizhuCell" bundle:nil] forCellReuseIdentifier:@"CYDizhuCell"];
+        
     }
     return self;
 }
@@ -41,14 +43,21 @@
     
     static NSString *indentifier = @"CYDizhuCell";
     
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
+//    }
+    
     
     CYDizhuCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
-    
     if (!cell) {
-        cell = kLoadViewWithNIB(indentifier);
-       
         
+    
+    
+        cell = kLoadViewWithNIB(indentifier);
+    
     }
+    
     cell.textLabel.text = @"rrrr";
     
     

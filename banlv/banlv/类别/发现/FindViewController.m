@@ -52,10 +52,6 @@
     
     [self creaPartyTableView];
     
-    [self.navigationController.navigationBar addSubview:self.seg];
-   
-    
-    
     
     
     
@@ -66,14 +62,14 @@
 //contentInset:滑动视图在外面的相对位置
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSInteger pageNum = scrollView.contentOffset.x/kScreenFrameW;
+    NSInteger pageNum = scrollView.contentOffset.x/kScreenFrameW + 0.5;
     
     self.seg.selectedSegmentIndex = pageNum;
 }
 
 - (void)creatScrollView{
     UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, kScreenFrameH)];
-//    mainScrollView.showsHorizontalScrollIndicator = NO;
+    mainScrollView.showsHorizontalScrollIndicator = NO;
     self.mainScrollView = mainScrollView;
     mainScrollView.delegate = self;
     
@@ -104,7 +100,7 @@
     
     
     seg.selectedSegmentIndex = 0;
-    [self.view addSubview:seg];
+    self.navigationItem.titleView = seg;
     
     self.seg = seg;
     
@@ -116,11 +112,14 @@
 
 - (void)segAction:(id)sender{
     
-    if (self.seg.selectedSegmentIndex == 0) {
-        self.mainScrollView.contentOffset = CGPointMake(kScreenFrameW, kScreenFrameH);
-    }else{
-        self.mainScrollView.contentOffset = CGPointMake(0, kScreenFrameH);
-    }
+    [UIView animateWithDuration:0.5 animations:^{
+       
+        self.mainScrollView.contentOffset = CGPointMake(kScreenFrameW * self.seg.selectedSegmentIndex, - 64);
+        
+        
+    }];
+    
+    
     
     
     
