@@ -34,6 +34,7 @@
 		CB6BAC8A1CE4584A006457BC /* FYCollectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC891CE4584A006457BC /* FYCollectionHeader.m */; };
 		CB6BAC8E1CE45912006457BC /* FYHeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC8C1CE45912006457BC /* FYHeaderViewCell.m */; };
 		CB6BAC8F1CE45912006457BC /* FYHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6BAC8D1CE45912006457BC /* FYHeaderViewCell.xib */; };
+		CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB741F2F1CE4D744002FA686 /* FYLookMoreCityVC.m */; };
 		CB7CF5021CE4BB4100716F5D /* FYHomeWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7CF5001CE4BB4100716F5D /* FYHomeWebViewVC.m */; };
 		CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB902C5B1CE2DDA500DCE806 /* Assets.xcassets */; };
 		CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6548E1CE3591500499922 /* FYHomeViewData.m */; };
@@ -116,6 +117,8 @@
 		CB6BAC8B1CE45912006457BC /* FYHeaderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHeaderViewCell.h; sourceTree = "<group>"; };
 		CB6BAC8C1CE45912006457BC /* FYHeaderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHeaderViewCell.m; sourceTree = "<group>"; };
 		CB6BAC8D1CE45912006457BC /* FYHeaderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHeaderViewCell.xib; sourceTree = "<group>"; };
+		CB741F2E1CE4D744002FA686 /* FYLookMoreCityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLookMoreCityVC.h; sourceTree = "<group>"; };
+		CB741F2F1CE4D744002FA686 /* FYLookMoreCityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLookMoreCityVC.m; sourceTree = "<group>"; };
 		CB7CF4FF1CE4BB4100716F5D /* FYHomeWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeWebViewVC.h; sourceTree = "<group>"; };
 		CB7CF5001CE4BB4100716F5D /* FYHomeWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeWebViewVC.m; sourceTree = "<group>"; };
 		CB902C5B1CE2DDA500DCE806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 				2B97A18C1CDC2BF900B4989C /* HomeViewController.m */,
 				CB7CF4FF1CE4BB4100716F5D /* FYHomeWebViewVC.h */,
 				CB7CF5001CE4BB4100716F5D /* FYHomeWebViewVC.m */,
+				CB741F2E1CE4D744002FA686 /* FYLookMoreCityVC.h */,
+				CB741F2F1CE4D744002FA686 /* FYLookMoreCityVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -647,6 +652,7 @@
 			files = (
 				CB6BAC8E1CE45912006457BC /* FYHeaderViewCell.m in Sources */,
 				2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */,
+				CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */,
 				2B97A17D1CDC2B0400B4989C /* UINavigationController+Jump.m in Sources */,
 				2B97A1661CDC2A6300B4989C /* CYMyTabBar.m in Sources */,
 				CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */,
