@@ -30,6 +30,8 @@
 		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
 		CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4EF9621CE388DD008046EF /* FYHomeViewCell.m */; };
 		CB4EF9651CE388DD008046EF /* FYHomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4EF9631CE388DD008046EF /* FYHomeViewCell.xib */; };
+		CB6BAC7F1CE445F4006457BC /* FYCollectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC7E1CE445F4006457BC /* FYCollectionHeader.m */; };
+		CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC811CE4461B006457BC /* FYCollectionFooter.m */; };
 		CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB902C5B1CE2DDA500DCE806 /* Assets.xcassets */; };
 		CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6548E1CE3591500499922 /* FYHomeViewData.m */; };
 		CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654911CE35A9B00499922 /* FYHomeViewBannerData.m */; };
@@ -104,6 +106,10 @@
 		CB4EF9611CE388DD008046EF /* FYHomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeViewCell.h; sourceTree = "<group>"; };
 		CB4EF9621CE388DD008046EF /* FYHomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeViewCell.m; sourceTree = "<group>"; };
 		CB4EF9631CE388DD008046EF /* FYHomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHomeViewCell.xib; sourceTree = "<group>"; };
+		CB6BAC7D1CE445F4006457BC /* FYCollectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCollectionHeader.h; sourceTree = "<group>"; };
+		CB6BAC7E1CE445F4006457BC /* FYCollectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCollectionHeader.m; sourceTree = "<group>"; };
+		CB6BAC801CE4461B006457BC /* FYCollectionFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCollectionFooter.h; sourceTree = "<group>"; };
+		CB6BAC811CE4461B006457BC /* FYCollectionFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCollectionFooter.m; sourceTree = "<group>"; };
 		CB902C5B1CE2DDA500DCE806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD6548D1CE3591500499922 /* FYHomeViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeViewData.h; sourceTree = "<group>"; };
 		CBD6548E1CE3591500499922 /* FYHomeViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeViewData.m; sourceTree = "<group>"; };
@@ -386,6 +392,10 @@
 				CB4EF9611CE388DD008046EF /* FYHomeViewCell.h */,
 				CB4EF9621CE388DD008046EF /* FYHomeViewCell.m */,
 				CB4EF9631CE388DD008046EF /* FYHomeViewCell.xib */,
+				CB6BAC7D1CE445F4006457BC /* FYCollectionHeader.h */,
+				CB6BAC7E1CE445F4006457BC /* FYCollectionHeader.m */,
+				CB6BAC801CE4461B006457BC /* FYCollectionFooter.h */,
+				CB6BAC811CE4461B006457BC /* FYCollectionFooter.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -630,9 +640,11 @@
 				CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */,
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
+				CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */,
 				2B15B0991CE361AF00BE5221 /* CYDizhuCell.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
 				CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */,
+				CB6BAC7F1CE445F4006457BC /* FYCollectionHeader.m in Sources */,
 				CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */,
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
 				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,
