@@ -14,6 +14,9 @@
 //cell
 #import "FYHomeViewCell.h"
 
+//顶部haeder
+#import "FYCollectionHeader.h"
+
 //底部footer
 #import "FYCollectionFooter.h"
 
@@ -72,12 +75,12 @@
     [self.collectionView registerNib:[UINib nibWithNibName:@"FYHomeViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"cell"];
     
     //注册Header
-//    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:@"header"];
+    [self.collectionView registerClass:[FYCollectionHeader class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:@"header"];
     
     //注册Footer
     [self.collectionView registerClass:[FYCollectionFooter class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionFooter" withReuseIdentifier:@"footer"];
     
-//    flowLayout.headerReferenceSize = CGSizeMake(10, 10);
+    flowLayout.headerReferenceSize = CGSizeMake(kScreenFrameW, 0.55f * kScreenFrameW);
     
     flowLayout.footerReferenceSize = CGSizeMake(kScreenFrameW, 0.4526f * kScreenFrameW);
     
@@ -140,7 +143,17 @@
 {
     UICollectionReusableView *reusableView = nil;
     
+    if (kind == UICollectionElementKindSectionHeader) {
+        
+        FYCollectionHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+        
+        header.bannerArr = self.homeViewData.topBanner;
+        
+        reusableView = header;
+    }
+    
     if (kind == UICollectionElementKindSectionFooter) {
+        
         FYCollectionFooter *footer = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer" forIndexPath:indexPath];
         
         footer.footerPic = self.homeViewData.bottomPic;

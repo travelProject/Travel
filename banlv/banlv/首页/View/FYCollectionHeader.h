@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FYHomeViewBannerData.h"
+
 @interface FYCollectionHeader : UICollectionReusableView
+
+@property(nonatomic,strong) UICollectionView *bannerCollecView;
+
+@property(nonatomic,strong) UIPageControl *bannerPage;
+
+@property(nonatomic,strong) NSArray<FYHomeViewBannerData *> *bannerArr;
 
 @end
