@@ -54,7 +54,7 @@
 //查看更多城市
 - (void)lookMoreCity
 {
-    NSLog(@"查看更多城市");
+    
 }
 
 - (void)setFooterPic:(NSString *)footerPic
@@ -70,6 +70,11 @@
     
     self.footImgView.frame = CGRectMake(0, 0, kScreenFrameW, 0.4526f * kScreenFrameW);
     
+}
+
+- (void)setMyHostVC:(UIViewController *)myHostVC
+{
+    _myHostVC = myHostVC;
 }
 
 @end

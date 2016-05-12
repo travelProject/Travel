@@ -20,6 +20,7 @@
 //底部footer
 #import "FYCollectionFooter.h"
 
+
 @interface HomeViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic,strong)UICollectionView *collectionView;
@@ -40,6 +41,14 @@
     return UIStatusBarStyleLightContent;
 }
 
+//view即将出现时隐藏导航栏
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -50,8 +59,6 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.96 blue:0.96 alpha:1.0];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    self.navigationController.navigationBar.hidden = YES;
     
     [self initCollectionView];
     
@@ -114,6 +121,7 @@
         
         [self.collectionView reloadData];
         
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         NSLog(@"error : %@",error);
@@ -149,6 +157,9 @@
         
         FYCollectionHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
         
+        //把控制器传到header里
+        header.myHostVC = self;
+        
         header.bannerArr = self.homeViewData.topBanner;
         
         reusableView = header;
@@ -157,6 +168,9 @@
     if (kind == UICollectionElementKindSectionFooter) {
         
         FYCollectionFooter *footer = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer" forIndexPath:indexPath];
+        
+        //把控制器传到header里
+        footer.myHostVC = self;
         
         footer.footerPic = self.homeViewData.bottomPic;
         
@@ -199,10 +213,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    CGFloat width =  self.flowLayout.headerReferenceSize.width;
-//    CGFloat height = self.flowLayout.headerReferenceSize.height;
-//    
-//    self.flowLayout.headerReferenceSize = CGSizeMake(width - scrollView.contentOffset.y, height -scrollView.contentOffset.y);
+    
+//    self.flowLayout.headerReferenceSize = CGSizeMake(500, 400);
     
 }
 

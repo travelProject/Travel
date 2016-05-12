@@ -16,4 +16,7 @@
 
 @property(nonatomic,strong) UIButton *moreCity;
 
+@property(nonatomic,strong) UIViewController *myHostVC;
+
+
 @end

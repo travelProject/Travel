@@ -11,6 +11,9 @@
 //bannerCell
 #import "FYHeaderViewCell.h"
 
+//webviewVC
+#import "FYHomeWebViewVC.h"
+
 #define MaxSection 100
 
 @interface FYCollectionHeader () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -29,7 +32,7 @@
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
-        self.bannerCollecView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, 0.55f * kScreenFrameW) collectionViewLayout:flowLayout];
+        self.bannerCollecView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) collectionViewLayout:flowLayout];
         self.bannerCollecView.backgroundColor = [UIColor clearColor];
         self.bannerCollecView.showsHorizontalScrollIndicator = NO;
         self.bannerCollecView.pagingEnabled = YES;
@@ -136,14 +139,21 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"点击的banner标题：%@",self.bannerArr[indexPath.row].advTitle);
+
+    FYHomeWebViewVC *webViewVC = [[FYHomeWebViewVC alloc] init];
+    
+    webViewVC.urlString = self.bannerArr[indexPath.row].advUrl;
+    
+    [self.myHostVC.navigationController pushViewController:webViewVC animated:YES];
+    
+
 }
 
 #pragma mark -- UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(kScreenFrameW, 0.55f * kScreenFrameW);
+    return CGSizeMake(self.width, self.height);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
@@ -187,6 +197,11 @@
     }
     
     
+}
+
+- (void)setMyHostVC:(UIViewController *)myHostVC
+{
+    _myHostVC = myHostVC;
 }
 
 

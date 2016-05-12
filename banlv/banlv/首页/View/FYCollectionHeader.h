@@ -18,4 +18,6 @@
 
 @property(nonatomic,strong) NSArray<FYHomeViewBannerData *> *bannerArr;
 
+@property(nonatomic,strong) UIViewController *myHostVC;
+
 @end
