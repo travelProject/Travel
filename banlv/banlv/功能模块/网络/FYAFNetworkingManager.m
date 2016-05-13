@@ -19,11 +19,16 @@ kSharedObjWithClass;
 
 - (void)GET:(NSString *)url parameters:(NSDictionary *)params success:(void(^)(id responseObject))success failur:(void(^)(NSError *error))failure
 {
-    [self GET:url parameters:params success:^(id responseObject) {
+    
+//    self.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    [self GET:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         success(responseObject);
         
-    } failur:^(NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         failure(error);
         
@@ -33,16 +38,19 @@ kSharedObjWithClass;
 
 - (void)POST:(NSString *)url parameters:(NSDictionary *)params success:(void(^)(id responseObject))success failur:(void(^)(NSError *error))failure
 {
-    [self POST:url parameters:params success:^(id responseObject) {
+    
+    [self POST:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         success(responseObject);
         
-    } failur:^(NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         failure(error);
         
     }];
-
+    
 }
 
 

@@ -8,6 +8,9 @@
 
 #import "FYCollectionFooter.h"
 
+//查看更多城市
+#import "FYLookMoreCityVC.h"
+
 @implementation FYCollectionFooter
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -54,7 +57,9 @@
 //查看更多城市
 - (void)lookMoreCity
 {
+    FYLookMoreCityVC *lookMoreCityVC = [[FYLookMoreCityVC alloc] init];
     
+    [self.myHostVC.navigationController pushViewController:lookMoreCityVC animated:YES];
 }
 
 - (void)setFooterPic:(NSString *)footerPic

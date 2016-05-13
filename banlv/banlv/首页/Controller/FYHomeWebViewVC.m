@@ -16,17 +16,8 @@
 
 @implementation FYHomeWebViewVC
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    self.navigationController.navigationBar.hidden = NO;//显示导航栏
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;//导航栏设置为白色
     
     //请求地址
     NSURL *url = [NSURL URLWithString:[self.urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]];//对网址进行编码,防止含有中文
