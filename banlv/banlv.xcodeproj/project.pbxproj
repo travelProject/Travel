@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		127437573AB123E2BCE39558 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E8EF9BBE4402875978F035 /* libPods.a */; };
+		2B8C4F901CE5FDEF0084F467 /* CYXuanfuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C4F8F1CE5FDEF0084F467 /* CYXuanfuView.m */; };
+		2B8C4F921CE5FE0D0084F467 /* CYXuanfuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8C4F911CE5FE0D0084F467 /* CYXuanfuView.xib */; };
 		2B97A12F1CDC264700B4989C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A12E1CDC264700B4989C /* main.m */; };
 		2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1311CDC264700B4989C /* AppDelegate.m */; };
 		2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A13B1CDC264700B4989C /* LaunchScreen.storyboard */; };
@@ -61,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B8C4F8E1CE5FDEF0084F467 /* CYXuanfuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYXuanfuView.h; sourceTree = "<group>"; };
+		2B8C4F8F1CE5FDEF0084F467 /* CYXuanfuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYXuanfuView.m; sourceTree = "<group>"; };
+		2B8C4F911CE5FE0D0084F467 /* CYXuanfuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYXuanfuView.xib; sourceTree = "<group>"; };
 		2B97A12A1CDC264700B4989C /* banlv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = banlv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B97A12E1CDC264700B4989C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B97A1301CDC264700B4989C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +187,7 @@
 		2B97A12C1CDC264700B4989C /* banlv */ = {
 			isa = PBXGroup;
 			children = (
+				2BAA47631CE4D85E00559F4F /* 发现 */,
 				2B97A1611CDC2A4700B4989C /* 管理全局的类 */,
 				CBE1DA991CE2191C00B36A18 /* 功能模块 */,
 				2B97A16B1CDC2B0400B4989C /* 类别 */,
@@ -245,7 +251,6 @@
 		2B97A16B1CDC2B0400B4989C /* 类别 */ = {
 			isa = PBXGroup;
 			children = (
-				2BAA47631CE4D85E00559F4F /* 发现 */,
 				2B97A16C1CDC2B0400B4989C /* CustomBarButton */,
 				2B97A16F1CDC2B0400B4989C /* GetVC-StoryBoard */,
 				2B97A1721CDC2B0400B4989C /* NavJump */,
@@ -342,10 +347,14 @@
 			children = (
 				2BAA47641CE4D85E00559F4F /* FindViewController.h */,
 				2BAA47651CE4D85E00559F4F /* FindViewController.m */,
+				2B8C4F8E1CE5FDEF0084F467 /* CYXuanfuView.h */,
+				2B8C4F8F1CE5FDEF0084F467 /* CYXuanfuView.m */,
+				2B8C4F911CE5FE0D0084F467 /* CYXuanfuView.xib */,
 				2BAA47661CE4D85E00559F4F /* 叫地主 */,
 				2BAA476C1CE4D85E00559F4F /* 聚会 */,
 			);
-			path = "发现";
+			name = "发现";
+			path = "类别/发现";
 			sourceTree = "<group>";
 		};
 		2BAA47661CE4D85E00559F4F /* 叫地主 */ = {
@@ -575,6 +584,7 @@
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
 				2BAA47711CE4D85E00559F4F /* CYDizhuCell.xib in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
+				2B8C4F921CE5FE0D0084F467 /* CYXuanfuView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +670,7 @@
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
 				CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */,
+				2B8C4F901CE5FDEF0084F467 /* CYXuanfuView.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
 				CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */,
 				CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */,

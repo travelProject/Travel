@@ -106,6 +106,8 @@
         
         NSDictionary *dict = [[responseObject objectForKey:@"data"] objectForKey:@"homePageInfo"];
         
+        
+        
         //模型嵌套模型
         [FYHomeViewData mj_setupObjectClassInArray:^NSDictionary *{
             

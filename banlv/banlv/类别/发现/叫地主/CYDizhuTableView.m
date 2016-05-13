@@ -28,12 +28,15 @@
     return self;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return  0.45 *kScreenFrameH;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
     
-    return 100;
+    return 10;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -41,12 +44,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+
+    
+
+    
+    
+    
+    
     static NSString *indentifier = @"CYDizhuCell";
     
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
-//    }
+
     
     
     CYDizhuCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];

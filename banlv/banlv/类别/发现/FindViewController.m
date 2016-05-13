@@ -12,7 +12,7 @@
 
 #import "FindViewController.h"
 
-
+#import "CYXuanfuView.h"
 
 #import "CYDizhuTableView.h"
 #import "CYPartyTableView.h"
@@ -28,6 +28,8 @@
 @property(nonatomic, strong)CYDizhuTableView *dizhuTableView;
 @property(nonatomic, strong)CYPartyTableView *partyTableView;
 
+@property(nonatomic, strong)UIButton *btn;
+
 @end
 
 @implementation FindViewController
@@ -37,8 +39,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-
     
     
     
@@ -52,12 +52,81 @@
     
     [self creaPartyTableView];
     
+    CGFloat r = 50.f;
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/7, kScreenFrameH*7/10, r, r)];
+    
+    
+    btn.backgroundColor = [UIColor whiteColor];
+    
+    [btn setImage:[UIImage imageNamed:@"xuanfuButton"] forState:UIControlStateNormal];
+    
+    
+    btn.layer.masksToBounds = YES;
+    btn.layer.cornerRadius = r/2;
+    
+    [self.mainScrollView addSubview:btn];
+    [self.mainScrollView bringSubviewToFront:btn];
+    
+    [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.btn = btn;
+    
+    
+    CYXuanfuView *xunfu = [[CYXuanfuView alloc] init];
+    
+    xunfu = kLoadViewWithNIB(@"CYXuanfuView");
+    
+    xunfu.backgroundColor = [UIColor whiteColor];
+    
+    xunfu.frame = CGRectMake(kScreenFrameW*1/7+r, kScreenFrameH*7/10, 200, r);
+    
+    [xunfu.leftButton setTitle:@"我预约的" forState:UIControlStateNormal];
+    
+    [xunfu.rightButton setTitle:@"我要做地主" forState:UIControlStateNormal];
+    
+    [xunfu.leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [xunfu.rightButton addTarget:self action:@selector(rightButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [self.mainScrollView addSubview:xunfu];
     
     
     
+    
+//    
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    
+//    [manager GET:@"http://www.shafalvxing.com/channel/getLocalServiceList.do" parameters:@{@"userToken":@"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2" ,@"page":@"1"} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        
+//        NSDictionary *dict = [[responseObject objectForKey:@"rtnStatus"]   objectForKey:@"message"];
+//        
+//        NSLog(@"eee%@",dict);
+//        
+//        
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//        NSLog(@"error : %@",error);
+//    }];
+//    
     
     
 }
+- (void)rightButtonAction:(id)sender{
+    NSLog(@"rrrr");
+}
+- (void)leftButtonAction:(id)sender{
+    NSLog(@"lll");
+}
+
+- (void)btnAction:(id)sender{
+    NSLog(@"*****");
+    [UIView animateWithDuration:0.6 animations:^{
+        
+    }];
+    
+}
+
 //contentOffset:滑动视图里面的内容的相对位置
 //contentInset:滑动视图在外面的相对位置
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -65,6 +134,8 @@
     NSInteger pageNum = scrollView.contentOffset.x/kScreenFrameW + 0.5;
     
     self.seg.selectedSegmentIndex = pageNum;
+    
+    
 }
 
 - (void)creatScrollView{
@@ -157,10 +228,8 @@
     self.partyTableView = partyTableView;
     
     
-    
-    
-    
-//    return partyTableView;
+
+
     
 }
 
