@@ -56,7 +56,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    NSString *urlString = @"aaaa";
+    NSString *urlString = @"bizParams={\n\"key\":\"上\",\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}";
+    
+    NSLog(@"编码后的结果:%@",[urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]);
     
     self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.96 blue:0.96 alpha:1.0];
     
