@@ -56,6 +56,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    NSString *urlString = @"aaaa";
+    
     self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.96 blue:0.96 alpha:1.0];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -123,7 +125,7 @@
         
     } failur:^(NSError *error) {
         
-        NSLog(@"error : %@",error);
+        CYLog(@"error : %@",error);
         
     }];
     
