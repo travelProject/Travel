@@ -5,21 +5,22 @@
 //  Created by lcy on 16/5/6.
 //  Copyright © 2016年 llz. All rights reserved.
 //
-
+#define  r  50.f
 #define kSegmentH 30
 
 #define kTableViewY 64
 
 #import "FindViewController.h"
 
-
+#import "CYXuanfuView.h"
 
 #import "CYDizhuTableView.h"
 #import "CYPartyTableView.h"
 
 @interface FindViewController ()<UIScrollViewDelegate>
 
-
+@property(nonatomic , assign)BOOL dizhuTagNum;
+@property(nonatomic , assign)BOOL partyTagNum;
 
 @property(nonatomic,strong)UISegmentedControl *seg;
 
@@ -27,6 +28,14 @@
 
 @property(nonatomic, strong)CYDizhuTableView *dizhuTableView;
 @property(nonatomic, strong)CYPartyTableView *partyTableView;
+
+@property(nonatomic, strong)UIButton *dizhuBtn;
+@property(nonatomic, strong)CYXuanfuView *duzhiXuanfu;
+
+@property(nonatomic, strong)UIButton *partyBtn;
+@property(nonatomic, strong)CYXuanfuView *partyXuanfu;
+
+@property(nonatomic, strong)UIImage *xuanfuImg;
 
 @end
 
@@ -38,9 +47,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-
+    self.dizhuTagNum = NO;
+    self.dizhuTagNum = NO;
     
+    UIImage *xuanfuImg = [UIImage imageNamed:@"xuanfuButton"];
     
+    self.xuanfuImg = xuanfuImg;
     
     self.view.backgroundColor = [UIColor cyanColor];
     
@@ -53,11 +65,175 @@
     [self creaPartyTableView];
     
     
+    [self setDizhuBtn];
+    
+    [self setPartyBtn];
+
     
     
+    
+
+    
+//
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    
+//    [manager GET:@"http://www.shafalvxing.com/channel/getLocalServiceList.do" parameters:@{@"userToken":@"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2" ,@"page":@"1"} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        
+//        NSDictionary *dict = [[responseObject objectForKey:@"rtnStatus"]   objectForKey:@"message"];
+//        
+//        NSLog(@"eee%@",dict);
+//        
+//        
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//        NSLog(@"error : %@",error);
+//    }];
+//    
     
     
 }
+
+- (void)setPartyBtn{
+    
+    UIButton *partyBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/7+kScreenFrameW, kScreenFrameH*7/10, r, r)];
+    
+    
+    
+    
+    [partyBtn setImage:self.xuanfuImg forState:UIControlStateNormal];
+    
+    
+    partyBtn.layer.masksToBounds = YES;
+    partyBtn.layer.cornerRadius = r/2;
+    
+    [self.mainScrollView addSubview:partyBtn];
+    [self.mainScrollView bringSubviewToFront:partyBtn];
+    
+    [partyBtn addTarget:self action:@selector(partyBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.partyBtn = partyBtn;
+    
+    CYXuanfuView *partyXuanfu = [[CYXuanfuView alloc] init];
+    
+    partyXuanfu = kLoadViewWithNIB(@"CYXuanfuView");
+    
+    
+    
+    partyXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2+kScreenFrameW, kScreenFrameH*7/10, 0, partyBtn.size.height);
+    
+    [partyXuanfu.leftButton setTitle:@"     我预约的" forState:UIControlStateNormal];
+    
+    [partyXuanfu.rightButton setTitle:@"我要做地主" forState:UIControlStateNormal];
+    
+    [partyXuanfu.leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [partyXuanfu.rightButton addTarget:self action:@selector(rightButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [self.mainScrollView addSubview:partyXuanfu];
+    self.partyXuanfu = partyXuanfu;
+}
+
+
+
+- (void)setDizhuBtn{
+    
+        UIButton *dizhuBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/7, kScreenFrameH*7/10, r, r)];
+        
+        
+    
+    
+        [dizhuBtn setImage:self.xuanfuImg forState:UIControlStateNormal];
+        
+        
+        dizhuBtn.layer.masksToBounds = YES;
+        dizhuBtn.layer.cornerRadius = r/2;
+        
+        [self.mainScrollView addSubview:dizhuBtn];
+        [self.mainScrollView bringSubviewToFront:dizhuBtn];
+        
+        [dizhuBtn addTarget:self action:@selector(dizhuBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.dizhuBtn = dizhuBtn;
+        
+        CYXuanfuView *duzhiXuanfu = [[CYXuanfuView alloc] init];
+        
+        duzhiXuanfu = kLoadViewWithNIB(@"CYXuanfuView");
+        
+        
+        
+        duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 0, dizhuBtn.size.height);
+        
+        [duzhiXuanfu.leftButton setTitle:@"     我预约的" forState:UIControlStateNormal];
+        
+        [duzhiXuanfu.rightButton setTitle:@"我要做地主" forState:UIControlStateNormal];
+        
+        [duzhiXuanfu.leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [duzhiXuanfu.rightButton addTarget:self action:@selector(rightButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        [self.mainScrollView addSubview:duzhiXuanfu];
+        self.duzhiXuanfu = duzhiXuanfu;
+    
+}
+
+
+
+- (void)rightButtonAction:(id)sender{
+    NSLog(@"rrrr");
+}
+- (void)leftButtonAction:(id)sender{
+    NSLog(@"lll");
+}
+- (void)partyBtnAction:(id)sender{
+    
+    
+    if (self.partyTagNum == NO) {
+        
+        
+        [UIView animateWithDuration:0.6 animations:^{
+            
+            
+            self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 200, self.partyBtn.size.height);
+            [self.mainScrollView bringSubviewToFront:self.partyBtn];
+            
+        }];
+        
+        self.partyTagNum =YES;
+        
+        
+    }else{
+        self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 0, self.partyBtn.size.height);
+        
+        self.partyTagNum=NO;
+    }
+
+    
+}
+- (void)dizhuBtnAction:(id)sender{
+    
+    if (self.dizhuTagNum == NO) {
+    
+    
+    [UIView animateWithDuration:0.6 animations:^{
+        
+        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 200, self.dizhuBtn.size.height);
+        [self.mainScrollView bringSubviewToFront:self.dizhuBtn];
+
+    }];
+        
+        self.dizhuTagNum =YES;
+        
+        
+    }else{
+        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 0, self.dizhuBtn.size.height);
+     
+        self.dizhuTagNum=NO;
+    }
+    
+    
+}
+
 //contentOffset:滑动视图里面的内容的相对位置
 //contentInset:滑动视图在外面的相对位置
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -65,6 +241,8 @@
     NSInteger pageNum = scrollView.contentOffset.x/kScreenFrameW + 0.5;
     
     self.seg.selectedSegmentIndex = pageNum;
+    
+    
 }
 
 - (void)creatScrollView{
@@ -76,8 +254,7 @@
     mainScrollView.pagingEnabled = YES;
     
     mainScrollView.contentSize = CGSizeMake(kScreenFrameW *2, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
-    
-//    mainScrollView.backgroundColor = [UIColor orangeColor];
+
     
     [self.view addSubview:mainScrollView];
     
@@ -97,16 +274,10 @@
     [seg addTarget:self action:@selector(segAction:) forControlEvents:UIControlEventValueChanged];
    
     
-    
-    
     seg.selectedSegmentIndex = 0;
     self.navigationItem.titleView = seg;
     
     self.seg = seg;
-    
-    
-    
-
     
 }
 
@@ -120,9 +291,6 @@
     }];
     
     
-    
-    
-    
 }
 
 
@@ -133,14 +301,8 @@
     dizhuTableView.frame = CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
     [self.mainScrollView addSubview:dizhuTableView];
     
-    
-
-    
     self.dizhuTableView = dizhuTableView;
     
-
-    
-
     
 }
 
@@ -157,19 +319,6 @@
     self.partyTableView = partyTableView;
     
     
-    
-    
-    
-//    return partyTableView;
-    
-}
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

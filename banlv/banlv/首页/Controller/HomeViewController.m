@@ -56,6 +56,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *urlString = @"bizParams={\n\"key\":\"上\",\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}";
+    
+    NSLog(@"编码后的结果:%@",[urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]);
+    
     self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.96 blue:0.96 alpha:1.0];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -106,6 +110,8 @@
         
         NSDictionary *dict = [[responseObject objectForKey:@"data"] objectForKey:@"homePageInfo"];
         
+        
+        
         //模型嵌套模型
         [FYHomeViewData mj_setupObjectClassInArray:^NSDictionary *{
             
@@ -123,7 +129,7 @@
         
     } failur:^(NSError *error) {
         
-        NSLog(@"error : %@",error);
+        CYLog(@"error : %@",error);
         
     }];
     
