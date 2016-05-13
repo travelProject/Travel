@@ -33,28 +33,28 @@
 
 @implementation HomeViewController
 
-//重写状态栏方法
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    [super preferredStatusBarStyle];
-    
-    return UIStatusBarStyleLightContent;
-}
-
 //view即将出现时隐藏导航栏
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBar.hidden = YES;
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;//导航栏设置为黑色
+}
+
+//view即将消失显示导航栏
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+        
+    self.navigationController.navigationBar.hidden = NO;
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //强制调用状态栏方法
-    [self setNeedsStatusBarAppearanceUpdate];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;//导航栏设置为黑色
     
     self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.96 blue:0.96 alpha:1.0];
     
@@ -100,9 +100,9 @@
 //请求数据
 - (void)requestData
 {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
     
-    [manager GET:@"http://www.shafalvxing.com/index/indexLoadInfo.do" parameters:@{@"deviceToken":@"b66411928c928500742567ffd43b991a8eb21b9d683180e346d7ebcceed1e94d" ,@"userToken":@"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3"} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:@"http://www.shafalvxing.com/index/indexLoadInfo.do" parameters:@{@"deviceToken":@"b66411928c928500742567ffd43b991a8eb21b9d683180e346d7ebcceed1e94d" ,@"userToken":@"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3"} success:^(id responseObject) {
         
         NSDictionary *dict = [[responseObject objectForKey:@"data"] objectForKey:@"homePageInfo"];
         
@@ -121,12 +121,12 @@
         
         [self.collectionView reloadData];
         
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } failur:^(NSError *error) {
         
         NSLog(@"error : %@",error);
+        
     }];
-
+    
 }
 
 
