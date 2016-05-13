@@ -93,9 +93,15 @@
 {
     FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
     
-    [manager GET:@"http://www.shafalvxing.com/city/searchCity.do" parameters:@{@"bizParams":@{
-        @"key" : @"上",@"userToken" : @"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4"
-    }} success:^(id responseObject) {
+    NSString *keyWord = @"上";
+    
+    NSString *urlString = [NSString stringWithFormat:@"bizParams={\n\"key\":\"%@\",\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}",keyWord];
+    
+    NSString *urlStr = [NSString stringWithFormat:@"http://www.shafalvxing.com/city/searchCity.do?%@",[urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]];
+    
+    NSLog(@"url:%@",urlStr);
+    
+    [manager GET:urlStr parameters:nil success:^(id responseObject) {
         
         NSLog(@"%@",responseObject);
         

@@ -22,6 +22,26 @@
     self.view.backgroundColor = [UIColor redColor];
     
     [self initTableView];
+    
+    FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
+    
+    NSString *keyWord = @"安";
+    
+    NSString *urlString = [NSString stringWithFormat:@"bizParams={\n\"key\":\"%@\",\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}",keyWord];
+    
+    NSString *urlStr = [NSString stringWithFormat:@"http://www.shafalvxing.com/city/searchCity.do?%@",[urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]];
+    
+    NSLog(@"url:%@",urlStr);
+    
+    [manager GET:urlStr parameters:nil success:^(id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+    } failur:^(NSError *error) {
+        
+        CYLog(@"error : %@",error);
+        
+    }];
 }
 
 - (void)initTableView
