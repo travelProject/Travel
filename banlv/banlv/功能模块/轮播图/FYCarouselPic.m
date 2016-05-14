@@ -1,0 +1,99 @@
+//
+//  FYCarouselPic.m
+//  banlv
+//
+//  Created by lifeiyang on 16/5/14.
+//  Copyright © 2016年 llz. All rights reserved.
+//
+
+#import "FYCarouselPic.h"
+
+//图片cell
+#import "FYCarouselCell.h"
+
+#define MaxSection 30
+
+@interface FYCarouselPic () <UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout>
+
+@property(nonatomic,strong) UICollectionView *collectionView;
+
+@end
+
+@implementation FYCarouselPic
+
+//从xib加载时调用
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [self initCollectionView];
+}
+
+- (void)initCollectionView
+{
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
+    
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    
+    [self.collectionView registerClass:[FYCarouselCell class] forCellWithReuseIdentifier:@"picCell"];
+    
+    self.collectionView.pagingEnabled = YES;
+    
+    [self addSubview:self.collectionView];
+    
+    
+}
+
+#pragma mark -- UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(self.width, self.height);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0.f;
+}
+
+#pragma mark -- UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return MaxSection;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.picArr.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    FYCarouselCell *picCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"picCell" forIndexPath:indexPath];
+    
+    [picCell.picImageView sd_setImageWithURL:[NSURL URLWithString:self.picArr[indexPath.row]] placeholderImage:nil options:SDWebImageProgressiveDownload];
+    
+    return picCell;
+}
+
+//setter方法
+- (void)setPicArr:(NSArray *)picArr
+{
+    
+    _picArr = picArr;
+    
+    if (_picArr.count > 0) {
+        
+        
+        [self.collectionView reloadData];
+    }
+    
+}
+
+@end

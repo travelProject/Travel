@@ -21,7 +21,7 @@
 #import "FYCollectionFooter.h"
 
 //点击城市跳转的城市民宿列表
-#import "FYCityHouseList.h"
+#import "FYCityHouseListVC.h"
 
 
 @interface HomeViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -189,9 +189,9 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    FYCityHouseList *cityHouseList = [[FYCityHouseList alloc] init];
+    FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
     
-    [self.navigationController pushViewController:cityHouseList animated:YES];
+    [self.navigationController pushViewController:cityHouseListVC animated:YES];
     
 //    NSLog(@"点击的城市编号%@",self.homeViewData.recommendCity[indexPath.row].ID);
 }

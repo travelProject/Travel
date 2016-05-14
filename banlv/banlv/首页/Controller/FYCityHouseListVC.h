@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FYCityHouseList : UIViewController
+@interface FYCityHouseListVC : UIViewController
 
 @end
