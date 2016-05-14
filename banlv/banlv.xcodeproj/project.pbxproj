@@ -31,6 +31,7 @@
 		2BAA47711CE4D85E00559F4F /* CYDizhuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAA47691CE4D85E00559F4F /* CYDizhuCell.xib */; };
 		2BAA47721CE4D85E00559F4F /* CYDizhuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA476B1CE4D85E00559F4F /* CYDizhuTableView.m */; };
 		2BAA47731CE4D85E00559F4F /* CYPartyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA476E1CE4D85E00559F4F /* CYPartyTableView.m */; };
+		CB038E3D1CE6F0F30090839D /* NSString+FYURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E3C1CE6F0F30090839D /* NSString+FYURLEncode.m */; };
 		CB0A76901CE5B6E700EB6E7D /* FYCityHouseList.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0A768F1CE5B6E700EB6E7D /* FYCityHouseList.m */; };
 		CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503311CE579FF007004AB /* FYLookMoreCityData.m */; };
 		CB2503351CE57CA2007004AB /* FYSingleCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503341CE57CA2007004AB /* FYSingleCityData.m */; };
@@ -117,6 +118,8 @@
 		2BAA476E1CE4D85E00559F4F /* CYPartyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyTableView.m; sourceTree = "<group>"; };
 		32E8EF9BBE4402875978F035 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B32E114A75699846B69112 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CB038E3B1CE6F0F30090839D /* NSString+FYURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FYURLEncode.h"; sourceTree = "<group>"; };
+		CB038E3C1CE6F0F30090839D /* NSString+FYURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FYURLEncode.m"; sourceTree = "<group>"; };
 		CB0A768E1CE5B6E700EB6E7D /* FYCityHouseList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseList.h; sourceTree = "<group>"; };
 		CB0A768F1CE5B6E700EB6E7D /* FYCityHouseList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseList.m; sourceTree = "<group>"; };
 		CB2503301CE579FF007004AB /* FYLookMoreCityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLookMoreCityData.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				2B97A1721CDC2B0400B4989C /* NavJump */,
 				2B97A1751CDC2B0400B4989C /* ViewAnimation */,
 				2B97A1781CDC2B0400B4989C /* ViewFrame */,
+				CB038E3B1CE6F0F30090839D /* NSString+FYURLEncode.h */,
+				CB038E3C1CE6F0F30090839D /* NSString+FYURLEncode.m */,
 			);
 			path = "类别";
 			sourceTree = "<group>";
@@ -698,6 +703,7 @@
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
 				CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */,
+				CB038E3D1CE6F0F30090839D /* NSString+FYURLEncode.m in Sources */,
 				2B8C4F901CE5FDEF0084F467 /* CYXuanfuView.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
 				CB0A76901CE5B6E700EB6E7D /* FYCityHouseList.m in Sources */,

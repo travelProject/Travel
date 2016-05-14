@@ -14,6 +14,9 @@
 //展示搜索结果的列表
 #import "FYSearchedCityTableView.h"
 
+//城市民宿列表
+#import "FYCityHouseList.h"
+
 @interface FYLookMoreCityVC () <UITableViewDelegate ,UITableViewDataSource ,UITextFieldDelegate>
 
 @property(nonatomic,strong) UITextField *searchField;
@@ -47,6 +50,11 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    //添加手势,退出键盘
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignKeyBoard)];
+//    
+//    [self.view addGestureRecognizer:tap];
+    
     [self initNavCenterView];
     
     [self initCityTableView];
@@ -54,6 +62,13 @@
     [self initSearchedTableView];
     
     [self requestCityData];
+    
+}
+
+//退出键盘
+- (void)resignKeyBoard
+{
+    [self.searchField resignFirstResponder];
     
 }
 
@@ -146,6 +161,7 @@
 
 }
 
+
 #pragma mark -- UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -160,7 +176,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"点击的城市id:%@",self.cityArr[indexPath.section].city[indexPath.row].ID);
+    //设为不选中(不然会变灰色)
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //点击cell退出键盘
+    [self.searchField resignFirstResponder];
+    
+    FYCityHouseList *cityHouseList = [[FYCityHouseList alloc] init];
+    
+    [self.navigationController pushViewController:cityHouseList animated:YES];
+    
 }
 
 #pragma mark -- UITableViewDataSource
