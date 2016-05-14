@@ -22,14 +22,14 @@
     if (self) {
         self.dataSource = self;
         self.delegate = self;
-//        [self registerNib:[UINib nibWithNibName:@"CYDizhuCell" bundle:nil] forCellReuseIdentifier:@"CYDizhuCell"];
+
         
     }
     return self;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  0.45 *kScreenFrameH;
+    return  350;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -65,7 +65,7 @@
     
     }
     
-    cell.textLabel.text = @"rrrr";
+//    cell.textLabel.text = @"rrrr";
     
     
     return cell;

@@ -70,26 +70,38 @@
     [self setPartyBtn];
 
     
+    NSString *search = nil;
     
+    FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
     
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"key\":\"%@\",\n\"userToken\":\"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2\"\n}",search];
+    
+    NSString *urlStr = @"http://www.shafalvxing.com/channel/getLocalServiceList.do?";
+//http://www.shafalvxing.com/channel/getLocalServiceList.do
+//    bizParams：{
+//          "userToken" : "MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2",
+//          "page" : 1
+//    }
+
+    [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
+        
+        NSArray *jsonArr = [responseObject objectForKey:@"data"];
+        NSLog(@"%@",jsonArr);
+        
+//        self.searchedCityArr = [FYSingleCityData mj_objectArrayWithKeyValuesArray:jsonArr];
+//        
+//        //刷新搜索表格
+//        [self.searchedTableView reloadData];
+        
+        
+    } failur:^(NSError *error) {
+        
+        CYLog(@"error : %@",error);
+        
+    }];
 
     
-//
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    
-//    [manager GET:@"http://www.shafalvxing.com/channel/getLocalServiceList.do" parameters:@{@"userToken":@"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2" ,@"page":@"1"} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        
-//        NSDictionary *dict = [[responseObject objectForKey:@"rtnStatus"]   objectForKey:@"message"];
-//        
-//        NSLog(@"eee%@",dict);
-//        
-//        
-//        
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        
-//        NSLog(@"error : %@",error);
-//    }];
-//    
+    
     
     
 }
