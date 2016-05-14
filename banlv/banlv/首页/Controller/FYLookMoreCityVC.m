@@ -14,6 +14,9 @@
 //展示搜索结果的列表
 #import "FYSearchedCityTableView.h"
 
+//城市民宿列表
+#import "FYCityHouseList.h"
+
 @interface FYLookMoreCityVC () <UITableViewDelegate ,UITableViewDataSource ,UITextFieldDelegate>
 
 @property(nonatomic,strong) UITextField *searchField;
@@ -47,6 +50,11 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    //添加手势,退出键盘
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignKeyBoard)];
+//    
+//    [self.view addGestureRecognizer:tap];
+    
     [self initNavCenterView];
     
     [self initCityTableView];
@@ -54,6 +62,13 @@
     [self initSearchedTableView];
     
     [self requestCityData];
+    
+}
+
+//退出键盘
+- (void)resignKeyBoard
+{
+    [self.searchField resignFirstResponder];
     
 }
 
@@ -66,9 +81,30 @@
     
     self.searchField.delegate = self;
     
+    [self.searchField addTarget:self action:@selector(textFieldEditChanged:) forControlEvents:UIControlEventEditingChanged];
+    
     self.navigationItem.titleView = self.searchField;
     
 
+}
+
+//实时监测输入框文本的改变
+- (void)textFieldEditChanged:(UITextField *)textField
+
+{
+    if (![self.searchField.text isEqualToString:@""]) {
+        
+        self.searchedTableView.searchWord = self.searchField.text;
+        
+        self.searchedTableView.hidden = NO;
+        self.cityTableView.hidden = YES;
+        
+    }else
+    {
+        self.cityTableView.hidden = NO;
+        self.searchedTableView.hidden = YES;
+    }
+    
 }
 
 //显示的城市列表
@@ -125,6 +161,7 @@
 
 }
 
+
 #pragma mark -- UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -139,7 +176,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"点击的城市id:%@",self.cityArr[indexPath.section].city[indexPath.row].ID);
+    //设为不选中(不然会变灰色)
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //点击cell退出键盘
+    [self.searchField resignFirstResponder];
+    
+    FYCityHouseList *cityHouseList = [[FYCityHouseList alloc] init];
+    
+    [self.navigationController pushViewController:cityHouseList animated:YES];
+    
 }
 
 #pragma mark -- UITableViewDataSource
@@ -195,13 +241,7 @@
 
 #pragma mark -- UITextFieldDelegate
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    self.searchedTableView.searchWord = self.searchField.text;
-    
-    return YES;
-}
-
+//按return键时退出键盘
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.searchField resignFirstResponder];
