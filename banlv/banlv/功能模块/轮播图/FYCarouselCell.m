@@ -16,8 +16,7 @@
     if (self) {
         
         self.picImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        
-        NSLog(@"self.picImageView`s frame is : %@",[NSValue valueWithCGRect:self.picImageView.frame]);
+
         
         [self addSubview:self.picImageView];
     }

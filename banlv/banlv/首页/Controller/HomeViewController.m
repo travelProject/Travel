@@ -191,9 +191,10 @@
     
     FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
     
+    cityHouseListVC.cityId = self.homeViewData.recommendCity[indexPath.row].ID;
+    
     [self.navigationController pushViewController:cityHouseListVC animated:YES];
     
-//    NSLog(@"点击的城市编号%@",self.homeViewData.recommendCity[indexPath.row].ID);
 }
 
 #pragma mark -- UICollectionViewDelegateFlowLayout

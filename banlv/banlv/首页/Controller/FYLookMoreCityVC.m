@@ -187,6 +187,8 @@
     
     FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
     
+    cityHouseListVC.cityId = self.cityArr[indexPath.section].city[indexPath.row].ID;
+    
     [self.navigationController pushViewController:cityHouseListVC animated:YES];
     
 }

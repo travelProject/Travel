@@ -53,7 +53,7 @@
 {
     FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
     
-    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":73,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"page\":1,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":0}"];
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%@,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"page\":1,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":0}",self.cityId];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
     
@@ -101,6 +101,12 @@
     houseCell.cityHouseData = self.cityHouseArr[indexPath.row];
     
     return houseCell;
+}
+
+//cityId的setter方法
+- (void)setCityId:(NSString *)cityId
+{
+    _cityId = cityId;
 }
 
 - (void)didReceiveMemoryWarning {

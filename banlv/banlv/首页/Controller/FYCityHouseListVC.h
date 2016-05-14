@@ -10,4 +10,6 @@
 
 @interface FYCityHouseListVC : UIViewController
 
+@property(nonatomic,copy) NSString *cityId;
+
 @end
