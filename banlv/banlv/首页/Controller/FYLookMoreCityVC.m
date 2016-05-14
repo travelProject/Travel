@@ -66,9 +66,30 @@
     
     self.searchField.delegate = self;
     
+    [self.searchField addTarget:self action:@selector(textFieldEditChanged:) forControlEvents:UIControlEventEditingChanged];
+    
     self.navigationItem.titleView = self.searchField;
     
 
+}
+
+//实时监测输入框文本的改变
+- (void)textFieldEditChanged:(UITextField *)textField
+
+{
+    if (![self.searchField.text isEqualToString:@""]) {
+        
+        self.searchedTableView.searchWord = self.searchField.text;
+        
+        self.searchedTableView.hidden = NO;
+        self.cityTableView.hidden = YES;
+        
+    }else
+    {
+        self.cityTableView.hidden = NO;
+        self.searchedTableView.hidden = YES;
+    }
+    
 }
 
 //显示的城市列表
@@ -195,13 +216,7 @@
 
 #pragma mark -- UITextFieldDelegate
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    self.searchedTableView.searchWord = self.searchField.text;
-    
-    return YES;
-}
-
+//按return键时退出键盘
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.searchField resignFirstResponder];
