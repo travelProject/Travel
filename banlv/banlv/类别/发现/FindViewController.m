@@ -69,27 +69,8 @@
     
     [self setPartyBtn];
 
+        
     
-    
-    
-
-    
-//
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    
-//    [manager GET:@"http://www.shafalvxing.com/channel/getLocalServiceList.do" parameters:@{@"userToken":@"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2" ,@"page":@"1"} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        
-//        NSDictionary *dict = [[responseObject objectForKey:@"rtnStatus"]   objectForKey:@"message"];
-//        
-//        NSLog(@"eee%@",dict);
-//        
-//        
-//        
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        
-//        NSLog(@"error : %@",error);
-//    }];
-//    
     
     
 }

@@ -9,8 +9,13 @@
 #import "CYDizhuTableView.h"
 #import "CYDizhuCell.h"
 
+#import "CYDizhuData.h"
+#import "CYDizhuResultData.h"
+
 
 @interface CYDizhuTableView ()<UITableViewDelegate ,UITableViewDataSource>
+
+@property(nonatomic ,strong)CYDizhuResultData *dizhuResultData;
 
 @end
 
@@ -22,14 +27,61 @@
     if (self) {
         self.dataSource = self;
         self.delegate = self;
-//        [self registerNib:[UINib nibWithNibName:@"CYDizhuCell" bundle:nil] forCellReuseIdentifier:@"CYDizhuCell"];
+        
+
+        
+        NSString *search = nil;
+        
+        FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
+        
+        NSString *params = [NSString stringWithFormat:@"bizParams={\n\"key\":\"%@\",\n\"userToken\":\"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2\"\n}",search];
+        
+        NSString *urlStr = @"http://www.shafalvxing.com/channel/getLocalServiceList.do?";
+        //http://www.shafalvxing.com/channel/getLocalServiceList.do
+        //    bizParams：{
+        //          "userToken" : "MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2",
+        //          "page" : 1
+        //    }
+        
+        [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
+            
+            NSArray *jsonArr = [[responseObject objectForKey:@"data"]objectForKey:@"result"];
+            NSLog(@"%@",jsonArr);
+            [CYDizhuResultData mj_setupObjectClassInArray:^NSDictionary *{
+                
+                return @{@"pictureList" : @"CYDizhuPictureListData"
+                         
+                         };
+                
+            }];
+            
+            
+//            self.dizhuResultData = [CYDizhuResultData mj_objectArrayWithKeyValuesArray:<#(id)#>];
+            
+            
+            [self reloadData];
+           
+            
+            //        self.searchedCityArr = [FYSingleCityData mj_objectArrayWithKeyValuesArray:jsonArr];
+            //
+            //        //刷新搜索表格
+            //        [self.searchedTableView reloadData];
+            
+            
+        } failur:^(NSError *error) {
+            
+            CYLog(@"error : %@",error);
+            
+        }];
+        
+
         
     }
     return self;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  0.45 *kScreenFrameH;
+    return  350;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -65,7 +117,7 @@
     
     }
     
-    cell.textLabel.text = @"rrrr";
+//    cell.textLabel.text = @"rrrr";
     
     
     return cell;
