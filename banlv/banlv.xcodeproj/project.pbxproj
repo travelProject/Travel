@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		127437573AB123E2BCE39558 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E8EF9BBE4402875978F035 /* libPods.a */; };
+		2B8AB7451CE74F2500E0BCC1 /* CYDizhuData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */; };
+		2B8AB7481CE7509000E0BCC1 /* CYDizhuResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB7471CE7509000E0BCC1 /* CYDizhuResultData.m */; };
+		2B8AB74B1CE7532800E0BCC1 /* CYDizhuPictureListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB74A1CE7532800E0BCC1 /* CYDizhuPictureListData.m */; };
 		2B8C4F901CE5FDEF0084F467 /* CYXuanfuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C4F8F1CE5FDEF0084F467 /* CYXuanfuView.m */; };
 		2B8C4F921CE5FE0D0084F467 /* CYXuanfuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8C4F911CE5FE0D0084F467 /* CYXuanfuView.xib */; };
 		2B97A12F1CDC264700B4989C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A12E1CDC264700B4989C /* main.m */; };
@@ -69,6 +72,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B8AB7431CE74F2500E0BCC1 /* CYDizhuData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuData.h; sourceTree = "<group>"; };
+		2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuData.m; sourceTree = "<group>"; };
+		2B8AB7461CE7509000E0BCC1 /* CYDizhuResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuResultData.h; sourceTree = "<group>"; };
+		2B8AB7471CE7509000E0BCC1 /* CYDizhuResultData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuResultData.m; sourceTree = "<group>"; };
+		2B8AB7491CE7532800E0BCC1 /* CYDizhuPictureListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuPictureListData.h; sourceTree = "<group>"; };
+		2B8AB74A1CE7532800E0BCC1 /* CYDizhuPictureListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuPictureListData.m; sourceTree = "<group>"; };
 		2B8C4F8E1CE5FDEF0084F467 /* CYXuanfuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYXuanfuView.h; sourceTree = "<group>"; };
 		2B8C4F8F1CE5FDEF0084F467 /* CYXuanfuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYXuanfuView.m; sourceTree = "<group>"; };
 		2B8C4F911CE5FE0D0084F467 /* CYXuanfuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYXuanfuView.xib; sourceTree = "<group>"; };
@@ -180,6 +189,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B8AB7421CE74E8900E0BCC1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2B8AB7431CE74F2500E0BCC1 /* CYDizhuData.h */,
+				2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */,
+				2B8AB7461CE7509000E0BCC1 /* CYDizhuResultData.h */,
+				2B8AB7471CE7509000E0BCC1 /* CYDizhuResultData.m */,
+				2B8AB7491CE7532800E0BCC1 /* CYDizhuPictureListData.h */,
+				2B8AB74A1CE7532800E0BCC1 /* CYDizhuPictureListData.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		2B97A1211CDC264700B4989C = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +402,7 @@
 		2BAA47661CE4D85E00559F4F /* 叫地主 */ = {
 			isa = PBXGroup;
 			children = (
+				2B8AB7421CE74E8900E0BCC1 /* model */,
 				2BAA47671CE4D85E00559F4F /* CYDizhuCell.h */,
 				2BAA47681CE4D85E00559F4F /* CYDizhuCell.m */,
 				2BAA47691CE4D85E00559F4F /* CYDizhuCell.xib */,
@@ -688,10 +711,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB6BAC8E1CE45912006457BC /* FYHeaderViewCell.m in Sources */,
+				2B8AB74B1CE7532800E0BCC1 /* CYDizhuPictureListData.m in Sources */,
 				2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */,
 				CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */,
 				2B97A17D1CDC2B0400B4989C /* UINavigationController+Jump.m in Sources */,
 				2BAA476F1CE4D85E00559F4F /* FindViewController.m in Sources */,
+				2B8AB7481CE7509000E0BCC1 /* CYDizhuResultData.m in Sources */,
 				CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */,
 				2B97A1661CDC2A6300B4989C /* CYMyTabBar.m in Sources */,
 				CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */,
@@ -711,6 +736,7 @@
 				CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */,
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
 				2BAA47721CE4D85E00559F4F /* CYDizhuTableView.m in Sources */,
+				2B8AB7451CE74F2500E0BCC1 /* CYDizhuData.m in Sources */,
 				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,
 				2BAA47731CE4D85E00559F4F /* CYPartyTableView.m in Sources */,
 				2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */,
