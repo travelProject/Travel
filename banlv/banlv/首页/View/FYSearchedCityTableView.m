@@ -11,6 +11,9 @@
 //搜索到的城市模型
 #import "FYSingleCityData.h"
 
+//城市民宿列表
+#import "FYCityHouseListVC.h"
+
 @interface FYSearchedCityTableView () <UITableViewDelegate ,UITableViewDataSource >
 
 @property(nonatomic,strong) UITableView *searchedTableView;
@@ -69,7 +72,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"点击的城市id : %@",self.searchedCityArr[indexPath.row].ID);
+    
+    FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
+    
+    cityHouseListVC.cityId = self.searchedCityArr[indexPath.row].ID;
+    
+    [self.myHostVC.navigationController pushViewController:cityHouseListVC animated:YES];
 }
 
 #pragma mark -- UITableViewDataSource
@@ -95,6 +103,11 @@
     _searchWord = searchWord;
     
     [self requestData];
+}
+
+- (void)setMyHostVC:(UIViewController *)myHostVC
+{
+    _myHostVC = myHostVC;
 }
   
 //请求数据

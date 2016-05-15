@@ -12,4 +12,6 @@
 
 @property(nonatomic,copy) NSString *searchWord;
 
+@property(nonatomic,strong) UIViewController *myHostVC;
+
 @end

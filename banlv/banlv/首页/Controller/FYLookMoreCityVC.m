@@ -15,7 +15,7 @@
 #import "FYSearchedCityTableView.h"
 
 //城市民宿列表
-#import "FYCityHouseList.h"
+#import "FYCityHouseListVC.h"
 
 @interface FYLookMoreCityVC () <UITableViewDelegate ,UITableViewDataSource ,UITextFieldDelegate>
 
@@ -122,11 +122,14 @@
     [self.view addSubview:self.cityTableView];
 }
 
+//显示搜索后的城市列表
 - (void)initSearchedTableView
 {
     self.searchedTableView = [[FYSearchedCityTableView alloc] initWithFrame:self.view.bounds];
     
     self.searchedTableView.hidden = YES;
+    
+    self.searchedTableView.myHostVC = self;
     
     [self.view addSubview:self.searchedTableView];
 }
@@ -182,9 +185,11 @@
     //点击cell退出键盘
     [self.searchField resignFirstResponder];
     
-    FYCityHouseList *cityHouseList = [[FYCityHouseList alloc] init];
+    FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
     
-    [self.navigationController pushViewController:cityHouseList animated:YES];
+    cityHouseListVC.cityId = self.cityArr[indexPath.section].city[indexPath.row].ID;
+    
+    [self.navigationController pushViewController:cityHouseListVC animated:YES];
     
 }
 

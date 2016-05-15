@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FYCityHouseList : UIViewController
+@interface FYCityHouseListVC : UIViewController
+
+@property(nonatomic,copy) NSString *cityId;
 
 @end

@@ -35,7 +35,12 @@
 		2BAA47721CE4D85E00559F4F /* CYDizhuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA476B1CE4D85E00559F4F /* CYDizhuTableView.m */; };
 		2BAA47731CE4D85E00559F4F /* CYPartyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA476E1CE4D85E00559F4F /* CYPartyTableView.m */; };
 		CB038E3D1CE6F0F30090839D /* NSString+FYURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E3C1CE6F0F30090839D /* NSString+FYURLEncode.m */; };
-		CB0A76901CE5B6E700EB6E7D /* FYCityHouseList.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0A768F1CE5B6E700EB6E7D /* FYCityHouseList.m */; };
+		CB038E411CE6FA100090839D /* FYCarouselPic.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E401CE6FA100090839D /* FYCarouselPic.m */; };
+		CB038E441CE6FD910090839D /* FYCarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E431CE6FD910090839D /* FYCarouselCell.m */; };
+		CB038E471CE717780090839D /* FYCityHouseListData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E461CE717780090839D /* FYCityHouseListData.m */; };
+		CB0A76901CE5B6E700EB6E7D /* FYCityHouseListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0A768F1CE5B6E700EB6E7D /* FYCityHouseListVC.m */; };
+		CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB120DB01CE73F99007D71C6 /* FYCityHouseListCell.m */; };
+		CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB120DB11CE73F99007D71C6 /* FYCityHouseListCell.xib */; };
 		CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503311CE579FF007004AB /* FYLookMoreCityData.m */; };
 		CB2503351CE57CA2007004AB /* FYSingleCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503341CE57CA2007004AB /* FYSingleCityData.m */; };
 		CB2503381CE58F2C007004AB /* FYSearchedCityTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503371CE58F2C007004AB /* FYSearchedCityTableView.m */; };
@@ -129,8 +134,17 @@
 		84B32E114A75699846B69112 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CB038E3B1CE6F0F30090839D /* NSString+FYURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FYURLEncode.h"; sourceTree = "<group>"; };
 		CB038E3C1CE6F0F30090839D /* NSString+FYURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FYURLEncode.m"; sourceTree = "<group>"; };
-		CB0A768E1CE5B6E700EB6E7D /* FYCityHouseList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseList.h; sourceTree = "<group>"; };
-		CB0A768F1CE5B6E700EB6E7D /* FYCityHouseList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseList.m; sourceTree = "<group>"; };
+		CB038E3F1CE6FA100090839D /* FYCarouselPic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCarouselPic.h; sourceTree = "<group>"; };
+		CB038E401CE6FA100090839D /* FYCarouselPic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCarouselPic.m; sourceTree = "<group>"; };
+		CB038E421CE6FD910090839D /* FYCarouselCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCarouselCell.h; sourceTree = "<group>"; };
+		CB038E431CE6FD910090839D /* FYCarouselCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCarouselCell.m; sourceTree = "<group>"; };
+		CB038E451CE717780090839D /* FYCityHouseListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseListData.h; sourceTree = "<group>"; };
+		CB038E461CE717780090839D /* FYCityHouseListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseListData.m; sourceTree = "<group>"; };
+		CB0A768E1CE5B6E700EB6E7D /* FYCityHouseListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseListVC.h; sourceTree = "<group>"; };
+		CB0A768F1CE5B6E700EB6E7D /* FYCityHouseListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseListVC.m; sourceTree = "<group>"; };
+		CB120DAF1CE73F99007D71C6 /* FYCityHouseListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseListCell.h; sourceTree = "<group>"; };
+		CB120DB01CE73F99007D71C6 /* FYCityHouseListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseListCell.m; sourceTree = "<group>"; };
+		CB120DB11CE73F99007D71C6 /* FYCityHouseListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYCityHouseListCell.xib; sourceTree = "<group>"; };
 		CB2503301CE579FF007004AB /* FYLookMoreCityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLookMoreCityData.h; sourceTree = "<group>"; };
 		CB2503311CE579FF007004AB /* FYLookMoreCityData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLookMoreCityData.m; sourceTree = "<group>"; };
 		CB2503331CE57CA2007004AB /* FYSingleCityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYSingleCityData.h; sourceTree = "<group>"; };
@@ -438,6 +452,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CB038E3E1CE6F9B40090839D /* 轮播图 */ = {
+			isa = PBXGroup;
+			children = (
+				CB038E3F1CE6FA100090839D /* FYCarouselPic.h */,
+				CB038E401CE6FA100090839D /* FYCarouselPic.m */,
+				CB038E421CE6FD910090839D /* FYCarouselCell.h */,
+				CB038E431CE6FD910090839D /* FYCarouselCell.m */,
+			);
+			path = "轮播图";
+			sourceTree = "<group>";
+		};
 		CBD6548A1CE3581A00499922 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,8 +472,8 @@
 				CB7CF5001CE4BB4100716F5D /* FYHomeWebViewVC.m */,
 				CB741F2E1CE4D744002FA686 /* FYLookMoreCityVC.h */,
 				CB741F2F1CE4D744002FA686 /* FYLookMoreCityVC.m */,
-				CB0A768E1CE5B6E700EB6E7D /* FYCityHouseList.h */,
-				CB0A768F1CE5B6E700EB6E7D /* FYCityHouseList.m */,
+				CB0A768E1CE5B6E700EB6E7D /* FYCityHouseListVC.h */,
+				CB0A768F1CE5B6E700EB6E7D /* FYCityHouseListVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +493,9 @@
 				CB6BAC811CE4461B006457BC /* FYCollectionFooter.m */,
 				CB2503361CE58F2C007004AB /* FYSearchedCityTableView.h */,
 				CB2503371CE58F2C007004AB /* FYSearchedCityTableView.m */,
+				CB120DAF1CE73F99007D71C6 /* FYCityHouseListCell.h */,
+				CB120DB01CE73F99007D71C6 /* FYCityHouseListCell.m */,
+				CB120DB11CE73F99007D71C6 /* FYCityHouseListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,6 +513,8 @@
 				CB2503311CE579FF007004AB /* FYLookMoreCityData.m */,
 				CB2503331CE57CA2007004AB /* FYSingleCityData.h */,
 				CB2503341CE57CA2007004AB /* FYSingleCityData.m */,
+				CB038E451CE717780090839D /* FYCityHouseListData.h */,
+				CB038E461CE717780090839D /* FYCityHouseListData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -503,6 +533,7 @@
 		CBE1DA991CE2191C00B36A18 /* 功能模块 */ = {
 			isa = PBXGroup;
 			children = (
+				CB038E3E1CE6F9B40090839D /* 轮播图 */,
 				CBE1DA9A1CE2196800B36A18 /* 网络 */,
 				CBE1DA9B1CE2197E00B36A18 /* 数据库 */,
 			);
@@ -636,6 +667,7 @@
 				CB4EF9651CE388DD008046EF /* FYHomeViewCell.xib in Resources */,
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
 				2BAA47711CE4D85E00559F4F /* CYDizhuCell.xib in Resources */,
+				CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
 				2B8C4F921CE5FE0D0084F467 /* CYXuanfuView.xib in Resources */,
 			);
@@ -715,6 +747,7 @@
 				2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */,
 				CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */,
 				2B97A17D1CDC2B0400B4989C /* UINavigationController+Jump.m in Sources */,
+				CB038E441CE6FD910090839D /* FYCarouselCell.m in Sources */,
 				2BAA476F1CE4D85E00559F4F /* FindViewController.m in Sources */,
 				2B8AB7481CE7509000E0BCC1 /* CYDizhuResultData.m in Sources */,
 				CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */,
@@ -729,9 +762,12 @@
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
 				CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */,
 				CB038E3D1CE6F0F30090839D /* NSString+FYURLEncode.m in Sources */,
+				CB038E471CE717780090839D /* FYCityHouseListData.m in Sources */,
+				CB038E411CE6FA100090839D /* FYCarouselPic.m in Sources */,
+				CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */,
 				2B8C4F901CE5FDEF0084F467 /* CYXuanfuView.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
-				CB0A76901CE5B6E700EB6E7D /* FYCityHouseList.m in Sources */,
+				CB0A76901CE5B6E700EB6E7D /* FYCityHouseListVC.m in Sources */,
 				CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */,
 				CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */,
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
