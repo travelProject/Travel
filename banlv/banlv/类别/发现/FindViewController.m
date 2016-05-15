@@ -69,27 +69,8 @@
     
     [self setPartyBtn];
 
+        
     
-    
-    
-
-    
-//
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    
-//    [manager GET:@"http://www.shafalvxing.com/channel/getLocalServiceList.do" parameters:@{@"userToken":@"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2" ,@"page":@"1"} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        
-//        NSDictionary *dict = [[responseObject objectForKey:@"rtnStatus"]   objectForKey:@"message"];
-//        
-//        NSLog(@"eee%@",dict);
-//        
-//        
-//        
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        
-//        NSLog(@"error : %@",error);
-//    }];
-//    
     
     
 }
@@ -120,7 +101,7 @@
     
     
     
-    partyXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2+kScreenFrameW, kScreenFrameH*7/10, 0, partyBtn.size.height);
+    partyXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2+kScreenFrameW, kScreenFrameH*7/10+4, 0, partyBtn.size.height-8);
     
     [partyXuanfu.leftButton setTitle:@"     我预约的" forState:UIControlStateNormal];
     
@@ -148,7 +129,7 @@
         
         dizhuBtn.layer.masksToBounds = YES;
         dizhuBtn.layer.cornerRadius = r/2;
-        
+    
         [self.mainScrollView addSubview:dizhuBtn];
         [self.mainScrollView bringSubviewToFront:dizhuBtn];
         
@@ -162,7 +143,7 @@
         
         
         
-        duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 0, dizhuBtn.size.height);
+        duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 0, dizhuBtn.size.height-8);
         
         [duzhiXuanfu.leftButton setTitle:@"     我预约的" forState:UIControlStateNormal];
         
@@ -194,7 +175,7 @@
         [UIView animateWithDuration:0.6 animations:^{
             
             
-            self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 200, self.partyBtn.size.height);
+            self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 200, self.partyBtn.size.height-8);
             [self.mainScrollView bringSubviewToFront:self.partyBtn];
             
         }];
@@ -203,7 +184,7 @@
         
         
     }else{
-        self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 0, self.partyBtn.size.height);
+        self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
         
         self.partyTagNum=NO;
     }
@@ -217,7 +198,7 @@
     
     [UIView animateWithDuration:0.6 animations:^{
         
-        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 200, self.dizhuBtn.size.height);
+        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 200, self.dizhuBtn.size.height-8);
         [self.mainScrollView bringSubviewToFront:self.dizhuBtn];
 
     }];
@@ -226,7 +207,7 @@
         
         
     }else{
-        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10, 0, self.dizhuBtn.size.height);
+        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
      
         self.dizhuTagNum=NO;
     }

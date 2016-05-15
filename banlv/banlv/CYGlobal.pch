@@ -23,6 +23,9 @@
 //网络头文件
 #import "FYAFNetworkingManager.h"
 
+//URL编码
+#import "NSString+FYURLEncode.h"
+
 //定义输出
 #ifdef DEBUG
 #define CYLog(...) NSLog(__VA_ARGS__)

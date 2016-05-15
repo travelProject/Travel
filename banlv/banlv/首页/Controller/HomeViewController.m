@@ -20,6 +20,9 @@
 //底部footer
 #import "FYCollectionFooter.h"
 
+//点击城市跳转的城市民宿列表
+#import "FYCityHouseListVC.h"
+
 
 @interface HomeViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -56,10 +59,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *urlString = @"bizParams={\n\"key\":\"上\",\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}";
-    
-    NSLog(@"编码后的结果:%@",[urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]);
-    
     self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.96 blue:0.96 alpha:1.0];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -67,7 +66,6 @@
     [self initCollectionView];
     
     [self requestData];
-    
     
 }
 
@@ -190,7 +188,13 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"点击的城市编号%@",self.homeViewData.recommendCity[indexPath.row].ID);
+    
+    FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
+    
+    cityHouseListVC.cityId = self.homeViewData.recommendCity[indexPath.row].ID;
+    
+    [self.navigationController pushViewController:cityHouseListVC animated:YES];
+    
 }
 
 #pragma mark -- UICollectionViewDelegateFlowLayout

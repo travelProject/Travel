@@ -8,13 +8,32 @@
 
 #import "FYSearchedCityTableView.h"
 
+//搜索到的城市模型
+#import "FYSingleCityData.h"
+
+//城市民宿列表
+#import "FYCityHouseListVC.h"
+
 @interface FYSearchedCityTableView () <UITableViewDelegate ,UITableViewDataSource >
 
 @property(nonatomic,strong) UITableView *searchedTableView;
 
+@property(nonatomic,strong) NSArray<FYSingleCityData *> *searchedCityArr;
+
 @end
 
 @implementation FYSearchedCityTableView
+
+//懒加载
+- (NSArray *)searchedCityArr
+{
+    if (!_searchedCityArr) {
+        
+        _searchedCityArr = [[NSArray alloc] init];
+    }
+    
+    return _searchedCityArr;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -22,8 +41,6 @@
     if (self) {
         
         [self initSearchedTableView];
-        
-//        [self requestData];
         
     }
     return self;
@@ -55,19 +72,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"点击的城市id");
+    
+    FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
+    
+    cityHouseListVC.cityId = self.searchedCityArr[indexPath.row].ID;
+    
+    [self.myHostVC.navigationController pushViewController:cityHouseListVC animated:YES];
 }
 
 #pragma mark -- UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 10;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.searchedCityArr.count;
 }
 
 
@@ -75,7 +92,7 @@
 {
     UITableViewCell *cell = [self.searchedTableView dequeueReusableCellWithIdentifier:@"searchedCell"];
     
-    cell.textLabel.text = @"杭州";
+    cell.textLabel.text = self.searchedCityArr[indexPath.row].cityNameCh;
     
     return cell;
 }
@@ -85,25 +102,39 @@
 {
     _searchWord = searchWord;
     
-    
+    [self requestData];
 }
 
+- (void)setMyHostVC:(UIViewController *)myHostVC
+{
+    _myHostVC = myHostVC;
+}
+  
 //请求数据
 - (void)requestData
 {
     FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
     
-    [manager GET:@"http://www.shafalvxing.com/city/searchCity.do" parameters:@{@"bizParams":@{
-        @"key" : @"上",@"userToken" : @"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4"
-    }} success:^(id responseObject) {
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"key\":\"%@\",\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}",self.searchWord];
+    
+    NSString *urlStr = @"http://www.shafalvxing.com/city/searchCity.do?";
+    
+    [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
         
-        NSLog(@"%@",responseObject);
+        NSArray *jsonArr = [responseObject objectForKey:@"data"];
+        
+        self.searchedCityArr = [FYSingleCityData mj_objectArrayWithKeyValuesArray:jsonArr];
+        
+        //刷新搜索表格
+        [self.searchedTableView reloadData];
+        
         
     } failur:^(NSError *error) {
         
         CYLog(@"error : %@",error);
         
     }];
+
 }
 
 @end
