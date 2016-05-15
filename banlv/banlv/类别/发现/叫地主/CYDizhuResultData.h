@@ -11,7 +11,7 @@
 
 @interface CYDizhuResultData : NSObject
 
-@property(nonatomic,strong)NSNumber *age;
+@property(nonatomic,copy)NSString *age;
 
 @property(nonatomic,strong)NSNumber *cityId;
 
@@ -28,7 +28,7 @@
 @property(nonatomic,copy)NSString *ownerName;
 
 
-@property(nonatomic,strong)NSArray<CYDizhuPictureListData *> *pictureList;
+@property(nonatomic,strong)NSArray *pictureList;
 
 @property(nonatomic,copy)NSString *price;
 
@@ -36,7 +36,7 @@
 
 @property(nonatomic,strong)NSArray *serviceNameList;
 
-@property(nonatomic,strong)NSNumber *sex;
+@property(nonatomic,copy)NSString *sex;
 
 @property(nonatomic,strong)NSNumber *userIdentificationStatus;
 
