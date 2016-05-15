@@ -30,12 +30,12 @@
     self = [super init];
     if (self) {
         
-        self.backgroundImage = [UIImage imageNamed:@"tabBar_bgd"];
+        self.backgroundImage = [UIImage imageNamed:@"tabbar_bgd"];
 
         self.searchView = [[UIView alloc] init];
         
         self.btnBgView = [[UIImageView alloc] init];
-        self.btnBgView.image = [UIImage imageNamed:@"tabBar_bgd"];
+        self.btnBgView.image = [UIImage imageNamed:@"tabbar_bgd"];
         
         self.searchLab = [[UILabel alloc] init];
         

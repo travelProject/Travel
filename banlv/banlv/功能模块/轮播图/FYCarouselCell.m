@@ -16,9 +16,9 @@
     if (self) {
         
         self.picImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-
         
         [self addSubview:self.picImageView];
+        
     }
     return self;
 }

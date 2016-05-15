@@ -38,6 +38,7 @@
 
 - (void)initTableView
 {
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     
     self.tableView.delegate = self;
@@ -56,6 +57,13 @@
     NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%@,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"page\":1,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":0}",self.cityId];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
+    
+    //测试接口
+//    NSString *url = @"http://www.shafalvxing.com/space/getUserCollectedSpaceList.do?";
+//    
+//    NSString *params1 = [NSString stringWithFormat:@"bizParams={\n\"userToken\":NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4,\n\"page\":1}"];
+//    
+//    NSLog(@"接口是:%@",[url encodeURLWithParams:params1]);
     
     [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
         
@@ -84,6 +92,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //设为不选中（不变灰色）
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     NSLog(@"点击的房间ID:%@",self.cityHouseArr[indexPath.row].spaceId);
 }
 

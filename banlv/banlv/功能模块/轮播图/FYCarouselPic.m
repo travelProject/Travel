@@ -35,7 +35,8 @@
     
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
+    //分页错位的原因（frame不要用self.bounds）
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, 280.f) collectionViewLayout:flowLayout];
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -43,6 +44,8 @@
     [self.collectionView registerClass:[FYCarouselCell class] forCellWithReuseIdentifier:@"picCell"];
     
     self.collectionView.pagingEnabled = YES;
+    
+    self.collectionView.backgroundColor = [UIColor lightGrayColor];
     
     [self addSubview:self.collectionView];
     
@@ -53,7 +56,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.width, self.height);
+    return CGSizeMake(kScreenFrameW, 280.f);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
@@ -90,8 +93,11 @@
     
     if (_picArr.count > 0) {
         
-        
         [self.collectionView reloadData];
+        
+        //BUG（初始创建的cell轮播错位）
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:MaxSection / 2] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        
     }
     
 }
