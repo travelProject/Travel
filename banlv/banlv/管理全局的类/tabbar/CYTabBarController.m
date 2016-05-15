@@ -10,8 +10,9 @@
 
 #import "CYMyTabBar.h"
 
-#import "MainViewController.h"
-#import "OrderViewController.h"
+#import "BLMineViewController.h"
+#import "BLTempController.h"
+#import "BLOrdersViewController.h"
 #import "SearchViewController.h"
 
 #import "FindViewController.h"
@@ -38,9 +39,9 @@
     
     [self addViewController:[[FindViewController alloc]init] withImage:@"faxian" withSelectImage:@"faxian_click" withItemTitle:@"发现"];
     
-    [self addViewController:[[OrderViewController alloc]init] withImage:@"dingdan" withSelectImage:@"dingdan_click" withItemTitle:@"订单"];
+    [self addViewController:[[BLOrdersViewController alloc]init] withImage:@"dingdan" withSelectImage:@"dingdan_click" withItemTitle:@"订单"];
     
-    [self addViewController:[[MainViewController alloc]init] withImage:@"wode" withSelectImage:@"wode_click" withItemTitle:@"我的"];
+    [self addViewController:[[BLTempController alloc]init] withImage:@"wode" withSelectImage:@"wode_click" withItemTitle:@"我的"];
     
     CYMyTabBar *newTabBar = [[CYMyTabBar alloc] init];
     
