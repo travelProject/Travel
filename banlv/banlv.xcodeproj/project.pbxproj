@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		127437573AB123E2BCE39558 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E8EF9BBE4402875978F035 /* libPods.a */; };
+		2B6F17E31CE87E4800057F1F /* CYPartyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F17E11CE87E4800057F1F /* CYPartyCell.m */; };
+		2B6F17E41CE87E4800057F1F /* CYPartyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F17E21CE87E4800057F1F /* CYPartyCell.xib */; };
 		2B8AB7451CE74F2500E0BCC1 /* CYDizhuData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */; };
 		2B8AB7481CE7509000E0BCC1 /* CYDizhuResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB7471CE7509000E0BCC1 /* CYDizhuResultData.m */; };
 		2B8AB74B1CE7532800E0BCC1 /* CYDizhuPictureListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB74A1CE7532800E0BCC1 /* CYDizhuPictureListData.m */; };
@@ -77,6 +79,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B6F17E01CE87E4800057F1F /* CYPartyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPartyCell.h; sourceTree = "<group>"; };
+		2B6F17E11CE87E4800057F1F /* CYPartyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyCell.m; sourceTree = "<group>"; };
+		2B6F17E21CE87E4800057F1F /* CYPartyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYPartyCell.xib; sourceTree = "<group>"; };
 		2B8AB7431CE74F2500E0BCC1 /* CYDizhuData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuData.h; sourceTree = "<group>"; };
 		2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuData.m; sourceTree = "<group>"; };
 		2B8AB7461CE7509000E0BCC1 /* CYDizhuResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuResultData.h; sourceTree = "<group>"; };
@@ -416,11 +421,9 @@
 		2BAA47661CE4D85E00559F4F /* 叫地主 */ = {
 			isa = PBXGroup;
 			children = (
+				2BCDFD4F1CE86ABC00B0F169 /* cell */,
 				2BCDFD4D1CE8631B00B0F169 /* cell子页面 */,
 				2B8AB7421CE74E8900E0BCC1 /* model */,
-				2BAA47671CE4D85E00559F4F /* CYDizhuCell.h */,
-				2BAA47681CE4D85E00559F4F /* CYDizhuCell.m */,
-				2BAA47691CE4D85E00559F4F /* CYDizhuCell.xib */,
 				2BAA476A1CE4D85E00559F4F /* CYDizhuTableView.h */,
 				2BAA476B1CE4D85E00559F4F /* CYDizhuTableView.m */,
 			);
@@ -430,6 +433,8 @@
 		2BAA476C1CE4D85E00559F4F /* 聚会 */ = {
 			isa = PBXGroup;
 			children = (
+				2BCDFD501CE86AD800B0F169 /* cell */,
+				2BCDFD4E1CE86A9E00B0F169 /* model */,
 				2BAA476D1CE4D85E00559F4F /* CYPartyTableView.h */,
 				2BAA476E1CE4D85E00559F4F /* CYPartyTableView.m */,
 			);
@@ -441,6 +446,33 @@
 			children = (
 			);
 			name = "cell子页面";
+			sourceTree = "<group>";
+		};
+		2BCDFD4E1CE86A9E00B0F169 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		2BCDFD4F1CE86ABC00B0F169 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2BAA47671CE4D85E00559F4F /* CYDizhuCell.h */,
+				2BAA47681CE4D85E00559F4F /* CYDizhuCell.m */,
+				2BAA47691CE4D85E00559F4F /* CYDizhuCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		2BCDFD501CE86AD800B0F169 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2B6F17E01CE87E4800057F1F /* CYPartyCell.h */,
+				2B6F17E11CE87E4800057F1F /* CYPartyCell.m */,
+				2B6F17E21CE87E4800057F1F /* CYPartyCell.xib */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		938E96DF1B047757F4B0CBE1 /* Frameworks */ = {
@@ -675,6 +707,7 @@
 				CB4EF9651CE388DD008046EF /* FYHomeViewCell.xib in Resources */,
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
 				2BAA47711CE4D85E00559F4F /* CYDizhuCell.xib in Resources */,
+				2B6F17E41CE87E4800057F1F /* CYPartyCell.xib in Resources */,
 				CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
 				2B8C4F921CE5FE0D0084F467 /* CYXuanfuView.xib in Resources */,
@@ -767,6 +800,7 @@
 				CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */,
 				CB7CF5021CE4BB4100716F5D /* FYHomeWebViewVC.m in Sources */,
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
+				2B6F17E31CE87E4800057F1F /* CYPartyCell.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
 				CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */,
 				CB038E3D1CE6F0F30090839D /* NSString+FYURLEncode.m in Sources */,
