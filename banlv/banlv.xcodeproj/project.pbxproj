@@ -416,6 +416,7 @@
 		2BAA47661CE4D85E00559F4F /* 叫地主 */ = {
 			isa = PBXGroup;
 			children = (
+				2BCDFD4D1CE8631B00B0F169 /* cell子页面 */,
 				2B8AB7421CE74E8900E0BCC1 /* model */,
 				2BAA47671CE4D85E00559F4F /* CYDizhuCell.h */,
 				2BAA47681CE4D85E00559F4F /* CYDizhuCell.m */,
@@ -433,6 +434,13 @@
 				2BAA476E1CE4D85E00559F4F /* CYPartyTableView.m */,
 			);
 			path = "聚会";
+			sourceTree = "<group>";
+		};
+		2BCDFD4D1CE8631B00B0F169 /* cell子页面 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "cell子页面";
 			sourceTree = "<group>";
 		};
 		938E96DF1B047757F4B0CBE1 /* Frameworks */ = {
