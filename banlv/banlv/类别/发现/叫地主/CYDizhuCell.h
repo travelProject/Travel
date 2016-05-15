@@ -8,12 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CYDizhuResultData.h"
+
+#import "FYCarouselPic.h"
+
 @interface CYDizhuCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
+
 @property (weak, nonatomic) IBOutlet UILabel *jiage;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *serve1;
 @property (weak, nonatomic) IBOutlet UILabel *serve2;
 
+@property (weak, nonatomic) IBOutlet FYCarouselPic *bgImg;
+
 @property (weak, nonatomic) IBOutlet UILabel *jianjie;
+
+
 @end

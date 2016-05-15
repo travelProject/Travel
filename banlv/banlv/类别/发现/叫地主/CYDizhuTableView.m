@@ -12,12 +12,16 @@
 #import "CYDizhuData.h"
 #import "CYDizhuResultData.h"
 
+#import "FYCarouselPic.h"
+
 
 @interface CYDizhuTableView ()<UITableViewDelegate ,UITableViewDataSource>
 
 @property(nonatomic ,strong)CYDizhuResultData *dizhuResultData;
 
 @property(nonatomic, strong)NSArray<CYDizhuResultData *> *dataArr;
+
+@property(nonatomic,strong)FYCarouselPic *urlArr;
 
 @end
 
@@ -94,7 +98,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  350;
+    return  330;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -126,6 +130,8 @@
         cell = kLoadViewWithNIB(indentifier);
     
     }
+    
+    cell.bgImg.picArr = self.dataArr[indexPath.row].pictureList;
     
     NSString  *gender = nil;
     if ([self.dataArr[indexPath.row].sex isEqualToString:@"1"]) {
@@ -162,13 +168,21 @@
     cell.userName.text = self.dataArr[indexPath.row].ownerName;
     
     
+//    
+//    NSLog(@"%@",self.dataArr[indexPath.row].pictureList[0]);
+//    
+//    NSString *urlStr = [NSString stringWithFormat:@"%@",self.dataArr[indexPath.row].pictureList[0]];
+////    
+//    NSArray *arr = self.dataArr[indexPath.row].pictureList;
+//    NSLog(@"%@",arr);
+//    
+//    [self.urlArr setPicArr:arr];
+//    [cell setBgImg:_urlArr];
     
-    NSLog(@"%@",self.dataArr[indexPath.row].pictureList[0]);
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@",self.dataArr[indexPath.row].pictureList[0]];
-    
-    
-    [cell.bgImg sd_setImageWithURL:[NSURL URLWithString:urlStr]];
+//    
+//    
+//    [cell.bgImgView sd_setImageWithURL:[NSURL URLWithString:urlStr]];
     
     
     return cell;
