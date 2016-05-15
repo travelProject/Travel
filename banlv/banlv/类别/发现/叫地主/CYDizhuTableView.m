@@ -42,9 +42,6 @@
         [self request];
 
         
-       
-        
-
         
     }
     return self;
@@ -66,26 +63,11 @@
     //    }
     
     [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
-        
-//        NSLog(@"%@",[urlStr encodeURLWithParams:params]);
-        
-        //            NSLog(@"%@",responseObject);
-        
+       
         NSArray *jsonArr = [[responseObject objectForKey:@"data"]objectForKey:@"result"];
-//        NSLog(@"%@",jsonArr);
-//        [CYDizhuResultData mj_setupObjectClassInArray:^NSDictionary *{
-//            
-//            return @{@"pictureList" : @"CYDizhuPictureListData"
-//                     
-//                     };
-//            
-//        }];
+
         
         self.dataArr = [CYDizhuResultData mj_objectArrayWithKeyValuesArray:jsonArr];
-        
-        
-        //            self.dizhuResultData = [CYDizhuResultData mj_objectArrayWithKeyValuesArray:<#(id)#>];
-        
         
         [self reloadData];
         
@@ -96,6 +78,12 @@
         
     }];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"点击了%@",self.dataArr[indexPath.row]);
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return  330;
@@ -108,18 +96,11 @@
     return self.dataArr.count;
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
 
-    
-
-    
-    
-    
-    
     static NSString *indentifier = @"CYDizhuCell";
     
 
@@ -140,13 +121,7 @@
         gender =@"女";
     }
     
-    
-    
     NSString *jianjie = [NSString stringWithFormat:@"%@岁  %@  %@",self.dataArr[indexPath.row].age,gender,self.dataArr[indexPath.row].profession];
-    
-    
-    
-    
     
     cell.jianjie.text =jianjie;
     
@@ -164,40 +139,10 @@
     cell.serve2.text = serve2;
     
 
-    cell.jiage.text =[NSString stringWithFormat:@"%@/天 ",self.dataArr[indexPath.row].price];
+    cell.jiage.text =[NSString stringWithFormat:@"%@/天  %@  ",self.dataArr[indexPath.row].price,self.dataArr[indexPath.row].cityName];
     cell.userName.text = self.dataArr[indexPath.row].ownerName;
-    
-    
-//    
-//    NSLog(@"%@",self.dataArr[indexPath.row].pictureList[0]);
-//    
-//    NSString *urlStr = [NSString stringWithFormat:@"%@",self.dataArr[indexPath.row].pictureList[0]];
-////    
-//    NSArray *arr = self.dataArr[indexPath.row].pictureList;
-//    NSLog(@"%@",arr);
-//    
-//    [self.urlArr setPicArr:arr];
-//    [cell setBgImg:_urlArr];
-    
-    
-//    
-//    
-//    [cell.bgImgView sd_setImageWithURL:[NSURL URLWithString:urlStr]];
-    
     
     return cell;
 }
-
-
-
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

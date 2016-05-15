@@ -20,7 +20,13 @@
                         <color key="backgroundColor" red="1" green="0.1101172924" blue="0.1903352754" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="280" id="hsZ-ny-ayU"/>
+                            <constraint firstAttribute="height" constant="280" id="uoD-6a-z5c"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hsZ-ny-ayU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l82-VF-OFx">
                         <rect key="frame" x="0.0" y="343" width="379" height="50"/>
@@ -45,9 +51,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbD-6B-2RW">
-                                <rect key="frame" x="279" y="29" width="100" height="21"/>
+                                <rect key="frame" x="213" y="29" width="166" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="1KR-1U-ycV"/>
+                                    <constraint firstAttribute="width" constant="166" id="1KR-1U-ycV"/>
                                     <constraint firstAttribute="height" constant="21" id="zF3-eA-5hp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -97,6 +103,7 @@
                     <constraint firstItem="GYg-cm-Fyt" firstAttribute="leading" secondItem="FrO-vY-4M8" secondAttribute="leadingMargin" id="KBn-y8-jMD"/>
                     <constraint firstAttribute="trailing" secondItem="l82-VF-OFx" secondAttribute="trailing" id="NiZ-jy-TSD"/>
                     <constraint firstAttribute="bottomMargin" secondItem="l82-VF-OFx" secondAttribute="bottom" id="PUp-QF-J9r"/>
+                    <constraint firstItem="l82-VF-OFx" firstAttribute="top" secondItem="GYg-cm-Fyt" secondAttribute="bottom" id="QaS-R3-HJp"/>
                     <constraint firstAttribute="bottom" secondItem="l82-VF-OFx" secondAttribute="bottom" id="Y3a-8O-nWh"/>
                     <constraint firstItem="GYg-cm-Fyt" firstAttribute="trailing" secondItem="l82-VF-OFx" secondAttribute="trailing" id="YxU-Gd-K4g"/>
                     <constraint firstItem="GYg-cm-Fyt" firstAttribute="top" secondItem="FrO-vY-4M8" secondAttribute="topMargin" id="aRd-Zq-kV5"/>
@@ -126,6 +133,7 @@
                         <exclude reference="zHI-tV-aw6"/>
                         <exclude reference="DO8-2n-QCv"/>
                         <exclude reference="PUp-QF-J9r"/>
+                        <exclude reference="QaS-R3-HJp"/>
                         <exclude reference="beS-Oe-mnm"/>
                         <exclude reference="lzY-XT-MqE"/>
                     </mask>
