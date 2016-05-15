@@ -90,7 +90,7 @@ typedef enum : NSUInteger {
     //价格需要截取到小数点后一位
     //%.1f  表示小数点一位，%.2f 表示小数点2位，依次类推
     self.priceLabel.text = [NSString stringWithFormat:@"¥%.1f",_cityHouseData.price.floatValue];
-    self.priceLabel.textColor = [UIColor colorWithRed:0.40 green:0.74 blue:0.75 alpha:1.0];
+    self.priceLabel.textColor = [UIColor colorWithRed:0.38 green:0.94 blue:0.63 alpha:1.0];
     
     self.titleLabel.text = [NSString stringWithFormat:@"· %@",_cityHouseData.title];
     
@@ -102,6 +102,45 @@ typedef enum : NSUInteger {
     NSString *replyStr = [NSString stringWithFormat:@"回复率%@",_cityHouseData.replyRate];
     
     self.replyRateLabel.text = [replyStr stringByAppendingString:@"%"];
+    
+    CGFloat x = CGRectGetMaxX(self.userName.frame) + 3;
+    
+    CGFloat y = CGRectGetMinY(self.userName.frame);
+    
+    UIImageView *userIdentiSta = nil;
+    
+    UIImageView *zmAuthentication = nil;
+    
+    //添加实名认证、芝麻信用
+    if ([_cityHouseData.userIdentificationStatus isEqualToString:@"2"]) {
+        
+        userIdentiSta = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 15.f, 10.f)];
+        
+        
+        userIdentiSta.image = [UIImage imageNamed:@"shenfenzheng"];
+        
+        [self addSubview:userIdentiSta];
+        
+        if ([_cityHouseData.zmAuthentication isEqualToString:@"1"]) {
+            
+            zmAuthentication = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(userIdentiSta.frame) + 3.f, y, 15.f, 10.f)];
+            
+            zmAuthentication.image = [UIImage imageNamed:@"tupian"];
+            
+            [self addSubview:zmAuthentication];
+            
+        }
+        
+        
+    }else if ([_cityHouseData.zmAuthentication isEqualToString:@"1"])
+    {
+        zmAuthentication = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 20.f, 10.f)];
+        
+        zmAuthentication.image = [UIImage imageNamed:@"tupian"];
+        
+        [self addSubview:zmAuthentication];
+        
+    }
     
     
 }
