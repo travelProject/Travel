@@ -17,11 +17,11 @@
 
 @interface CYDizhuTableView ()<UITableViewDelegate ,UITableViewDataSource>
 
-@property(nonatomic ,strong)CYDizhuResultData *dizhuResultData;
+
 
 @property(nonatomic, strong)NSArray<CYDizhuResultData *> *dataArr;
 
-@property(nonatomic,strong)FYCarouselPic *urlArr;
+
 
 @end
 
@@ -91,7 +91,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    NSLog(@"%lu",(unsigned long)self.dataArr.count);
+//    NSLog(@"%lu",(unsigned long)self.dataArr.count);
     
     return self.dataArr.count;
 }
@@ -112,7 +112,10 @@
     
     }
     
-    cell.bgImg.picArr = self.dataArr[indexPath.row].pictureList;
+    NSString *uuu = self.dataArr[indexPath.row].pictureList[0];
+    [cell.bgImg sd_setImageWithURL:[NSURL URLWithString:uuu]];
+    
+//    cell.bgImg.picArr = self.dataArr[indexPath.row].pictureList;
     
     NSString  *gender = nil;
     if ([self.dataArr[indexPath.row].sex isEqualToString:@"1"]) {

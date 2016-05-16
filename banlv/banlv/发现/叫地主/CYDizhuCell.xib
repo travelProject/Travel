@@ -15,19 +15,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="379" height="393"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYg-cm-Fyt" customClass="FYCarouselPic">
-                        <rect key="frame" x="0.0" y="0.0" width="379" height="280"/>
-                        <color key="backgroundColor" red="1" green="0.1101172924" blue="0.1903352754" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="280" id="hsZ-ny-ayU"/>
-                            <constraint firstAttribute="height" constant="280" id="uoD-6a-z5c"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="hsZ-ny-ayU"/>
-                            </mask>
-                        </variation>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l82-VF-OFx">
                         <rect key="frame" x="0.0" y="343" width="379" height="50"/>
                         <subviews>
@@ -97,50 +84,34 @@
                             <constraint firstItem="RVy-qH-2LJ" firstAttribute="top" secondItem="WhA-Nt-VEf" secondAttribute="bottom" constant="8" id="sIW-wU-zCd"/>
                         </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-9S-A5j">
+                        <rect key="frame" x="0.0" y="0.0" width="379" height="280"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="280" id="faj-un-7lY"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="4Af-9S-A5j" firstAttribute="top" secondItem="FrO-vY-4M8" secondAttribute="top" id="4kt-Ac-VS4"/>
                     <constraint firstAttribute="trailingMargin" secondItem="l82-VF-OFx" secondAttribute="trailing" id="DO8-2n-QCv"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="leading" secondItem="FrO-vY-4M8" secondAttribute="leadingMargin" id="KBn-y8-jMD"/>
                     <constraint firstAttribute="trailing" secondItem="l82-VF-OFx" secondAttribute="trailing" id="NiZ-jy-TSD"/>
                     <constraint firstAttribute="bottomMargin" secondItem="l82-VF-OFx" secondAttribute="bottom" id="PUp-QF-J9r"/>
-                    <constraint firstItem="l82-VF-OFx" firstAttribute="top" secondItem="GYg-cm-Fyt" secondAttribute="bottom" id="QaS-R3-HJp"/>
+                    <constraint firstAttribute="trailing" secondItem="4Af-9S-A5j" secondAttribute="trailing" id="USi-55-U3y"/>
                     <constraint firstAttribute="bottom" secondItem="l82-VF-OFx" secondAttribute="bottom" id="Y3a-8O-nWh"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="trailing" secondItem="l82-VF-OFx" secondAttribute="trailing" id="YxU-Gd-K4g"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="top" secondItem="FrO-vY-4M8" secondAttribute="topMargin" id="aRd-Zq-kV5"/>
                     <constraint firstItem="l82-VF-OFx" firstAttribute="leading" secondItem="FrO-vY-4M8" secondAttribute="leading" id="bML-2r-Xx3"/>
-                    <constraint firstItem="l82-VF-OFx" firstAttribute="top" secondItem="GYg-cm-Fyt" secondAttribute="bottom" id="beS-Oe-mnm"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="top" secondItem="FrO-vY-4M8" secondAttribute="topMargin" id="eu8-qF-Nx3"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="top" secondItem="FrO-vY-4M8" secondAttribute="topMargin" id="j1P-TP-NxN"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="trailing" secondItem="FrO-vY-4M8" secondAttribute="trailingMargin" id="jf7-g2-TA3"/>
+                    <constraint firstItem="4Af-9S-A5j" firstAttribute="leading" secondItem="FrO-vY-4M8" secondAttribute="leading" id="gc5-da-ObX"/>
                     <constraint firstItem="l82-VF-OFx" firstAttribute="leading" secondItem="FrO-vY-4M8" secondAttribute="leadingMargin" id="lzY-XT-MqE"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="leading" secondItem="l82-VF-OFx" secondAttribute="leading" id="nx6-PH-nC5"/>
-                    <constraint firstAttribute="trailing" secondItem="GYg-cm-Fyt" secondAttribute="trailing" id="p3k-Up-Ul2"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="top" secondItem="FrO-vY-4M8" secondAttribute="top" id="uSN-ST-MU7"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="leading" secondItem="FrO-vY-4M8" secondAttribute="leadingMargin" id="vwa-1Z-MFe"/>
-                    <constraint firstItem="GYg-cm-Fyt" firstAttribute="leading" secondItem="FrO-vY-4M8" secondAttribute="leading" id="xb8-kq-2zD"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="GYg-cm-Fyt" secondAttribute="trailing" id="zHI-tV-aw6"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="KBn-y8-jMD"/>
-                        <exclude reference="YxU-Gd-K4g"/>
-                        <exclude reference="aRd-Zq-kV5"/>
-                        <exclude reference="eu8-qF-Nx3"/>
-                        <exclude reference="j1P-TP-NxN"/>
-                        <exclude reference="jf7-g2-TA3"/>
-                        <exclude reference="nx6-PH-nC5"/>
-                        <exclude reference="vwa-1Z-MFe"/>
-                        <exclude reference="zHI-tV-aw6"/>
                         <exclude reference="DO8-2n-QCv"/>
                         <exclude reference="PUp-QF-J9r"/>
-                        <exclude reference="QaS-R3-HJp"/>
-                        <exclude reference="beS-Oe-mnm"/>
                         <exclude reference="lzY-XT-MqE"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="bgImg" destination="GYg-cm-Fyt" id="eKR-sj-d9U"/>
+                <outlet property="bgImg" destination="4Af-9S-A5j" id="y69-xf-t9D"/>
                 <outlet property="jiage" destination="YbD-6B-2RW" id="Lkc-UJ-CWZ"/>
                 <outlet property="jianjie" destination="KE1-bO-r4G" id="GuG-1J-S32"/>
                 <outlet property="serve1" destination="Rfe-iq-wyt" id="bgg-Qt-O2t"/>

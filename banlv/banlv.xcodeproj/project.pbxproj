@@ -8,11 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		127437573AB123E2BCE39558 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E8EF9BBE4402875978F035 /* libPods.a */; };
-		2B8AB7451CE74F2500E0BCC1 /* CYDizhuData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */; };
-		2B8AB7481CE7509000E0BCC1 /* CYDizhuResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB7471CE7509000E0BCC1 /* CYDizhuResultData.m */; };
-		2B8AB74B1CE7532800E0BCC1 /* CYDizhuPictureListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB74A1CE7532800E0BCC1 /* CYDizhuPictureListData.m */; };
-		2B8C4F901CE5FDEF0084F467 /* CYXuanfuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C4F8F1CE5FDEF0084F467 /* CYXuanfuView.m */; };
-		2B8C4F921CE5FE0D0084F467 /* CYXuanfuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8C4F911CE5FE0D0084F467 /* CYXuanfuView.xib */; };
+		2B8D54241CEA18E400AF43CA /* CYXuanfuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54031CEA18E400AF43CA /* CYXuanfuView.m */; };
+		2B8D54251CEA18E400AF43CA /* CYXuanfuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D54041CEA18E400AF43CA /* CYXuanfuView.xib */; };
+		2B8D54261CEA18E400AF43CA /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54061CEA18E400AF43CA /* FindViewController.m */; };
+		2B8D54271CEA18E400AF43CA /* CYDoDiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54091CEA18E400AF43CA /* CYDoDiViewController.m */; };
+		2B8D54281CEA18E400AF43CA /* CYPoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D540C1CEA18E400AF43CA /* CYPoViewController.m */; };
+		2B8D54291CEA18E400AF43CA /* CYDizhuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D540F1CEA18E400AF43CA /* CYDizhuCell.m */; };
+		2B8D542A1CEA18E400AF43CA /* CYDizhuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D54101CEA18E400AF43CA /* CYDizhuCell.xib */; };
+		2B8D542B1CEA18E400AF43CA /* CYDizhuData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54121CEA18E400AF43CA /* CYDizhuData.m */; };
+		2B8D542C1CEA18E400AF43CA /* CYDizhuPictureListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54141CEA18E400AF43CA /* CYDizhuPictureListData.m */; };
+		2B8D542D1CEA18E400AF43CA /* CYDizhuResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54161CEA18E400AF43CA /* CYDizhuResultData.m */; };
+		2B8D542E1CEA18E400AF43CA /* CYDizhuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54181CEA18E400AF43CA /* CYDizhuTableView.m */; };
+		2B8D542F1CEA18E400AF43CA /* CYJoinedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D541B1CEA18E400AF43CA /* CYJoinedViewController.m */; };
+		2B8D54301CEA18E400AF43CA /* CYPartyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D541E1CEA18E400AF43CA /* CYPartyCell.m */; };
+		2B8D54311CEA18E400AF43CA /* CYPartyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D541F1CEA18E400AF43CA /* CYPartyCell.xib */; };
+		2B8D54321CEA18E400AF43CA /* CYPartyCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54211CEA18E400AF43CA /* CYPartyCellData.m */; };
+		2B8D54331CEA18E400AF43CA /* CYPartyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54231CEA18E400AF43CA /* CYPartyTableView.m */; };
 		2B97A12F1CDC264700B4989C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A12E1CDC264700B4989C /* main.m */; };
 		2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1311CDC264700B4989C /* AppDelegate.m */; };
 		2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B97A13B1CDC264700B4989C /* LaunchScreen.storyboard */; };
@@ -29,11 +40,6 @@
 		2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18C1CDC2BF900B4989C /* HomeViewController.m */; };
 		2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18F1CDC2C0E00B4989C /* MainViewController.m */; };
 		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
-		2BAA476F1CE4D85E00559F4F /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA47651CE4D85E00559F4F /* FindViewController.m */; };
-		2BAA47701CE4D85E00559F4F /* CYDizhuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA47681CE4D85E00559F4F /* CYDizhuCell.m */; };
-		2BAA47711CE4D85E00559F4F /* CYDizhuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAA47691CE4D85E00559F4F /* CYDizhuCell.xib */; };
-		2BAA47721CE4D85E00559F4F /* CYDizhuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA476B1CE4D85E00559F4F /* CYDizhuTableView.m */; };
-		2BAA47731CE4D85E00559F4F /* CYPartyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA476E1CE4D85E00559F4F /* CYPartyTableView.m */; };
 		7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */; };
 		7A2FD8301CE86E330049267C /* BLMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7F61CE86E330049267C /* BLMyCollectController.m */; };
 		7A2FD8311CE86E330049267C /* BLMyCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2FD7F71CE86E330049267C /* BLMyCollectController.xib */; };
@@ -101,15 +107,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B8AB7431CE74F2500E0BCC1 /* CYDizhuData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuData.h; sourceTree = "<group>"; };
-		2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuData.m; sourceTree = "<group>"; };
-		2B8AB7461CE7509000E0BCC1 /* CYDizhuResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuResultData.h; sourceTree = "<group>"; };
-		2B8AB7471CE7509000E0BCC1 /* CYDizhuResultData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuResultData.m; sourceTree = "<group>"; };
-		2B8AB7491CE7532800E0BCC1 /* CYDizhuPictureListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuPictureListData.h; sourceTree = "<group>"; };
-		2B8AB74A1CE7532800E0BCC1 /* CYDizhuPictureListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuPictureListData.m; sourceTree = "<group>"; };
-		2B8C4F8E1CE5FDEF0084F467 /* CYXuanfuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYXuanfuView.h; sourceTree = "<group>"; };
-		2B8C4F8F1CE5FDEF0084F467 /* CYXuanfuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYXuanfuView.m; sourceTree = "<group>"; };
-		2B8C4F911CE5FE0D0084F467 /* CYXuanfuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYXuanfuView.xib; sourceTree = "<group>"; };
+		2B8D54021CEA18E400AF43CA /* CYXuanfuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYXuanfuView.h; sourceTree = "<group>"; };
+		2B8D54031CEA18E400AF43CA /* CYXuanfuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYXuanfuView.m; sourceTree = "<group>"; };
+		2B8D54041CEA18E400AF43CA /* CYXuanfuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYXuanfuView.xib; sourceTree = "<group>"; };
+		2B8D54051CEA18E400AF43CA /* FindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindViewController.h; sourceTree = "<group>"; };
+		2B8D54061CEA18E400AF43CA /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
+		2B8D54081CEA18E400AF43CA /* CYDoDiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDoDiViewController.h; sourceTree = "<group>"; };
+		2B8D54091CEA18E400AF43CA /* CYDoDiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDoDiViewController.m; sourceTree = "<group>"; };
+		2B8D540B1CEA18E400AF43CA /* CYPoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPoViewController.h; sourceTree = "<group>"; };
+		2B8D540C1CEA18E400AF43CA /* CYPoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPoViewController.m; sourceTree = "<group>"; };
+		2B8D540E1CEA18E400AF43CA /* CYDizhuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuCell.h; sourceTree = "<group>"; };
+		2B8D540F1CEA18E400AF43CA /* CYDizhuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuCell.m; sourceTree = "<group>"; };
+		2B8D54101CEA18E400AF43CA /* CYDizhuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYDizhuCell.xib; sourceTree = "<group>"; };
+		2B8D54111CEA18E400AF43CA /* CYDizhuData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuData.h; sourceTree = "<group>"; };
+		2B8D54121CEA18E400AF43CA /* CYDizhuData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuData.m; sourceTree = "<group>"; };
+		2B8D54131CEA18E400AF43CA /* CYDizhuPictureListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuPictureListData.h; sourceTree = "<group>"; };
+		2B8D54141CEA18E400AF43CA /* CYDizhuPictureListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuPictureListData.m; sourceTree = "<group>"; };
+		2B8D54151CEA18E400AF43CA /* CYDizhuResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuResultData.h; sourceTree = "<group>"; };
+		2B8D54161CEA18E400AF43CA /* CYDizhuResultData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuResultData.m; sourceTree = "<group>"; };
+		2B8D54171CEA18E400AF43CA /* CYDizhuTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuTableView.h; sourceTree = "<group>"; };
+		2B8D54181CEA18E400AF43CA /* CYDizhuTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuTableView.m; sourceTree = "<group>"; };
+		2B8D541A1CEA18E400AF43CA /* CYJoinedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYJoinedViewController.h; sourceTree = "<group>"; };
+		2B8D541B1CEA18E400AF43CA /* CYJoinedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYJoinedViewController.m; sourceTree = "<group>"; };
+		2B8D541D1CEA18E400AF43CA /* CYPartyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPartyCell.h; sourceTree = "<group>"; };
+		2B8D541E1CEA18E400AF43CA /* CYPartyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyCell.m; sourceTree = "<group>"; };
+		2B8D541F1CEA18E400AF43CA /* CYPartyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYPartyCell.xib; sourceTree = "<group>"; };
+		2B8D54201CEA18E400AF43CA /* CYPartyCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPartyCellData.h; sourceTree = "<group>"; };
+		2B8D54211CEA18E400AF43CA /* CYPartyCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyCellData.m; sourceTree = "<group>"; };
+		2B8D54221CEA18E400AF43CA /* CYPartyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPartyTableView.h; sourceTree = "<group>"; };
+		2B8D54231CEA18E400AF43CA /* CYPartyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyTableView.m; sourceTree = "<group>"; };
 		2B97A12A1CDC264700B4989C /* banlv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = banlv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B97A12E1CDC264700B4989C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B97A1301CDC264700B4989C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -145,15 +171,6 @@
 		2B97A18F1CDC2C0E00B4989C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2B97A1911CDC2C4B00B4989C /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		2B97A1921CDC2C4B00B4989C /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
-		2BAA47641CE4D85E00559F4F /* FindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindViewController.h; sourceTree = "<group>"; };
-		2BAA47651CE4D85E00559F4F /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
-		2BAA47671CE4D85E00559F4F /* CYDizhuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuCell.h; sourceTree = "<group>"; };
-		2BAA47681CE4D85E00559F4F /* CYDizhuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuCell.m; sourceTree = "<group>"; };
-		2BAA47691CE4D85E00559F4F /* CYDizhuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYDizhuCell.xib; sourceTree = "<group>"; };
-		2BAA476A1CE4D85E00559F4F /* CYDizhuTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuTableView.h; sourceTree = "<group>"; };
-		2BAA476B1CE4D85E00559F4F /* CYDizhuTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuTableView.m; sourceTree = "<group>"; };
-		2BAA476D1CE4D85E00559F4F /* CYPartyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPartyTableView.h; sourceTree = "<group>"; };
-		2BAA476E1CE4D85E00559F4F /* CYPartyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyTableView.m; sourceTree = "<group>"; };
 		32E8EF9BBE4402875978F035 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2FD7ED1CE86DE40049267C /* BLOrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLOrdersViewController.h; sourceTree = "<group>"; };
 		7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLOrdersViewController.m; sourceTree = "<group>"; };
@@ -270,17 +287,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B8AB7421CE74E8900E0BCC1 /* model */ = {
+		2B8D54011CEA18E400AF43CA /* 发现 */ = {
 			isa = PBXGroup;
 			children = (
-				2B8AB7431CE74F2500E0BCC1 /* CYDizhuData.h */,
-				2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */,
-				2B8AB7461CE7509000E0BCC1 /* CYDizhuResultData.h */,
-				2B8AB7471CE7509000E0BCC1 /* CYDizhuResultData.m */,
-				2B8AB7491CE7532800E0BCC1 /* CYDizhuPictureListData.h */,
-				2B8AB74A1CE7532800E0BCC1 /* CYDizhuPictureListData.m */,
+				2B8D54021CEA18E400AF43CA /* CYXuanfuView.h */,
+				2B8D54031CEA18E400AF43CA /* CYXuanfuView.m */,
+				2B8D54041CEA18E400AF43CA /* CYXuanfuView.xib */,
+				2B8D54051CEA18E400AF43CA /* FindViewController.h */,
+				2B8D54061CEA18E400AF43CA /* FindViewController.m */,
+				2B8D54071CEA18E400AF43CA /* 做地主 */,
+				2B8D540A1CEA18E400AF43CA /* 发布 */,
+				2B8D540D1CEA18E400AF43CA /* 叫地主 */,
+				2B8D54191CEA18E400AF43CA /* 我参加的 */,
+				2B8D541C1CEA18E400AF43CA /* 聚会 */,
 			);
-			name = model;
+			path = "发现";
+			sourceTree = "<group>";
+		};
+		2B8D54071CEA18E400AF43CA /* 做地主 */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D54081CEA18E400AF43CA /* CYDoDiViewController.h */,
+				2B8D54091CEA18E400AF43CA /* CYDoDiViewController.m */,
+			);
+			path = "做地主";
+			sourceTree = "<group>";
+		};
+		2B8D540A1CEA18E400AF43CA /* 发布 */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D540B1CEA18E400AF43CA /* CYPoViewController.h */,
+				2B8D540C1CEA18E400AF43CA /* CYPoViewController.m */,
+			);
+			path = "发布";
+			sourceTree = "<group>";
+		};
+		2B8D540D1CEA18E400AF43CA /* 叫地主 */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D540E1CEA18E400AF43CA /* CYDizhuCell.h */,
+				2B8D540F1CEA18E400AF43CA /* CYDizhuCell.m */,
+				2B8D54101CEA18E400AF43CA /* CYDizhuCell.xib */,
+				2B8D54111CEA18E400AF43CA /* CYDizhuData.h */,
+				2B8D54121CEA18E400AF43CA /* CYDizhuData.m */,
+				2B8D54131CEA18E400AF43CA /* CYDizhuPictureListData.h */,
+				2B8D54141CEA18E400AF43CA /* CYDizhuPictureListData.m */,
+				2B8D54151CEA18E400AF43CA /* CYDizhuResultData.h */,
+				2B8D54161CEA18E400AF43CA /* CYDizhuResultData.m */,
+				2B8D54171CEA18E400AF43CA /* CYDizhuTableView.h */,
+				2B8D54181CEA18E400AF43CA /* CYDizhuTableView.m */,
+			);
+			path = "叫地主";
+			sourceTree = "<group>";
+		};
+		2B8D54191CEA18E400AF43CA /* 我参加的 */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D541A1CEA18E400AF43CA /* CYJoinedViewController.h */,
+				2B8D541B1CEA18E400AF43CA /* CYJoinedViewController.m */,
+			);
+			path = "我参加的";
+			sourceTree = "<group>";
+		};
+		2B8D541C1CEA18E400AF43CA /* 聚会 */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D541D1CEA18E400AF43CA /* CYPartyCell.h */,
+				2B8D541E1CEA18E400AF43CA /* CYPartyCell.m */,
+				2B8D541F1CEA18E400AF43CA /* CYPartyCell.xib */,
+				2B8D54201CEA18E400AF43CA /* CYPartyCellData.h */,
+				2B8D54211CEA18E400AF43CA /* CYPartyCellData.m */,
+				2B8D54221CEA18E400AF43CA /* CYPartyTableView.h */,
+				2B8D54231CEA18E400AF43CA /* CYPartyTableView.m */,
+			);
+			path = "聚会";
 			sourceTree = "<group>";
 		};
 		2B97A1211CDC264700B4989C = {
@@ -308,7 +388,7 @@
 		2B97A12C1CDC264700B4989C /* banlv */ = {
 			isa = PBXGroup;
 			children = (
-				2BAA47631CE4D85E00559F4F /* 发现 */,
+				2B8D54011CEA18E400AF43CA /* 发现 */,
 				2B97A1611CDC2A4700B4989C /* 管理全局的类 */,
 				CBE1DA991CE2191C00B36A18 /* 功能模块 */,
 				2B97A16B1CDC2B0400B4989C /* 类别 */,
@@ -476,51 +556,6 @@
 				2B97A18F1CDC2C0E00B4989C /* MainViewController.m */,
 			);
 			path = "我的";
-			sourceTree = "<group>";
-		};
-		2BAA47631CE4D85E00559F4F /* 发现 */ = {
-			isa = PBXGroup;
-			children = (
-				2BAA47641CE4D85E00559F4F /* FindViewController.h */,
-				2BAA47651CE4D85E00559F4F /* FindViewController.m */,
-				2B8C4F8E1CE5FDEF0084F467 /* CYXuanfuView.h */,
-				2B8C4F8F1CE5FDEF0084F467 /* CYXuanfuView.m */,
-				2B8C4F911CE5FE0D0084F467 /* CYXuanfuView.xib */,
-				2BAA47661CE4D85E00559F4F /* 叫地主 */,
-				2BAA476C1CE4D85E00559F4F /* 聚会 */,
-			);
-			name = "发现";
-			path = "类别/发现";
-			sourceTree = "<group>";
-		};
-		2BAA47661CE4D85E00559F4F /* 叫地主 */ = {
-			isa = PBXGroup;
-			children = (
-				2BCDFD4D1CE8631B00B0F169 /* cell子页面 */,
-				2B8AB7421CE74E8900E0BCC1 /* model */,
-				2BAA47671CE4D85E00559F4F /* CYDizhuCell.h */,
-				2BAA47681CE4D85E00559F4F /* CYDizhuCell.m */,
-				2BAA47691CE4D85E00559F4F /* CYDizhuCell.xib */,
-				2BAA476A1CE4D85E00559F4F /* CYDizhuTableView.h */,
-				2BAA476B1CE4D85E00559F4F /* CYDizhuTableView.m */,
-			);
-			path = "叫地主";
-			sourceTree = "<group>";
-		};
-		2BAA476C1CE4D85E00559F4F /* 聚会 */ = {
-			isa = PBXGroup;
-			children = (
-				2BAA476D1CE4D85E00559F4F /* CYPartyTableView.h */,
-				2BAA476E1CE4D85E00559F4F /* CYPartyTableView.m */,
-			);
-			path = "聚会";
-			sourceTree = "<group>";
-		};
-		2BCDFD4D1CE8631B00B0F169 /* cell子页面 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "cell子页面";
 			sourceTree = "<group>";
 		};
 		7A2FD7EC1CE86DE40049267C /* Controllers */ = {
@@ -1061,11 +1096,12 @@
 				7A2FD8401CE86E330049267C /* BLBannerView.xib in Resources */,
 				7A2FD83E1CE86E330049267C /* BLBannerCell.xib in Resources */,
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
-				2BAA47711CE4D85E00559F4F /* CYDizhuCell.xib in Resources */,
+				2B8D54311CEA18E400AF43CA /* CYPartyCell.xib in Resources */,
 				CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */,
 				7A2FD83B1CE86E330049267C /* BLLogoView.xib in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
-				2B8C4F921CE5FE0D0084F467 /* CYXuanfuView.xib in Resources */,
+				2B8D54251CEA18E400AF43CA /* CYXuanfuView.xib in Resources */,
+				2B8D542A1CEA18E400AF43CA /* CYDizhuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,25 +1177,29 @@
 				CB6BAC8E1CE45912006457BC /* FYHeaderViewCell.m in Sources */,
 				7A2FD83A1CE86E330049267C /* BLLogoView.m in Sources */,
 				7A2FD84E1CE870470049267C /* MMDrawerController.m in Sources */,
-				2B8AB74B1CE7532800E0BCC1 /* CYDizhuPictureListData.m in Sources */,
+				2B8D54301CEA18E400AF43CA /* CYPartyCell.m in Sources */,
 				7A2FD8351CE86E330049267C /* BLSetController.m in Sources */,
 				2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */,
 				7A2FD8341CE86E330049267C /* BLMineViewController.m in Sources */,
 				CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */,
+				2B8D54321CEA18E400AF43CA /* CYPartyCellData.m in Sources */,
+				2B8D54291CEA18E400AF43CA /* CYDizhuCell.m in Sources */,
 				7A2FD8371CE86E330049267C /* BLAboutUsView.m in Sources */,
 				2B97A17D1CDC2B0400B4989C /* UINavigationController+Jump.m in Sources */,
+				2B8D542C1CEA18E400AF43CA /* CYDizhuPictureListData.m in Sources */,
 				CB038E441CE6FD910090839D /* FYCarouselCell.m in Sources */,
-				2BAA476F1CE4D85E00559F4F /* FindViewController.m in Sources */,
+				2B8D54241CEA18E400AF43CA /* CYXuanfuView.m in Sources */,
 				7A2FD8321CE86E330049267C /* BLEditProfilesController.m in Sources */,
-				2B8AB7481CE7509000E0BCC1 /* CYDizhuResultData.m in Sources */,
 				7A2FD83C1CE86E330049267C /* BLProfilesController.m in Sources */,
 				7A2FD8381CE86E330049267C /* BLIconView.m in Sources */,
 				CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */,
 				2B97A1661CDC2A6300B4989C /* CYMyTabBar.m in Sources */,
 				CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */,
+				2B8D54331CEA18E400AF43CA /* CYPartyTableView.m in Sources */,
+				2B8D542D1CEA18E400AF43CA /* CYDizhuResultData.m in Sources */,
 				CB2503381CE58F2C007004AB /* FYSearchedCityTableView.m in Sources */,
-				2BAA47701CE4D85E00559F4F /* CYDizhuCell.m in Sources */,
 				2B97A1671CDC2A6300B4989C /* CYTabBarController.m in Sources */,
+				2B8D54281CEA18E400AF43CA /* CYPoViewController.m in Sources */,
 				CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */,
 				7A2FD83F1CE86E330049267C /* BLBannerView.m in Sources */,
 				CB7CF5021CE4BB4100716F5D /* FYHomeWebViewVC.m in Sources */,
@@ -1168,27 +1208,28 @@
 				7A2FD8301CE86E330049267C /* BLMyCollectController.m in Sources */,
 				CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */,
 				CB038E3D1CE6F0F30090839D /* NSString+FYURLEncode.m in Sources */,
+				2B8D54261CEA18E400AF43CA /* FindViewController.m in Sources */,
+				2B8D54271CEA18E400AF43CA /* CYDoDiViewController.m in Sources */,
 				CB038E471CE717780090839D /* FYCityHouseListData.m in Sources */,
 				CB038E411CE6FA100090839D /* FYCarouselPic.m in Sources */,
 				CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */,
-				2B8C4F901CE5FDEF0084F467 /* CYXuanfuView.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
 				CB0A76901CE5B6E700EB6E7D /* FYCityHouseListVC.m in Sources */,
 				CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */,
 				7A2FD8501CE870470049267C /* UIViewController+MMDrawerController.m in Sources */,
 				CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */,
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
-				2BAA47721CE4D85E00559F4F /* CYDizhuTableView.m in Sources */,
-				2B8AB7451CE74F2500E0BCC1 /* CYDizhuData.m in Sources */,
 				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,
-				2BAA47731CE4D85E00559F4F /* CYPartyTableView.m in Sources */,
 				7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */,
+				2B8D542B1CEA18E400AF43CA /* CYDizhuData.m in Sources */,
 				2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */,
 				CB2503351CE57CA2007004AB /* FYSingleCityData.m in Sources */,
+				2B8D542F1CEA18E400AF43CA /* CYJoinedViewController.m in Sources */,
 				2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */,
 				7A2FD8361CE86E330049267C /* BLTempController.m in Sources */,
 				7A2FD84D1CE870470049267C /* MMDrawerBarButtonItem.m in Sources */,
 				CB6BAC8A1CE4584A006457BC /* FYCollectionHeader.m in Sources */,
+				2B8D542E1CEA18E400AF43CA /* CYDizhuTableView.m in Sources */,
 				7A2FD8411CE86E330049267C /* BLMyWalletController.m in Sources */,
 				7A2FD8331CE86E330049267C /* BLFeedbackController.m in Sources */,
 				CBD654951CE35B4B00499922 /* FYHomeViewCityData.m in Sources */,
