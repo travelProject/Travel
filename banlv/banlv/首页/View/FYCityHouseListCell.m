@@ -31,11 +31,31 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
 @property (weak, nonatomic) IBOutlet UILabel *replyRateLabel;
 
-@property(nonatomic,assign) CGFloat houseCellHeight;
+@property (weak, nonatomic) IBOutlet UIImageView *userIdentification;
+@property (weak, nonatomic) IBOutlet UIImageView *zmAuthon;
+
+@property (weak, nonatomic) IBOutlet UIImageView *star1;
+@property (weak, nonatomic) IBOutlet UIImageView *star2;
+@property (weak, nonatomic) IBOutlet UIImageView *star3;
+@property (weak, nonatomic) IBOutlet UIImageView *star4;
+@property (weak, nonatomic) IBOutlet UIImageView *star5;
+
+@property(nonatomic,strong)NSArray<UIImageView *> *starArr;
 
 @end
 
 @implementation FYCityHouseListCell
+
+//星星数组
+- (NSArray *)starArr
+{
+    if (!_starArr) {
+        
+        _starArr = [NSArray arrayWithObjects:self.star1, self.star2, self.star3, self.star4, self.star5, nil];
+    }
+    
+    return _starArr;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -103,43 +123,36 @@ typedef enum : NSUInteger {
     
     self.replyRateLabel.text = [replyStr stringByAppendingString:@"%"];
     
-    CGFloat x = CGRectGetMaxX(self.userName.frame) + 3;
-    
-    CGFloat y = CGRectGetMinY(self.userName.frame);
-    
-    UIImageView *userIdentiSta = nil;
-    
-    UIImageView *zmAuthentication = nil;
-    
     //添加实名认证、芝麻信用
     if ([_cityHouseData.userIdentificationStatus isEqualToString:@"2"]) {
         
-        userIdentiSta = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 15.f, 10.f)];
         
+        self.userIdentification.image = [UIImage imageNamed:@"shenfenzheng"];
         
-        userIdentiSta.image = [UIImage imageNamed:@"shenfenzheng"];
-        
-        [self addSubview:userIdentiSta];
         
         if ([_cityHouseData.zmAuthentication isEqualToString:@"1"]) {
             
-            zmAuthentication = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(userIdentiSta.frame) + 3.f, y, 15.f, 10.f)];
-            
-            zmAuthentication.image = [UIImage imageNamed:@"tupian"];
-            
-            [self addSubview:zmAuthentication];
+            self.zmAuthon.image = [UIImage imageNamed:@"tupian"];
             
         }
         
         
     }else if ([_cityHouseData.zmAuthentication isEqualToString:@"1"])
     {
-        zmAuthentication = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 20.f, 10.f)];
+        self.userIdentification.image = [UIImage imageNamed:@"shenfenzheng"];
         
-        zmAuthentication.image = [UIImage imageNamed:@"tupian"];
+    }
+    
+    //星星评论
+    for (NSInteger i = 0; i < _cityHouseData.reviewScore.integerValue; i++) {
         
-        [self addSubview:zmAuthentication];
+        self.starArr[i].image = [UIImage imageNamed:@"hongxin"];
         
+    }
+    
+    for (NSInteger j = _cityHouseData.reviewScore.integerValue; j < 5; j++) {
+        
+        self.starArr[j].image = [UIImage imageNamed:@"shoucang"];
     }
     
     

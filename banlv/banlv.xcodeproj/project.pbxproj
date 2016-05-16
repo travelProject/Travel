@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		127437573AB123E2BCE39558 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E8EF9BBE4402875978F035 /* libPods.a */; };
-		2B6F17E31CE87E4800057F1F /* CYPartyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F17E11CE87E4800057F1F /* CYPartyCell.m */; };
-		2B6F17E41CE87E4800057F1F /* CYPartyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F17E21CE87E4800057F1F /* CYPartyCell.xib */; };
 		2B8AB7451CE74F2500E0BCC1 /* CYDizhuData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */; };
 		2B8AB7481CE7509000E0BCC1 /* CYDizhuResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB7471CE7509000E0BCC1 /* CYDizhuResultData.m */; };
 		2B8AB74B1CE7532800E0BCC1 /* CYDizhuPictureListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8AB74A1CE7532800E0BCC1 /* CYDizhuPictureListData.m */; };
@@ -103,9 +101,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B6F17E01CE87E4800057F1F /* CYPartyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPartyCell.h; sourceTree = "<group>"; };
-		2B6F17E11CE87E4800057F1F /* CYPartyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPartyCell.m; sourceTree = "<group>"; };
-		2B6F17E21CE87E4800057F1F /* CYPartyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYPartyCell.xib; sourceTree = "<group>"; };
 		2B8AB7431CE74F2500E0BCC1 /* CYDizhuData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuData.h; sourceTree = "<group>"; };
 		2B8AB7441CE74F2500E0BCC1 /* CYDizhuData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuData.m; sourceTree = "<group>"; };
 		2B8AB7461CE7509000E0BCC1 /* CYDizhuResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuResultData.h; sourceTree = "<group>"; };
@@ -501,9 +496,11 @@
 		2BAA47661CE4D85E00559F4F /* 叫地主 */ = {
 			isa = PBXGroup;
 			children = (
-				2BCDFD4F1CE86ABC00B0F169 /* cell */,
 				2BCDFD4D1CE8631B00B0F169 /* cell子页面 */,
 				2B8AB7421CE74E8900E0BCC1 /* model */,
+				2BAA47671CE4D85E00559F4F /* CYDizhuCell.h */,
+				2BAA47681CE4D85E00559F4F /* CYDizhuCell.m */,
+				2BAA47691CE4D85E00559F4F /* CYDizhuCell.xib */,
 				2BAA476A1CE4D85E00559F4F /* CYDizhuTableView.h */,
 				2BAA476B1CE4D85E00559F4F /* CYDizhuTableView.m */,
 			);
@@ -513,8 +510,6 @@
 		2BAA476C1CE4D85E00559F4F /* 聚会 */ = {
 			isa = PBXGroup;
 			children = (
-				2BCDFD501CE86AD800B0F169 /* cell */,
-				2BCDFD4E1CE86A9E00B0F169 /* model */,
 				2BAA476D1CE4D85E00559F4F /* CYPartyTableView.h */,
 				2BAA476E1CE4D85E00559F4F /* CYPartyTableView.m */,
 			);
@@ -528,31 +523,306 @@
 			name = "cell子页面";
 			sourceTree = "<group>";
 		};
-		2BCDFD4E1CE86A9E00B0F169 /* model */ = {
+		7A2FD7EC1CE86DE40049267C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A2FD7ED1CE86DE40049267C /* BLOrdersViewController.h */,
+				7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */,
 			);
-			name = model;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		2BCDFD4F1CE86ABC00B0F169 /* cell */ = {
+		7A2FD7F01CE86E080049267C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BAA47671CE4D85E00559F4F /* CYDizhuCell.h */,
-				2BAA47681CE4D85E00559F4F /* CYDizhuCell.m */,
-				2BAA47691CE4D85E00559F4F /* CYDizhuCell.xib */,
 			);
-			name = cell;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		2BCDFD501CE86AD800B0F169 /* cell */ = {
+		7A2FD7F11CE86E080049267C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2B6F17E01CE87E4800057F1F /* CYPartyCell.h */,
-				2B6F17E11CE87E4800057F1F /* CYPartyCell.m */,
-				2B6F17E21CE87E4800057F1F /* CYPartyCell.xib */,
 			);
-			name = cell;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A2FD7F21CE86E330049267C /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		7A2FD7F31CE86E330049267C /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD7F41CE86E330049267C /* Controlers */,
+				7A2FD7F81CE86E330049267C /* Model */,
+				7A2FD7F91CE86E330049267C /* Views */,
+			);
+			path = Collect;
+			sourceTree = "<group>";
+		};
+		7A2FD7F41CE86E330049267C /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD7F51CE86E330049267C /* BLMyCollectController.h */,
+				7A2FD7F61CE86E330049267C /* BLMyCollectController.m */,
+				7A2FD7F71CE86E330049267C /* BLMyCollectController.xib */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		7A2FD7F81CE86E330049267C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A2FD7F91CE86E330049267C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A2FD7FA1CE86E330049267C /* EditProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD7FB1CE86E330049267C /* Controlers */,
+				7A2FD7FE1CE86E330049267C /* Model */,
+				7A2FD7FF1CE86E330049267C /* Views */,
+			);
+			path = EditProfiles;
+			sourceTree = "<group>";
+		};
+		7A2FD7FB1CE86E330049267C /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD7FC1CE86E330049267C /* BLEditProfilesController.h */,
+				7A2FD7FD1CE86E330049267C /* BLEditProfilesController.m */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		7A2FD7FE1CE86E330049267C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A2FD7FF1CE86E330049267C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A2FD8001CE86E330049267C /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD8011CE86E330049267C /* Controlers */,
+				7A2FD8041CE86E330049267C /* Model */,
+				7A2FD8051CE86E330049267C /* Views */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		7A2FD8011CE86E330049267C /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD8021CE86E330049267C /* BLFeedbackController.h */,
+				7A2FD8031CE86E330049267C /* BLFeedbackController.m */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		7A2FD8041CE86E330049267C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A2FD8051CE86E330049267C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A2FD8061CE86E330049267C /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD8071CE86E330049267C /* Controlers */,
+				7A2FD80E1CE86E330049267C /* Model */,
+				7A2FD80F1CE86E330049267C /* Views */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		7A2FD8071CE86E330049267C /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD8081CE86E330049267C /* BLMineViewController.h */,
+				7A2FD8091CE86E330049267C /* BLMineViewController.m */,
+				7A2FD80A1CE86E330049267C /* BLSetController.h */,
+				7A2FD80B1CE86E330049267C /* BLSetController.m */,
+				7A2FD80C1CE86E330049267C /* BLTempController.h */,
+				7A2FD80D1CE86E330049267C /* BLTempController.m */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		7A2FD80E1CE86E330049267C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A2FD80F1CE86E330049267C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD8101CE86E330049267C /* BLAboutUsView.h */,
+				7A2FD8111CE86E330049267C /* BLAboutUsView.m */,
+				7A2FD8121CE86E330049267C /* BLIconView.h */,
+				7A2FD8131CE86E330049267C /* BLIconView.m */,
+				7A2FD8141CE86E330049267C /* BLIconView.xib */,
+				7A2FD8151CE86E330049267C /* BLLogoView.h */,
+				7A2FD8161CE86E330049267C /* BLLogoView.m */,
+				7A2FD8171CE86E330049267C /* BLLogoView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A2FD8181CE86E330049267C /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD8191CE86E330049267C /* Controlers */,
+				7A2FD81C1CE86E330049267C /* Model */,
+				7A2FD81D1CE86E330049267C /* Views */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
+		7A2FD8191CE86E330049267C /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD81A1CE86E330049267C /* BLProfilesController.h */,
+				7A2FD81B1CE86E330049267C /* BLProfilesController.m */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		7A2FD81C1CE86E330049267C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A2FD81D1CE86E330049267C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD81E1CE86E330049267C /* BLBannerCell.h */,
+				7A2FD81F1CE86E330049267C /* BLBannerCell.m */,
+				7A2FD8201CE86E330049267C /* BLBannerCell.xib */,
+				7A2FD8211CE86E330049267C /* BLBannerView.h */,
+				7A2FD8221CE86E330049267C /* BLBannerView.m */,
+				7A2FD8231CE86E330049267C /* BLBannerView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A2FD8241CE86E330049267C /* RoomSource */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD8251CE86E330049267C /* Controlers */,
+				7A2FD8261CE86E330049267C /* Model */,
+				7A2FD8271CE86E330049267C /* Views */,
+			);
+			path = RoomSource;
+			sourceTree = "<group>";
+		};
+		7A2FD8251CE86E330049267C /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		7A2FD8261CE86E330049267C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A2FD8271CE86E330049267C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A2FD8281CE86E330049267C /* Share */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		7A2FD8291CE86E330049267C /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD82A1CE86E330049267C /* Controlers */,
+				7A2FD82E1CE86E330049267C /* Model */,
+				7A2FD82F1CE86E330049267C /* Views */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		7A2FD82A1CE86E330049267C /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD82B1CE86E330049267C /* BLMyWalletController.h */,
+				7A2FD82C1CE86E330049267C /* BLMyWalletController.m */,
+				7A2FD82D1CE86E330049267C /* BLMyWalletController.xib */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		7A2FD82E1CE86E330049267C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A2FD82F1CE86E330049267C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A2FD8431CE870470049267C /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				7A2FD8441CE870470049267C /* MMDrawerBarButtonItem.h */,
+				7A2FD8451CE870470049267C /* MMDrawerBarButtonItem.m */,
+				7A2FD8461CE870470049267C /* MMDrawerController+Subclass.h */,
+				7A2FD8471CE870470049267C /* MMDrawerController.h */,
+				7A2FD8481CE870470049267C /* MMDrawerController.m */,
+				7A2FD8491CE870470049267C /* MMDrawerVisualState.h */,
+				7A2FD84A1CE870470049267C /* MMDrawerVisualState.m */,
+				7A2FD84B1CE870470049267C /* UIViewController+MMDrawerController.h */,
+				7A2FD84C1CE870470049267C /* UIViewController+MMDrawerController.m */,
+			);
+			path = MMDrawerController;
 			sourceTree = "<group>";
 		};
 		938E96DF1B047757F4B0CBE1 /* Frameworks */ = {
@@ -792,7 +1062,6 @@
 				7A2FD83E1CE86E330049267C /* BLBannerCell.xib in Resources */,
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
 				2BAA47711CE4D85E00559F4F /* CYDizhuCell.xib in Resources */,
-				2B6F17E41CE87E4800057F1F /* CYPartyCell.xib in Resources */,
 				CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */,
 				7A2FD83B1CE86E330049267C /* BLLogoView.xib in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
@@ -895,7 +1164,6 @@
 				7A2FD83F1CE86E330049267C /* BLBannerView.m in Sources */,
 				CB7CF5021CE4BB4100716F5D /* FYHomeWebViewVC.m in Sources */,
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
-				2B6F17E31CE87E4800057F1F /* CYPartyCell.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
 				7A2FD8301CE86E330049267C /* BLMyCollectController.m in Sources */,
 				CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */,
