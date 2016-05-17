@@ -14,6 +14,8 @@
 //城市房间cell
 #import "FYCityHouseListCell.h"
 
+#import "FYCityHouseMapVC.h"
+
 @interface FYCityHouseListVC () <UITableViewDelegate ,UITableViewDataSource>
 
 @property(nonatomic,strong) UITableView *tableView;
@@ -58,13 +60,8 @@
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
     
-    //测试接口
-//    NSString *url = @"http://www.shafalvxing.com/space/getUserCollectedSpaceList.do?";
-//    
-//    NSString *params1 = [NSString stringWithFormat:@"bizParams={\n\"userToken\":NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4,\n\"page\":1}"];
-//    
-//    NSLog(@"接口是:%@",[url encodeURLWithParams:params1]);
-    
+//    NSLog(@"列表模式接口:%@",[urlStr encodeURLWithParams:params]);
+
     [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
         
         NSArray *cityHouseArr = [[responseObject objectForKey:@"data"] objectForKey:@"result"];
@@ -95,7 +92,11 @@
     //设为不选中（不变灰色）
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSLog(@"点击的房间ID:%@",self.cityHouseArr[indexPath.row].spaceId);
+    FYCityHouseMapVC *mapVC = [[FYCityHouseMapVC alloc] init];
+    
+    [self.navigationController pushViewController:mapVC animated:YES];
+    
+//    NSLog(@"点击的房间ID:%@",self.cityHouseArr[indexPath.row].spaceId);
 }
 
 #pragma mark -- UITableViewDataSource
