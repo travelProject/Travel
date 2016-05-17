@@ -21,19 +21,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     
-//    FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
 //    "cityId" : 73,
 //    "limitGuestsNum" : 0,
-//    "checkOutDate" : 1463414400000,
-//    "page" : 1,
-//    "userToken" : "NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3",
-//    "sex" : 0,
+//    "checkOutDate" : 0,
 //    "districtId" : 0,
-//    "checkInDate" : 1462550400000
+//    "sex" : 0,
+//    "checkInDate" : 0,
+//    "userToken" : “NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3"
     
-    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":73,\n\"limitGuestsNum\":0,\n\"checkOutDate\":1463414400000,\n\"page\":1,\n\"userToken\":NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3,\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":1462550400000}"];
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":73,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"districtId\":0,\n\"sex\":0,\n\"sex\":0,\n\"checkInDate\":0,\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}"];
     
-    NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
+    NSString *urlStr = @"http://www.shafalvxing.com/space/getSpaceByLatLng.do?";
     
     NSLog(@"接口是:%@",[urlStr encodeURLWithParams:params]);
     
