@@ -21,21 +21,29 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     
-    FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
+//    FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
+//    "cityId" : 73,
+//    "limitGuestsNum" : 0,
+//    "checkOutDate" : 1463414400000,
+//    "page" : 1,
+//    "userToken" : "NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3",
+//    "sex" : 0,
+//    "districtId" : 0,
+//    "checkInDate" : 1462550400000
     
-    NSString *params = [NSString stringWithFormat:@"bizParams={\"cityId\":73,\"limitGuestsNum\":0,\"checkOutDate\":0,\"districtId\":0,\"sex\":0,\"checkInDate\":0,\"userToken\":NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3}"];
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":73,\n\"limitGuestsNum\":0,\n\"checkOutDate\":1463414400000,\n\"page\":1,\n\"userToken\":NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3,\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":1462550400000}"];
     
-    NSString *urlStr = @"http://www.shafalvxing.com/space/getSpaceByLatLng.do?";
+    NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
     
     NSLog(@"接口是:%@",[urlStr encodeURLWithParams:params]);
     
-    [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
-        
-        
-        
-    } failur:^(NSError *error) {
-        
-    }];
+//    [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
+//        
+//        
+//        
+//    } failur:^(NSError *error) {
+//        
+//    }];
     
     
 }
