@@ -10,6 +10,20 @@
 
 @implementation FYCityHouseMapCell
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake((self.width - 100) / 2, (self.height - 15) / 2, 100, 15)];
+        
+        self.label.textAlignment = NSTextAlignmentCenter;
+        
+        [self addSubview:self.label];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

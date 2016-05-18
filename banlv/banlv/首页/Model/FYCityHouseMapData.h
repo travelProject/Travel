@@ -10,4 +10,11 @@
 
 @interface FYCityHouseMapData : NSObject
 
+//大头针数据模型
+@property(nonatomic,copy) NSString *price;//价格
+
+@property(nonatomic,copy) NSString *lat;//纬度
+
+@property(nonatomic,copy) NSString *lng;//经度
+
 @end
