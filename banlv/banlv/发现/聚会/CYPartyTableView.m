@@ -105,7 +105,7 @@
         
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@",[urlStr encodeURLWithParams:params]);
+//        NSLog(@"%@",[urlStr encodeURLWithParams:params]);
         
         NSArray *jsonArr = [[[responseObject objectForKey:@"data"]objectForKey:@"parties" ] objectForKey:@"result"];
         

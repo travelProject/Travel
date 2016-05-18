@@ -40,6 +40,7 @@
 		2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18C1CDC2BF900B4989C /* HomeViewController.m */; };
 		2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18F1CDC2C0E00B4989C /* MainViewController.m */; };
 		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
+		2BB006181CEB39A00076485D /* CYMySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB006171CEB39A00076485D /* CYMySegment.m */; };
 		7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */; };
 		7A2FD8301CE86E330049267C /* BLMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7F61CE86E330049267C /* BLMyCollectController.m */; };
 		7A2FD8311CE86E330049267C /* BLMyCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2FD7F71CE86E330049267C /* BLMyCollectController.xib */; };
@@ -171,6 +172,8 @@
 		2B97A18F1CDC2C0E00B4989C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2B97A1911CDC2C4B00B4989C /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		2B97A1921CDC2C4B00B4989C /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		2BB006161CEB39A00076485D /* CYMySegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMySegment.h; sourceTree = "<group>"; };
+		2BB006171CEB39A00076485D /* CYMySegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMySegment.m; sourceTree = "<group>"; };
 		32E8EF9BBE4402875978F035 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2FD7ED1CE86DE40049267C /* BLOrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLOrdersViewController.h; sourceTree = "<group>"; };
 		7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLOrdersViewController.m; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 		2B8D54191CEA18E400AF43CA /* 我参加的 */ = {
 			isa = PBXGroup;
 			children = (
+				2BB006161CEB39A00076485D /* CYMySegment.h */,
+				2BB006171CEB39A00076485D /* CYMySegment.m */,
 				2B8D541A1CEA18E400AF43CA /* CYJoinedViewController.h */,
 				2B8D541B1CEA18E400AF43CA /* CYJoinedViewController.m */,
 			);
@@ -1203,6 +1208,7 @@
 				CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */,
 				7A2FD83F1CE86E330049267C /* BLBannerView.m in Sources */,
 				CB7CF5021CE4BB4100716F5D /* FYHomeWebViewVC.m in Sources */,
+				2BB006181CEB39A00076485D /* CYMySegment.m in Sources */,
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
 				7A2FD8301CE86E330049267C /* BLMyCollectController.m in Sources */,
