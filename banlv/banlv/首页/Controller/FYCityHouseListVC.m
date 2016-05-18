@@ -14,6 +14,8 @@
 //城市房间cell
 #import "FYCityHouseListCell.h"
 
+#import "FYCityHouseMapVC.h"
+
 @interface FYCityHouseListVC () <UITableViewDelegate ,UITableViewDataSource>
 
 @property(nonatomic,strong) UITableView *tableView;
@@ -28,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"dizhi"] style:UIBarButtonItemStyleDone target:self action:@selector(swithToMapStyle)];
     
     [self initTableView];
     
@@ -57,14 +59,7 @@
     NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%@,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"page\":1,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":0}",self.cityId];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
-    
-    //测试接口
-//    NSString *url = @"http://www.shafalvxing.com/space/getUserCollectedSpaceList.do?";
-//    
-//    NSString *params1 = [NSString stringWithFormat:@"bizParams={\n\"userToken\":NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4,\n\"page\":1}"];
-//    
-//    NSLog(@"接口是:%@",[url encodeURLWithParams:params1]);
-    
+
     [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
         
         NSArray *cityHouseArr = [[responseObject objectForKey:@"data"] objectForKey:@"result"];
@@ -81,6 +76,14 @@
     }];
     
     
+}
+
+//切换到地图模式
+- (void)swithToMapStyle
+{
+    FYCityHouseMapVC *mapVC = [[FYCityHouseMapVC alloc] init];
+    
+    [self.navigationController pushViewController:mapVC animated:YES];
 }
 
 #pragma mark -- UITableViewDelegate

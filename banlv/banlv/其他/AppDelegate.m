@@ -11,6 +11,10 @@
 
 @interface AppDelegate ()
 
+{
+    BMKMapManager * _mapManager;
+}
+
 @end
 
 @implementation AppDelegate
@@ -18,6 +22,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 要使用百度地图，请先启动BaiduMapManager 
+    _mapManager = [[BMKMapManager alloc]init];
+    
+    BOOL ret = [_mapManager start:@"DsmdGAOS6xQgjbuEXynqIT70jdnlGYvV"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
