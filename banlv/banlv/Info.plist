@@ -46,5 +46,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>申请永久获取GPS权限</string>
+	<key>CFBundleDisplayName</key>
+	<string>伴旅</string>
 </dict>
 </plist>

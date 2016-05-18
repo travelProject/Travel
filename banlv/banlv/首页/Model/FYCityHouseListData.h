@@ -34,6 +34,12 @@
 
 @property(nonatomic,copy) NSString *replyRate;//回复率
 
+@property(nonatomic,copy) NSString *lat;//纬度
+
+@property(nonatomic,copy) NSString *lng;//经度
+
+@property(nonatomic,copy) NSString *cityName;//城市名称
+
 
 
 

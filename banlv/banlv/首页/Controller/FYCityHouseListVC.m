@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"dizhi"] style:UIBarButtonItemStyleDone target:self action:@selector(swithToMapStyle)];
     
     [self initTableView];
     
@@ -59,8 +59,6 @@
     NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%@,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"page\":1,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":0}",self.cityId];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
-    
-//    NSLog(@"列表模式接口:%@",[urlStr encodeURLWithParams:params]);
 
     [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
         
@@ -80,6 +78,14 @@
     
 }
 
+//切换到地图模式
+- (void)swithToMapStyle
+{
+    FYCityHouseMapVC *mapVC = [[FYCityHouseMapVC alloc] init];
+    
+    [self.navigationController pushViewController:mapVC animated:YES];
+}
+
 #pragma mark -- UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,11 +98,7 @@
     //设为不选中（不变灰色）
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    FYCityHouseMapVC *mapVC = [[FYCityHouseMapVC alloc] init];
-    
-    [self.navigationController pushViewController:mapVC animated:YES];
-    
-//    NSLog(@"点击的房间ID:%@",self.cityHouseArr[indexPath.row].spaceId);
+    NSLog(@"点击的房间ID:%@",self.cityHouseArr[indexPath.row].spaceId);
 }
 
 #pragma mark -- UITableViewDataSource

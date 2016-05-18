@@ -17,6 +17,10 @@
 #import "CYDizhuTableView.h"
 #import "CYPartyTableView.h"
 
+#import "CYJoinedViewController.h"
+#import "CYDoDiViewController.h"
+#import "CYPoViewController.h"
+
 @interface FindViewController ()<UIScrollViewDelegate>
 
 @property(nonatomic , assign)BOOL dizhuTagNum;
@@ -53,8 +57,8 @@
         
         [_duzhiXuanfu.rightButton setTitle:@"我要做地主" forState:UIControlStateNormal];
         
-        [_duzhiXuanfu.leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_duzhiXuanfu.rightButton addTarget:self action:@selector(rightButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
+        [_duzhiXuanfu.leftButton addTarget:self action:@selector(leftdizhuButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_duzhiXuanfu.rightButton addTarget:self action:@selector(rightdizhuButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
         
         
         
@@ -65,21 +69,30 @@
 }
 
 - (CYXuanfuView *)partyXuanfu{
-    if (!_duzhiXuanfu) {
+    if (!_partyXuanfu) {
         CYXuanfuView *partyXuanfu = [[CYXuanfuView alloc] init];
         
         partyXuanfu = kLoadViewWithNIB(@"CYXuanfuView");
         
-        
+//        //设置button完全为圆形：
+//        Button.layer.cornerRadius = 34.0;（该值到一定的程度，就为圆形了。）
+//        
+//        Button.layer.borderWidth = 1.0;
+//        
+//        Button.layer.borderColor =[UIColor clearColor].CGColor;
+//        
+//        Button.clipsToBounds = TRUE;//去除边界
         
         partyXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2+kScreenFrameW, kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
         
-        [partyXuanfu.leftButton setTitle:@"     我预约的" forState:UIControlStateNormal];
+        partyXuanfu.layer.cornerRadius = self.partyBtn.size.height/2;
         
-        [partyXuanfu.rightButton setTitle:@"我要做地主" forState:UIControlStateNormal];
+        [partyXuanfu.leftButton setTitle:@"     我参加的" forState:UIControlStateNormal];
         
-        [partyXuanfu.leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [partyXuanfu.rightButton addTarget:self action:@selector(rightButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
+        [partyXuanfu.rightButton setTitle:@"发布活动" forState:UIControlStateNormal];
+        
+        [partyXuanfu.leftButton addTarget:self action:@selector(leftpartyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [partyXuanfu.rightButton addTarget:self action:@selector(rightpartyButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
         
         
         [self.mainScrollView addSubview:partyXuanfu];
@@ -116,6 +129,8 @@
     [self setDizhuBtn];
     
     [self setPartyBtn];
+    self.dizhuBtn.hidden = NO;
+    self.partyBtn.hidden = NO;
 
         
     
@@ -138,6 +153,8 @@
     
     partyBtn.layer.masksToBounds = YES;
     partyBtn.layer.cornerRadius = r/2;
+    
+    partyBtn.clipsToBounds = TRUE;
     
     [self.mainScrollView addSubview:partyBtn];
     [self.mainScrollView bringSubviewToFront:partyBtn];
@@ -172,12 +189,34 @@
     
 }
 
-- (void)rightButtonAction:(id)sender{
-    NSLog(@"rrrr");
+- (void)leftpartyButtonAction:(id)sender{
+    
+    CYJoinedViewController *new = [[CYJoinedViewController alloc] init];
+    
+    [self.navigationController pushViewController:new animated:YES];
+    
 }
-- (void)leftButtonAction:(id)sender{
-    NSLog(@"lll");
+
+- (void)rightpartyButtonAction:(id)sender{
+    
+    CYPoViewController *new = [[CYPoViewController alloc] init];
+    [self.navigationController pushViewController:new animated:YES];
 }
+
+- (void)leftdizhuButtonAction:(id)sender{
+    
+}
+
+- (void)rightdizhuButtonAction:(id)sender{
+    CYDoDiViewController *new = [[CYDoDiViewController alloc ] init];
+    [self.navigationController pushViewController:new animated:YES];
+    
+    
+    
+}
+
+
+
 - (void)partyBtnAction:(id)sender{
     
     
