@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+//城市房间数据模型
+#import "FYCityHouseListData.h"
+
 @interface FYCityHouseMapCell : UICollectionViewCell
 
-@property(nonatomic,strong) UILabel *label;
+@property(nonatomic,strong) FYCityHouseListData *cityHouseData;
+
+
 
 @end

@@ -14,8 +14,9 @@
 //大头针的数据模型
 #import "FYCityHouseMapData.h"
 
-
+//cell模型
 #import "FYCityHouseMapCell.h"
+
 
 @interface FYCityHouseMapVC () <BMKMapViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -86,15 +87,15 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, self.view.height - 130, self.view.width, 40) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, self.view.height - 160, self.view.width, 100) collectionViewLayout:flowLayout];
     
-    self.collectionView.backgroundColor = [UIColor redColor];
+    self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.pagingEnabled = YES;
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
-    [self.collectionView registerClass:[FYCityHouseMapCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"FYCityHouseMapCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     
     [self.view addSubview:self.collectionView];
     
@@ -121,9 +122,7 @@
 {
     FYCityHouseMapCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.label.text = [NSString stringWithFormat:@"¥%.1f",self.cityHouseArr[indexPath.row].price.floatValue];
-    
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.cityHouseData = self.cityHouseArr[indexPath.row];
     
     return cell;
 }
@@ -132,7 +131,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.view.width, self.collectionView.height);
+    return CGSizeMake(self.view.width, 100);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
@@ -230,7 +229,7 @@
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view
 {
     
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:view.annotation.subtitle.integerValue inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:view.annotation.subtitle.integerValue inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     
 }
 
