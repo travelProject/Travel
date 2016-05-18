@@ -40,6 +40,9 @@
 		2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18C1CDC2BF900B4989C /* HomeViewController.m */; };
 		2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18F1CDC2C0E00B4989C /* MainViewController.m */; };
 		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
+		2B9946A61CEC943A00D21942 /* CYTableViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9946A51CEC943A00D21942 /* CYTableViewData.m */; };
+		2B9946A91CEC98F500D21942 /* CYPoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */; };
+		2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */; };
 		2BB006181CEB39A00076485D /* CYMySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB006171CEB39A00076485D /* CYMySegment.m */; };
 		7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */; };
 		7A2FD8301CE86E330049267C /* BLMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7F61CE86E330049267C /* BLMyCollectController.m */; };
@@ -189,6 +192,11 @@
 		2B97A18F1CDC2C0E00B4989C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2B97A1911CDC2C4B00B4989C /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		2B97A1921CDC2C4B00B4989C /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		2B9946A41CEC943A00D21942 /* CYTableViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTableViewData.h; sourceTree = "<group>"; };
+		2B9946A51CEC943A00D21942 /* CYTableViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYTableViewData.m; sourceTree = "<group>"; };
+		2B9946A71CEC98F500D21942 /* CYPoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPoHeaderView.h; sourceTree = "<group>"; };
+		2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPoHeaderView.m; sourceTree = "<group>"; };
+		2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYPoHeaderView.xib; sourceTree = "<group>"; };
 		2BB006161CEB39A00076485D /* CYMySegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMySegment.h; sourceTree = "<group>"; };
 		2BB006171CEB39A00076485D /* CYMySegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMySegment.m; sourceTree = "<group>"; };
 		32E8EF9BBE4402875978F035 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -368,8 +376,13 @@
 		2B8D540A1CEA18E400AF43CA /* 发布 */ = {
 			isa = PBXGroup;
 			children = (
+				2B9946A71CEC98F500D21942 /* CYPoHeaderView.h */,
+				2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */,
+				2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */,
 				2B8D540B1CEA18E400AF43CA /* CYPoViewController.h */,
 				2B8D540C1CEA18E400AF43CA /* CYPoViewController.m */,
+				2B9946A41CEC943A00D21942 /* CYTableViewData.h */,
+				2B9946A51CEC943A00D21942 /* CYTableViewData.m */,
 			);
 			path = "发布";
 			sourceTree = "<group>";
@@ -1167,6 +1180,7 @@
 				CB6BAC8F1CE45912006457BC /* FYHeaderViewCell.xib in Resources */,
 				CB4EF9651CE388DD008046EF /* FYHomeViewCell.xib in Resources */,
 				7A2FD8421CE86E330049267C /* BLMyWalletController.xib in Resources */,
+				2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */,
 				7A2FD8401CE86E330049267C /* BLBannerView.xib in Resources */,
 				7A2FD83E1CE86E330049267C /* BLBannerCell.xib in Resources */,
 				CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */,
@@ -1282,6 +1296,7 @@
 				CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */,
 				7A2FD83F1CE86E330049267C /* BLBannerView.m in Sources */,
 				CB7CF5021CE4BB4100716F5D /* FYHomeWebViewVC.m in Sources */,
+				2B9946A91CEC98F500D21942 /* CYPoHeaderView.m in Sources */,
 				2BB006181CEB39A00076485D /* CYMySegment.m in Sources */,
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
@@ -1307,6 +1322,7 @@
 				2B8D542F1CEA18E400AF43CA /* CYJoinedViewController.m in Sources */,
 				2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */,
 				7A2FD8361CE86E330049267C /* BLTempController.m in Sources */,
+				2B9946A61CEC943A00D21942 /* CYTableViewData.m in Sources */,
 				7A2FD84D1CE870470049267C /* MMDrawerBarButtonItem.m in Sources */,
 				CB6BAC8A1CE4584A006457BC /* FYCollectionHeader.m in Sources */,
 				2B8D542E1CEA18E400AF43CA /* CYDizhuTableView.m in Sources */,
