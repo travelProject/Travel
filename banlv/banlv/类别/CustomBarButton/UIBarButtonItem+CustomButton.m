@@ -37,7 +37,10 @@
     
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
-    [btn setTitle:itemTitle forState:UIControlStateNormal];
+    if (itemTitle) {
+        
+        [btn setTitle:itemTitle forState:UIControlStateNormal];
+    }
     
     btn.frame = CGRectMake(0, 0, 60, 44);
     

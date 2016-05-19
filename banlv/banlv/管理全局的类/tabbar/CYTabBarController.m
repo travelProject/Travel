@@ -65,7 +65,7 @@
     
  
     
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    BLNavigationController *nav = [[BLNavigationController alloc]initWithRootViewController:vc];
     
     [self addChildViewController:nav];
     
