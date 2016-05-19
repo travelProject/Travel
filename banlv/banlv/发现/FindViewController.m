@@ -200,6 +200,8 @@
 - (void)rightpartyButtonAction:(id)sender{
     
     CYPoViewController *new = [[CYPoViewController alloc] init];
+    
+    new.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:new animated:YES];
 }
 
