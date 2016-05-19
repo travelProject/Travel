@@ -110,12 +110,12 @@ typedef enum : NSUInteger {
     
 }
 
-//- (void)setFrame:(CGRect)frame
-//{
-//    
-//    CGRect newFrame = CGRectMake(20 + frame.origin.x, 0, 414 - 40, 100);
-//    
-//    [super setFrame:newFrame];
-//}
+- (void)setFrame:(CGRect)frame
+{
+    
+    CGRect newFrame = CGRectMake(frame.origin.x, 0, 414 - 30, 100);
+    
+    [super setFrame:newFrame];
+}
 
 @end
