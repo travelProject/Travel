@@ -14,11 +14,20 @@
 //城市房间cell
 #import "FYCityHouseListCell.h"
 
+//更多筛选条件
+#import "FYMoreChoose.h"
+
+//筛选条件控制器
+#import "FYMoreChooseVC.h"
+
+//地图模式控制器
 #import "FYCityHouseMapVC.h"
 
-@interface FYCityHouseListVC () <UITableViewDelegate ,UITableViewDataSource>
+@interface FYCityHouseListVC () <UITableViewDelegate ,UITableViewDataSource ,UIScrollViewDelegate>
 
 @property(nonatomic,strong) UITableView *tableView;
+
+@property(nonatomic,strong) FYMoreChoose *moreChoose;
 
 //存放城市房间的数组
 @property(nonatomic,strong) NSArray<FYCityHouseListData *> *cityHouseArr;
@@ -40,14 +49,35 @@
 
 - (void)initTableView
 {
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.moreChoose = [[FYMoreChoose alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 40)];
+    
+    __weak typeof(self) mySelf = self;
+    self.moreChoose.moreChooseBlock = ^(){
+        
+        NSLog(@"点击了筛选日期");
+        
+        
+        FYMoreChooseVC *moreChooseVC = [[FYMoreChooseVC alloc] initWithNibName:@"FYMoreChooseVC" bundle:nil];
+        
+        moreChooseVC.view.frame = mySelf.view.bounds;
+        
+        [mySelf.navigationController pushViewController:moreChooseVC animated:YES];
+    
+    };
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NavH, self.view.width, self.view.height - NavH) style:UITableViewStylePlain];
     
     self.tableView.delegate = self;
     
     self.tableView.dataSource = self;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FYCityHouseListCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"houseCell"];
+    
+    [self.tableView addSubview:self.moreChoose];
     
     [self.view addSubview:self.tableView];
 }
@@ -117,11 +147,32 @@
     return houseCell;
 }
 
+#pragma mark -- UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.tableView.contentOffset.y > 0) {
+        
+        [self.moreChoose removeFromSuperview];
+        
+        self.moreChoose.y = NavH;
+        
+        [self.view addSubview:self.moreChoose];
+        
+    }else
+    {
+        self.moreChoose.y = 0.f;
+        
+        [self.tableView addSubview:self.moreChoose];
+    }
+}
+
 //cityId的setter方法
 - (void)setCityId:(NSString *)cityId
 {
     _cityId = cityId;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
