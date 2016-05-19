@@ -15,8 +15,6 @@
 		2B8D54281CEA18E400AF43CA /* CYPoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D540C1CEA18E400AF43CA /* CYPoViewController.m */; };
 		2B8D54291CEA18E400AF43CA /* CYDizhuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D540F1CEA18E400AF43CA /* CYDizhuCell.m */; };
 		2B8D542A1CEA18E400AF43CA /* CYDizhuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D54101CEA18E400AF43CA /* CYDizhuCell.xib */; };
-		2B8D542B1CEA18E400AF43CA /* CYDizhuData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54121CEA18E400AF43CA /* CYDizhuData.m */; };
-		2B8D542C1CEA18E400AF43CA /* CYDizhuPictureListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54141CEA18E400AF43CA /* CYDizhuPictureListData.m */; };
 		2B8D542D1CEA18E400AF43CA /* CYDizhuResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54161CEA18E400AF43CA /* CYDizhuResultData.m */; };
 		2B8D542E1CEA18E400AF43CA /* CYDizhuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54181CEA18E400AF43CA /* CYDizhuTableView.m */; };
 		2B8D542F1CEA18E400AF43CA /* CYJoinedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D541B1CEA18E400AF43CA /* CYJoinedViewController.m */; };
@@ -43,6 +41,8 @@
 		2B9946A61CEC943A00D21942 /* CYTableViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9946A51CEC943A00D21942 /* CYTableViewData.m */; };
 		2B9946A91CEC98F500D21942 /* CYPoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */; };
 		2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */; };
+		2B9B48571CEDE9F900FB2169 /* CYDoDizhuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B48561CEDE9F900FB2169 /* CYDoDizhuView.m */; };
+		2B9B48591CEDEA1400FB2169 /* CYDoDizhuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9B48581CEDEA1400FB2169 /* CYDoDizhuView.xib */; };
 		2BB006181CEB39A00076485D /* CYMySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB006171CEB39A00076485D /* CYMySegment.m */; };
 		7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */; };
 		7A2FD8301CE86E330049267C /* BLMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7F61CE86E330049267C /* BLMyCollectController.m */; };
@@ -140,10 +140,6 @@
 		2B8D540E1CEA18E400AF43CA /* CYDizhuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuCell.h; sourceTree = "<group>"; };
 		2B8D540F1CEA18E400AF43CA /* CYDizhuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuCell.m; sourceTree = "<group>"; };
 		2B8D54101CEA18E400AF43CA /* CYDizhuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYDizhuCell.xib; sourceTree = "<group>"; };
-		2B8D54111CEA18E400AF43CA /* CYDizhuData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuData.h; sourceTree = "<group>"; };
-		2B8D54121CEA18E400AF43CA /* CYDizhuData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuData.m; sourceTree = "<group>"; };
-		2B8D54131CEA18E400AF43CA /* CYDizhuPictureListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuPictureListData.h; sourceTree = "<group>"; };
-		2B8D54141CEA18E400AF43CA /* CYDizhuPictureListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuPictureListData.m; sourceTree = "<group>"; };
 		2B8D54151CEA18E400AF43CA /* CYDizhuResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuResultData.h; sourceTree = "<group>"; };
 		2B8D54161CEA18E400AF43CA /* CYDizhuResultData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDizhuResultData.m; sourceTree = "<group>"; };
 		2B8D54171CEA18E400AF43CA /* CYDizhuTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDizhuTableView.h; sourceTree = "<group>"; };
@@ -197,6 +193,9 @@
 		2B9946A71CEC98F500D21942 /* CYPoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPoHeaderView.h; sourceTree = "<group>"; };
 		2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPoHeaderView.m; sourceTree = "<group>"; };
 		2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYPoHeaderView.xib; sourceTree = "<group>"; };
+		2B9B48551CEDE9F900FB2169 /* CYDoDizhuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDoDizhuView.h; sourceTree = "<group>"; };
+		2B9B48561CEDE9F900FB2169 /* CYDoDizhuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDoDizhuView.m; sourceTree = "<group>"; };
+		2B9B48581CEDEA1400FB2169 /* CYDoDizhuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYDoDizhuView.xib; sourceTree = "<group>"; };
 		2BB006161CEB39A00076485D /* CYMySegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMySegment.h; sourceTree = "<group>"; };
 		2BB006171CEB39A00076485D /* CYMySegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMySegment.m; sourceTree = "<group>"; };
 		32E8EF9BBE4402875978F035 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -369,6 +368,9 @@
 			children = (
 				2B8D54081CEA18E400AF43CA /* CYDoDiViewController.h */,
 				2B8D54091CEA18E400AF43CA /* CYDoDiViewController.m */,
+				2B9B48551CEDE9F900FB2169 /* CYDoDizhuView.h */,
+				2B9B48561CEDE9F900FB2169 /* CYDoDizhuView.m */,
+				2B9B48581CEDEA1400FB2169 /* CYDoDizhuView.xib */,
 			);
 			path = "做地主";
 			sourceTree = "<group>";
@@ -393,10 +395,6 @@
 				2B8D540E1CEA18E400AF43CA /* CYDizhuCell.h */,
 				2B8D540F1CEA18E400AF43CA /* CYDizhuCell.m */,
 				2B8D54101CEA18E400AF43CA /* CYDizhuCell.xib */,
-				2B8D54111CEA18E400AF43CA /* CYDizhuData.h */,
-				2B8D54121CEA18E400AF43CA /* CYDizhuData.m */,
-				2B8D54131CEA18E400AF43CA /* CYDizhuPictureListData.h */,
-				2B8D54141CEA18E400AF43CA /* CYDizhuPictureListData.m */,
 				2B8D54151CEA18E400AF43CA /* CYDizhuResultData.h */,
 				2B8D54161CEA18E400AF43CA /* CYDizhuResultData.m */,
 				2B8D54171CEA18E400AF43CA /* CYDizhuTableView.h */,
@@ -1185,6 +1183,7 @@
 				7A2FD83E1CE86E330049267C /* BLBannerCell.xib in Resources */,
 				CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */,
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
+				2B9B48591CEDEA1400FB2169 /* CYDoDizhuView.xib in Resources */,
 				2B8D54311CEA18E400AF43CA /* CYPartyCell.xib in Resources */,
 				CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */,
 				7A2FD83B1CE86E330049267C /* BLLogoView.xib in Resources */,
@@ -1278,7 +1277,6 @@
 				2B8D54291CEA18E400AF43CA /* CYDizhuCell.m in Sources */,
 				7A2FD8371CE86E330049267C /* BLAboutUsView.m in Sources */,
 				2B97A17D1CDC2B0400B4989C /* UINavigationController+Jump.m in Sources */,
-				2B8D542C1CEA18E400AF43CA /* CYDizhuPictureListData.m in Sources */,
 				CB038E441CE6FD910090839D /* FYCarouselCell.m in Sources */,
 				2B8D54241CEA18E400AF43CA /* CYXuanfuView.m in Sources */,
 				7A2FD8321CE86E330049267C /* BLEditProfilesController.m in Sources */,
@@ -1308,6 +1306,7 @@
 				CB038E471CE717780090839D /* FYCityHouseListData.m in Sources */,
 				CB038E411CE6FA100090839D /* FYCarouselPic.m in Sources */,
 				CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */,
+				2B9B48571CEDE9F900FB2169 /* CYDoDizhuView.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
 				CB0A76901CE5B6E700EB6E7D /* FYCityHouseListVC.m in Sources */,
 				CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */,
@@ -1316,7 +1315,6 @@
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
 				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,
 				7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */,
-				2B8D542B1CEA18E400AF43CA /* CYDizhuData.m in Sources */,
 				2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */,
 				CB2503351CE57CA2007004AB /* FYSingleCityData.m in Sources */,
 				2B8D542F1CEA18E400AF43CA /* CYJoinedViewController.m in Sources */,

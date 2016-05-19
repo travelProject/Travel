@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^xuanfu)(UIButton *xuanfuBtn);
+
 @interface CYDizhuTableView : UITableView
+@property(nonatomic, copy)xuanfu xuanfuBtn;
 
 @end
