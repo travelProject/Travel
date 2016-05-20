@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface CYDizhuResultData : NSObject
 
 @property(nonatomic,copy)NSString *age;

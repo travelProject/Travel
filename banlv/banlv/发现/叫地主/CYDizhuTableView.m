@@ -9,6 +9,7 @@
 #import "CYDizhuTableView.h"
 #import "CYDizhuCell.h"
 
+
 #import "CYDizhuResultData.h"
 
 #import "FYCarouselPic.h"
@@ -16,11 +17,7 @@
 
 @interface CYDizhuTableView ()<UITableViewDelegate ,UITableViewDataSource>
 
-
-
 @property(nonatomic, strong)NSArray<CYDizhuResultData *> *dataArr;
-
-
 
 @end
 
@@ -40,8 +37,6 @@
         self.delegate = self;
         [self request];
 
-        
-        
     }
     return self;
 }
@@ -82,6 +77,8 @@
     }];
 }
 
+#pragma mark --UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"点击了%@",self.dataArr[indexPath.row]);
@@ -91,6 +88,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return  330;
 }
+
+
+#pragma mark --UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -105,8 +105,6 @@
     
 
     static NSString *indentifier = @"CYDizhuCell";
-    
-
     
     
     CYDizhuCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
