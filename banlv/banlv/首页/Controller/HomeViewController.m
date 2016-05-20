@@ -32,6 +32,8 @@
 
 @property(nonatomic,strong)UICollectionViewFlowLayout *flowLayout;
 
+@property(nonatomic,strong)FYCollectionHeader *header;
+
 @end
 
 @implementation HomeViewController
@@ -72,10 +74,16 @@
 //初始化collectionView
 - (void)initCollectionView
 {
+    self.header = [[FYCollectionHeader alloc] initWithFrame:CGRectMake(0, -280, self.view.width, 280)];
+    self.header.backgroundColor = [UIColor grayColor];
+    
     self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
     self.flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - TabBarH) collectionViewLayout:self.flowLayout];
+    
+    self.collectionView.contentInset = UIEdgeInsetsMake(280, 0, 0, 0);
+    
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.showsVerticalScrollIndicator = NO;
     
@@ -86,14 +94,16 @@
     [self.collectionView registerNib:[UINib nibWithNibName:@"FYHomeViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"cell"];
     
     //注册Header
-    [self.collectionView registerClass:[FYCollectionHeader class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:@"header"];
+//    [self.collectionView registerClass:[FYCollectionHeader class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:@"header"];
     
     //注册Footer
     [self.collectionView registerClass:[FYCollectionFooter class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionFooter" withReuseIdentifier:@"footer"];
     
-    self.flowLayout.headerReferenceSize = CGSizeMake(kScreenFrameW, 0.55f * kScreenFrameW);
+//    self.flowLayout.headerReferenceSize = CGSizeMake(kScreenFrameW, 0.55f * kScreenFrameW);
     
     self.flowLayout.footerReferenceSize = CGSizeMake(kScreenFrameW, 0.4526f * kScreenFrameW);
+    
+    [self.collectionView addSubview:self.header];
     
     [self.view addSubview:self.collectionView];
     
@@ -122,6 +132,11 @@
         }];
         
         self.homeViewData = [FYHomeViewData mj_objectWithKeyValues:dict];
+        
+//        把控制器传到header里
+        self.header.myHostVC = self;
+        
+        self.header.bannerArr = self.homeViewData.topBanner;
         
         [self.collectionView reloadData];
         
@@ -157,17 +172,17 @@
 {
     UICollectionReusableView *reusableView = nil;
     
-    if (kind == UICollectionElementKindSectionHeader) {
-        
-        FYCollectionHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
-        
-        //把控制器传到header里
-        header.myHostVC = self;
-        
-        header.bannerArr = self.homeViewData.topBanner;
-        
-        reusableView = header;
-    }
+//    if (kind == UICollectionElementKindSectionHeader) {
+//        
+//        FYCollectionHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+//        
+//        //把控制器传到header里
+//        header.myHostVC = self;
+//        
+//        header.bannerArr = self.homeViewData.topBanner;
+//        
+//        reusableView = header;
+//    }
     
     if (kind == UICollectionElementKindSectionFooter) {
         
@@ -224,7 +239,12 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
-//    self.flowLayout.headerReferenceSize = CGSizeMake(500, 400);
+//    [UIView animateWithDuration:0.01f animations:^{
+//        
+//        self.header.frame = CGRectMake(0, self.collectionView.contentOffset.y + 280.f, self.view.width, self.collectionView.contentOffset.y);
+//    }];
+    
+    
     
 }
 

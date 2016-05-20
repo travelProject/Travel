@@ -155,20 +155,44 @@
                                     <rect key="frame" x="0.0" y="504" width="600" height="55"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUl-ES-jkM" userLabel="&lt;">
-                                            <rect key="frame" x="30" y="13" width="46" height="30"/>
-                                            <state key="normal" title="Button"/>
+                                            <rect key="frame" x="30" y="5" width="30" height="46"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <state key="normal" title="&lt;">
+                                                <color key="titleColor" red="0.28627450980392155" green="0.71764705882352942" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyZ-bO-Csl" userLabel="&gt;">
-                                            <rect key="frame" x="554" y="13" width="46" height="30"/>
-                                            <state key="normal" title="Button"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyZ-bO-Csl" userLabel="&gt;">
+                                            <rect key="frame" x="540" y="5" width="30" height="46"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <state key="normal" title="&gt;">
+                                                <color key="titleColor" red="0.2196078431372549" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男女不限" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pth-Gd-KP3">
+                                            <rect key="frame" x="262" y="16" width="76" height="23"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                            <color key="textColor" red="0.0" green="0.63529411764705879" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="NyZ-bO-Csl" firstAttribute="centerY" secondItem="7x7-d8-7dA" secondAttribute="centerY" id="1qN-aH-SMd"/>
+                                        <constraint firstAttribute="trailing" secondItem="NyZ-bO-Csl" secondAttribute="trailing" constant="30" id="7rs-7K-pQW"/>
+                                        <constraint firstItem="NyZ-bO-Csl" firstAttribute="top" secondItem="7x7-d8-7dA" secondAttribute="top" constant="15" id="JZU-FF-d5a"/>
                                         <constraint firstAttribute="height" constant="55" id="Nzi-Bf-gr8"/>
                                         <constraint firstItem="AUl-ES-jkM" firstAttribute="leading" secondItem="7x7-d8-7dA" secondAttribute="leading" constant="30" id="W72-Ch-ZWa"/>
+                                        <constraint firstItem="Pth-Gd-KP3" firstAttribute="centerY" secondItem="AUl-ES-jkM" secondAttribute="centerY" id="d6z-DS-4dU"/>
+                                        <constraint firstItem="Pth-Gd-KP3" firstAttribute="centerY" secondItem="7x7-d8-7dA" secondAttribute="centerY" id="fMe-8P-mPh"/>
                                         <constraint firstItem="AUl-ES-jkM" firstAttribute="centerY" secondItem="7x7-d8-7dA" secondAttribute="centerY" id="lig-fW-4a4"/>
+                                        <constraint firstItem="Pth-Gd-KP3" firstAttribute="centerX" secondItem="7x7-d8-7dA" secondAttribute="centerX" id="m8a-LH-xrf"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="fMe-8P-mPh"/>
+                                            <exclude reference="JZU-FF-d5a"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入住人数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YF-Xg-bf6">
                                     <rect key="frame" x="268" y="574" width="64" height="20"/>
@@ -178,9 +202,36 @@
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e82-PQ-c8B" userLabel="选择入住人数">
                                     <rect key="frame" x="0.0" y="609" width="600" height="55"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ2-Y6-xaB" userLabel="➖">
+                                            <rect key="frame" x="30" y="13" width="30" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="-">
+                                                <color key="titleColor" red="0.34509803919999998" green="0.72156862749999995" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqj-HP-ZLs" userLabel="➕">
+                                            <rect key="frame" x="540" y="13" width="30" height="30"/>
+                                            <state key="normal" title="+">
+                                                <color key="titleColor" red="0.34509803921568627" green="0.72156862745098038" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plD-cz-MGJ" userLabel="人数">
+                                            <rect key="frame" x="296" y="17" width="8" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.34509803921568627" green="0.72156862745098038" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="plD-cz-MGJ" firstAttribute="centerY" secondItem="vQ2-Y6-xaB" secondAttribute="centerY" id="5XY-qv-PjD"/>
+                                        <constraint firstItem="vQ2-Y6-xaB" firstAttribute="leading" secondItem="e82-PQ-c8B" secondAttribute="leading" constant="30" id="Gap-ve-Lu3"/>
+                                        <constraint firstItem="vQ2-Y6-xaB" firstAttribute="centerY" secondItem="e82-PQ-c8B" secondAttribute="centerY" id="IQa-6g-axc"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mqj-HP-ZLs" secondAttribute="trailing" constant="30" id="VkD-Oq-UPw"/>
+                                        <constraint firstItem="plD-cz-MGJ" firstAttribute="centerX" secondItem="e82-PQ-c8B" secondAttribute="centerX" id="dvq-j4-E1Y"/>
                                         <constraint firstAttribute="height" constant="55" id="lfX-dx-VJ9"/>
+                                        <constraint firstItem="Mqj-HP-ZLs" firstAttribute="centerY" secondItem="e82-PQ-c8B" secondAttribute="centerY" id="uvR-mo-rOz"/>
                                     </constraints>
                                 </view>
                             </subviews>

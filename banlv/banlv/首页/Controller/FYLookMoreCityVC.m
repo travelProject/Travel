@@ -29,6 +29,9 @@
 
 @property(nonatomic,strong) NSArray<FYLookMoreCityData *> *cityArr;
 
+//透明的蒙版
+@property(nonatomic,strong) UIView *maskView;
+
 @end
 
 @implementation FYLookMoreCityVC
@@ -50,10 +53,15 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.maskView = [[UIView alloc] initWithFrame:CGRectMake(0, NavH, self.view.width, self.view.height - NavH)];
+    
+    self.maskView.backgroundColor = [UIColor clearColor];
+    
     //添加手势,退出键盘
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignKeyBoard)];
-//    
-//    [self.view addGestureRecognizer:tap];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignKeyBoard)];
+    
+    [self.maskView addGestureRecognizer:tap];
+    
     
     [self initNavCenterView];
     
@@ -69,6 +77,8 @@
 - (void)resignKeyBoard
 {
     [self.searchField resignFirstResponder];
+    
+    [self.maskView removeFromSuperview];
     
 }
 
@@ -245,6 +255,12 @@
 
 
 #pragma mark -- UITextFieldDelegate
+
+//开始编辑的时候调用
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.view addSubview:self.maskView];
+}
 
 //按return键时退出键盘
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
