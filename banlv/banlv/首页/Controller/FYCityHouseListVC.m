@@ -58,9 +58,6 @@
     __weak typeof(self) mySelf = self;
     self.moreChoose.moreChooseBlock = ^(){
         
-        NSLog(@"点击了筛选日期");
-        
-        
         FYMoreChooseVC *moreChooseVC = [[FYMoreChooseVC alloc] initWithNibName:@"FYMoreChooseVC" bundle:nil];
         
         moreChooseVC.view.frame = mySelf.view.bounds;
