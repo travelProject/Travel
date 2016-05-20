@@ -47,6 +47,10 @@
     return self;
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    
+}
+
 
 - (void)request{
     NSString *search = nil;

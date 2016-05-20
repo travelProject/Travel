@@ -21,6 +21,7 @@
 #import "CYDoDiViewController.h"
 #import "CYPoViewController.h"
 
+
 @interface FindViewController ()<UIScrollViewDelegate>
 
 @property(nonatomic , assign)BOOL dizhuTagNum;
@@ -45,77 +46,20 @@
 
 @implementation FindViewController
 
-- (CYXuanfuView *)duzhiXuanfu{
-    if (!_duzhiXuanfu) {
-        _duzhiXuanfu  = [[CYXuanfuView alloc] init];
-        
-        _duzhiXuanfu = kLoadViewWithNIB(@"CYXuanfuView");
-        
-        _duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
-        
-        [_duzhiXuanfu.leftButton setTitle:@"     我预约的" forState:UIControlStateNormal];
-        
-        [_duzhiXuanfu.rightButton setTitle:@"我要做地主" forState:UIControlStateNormal];
-        
-        [_duzhiXuanfu.leftButton addTarget:self action:@selector(leftdizhuButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_duzhiXuanfu.rightButton addTarget:self action:@selector(rightdizhuButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        
-        [self.mainScrollView addSubview:_duzhiXuanfu];
-        
-    }
-    return _duzhiXuanfu;
-}
-
-- (CYXuanfuView *)partyXuanfu{
-    if (!_partyXuanfu) {
-        CYXuanfuView *partyXuanfu = [[CYXuanfuView alloc] init];
-        
-        partyXuanfu = kLoadViewWithNIB(@"CYXuanfuView");
-        
-//        //设置button完全为圆形：
-//        Button.layer.cornerRadius = 34.0;（该值到一定的程度，就为圆形了。）
-//        
-//        Button.layer.borderWidth = 1.0;
-//        
-//        Button.layer.borderColor =[UIColor clearColor].CGColor;
-//        
-//        Button.clipsToBounds = TRUE;//去除边界
-        
-        partyXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2+kScreenFrameW, kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
-        
-        partyXuanfu.layer.cornerRadius = self.partyBtn.size.height/2;
-        
-        [partyXuanfu.leftButton setTitle:@"     我参加的" forState:UIControlStateNormal];
-        
-        [partyXuanfu.rightButton setTitle:@"发布活动" forState:UIControlStateNormal];
-        
-        [partyXuanfu.leftButton addTarget:self action:@selector(leftpartyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [partyXuanfu.rightButton addTarget:self action:@selector(rightpartyButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        [self.mainScrollView addSubview:partyXuanfu];
-        _partyXuanfu = partyXuanfu;
-
-    }
-    return _partyXuanfu;
-}
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+ 
     
-    self.dizhuTagNum = NO;
-    self.dizhuTagNum = NO;
+    self.navigationController.navigationBar.backgroundColor = ThemeColor;
     
     UIImage *xuanfuImg = [UIImage imageNamed:@"xuanfuButton"];
     
     self.xuanfuImg = xuanfuImg;
     
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor =  ThemeColor;
     
     [self creatSegment];
     
@@ -129,8 +73,7 @@
     [self setDizhuBtn];
     
     [self setPartyBtn];
-    self.dizhuBtn.hidden = NO;
-    self.partyBtn.hidden = NO;
+    
 
         
     
@@ -144,6 +87,7 @@
     self.partyBtn.hidden = NO;
 }
 
+#pragma mark --partyBtn
 - (void)setPartyBtn{
     
     UIButton *partyBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/7+kScreenFrameW, kScreenFrameH*7/10, r, r)];
@@ -151,7 +95,7 @@
     [partyBtn setImage:self.xuanfuImg forState:UIControlStateNormal];
     
     
-    partyBtn.layer.masksToBounds = YES;
+//    partyBtn.layer.masksToBounds = YES;
     partyBtn.layer.cornerRadius = r/2;
     
     partyBtn.clipsToBounds = TRUE;
@@ -164,30 +108,37 @@
     self.partyBtn = partyBtn;
     
     
+    CYXuanfuView *partyXuanfu = [[CYXuanfuView alloc] init];
     
+    partyXuanfu = kLoadViewWithNIB(@"CYXuanfuView");
+    
+    //        //设置button完全为圆形：
+    //        Button.layer.cornerRadius = 34.0;（该值到一定的程度，就为圆形了。）
+    //
+    //        Button.layer.borderWidth = 1.0;
+    //
+    //        Button.layer.borderColor =[UIColor clearColor].CGColor;
+    //
+    //        Button.clipsToBounds = TRUE;//去除边界
+    
+    partyXuanfu.frame = CGRectMake(kScreenFrameW*1/7+kScreenFrameW+8,  kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
+    
+    partyXuanfu.layer.cornerRadius = r/2-8;
+    
+    [partyXuanfu.leftButton setTitle:@"          我参加的" forState:UIControlStateNormal];
+    
+    [partyXuanfu.rightButton setTitle:@"发布活动" forState:UIControlStateNormal];
+    
+    [partyXuanfu.leftButton addTarget:self action:@selector(leftpartyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [partyXuanfu.rightButton addTarget:self action:@selector(rightpartyButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [self.mainScrollView addSubview:partyXuanfu];
+    self.partyXuanfu = partyXuanfu;
 }
 
 
 
-- (void)setDizhuBtn{
-    
-        UIButton *dizhuBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/7, kScreenFrameH*7/10, r, r)];
-    
-    
-        [dizhuBtn setImage:self.xuanfuImg forState:UIControlStateNormal];
-        
-        
-        dizhuBtn.layer.masksToBounds = YES;
-        dizhuBtn.layer.cornerRadius = r/2;
-    
-        [self.mainScrollView addSubview:dizhuBtn];
-        [self.mainScrollView bringSubviewToFront:dizhuBtn];
-        
-        [dizhuBtn addTarget:self action:@selector(dizhuBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-        
-        self.dizhuBtn = dizhuBtn;
-    
-}
 
 - (void)leftpartyButtonAction:(id)sender{
     
@@ -205,20 +156,6 @@
     [self.navigationController pushViewController:new animated:YES];
 }
 
-- (void)leftdizhuButtonAction:(id)sender{
-    
-}
-
-- (void)rightdizhuButtonAction:(id)sender{
-    CYDoDiViewController *new = [[CYDoDiViewController alloc ] init];
-    [self.navigationController pushViewController:new animated:YES];
-    
-    
-    
-}
-
-
-
 - (void)partyBtnAction:(id)sender{
     
     
@@ -228,7 +165,7 @@
         [UIView animateWithDuration:0.2 animations:^{
             
             
-            self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 200, self.partyBtn.size.height-8);
+            self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 200, self.partyBtn.size.height-8);
             [self.mainScrollView bringSubviewToFront:self.partyBtn];
             
         }];
@@ -237,19 +174,77 @@
         
         
     }else{
-        self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
+        self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
         
         self.partyTagNum= NO;
     }
     
 }
+
+
+#pragma mark --dizhuBtn
+
+- (void)setDizhuBtn{
+    
+        UIButton *dizhuBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/7, kScreenFrameH*7/10, r, r)];
+    
+    
+        [dizhuBtn setImage:self.xuanfuImg forState:UIControlStateNormal];
+    
+        dizhuBtn.layer.masksToBounds = YES;
+        dizhuBtn.layer.cornerRadius = r/2;
+    
+        [self.mainScrollView addSubview:dizhuBtn];
+        [self.mainScrollView bringSubviewToFront:dizhuBtn];
+        
+        [dizhuBtn addTarget:self action:@selector(dizhuBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.dizhuBtn = dizhuBtn;
+    
+    
+    
+    CYXuanfuView  *duzhiXuanfu  = [[CYXuanfuView alloc] init];
+    
+    duzhiXuanfu = kLoadViewWithNIB(@"CYXuanfuView");
+    
+    duzhiXuanfu.layer.cornerRadius = r/2-8;
+    
+    duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
+    
+    [duzhiXuanfu.leftButton setTitle:@"          我预约的" forState:UIControlStateNormal];
+    
+    [duzhiXuanfu.rightButton setTitle:@"我要做地主" forState:UIControlStateNormal];
+    
+    [duzhiXuanfu.leftButton addTarget:self action:@selector(leftdizhuButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [duzhiXuanfu.rightButton addTarget:self action:@selector(rightdizhuButtonAction:)   forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    [self.mainScrollView addSubview:duzhiXuanfu];
+    
+    self.duzhiXuanfu = duzhiXuanfu;
+    
+}
+
+
+- (void)leftdizhuButtonAction:(id)sender{
+    
+}
+
+- (void)rightdizhuButtonAction:(id)sender{
+    CYDoDiViewController *new = [[CYDoDiViewController alloc ] init];
+    new.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:new animated:YES];
+   
+}
+
 - (void)dizhuBtnAction:(id)sender{
     
     if (self.dizhuTagNum == NO) {
     
     [UIView animateWithDuration:0.2 animations:^{
         
-        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 200, self.dizhuBtn.size.height-8);
+        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 200, self.dizhuBtn.size.height-8);
         [self.mainScrollView bringSubviewToFront:self.dizhuBtn];
 
     }];
@@ -258,27 +253,34 @@
         
         
     }else{
-        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
+        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
      
         self.dizhuTagNum= NO;
     }
     
-    
 }
+
+
+#pragma mark -- scrollView
 
 //contentOffset:滑动视图里面的内容的相对位置
 //contentInset:滑动视图在外面的相对位置
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    self.dizhuBtn.hidden = YES;
-    self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
-    self.partyBtn.hidden = YES;
-    self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+r/2, kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
+    
     NSInteger pageNum = scrollView.contentOffset.x/kScreenFrameW + 0.5;
     
     self.seg.selectedSegmentIndex = pageNum;
     
     
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    self.dizhuBtn.hidden = YES;
+    self.partyBtn.hidden = YES;
+    self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
+    self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
+
 }
 
 - (void)creatScrollView{
@@ -295,6 +297,8 @@
     [self.view addSubview:mainScrollView];
     
 }
+
+#pragma mark--segment
 
 - (void)creatSegment{
     
@@ -328,7 +332,7 @@
     
     
 }
-
+# pragma mark--tableView
 
 - (void)creatDizhuTableView{
     
@@ -336,6 +340,8 @@
     
     dizhuTableView.frame = CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
     [self.mainScrollView addSubview:dizhuTableView];
+    
+   
     
     self.dizhuTableView = dizhuTableView;
     
