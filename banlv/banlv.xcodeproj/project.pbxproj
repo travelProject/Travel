@@ -103,6 +103,7 @@
 		CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6548E1CE3591500499922 /* FYHomeViewData.m */; };
 		CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654911CE35A9B00499922 /* FYHomeViewBannerData.m */; };
 		CBD654951CE35B4B00499922 /* FYHomeViewCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654941CE35B4B00499922 /* FYHomeViewCityData.m */; };
+		CBD6E4051CEF29C9003BFA5F /* FYMoreChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61C021CEDF12500311C3F /* FYMoreChooseVC.m */; };
 		CBDF7DE41CEB4BDC00762867 /* FYCityHouseMapData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DE31CEB4BDC00762867 /* FYCityHouseMapData.m */; };
 		CBDF7DE81CEB4C3300762867 /* FYCityHouseMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DE61CEB4C3300762867 /* FYCityHouseMapCell.m */; };
 		CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDF7DE71CEB4C3300762867 /* FYCityHouseMapCell.xib */; };
@@ -110,7 +111,6 @@
 		CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */; };
 		CBF61BFD1CEDD57400311C3F /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61BFC1CEDD57400311C3F /* BLNavigationController.m */; };
 		CBF61C001CEDE7CF00311C3F /* FYMoreChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61BFF1CEDE7CF00311C3F /* FYMoreChoose.m */; };
-		CBF61C041CEDF12500311C3F /* FYMoreChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61C021CEDF12500311C3F /* FYMoreChooseVC.m */; };
 		CBF61C051CEDF12500311C3F /* FYMoreChooseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF61C031CEDF12500311C3F /* FYMoreChooseVC.xib */; };
 /* End PBXBuildFile section */
 
@@ -1282,6 +1282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD6E4051CEF29C9003BFA5F /* FYMoreChooseVC.m in Sources */,
 				CB6BAC8E1CE45912006457BC /* FYHeaderViewCell.m in Sources */,
 				7A2FD83A1CE86E330049267C /* BLLogoView.m in Sources */,
 				7A2FD84E1CE870470049267C /* MMDrawerController.m in Sources */,

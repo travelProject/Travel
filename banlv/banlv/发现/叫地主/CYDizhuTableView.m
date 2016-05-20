@@ -9,7 +9,6 @@
 #import "CYDizhuTableView.h"
 #import "CYDizhuCell.h"
 
-#import "CYDizhuData.h"
 #import "CYDizhuResultData.h"
 
 #import "FYCarouselPic.h"
