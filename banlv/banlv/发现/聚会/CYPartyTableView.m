@@ -34,11 +34,13 @@
         
         [self request];
     }
-
-    
     
     return self;
+    
 }
+
+#pragma mark --UITableViewDataSource
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *indentifier=@"CYPartyCell";
     
@@ -69,25 +71,20 @@
     
     cell.time.text = [NSString stringWithFormat:@"%@ ~ %@",startTime,endTime];
     
-    
-    
-    
-    
-    
-    
     return cell;
     
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    
-    return 402;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArr.count;
 }
 
+#pragma mark --UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    
+    return 402;
+}
 
 - (void)request{
 //    NSString *search = nil;
@@ -114,13 +111,9 @@
         
         [self reloadData];
         
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        
-        
     }];
-    
     
 }
 

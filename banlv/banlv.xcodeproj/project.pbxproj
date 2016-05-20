@@ -110,7 +110,6 @@
 		CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */; };
 		CBF61BFD1CEDD57400311C3F /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61BFC1CEDD57400311C3F /* BLNavigationController.m */; };
 		CBF61C001CEDE7CF00311C3F /* FYMoreChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61BFF1CEDE7CF00311C3F /* FYMoreChoose.m */; };
-		CBF61C041CEDF12500311C3F /* FYMoreChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61C021CEDF12500311C3F /* FYMoreChooseVC.m */; };
 		CBF61C051CEDF12500311C3F /* FYMoreChooseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF61C031CEDF12500311C3F /* FYMoreChooseVC.xib */; };
 /* End PBXBuildFile section */
 
@@ -360,16 +359,12 @@
 		2B8D54011CEA18E400AF43CA /* 发现 */ = {
 			isa = PBXGroup;
 			children = (
-				2B8D54021CEA18E400AF43CA /* CYXuanfuView.h */,
-				2B8D54031CEA18E400AF43CA /* CYXuanfuView.m */,
-				2B8D54041CEA18E400AF43CA /* CYXuanfuView.xib */,
-				2B8D54051CEA18E400AF43CA /* FindViewController.h */,
-				2B8D54061CEA18E400AF43CA /* FindViewController.m */,
+				2B91675F1CEF288D009D2A48 /* ViewController */,
+				2B8D541C1CEA18E400AF43CA /* 聚会 */,
+				2B8D540D1CEA18E400AF43CA /* 叫地主 */,
 				2B8D54071CEA18E400AF43CA /* 做地主 */,
 				2B8D540A1CEA18E400AF43CA /* 发布 */,
-				2B8D540D1CEA18E400AF43CA /* 叫地主 */,
 				2B8D54191CEA18E400AF43CA /* 我参加的 */,
-				2B8D541C1CEA18E400AF43CA /* 聚会 */,
 			);
 			path = "发现";
 			sourceTree = "<group>";
@@ -403,11 +398,8 @@
 		2B8D540D1CEA18E400AF43CA /* 叫地主 */ = {
 			isa = PBXGroup;
 			children = (
-				2B8D540E1CEA18E400AF43CA /* CYDizhuCell.h */,
-				2B8D540F1CEA18E400AF43CA /* CYDizhuCell.m */,
-				2B8D54101CEA18E400AF43CA /* CYDizhuCell.xib */,
-				2B8D54151CEA18E400AF43CA /* CYDizhuResultData.h */,
-				2B8D54161CEA18E400AF43CA /* CYDizhuResultData.m */,
+				2B91675E1CEF2867009D2A48 /* model */,
+				2B91675D1CEF284D009D2A48 /* cell */,
 				2B8D54171CEA18E400AF43CA /* CYDizhuTableView.h */,
 				2B8D54181CEA18E400AF43CA /* CYDizhuTableView.m */,
 			);
@@ -428,15 +420,70 @@
 		2B8D541C1CEA18E400AF43CA /* 聚会 */ = {
 			isa = PBXGroup;
 			children = (
-				2B8D541D1CEA18E400AF43CA /* CYPartyCell.h */,
-				2B8D541E1CEA18E400AF43CA /* CYPartyCell.m */,
-				2B8D541F1CEA18E400AF43CA /* CYPartyCell.xib */,
-				2B8D54201CEA18E400AF43CA /* CYPartyCellData.h */,
-				2B8D54211CEA18E400AF43CA /* CYPartyCellData.m */,
+				2B9167621CEF29D6009D2A48 /* model */,
+				2B9167611CEF29BB009D2A48 /* cell */,
 				2B8D54221CEA18E400AF43CA /* CYPartyTableView.h */,
 				2B8D54231CEA18E400AF43CA /* CYPartyTableView.m */,
 			);
 			path = "聚会";
+			sourceTree = "<group>";
+		};
+		2B91675D1CEF284D009D2A48 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D540E1CEA18E400AF43CA /* CYDizhuCell.h */,
+				2B8D540F1CEA18E400AF43CA /* CYDizhuCell.m */,
+				2B8D54101CEA18E400AF43CA /* CYDizhuCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		2B91675E1CEF2867009D2A48 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D54151CEA18E400AF43CA /* CYDizhuResultData.h */,
+				2B8D54161CEA18E400AF43CA /* CYDizhuResultData.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		2B91675F1CEF288D009D2A48 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D54051CEA18E400AF43CA /* FindViewController.h */,
+				2B8D54061CEA18E400AF43CA /* FindViewController.m */,
+				2B9167601CEF28A6009D2A48 /* view */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		2B9167601CEF28A6009D2A48 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D54021CEA18E400AF43CA /* CYXuanfuView.h */,
+				2B8D54031CEA18E400AF43CA /* CYXuanfuView.m */,
+				2B8D54041CEA18E400AF43CA /* CYXuanfuView.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		2B9167611CEF29BB009D2A48 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D541D1CEA18E400AF43CA /* CYPartyCell.h */,
+				2B8D541E1CEA18E400AF43CA /* CYPartyCell.m */,
+				2B8D541F1CEA18E400AF43CA /* CYPartyCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		2B9167621CEF29D6009D2A48 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D54201CEA18E400AF43CA /* CYPartyCellData.h */,
+				2B8D54211CEA18E400AF43CA /* CYPartyCellData.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		2B97A1211CDC264700B4989C = {

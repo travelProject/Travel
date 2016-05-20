@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CYDizhuPictureListData.h"
+
 
 @interface CYDizhuResultData : NSObject
 
