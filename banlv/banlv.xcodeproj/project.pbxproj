@@ -80,6 +80,7 @@
 		CB038E411CE6FA100090839D /* FYCarouselPic.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E401CE6FA100090839D /* FYCarouselPic.m */; };
 		CB038E441CE6FD910090839D /* FYCarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E431CE6FD910090839D /* FYCarouselCell.m */; };
 		CB038E471CE717780090839D /* FYCityHouseListData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E461CE717780090839D /* FYCityHouseListData.m */; };
+		CB06A9251CF03C1B009CFD17 /* FYChooseDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB06A9241CF03C1B009CFD17 /* FYChooseDateView.m */; };
 		CB0A76901CE5B6E700EB6E7D /* FYCityHouseListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0A768F1CE5B6E700EB6E7D /* FYCityHouseListVC.m */; };
 		CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB120DB01CE73F99007D71C6 /* FYCityHouseListCell.m */; };
 		CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB120DB11CE73F99007D71C6 /* FYCityHouseListCell.xib */; };
@@ -279,6 +280,8 @@
 		CB038E431CE6FD910090839D /* FYCarouselCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCarouselCell.m; sourceTree = "<group>"; };
 		CB038E451CE717780090839D /* FYCityHouseListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseListData.h; sourceTree = "<group>"; };
 		CB038E461CE717780090839D /* FYCityHouseListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseListData.m; sourceTree = "<group>"; };
+		CB06A9231CF03C1B009CFD17 /* FYChooseDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYChooseDateView.h; sourceTree = "<group>"; };
+		CB06A9241CF03C1B009CFD17 /* FYChooseDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYChooseDateView.m; sourceTree = "<group>"; };
 		CB0A768E1CE5B6E700EB6E7D /* FYCityHouseListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseListVC.h; sourceTree = "<group>"; };
 		CB0A768F1CE5B6E700EB6E7D /* FYCityHouseListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseListVC.m; sourceTree = "<group>"; };
 		CB120DAF1CE73F99007D71C6 /* FYCityHouseListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseListCell.h; sourceTree = "<group>"; };
@@ -1145,6 +1148,8 @@
 				CBDF7DE71CEB4C3300762867 /* FYCityHouseMapCell.xib */,
 				CBF61BFE1CEDE7CE00311C3F /* FYMoreChoose.h */,
 				CBF61BFF1CEDE7CF00311C3F /* FYMoreChoose.m */,
+				CB06A9231CF03C1B009CFD17 /* FYChooseDateView.h */,
+				CB06A9241CF03C1B009CFD17 /* FYChooseDateView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1412,6 +1417,7 @@
 				2B9167801CEF47C9009D2A48 /* CYThirdView.m in Sources */,
 				CB6BAC8E1CE45912006457BC /* FYHeaderViewCell.m in Sources */,
 				7A2FD83A1CE86E330049267C /* BLLogoView.m in Sources */,
+				CB06A9251CF03C1B009CFD17 /* FYChooseDateView.m in Sources */,
 				7A2FD84E1CE870470049267C /* MMDrawerController.m in Sources */,
 				CBDF7DE41CEB4BDC00762867 /* FYCityHouseMapData.m in Sources */,
 				CBDF7DEC1CEB4C7100762867 /* FYCityHouseMapVC.m in Sources */,
