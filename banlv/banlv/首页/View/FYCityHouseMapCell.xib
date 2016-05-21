@@ -115,8 +115,8 @@
             <size key="customSize" width="428" height="115"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="Lqy-3M-CQT"/>
                     <exclude reference="Ztb-NB-KLE"/>
+                    <exclude reference="Lqy-3M-CQT"/>
                     <exclude reference="hym-K6-ijk"/>
                 </mask>
             </variation>

@@ -68,6 +68,8 @@
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NavH, self.view.width, self.view.height - NavH) style:UITableViewStylePlain];
     
+    self.tableView.showsVerticalScrollIndicator = NO;
+    
     self.tableView.delegate = self;
     
     self.tableView.dataSource = self;
