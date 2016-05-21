@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FYLookMoreCityVC : UIViewController
+@interface FYLookMoreCityVC : BLBackViewController
 
 
 @end

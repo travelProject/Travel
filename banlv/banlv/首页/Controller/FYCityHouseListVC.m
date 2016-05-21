@@ -39,6 +39,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = self.cityName;
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"dizhi"] style:UIBarButtonItemStyleDone target:self action:@selector(swithToMapStyle)];
     
     [self initTableView];
@@ -112,6 +114,9 @@
 {
     FYCityHouseMapVC *mapVC = [[FYCityHouseMapVC alloc] init];
     
+    mapVC.cityId = self.cityId;
+    mapVC.cityName = self.cityName;
+    
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 
@@ -178,6 +183,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setCityName:(NSString *)cityName
+{
+    _cityName = cityName;
+}
 
 
 @end

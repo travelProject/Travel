@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FYCityHouseMapVC : UIViewController
+@interface FYCityHouseMapVC : BLBackViewController
+
+@property (nonatomic,copy)NSString *cityId;
+
+@property (nonatomic,copy)NSString *cityName;
 
 @end

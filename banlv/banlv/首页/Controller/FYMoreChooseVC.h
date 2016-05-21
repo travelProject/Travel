@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FYMoreChooseVC : UIViewController
+@interface FYMoreChooseVC : BLBackViewController
 
 @end

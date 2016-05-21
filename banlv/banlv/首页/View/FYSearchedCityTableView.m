@@ -51,9 +51,9 @@
 {
     self.searchedTableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
     
-    self.searchedTableView.contentInset = UIEdgeInsetsMake(NavH, 0, 0, 0);
+    self.searchedTableView.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0];
     
-    self.searchedTableView.backgroundColor = [UIColor greenColor];
+    self.searchedTableView.contentInset = UIEdgeInsetsMake(NavH, 0, 0, 0);
     
     self.searchedTableView.delegate = self;
     self.searchedTableView.dataSource = self;
@@ -77,6 +77,8 @@
     
     cityHouseListVC.cityId = self.searchedCityArr[indexPath.row].ID;
     
+    cityHouseListVC.cityName = self.searchedCityArr[indexPath.row].cityNameCh;
+    
     [self.myHostVC.navigationController pushViewController:cityHouseListVC animated:YES];
 }
 
@@ -91,6 +93,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.searchedTableView dequeueReusableCellWithIdentifier:@"searchedCell"];
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:13.5f];
+    
+    cell.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0];
     
     cell.textLabel.text = self.searchedCityArr[indexPath.row].cityNameCh;
     

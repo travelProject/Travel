@@ -62,6 +62,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title = self.cityName;
 
     [self initMap];
     
@@ -76,10 +78,10 @@
 {
     self.mapView = [[BMKMapView alloc] initWithFrame:self.view.bounds];
     
+    self.mapView.zoomLevel = 11.9f;
+    
     [self.view addSubview:self.mapView];
     
-    //设置地图中心点
-    [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(31.15831, 121.399503) animated:YES];
 }
 
 - (void)initCollectionView
@@ -159,7 +161,7 @@
 {
     FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
     
-    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":73,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"districtId\":0,\n\"sex\":0,\n\"sex\":0,\n\"checkInDate\":0,\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}"];
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%@,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"districtId\":0,\n\"sex\":0,\n\"sex\":0,\n\"checkInDate\":0,\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}",self.cityId];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSpaceByLatLng.do?";
     
@@ -170,6 +172,9 @@
         
         //大头针的模型数组
         self.pinArr = [FYCityHouseMapData mj_objectArrayWithKeyValuesArray:cityHouseArr];
+        
+        //设置地图中心点
+        [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.pinArr[0].lat.doubleValue, self.pinArr[0].lng.doubleValue) animated:NO];
         
         [self.pinArr enumerateObjectsUsingBlock:^(FYCityHouseMapData * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
@@ -231,6 +236,17 @@
     
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:view.annotation.subtitle.integerValue inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     
+}
+
+//setter方法
+- (void)setCityId:(NSString *)cityId
+{
+    _cityId = cityId;
+}
+
+- (void)setCityName:(NSString *)cityName
+{
+    _cityName = cityName;
 }
 
 - (void)didReceiveMemoryWarning {
