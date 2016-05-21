@@ -122,10 +122,14 @@
 {
     self.cityTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     
-    self.cityTableView.backgroundColor = [UIColor redColor];
+    self.cityTableView.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.0];
     
     self.cityTableView.delegate = self;
     self.cityTableView.dataSource = self;
+    
+    self.cityTableView.sectionIndexColor = [UIColor colorWithRed:0.33 green:0.33 blue:0.33 alpha:1.0];
+    
+//    self.cityTableView.sectionIndexBackgroundColor = [UIColor redColor];
     
     [self.cityTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cityCell"];
     
@@ -198,6 +202,7 @@
     FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
     
     cityHouseListVC.cityId = self.cityArr[indexPath.section].city[indexPath.row].ID;
+    cityHouseListVC.cityName = self.cityArr[indexPath.section].city[indexPath.row].cityNameCh;
     
     [self.navigationController pushViewController:cityHouseListVC animated:YES];
     
@@ -219,6 +224,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.cityTableView dequeueReusableCellWithIdentifier:@"cityCell"];
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:13.5f];
+    
+    cell.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0];
     
     cell.textLabel.text = self.cityArr[indexPath.section].city[indexPath.row].cityNameCh;
     

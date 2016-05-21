@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FYHomeWebViewVC : UIViewController
+@interface FYHomeWebViewVC : BLBackViewController
 
 @property(nonatomic,strong) NSString *urlString;
 

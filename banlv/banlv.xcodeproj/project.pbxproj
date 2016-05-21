@@ -117,6 +117,7 @@
 		CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDF7DE71CEB4C3300762867 /* FYCityHouseMapCell.xib */; };
 		CBDF7DEC1CEB4C7100762867 /* FYCityHouseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DEB1CEB4C7100762867 /* FYCityHouseMapVC.m */; };
 		CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */; };
+		CBEE47A21CF000E0007CE329 /* BLBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEE47A11CF000E0007CE329 /* BLBackViewController.m */; };
 		CBF61BFD1CEDD57400311C3F /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61BFC1CEDD57400311C3F /* BLNavigationController.m */; };
 		CBF61C001CEDE7CF00311C3F /* FYMoreChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61BFF1CEDE7CF00311C3F /* FYMoreChoose.m */; };
 		CBF61C051CEDF12500311C3F /* FYMoreChooseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF61C031CEDF12500311C3F /* FYMoreChooseVC.xib */; };
@@ -332,6 +333,8 @@
 		CBDF7DEB1CEB4C7100762867 /* FYCityHouseMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseMapVC.m; sourceTree = "<group>"; };
 		CBE1DA9C1CE21A5E00B36A18 /* FYAFNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAFNetworkingManager.h; sourceTree = "<group>"; };
 		CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAFNetworkingManager.m; sourceTree = "<group>"; };
+		CBEE47A01CF000E0007CE329 /* BLBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBackViewController.h; sourceTree = "<group>"; };
+		CBEE47A11CF000E0007CE329 /* BLBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLBackViewController.m; sourceTree = "<group>"; };
 		CBF61BFB1CEDD57400311C3F /* BLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLNavigationController.h; sourceTree = "<group>"; };
 		CBF61BFC1CEDD57400311C3F /* BLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLNavigationController.m; sourceTree = "<group>"; };
 		CBF61BFE1CEDE7CE00311C3F /* FYMoreChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYMoreChoose.h; sourceTree = "<group>"; };
@@ -582,12 +585,12 @@
 		2B97A12C1CDC264700B4989C /* banlv */ = {
 			isa = PBXGroup;
 			children = (
-				2B8D54011CEA18E400AF43CA /* 发现 */,
 				2B97A1611CDC2A4700B4989C /* 管理全局的类 */,
 				CBE1DA991CE2191C00B36A18 /* 功能模块 */,
 				2B97A16B1CDC2B0400B4989C /* 类别 */,
 				CBE1DA961CE1FAB600B36A18 /* 其他 */,
 				2B97A1801CDC2B3100B4989C /* 首页 */,
+				2B8D54011CEA18E400AF43CA /* 发现 */,
 				2B97A1821CDC2B4D00B4989C /* 搜索 */,
 				2B97A1831CDC2B5200B4989C /* 订单 */,
 				2B97A1841CDC2B5900B4989C /* 我的 */,
@@ -632,6 +635,8 @@
 				2B97A1681CDC2A7600B4989C /* tabbar */,
 				CBF61BFB1CEDD57400311C3F /* BLNavigationController.h */,
 				CBF61BFC1CEDD57400311C3F /* BLNavigationController.m */,
+				CBEE47A01CF000E0007CE329 /* BLBackViewController.h */,
+				CBEE47A11CF000E0007CE329 /* BLBackViewController.m */,
 			);
 			path = "管理全局的类";
 			sourceTree = "<group>";
@@ -1453,6 +1458,7 @@
 				CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */,
 				2B9B48571CEDE9F900FB2169 /* CYDoDizhuView.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
+				CBEE47A21CF000E0007CE329 /* BLBackViewController.m in Sources */,
 				CB0A76901CE5B6E700EB6E7D /* FYCityHouseListVC.m in Sources */,
 				CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */,
 				7A2FD8501CE870470049267C /* UIViewController+MMDrawerController.m in Sources */,
@@ -1623,7 +1629,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/banlv/CYGlobal.pch";
 				INFOPLIST_FILE = banlv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.banlv.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banlv.BL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1643,7 +1649,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/banlv/CYGlobal.pch";
 				INFOPLIST_FILE = banlv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.banlv.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banlv.BL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

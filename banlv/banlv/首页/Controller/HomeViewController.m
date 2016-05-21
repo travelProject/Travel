@@ -74,7 +74,7 @@
 //初始化collectionView
 - (void)initCollectionView
 {
-    self.header = [[FYCollectionHeader alloc] initWithFrame:CGRectMake(0, -280, self.view.width, 280)];
+    self.header = [[FYCollectionHeader alloc] initWithFrame:CGRectMake(0, -0.55f * kScreenFrameW, kScreenFrameW, 0.55f * kScreenFrameW)];
     self.header.backgroundColor = [UIColor grayColor];
     
     self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -82,7 +82,7 @@
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - TabBarH) collectionViewLayout:self.flowLayout];
     
-    self.collectionView.contentInset = UIEdgeInsetsMake(280, 0, 0, 0);
+    self.collectionView.contentInset = UIEdgeInsetsMake(0.55f * kScreenFrameW, 0, 0, 0);
     
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.showsVerticalScrollIndicator = NO;
@@ -207,6 +207,8 @@
     FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
     
     cityHouseListVC.cityId = self.homeViewData.recommendCity[indexPath.row].ID;
+    
+    cityHouseListVC.cityName = self.homeViewData.recommendCity[indexPath.row].cityNameCh;
     
     [self.navigationController pushViewController:cityHouseListVC animated:YES];
     

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FYCityHouseListVC : UIViewController
+@interface FYCityHouseListVC : BLBackViewController
 
 @property(nonatomic,copy) NSString *cityId;
+
+@property(nonatomic,copy) NSString *cityName;
 
 @end
