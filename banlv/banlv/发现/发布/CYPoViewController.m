@@ -6,135 +6,106 @@
 //  Copyright © 2016年 llz. All rights reserved.
 //
 # define poBtnH 50.f
+# define jiange 20.f
 
 #import "CYPoViewController.h"
 #import "CYPoHeaderView.h"
 
-@interface CYPoViewController ()<UITableViewDelegate ,UITableViewDataSource>
+@interface CYPoViewController ()<UIScrollViewDelegate>
 
 @end
 
 @implementation CYPoViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor cyanColor];
     
     self.title = @"发布";
+   
+    UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, - 64, kScreenFrameW, kScreenFrameH - poBtnH)];
+    mainScrollView.showsHorizontalScrollIndicator = NO;
+//    self.mainScrollView = mainScrollView;
+    mainScrollView.delegate = self;
     
-    UITableView *myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - poBtnH) style:UITableViewStyleGrouped];
-    myTableView.backgroundColor = [UIColor redColor];
+//    mainScrollView.pagingEnabled = YES;
     
-    myTableView.delegate = self;
+    mainScrollView.contentSize = CGSizeMake(kScreenFrameW ,4*jiange+44*6+400  );
     
-    myTableView.dataSource = self;
+    mainScrollView.bounces = NO;
+    [self.view addSubview:mainScrollView];
+    
+    
+    
     
     CYPoHeaderView *CYHeader = [[CYPoHeaderView alloc] init];
     
+    CYHeader.frame = CGRectMake(0, 0, kScreenFrameW, 400);
     
-    CYHeader.frame = CGRectMake(0, 0, kScreenFrameW, kScreenFrameH * 0.78);
-    
-    
-    myTableView.tableHeaderView = CYHeader;
-    
-    
-    
-    
-    
-    [self.view addSubview:myTableView];
+    [mainScrollView addSubview:CYHeader];
     
     UIButton *poBtn = [[UIButton alloc] init];
     poBtn.frame = CGRectMake(0, kScreenFrameH - poBtnH, kScreenFrameW, poBtnH);
-    poBtn.backgroundColor = [UIColor greenColor];
+    poBtn.backgroundColor = ThemeColor;
     [poBtn setTitle:@"发布" forState:UIControlStateNormal];
     [self.view addSubview:poBtn];
     
+    UIView *view1 = [[UIView alloc] init];
+    view1.frame = CGRectMake(0, CYHeader.size.height + jiange, kScreenFrameW, 44);
+    UILabel *left = [[UILabel alloc] init];
+    
+    left.center = CGPointMake(4, view1.size.height /2);
+    left.size = CGSizeMake(100, 38);
+    left.text = @"开始时间";
+    left.backgroundColor = [UIColor redColor];
     
     
-  
+    view1.backgroundColor = [UIColor whiteColor];
+    [mainScrollView addSubview:view1];
+    [view1 addSubview:left];
+    
+    UIView *view2 = [[UIView alloc] init];
+    view2.frame = CGRectMake(0, view1.origin.y + 44 , kScreenFrameW, 44);
+    view2.backgroundColor = [UIColor greenColor];
+    [mainScrollView addSubview:view2];
+    
+    UIView *view3 = [[UIView alloc] init];
+    view3.frame = CGRectMake(0, view2.origin.y + 44 +jiange , kScreenFrameW, 44);
+    view3.backgroundColor = [UIColor greenColor];
+    [mainScrollView addSubview:view3];
+    
+    UIView *view4 = [[UIView alloc] init];
+    view4.frame = CGRectMake(0, view3.origin.y + 44 , kScreenFrameW, 44);
+    view4.backgroundColor = [UIColor redColor];
+    [mainScrollView addSubview:view4];
+    
+    
+    UIView *view5 = [[UIView alloc] init];
+    view5.frame = CGRectMake(0, view4.origin.y + 44 +jiange , kScreenFrameW, 44);
+    view5.backgroundColor = [UIColor greenColor];
+    [mainScrollView addSubview:view5];
+    
+    UIView *view6 = [[UIView alloc] init];
+    view6.frame = CGRectMake(0, view5.origin.y + 44 +jiange , kScreenFrameW, 44);
+    view6.backgroundColor = [UIColor greenColor];
+    [mainScrollView addSubview:view6];
+    
 
     
 
 }
-//有多少个区
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 4;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    if (section == 1||section ==0) {
-        return 2;
-    }else {
-        return 1;
-    }
-    
-    
-    
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSString *indentifier = @"indentifier";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:indentifier];
-        
-    }
-    if (indexPath.section == 0) {
-        cell.backgroundColor = [UIColor yellowColor];
-        
-        if (indexPath.row ==0) {
-            cell.textLabel.text = @"开始时间";
-        }
-        if (indexPath.row == 1) {
-            cell.textLabel.text = @"结束时间";
-        }
-        
-//        cell.textLabel.text = @"dsfdsfs";
-    }
-    if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
-            cell.textLabel.text = @"活动价格";
-        }
-        if (indexPath.row == 1) {
-            cell.textLabel.text = @"人数限制";
-        }
-        
-    }
-    if (indexPath.section == 2) {
-        cell.textLabel.text = @"活动地址";
-    }
-    if (indexPath.section == 3) {
-        cell.textLabel.text = @"实名认证";
-    }
-    
-    
-    
-    
-    
-    return cell;
-    
-}
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

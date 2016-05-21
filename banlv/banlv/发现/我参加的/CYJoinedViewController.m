@@ -30,17 +30,13 @@
     
     mySeg.segmentBgColor = [UIColor whiteColor];
     
-    mySeg.defaultPerColor = [UIColor blackColor];
+    mySeg.defaultPerColor = [UIColor blackColor ];
     
-    mySeg.perColor = [UIColor redColor];
+    mySeg.perColor = ThemeColor;
     
-    mySeg.underLayerBackgroudColor = [UIColor redColor];
+    mySeg.underLayerBackgroudColor =ThemeColor;
     
     mySeg.selectIdx = 0;
-    
-
-    
-    
     
     [self.view addSubview:mySeg];
     
@@ -52,11 +48,10 @@
     mainScrollView.delegate = self;
     
     mainScrollView.pagingEnabled = YES;
-    mainScrollView.backgroundColor = [UIColor cyanColor];
+    mainScrollView.backgroundColor = [UIColor whiteColor];
     
     
     mainScrollView.contentSize = CGSizeMake(kScreenFrameW *2, kScreenFrameH - self.tabBarController.tabBar.height - mySegH - 64);
-    
     
     [self.view addSubview:mainScrollView];
     self.mainScrollView = mainScrollView;
@@ -74,12 +69,8 @@
             mainScrollView.contentOffset = point;
             
         }];
-       
-        
     };
    
-    
-    
 }
 
 
@@ -93,21 +84,4 @@
     
     
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

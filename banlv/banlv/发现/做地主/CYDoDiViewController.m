@@ -67,7 +67,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:indentifier];
-        
+        NSLog(@"%f",cell.size.height);
     }
     if (indexPath.section == 1) {
         cell.backgroundColor = [UIColor yellowColor];
