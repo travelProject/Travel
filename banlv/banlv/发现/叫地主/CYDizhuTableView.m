@@ -9,6 +9,8 @@
 #import "CYDizhuTableView.h"
 #import "CYDizhuCell.h"
 
+#import "CYDizCellChildViewController.h"
+
 
 #import "CYDizhuResultData.h"
 
@@ -82,11 +84,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"点击了%@",self.dataArr[indexPath.row]);
+    
+    CYDizCellChildViewController *new = [[CYDizCellChildViewController alloc] init];
+    
+    
+    
+    
+    
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  330;
+    return  364;
 }
 
 
