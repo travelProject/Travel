@@ -55,9 +55,9 @@
     
     [self.view addSubview:mainScrollView];
     self.mainScrollView = mainScrollView;
-    UIButton *t = [[UIButton alloc] initWithFrame:CGRectMake(100, 50, 30, 30)];
-    t.backgroundColor = [UIColor redColor];
-    [mainScrollView addSubview:t];
+    
+    
+    
     
     mySeg.changeCount = ^(NSInteger a){
         
@@ -70,6 +70,23 @@
             
         }];
     };
+    
+    UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake((kScreenFrameW - 100)/2, 200, 100, 100)];
+    img.image = [UIImage imageNamed:@"orderListNoData"];
+    [mainScrollView addSubview:img];
+    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake((kScreenFrameW - 100)/2, 308, 100, 22)];
+    lab.text = @"没有订单哦";
+    lab.textAlignment = NSTextAlignmentCenter;
+    [mainScrollView addSubview:lab];
+    
+    UIImageView *img1 = [[UIImageView alloc] initWithFrame:CGRectMake((kScreenFrameW - 100)/2+kScreenFrameW, 200, 100, 100)];
+    img1.image = [UIImage imageNamed:@"orderListNoData"];
+    [mainScrollView addSubview:img1];
+    UILabel *lab1 = [[UILabel alloc] initWithFrame:CGRectMake((kScreenFrameW - 100)/2+kScreenFrameW, 308, 100, 22)];
+    lab1.text = @"没有订单哦";
+    lab1.textAlignment = NSTextAlignmentCenter;
+    [mainScrollView addSubview:lab1];
+    
    
 }
 
