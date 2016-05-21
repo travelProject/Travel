@@ -53,7 +53,7 @@
     [super viewDidLoad];
  
     
-    self.navigationController.navigationBar.backgroundColor = ThemeColor;
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     
     UIImage *xuanfuImg = [UIImage imageNamed:@"xuanfuButton"];
     
@@ -73,10 +73,6 @@
     [self setDizhuBtn];
     
     [self setPartyBtn];
-    
-
-        
-    
     
     
 }
@@ -308,7 +304,10 @@
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:arrItems];
     seg.size = CGSizeMake(50, 10);
     seg.center = CGPointMake(kScreenFrameW/2, 44/2);
-    seg.backgroundColor = [UIColor whiteColor];
+//    seg.backgroundColor = [UIColor whiteColor];
+    seg.tintColor = ThemeColor;
+    
+    
     
   
     [seg addTarget:self action:@selector(segAction:) forControlEvents:UIControlEventValueChanged];
@@ -353,8 +352,6 @@
     
     CYPartyTableView *partyTableView = [[CYPartyTableView alloc] init];
     partyTableView.frame = CGRectMake(kScreenFrameW, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
-    
-    partyTableView.backgroundColor = [UIColor yellowColor];
     
     [self.mainScrollView addSubview:partyTableView];
     

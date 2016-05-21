@@ -1,18 +1,18 @@
 //
-//  CYPartyCell.m
+//  CYDCCTableViewCell.m
 //  banlv
 //
-//  Created by lcy on 16/5/15.
+//  Created by lcy on 16/5/20.
 //  Copyright © 2016年 llz. All rights reserved.
 //
 
-#import "CYPartyCell.h"
+#import "CYDCCTableViewCell.h"
 
-@implementation CYPartyCell
+@implementation CYDCCTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-//   self.title
+    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

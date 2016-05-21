@@ -31,6 +31,7 @@
     if (self) {
         self.delegate = self;
             self.dataSource = self;
+        self.backgroundColor = ThemeColor;
         
         [self request];
     }
@@ -53,10 +54,12 @@
     NSString *str = self.dataArr[indexPath.row].avatar;
     
     [cell.iconView sd_setImageWithURL:[NSURL URLWithString:str]];
+    cell.iconView.layer.cornerRadius = cell.iconView.size.height/2.f;
     
     cell.title.text =self.dataArr[indexPath.row].title;
     
-    cell.price.text =[NSString stringWithFormat:@"%@/人" ,self.dataArr[indexPath.row].price];
+    cell.price.text =[NSString stringWithFormat:@"¥%@/人" ,self.dataArr[indexPath.row].price];
+    
     
     cell.joinCount.text = [NSString stringWithFormat:@"%@人报名",self.dataArr[indexPath.row].joinCount];
     
@@ -71,6 +74,8 @@
     
     cell.time.text = [NSString stringWithFormat:@"%@ ~ %@",startTime,endTime];
     
+//    NSLog(@"%@",cell.time.text);
+    
     return cell;
     
 }
@@ -83,7 +88,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     
-    return 402;
+    return 410;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"点击了%@",self.dataArr[indexPath.row]);
 }
 
 - (void)request{
