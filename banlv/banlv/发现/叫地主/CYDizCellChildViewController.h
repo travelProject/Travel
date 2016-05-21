@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CYDizCellChildViewController : UIViewController
+@interface CYDizCellChildViewController : BLBackViewController
 
 @end

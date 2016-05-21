@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CYPoViewController : UIViewController
+@interface CYPoViewController : BLBackViewController
 
 @end
