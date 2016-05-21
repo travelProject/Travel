@@ -16,7 +16,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="280" id="zKi-FW-onr"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="选择图片" backgroundImage="beijing">
+                        <color key="titleColor" red="0.44705882352941179" green="0.70588235294117652" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="输入活动名称" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sdY-Qa-QWi">
                     <rect key="frame" x="0.0" y="301" width="403" height="40"/>
@@ -31,7 +33,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeD-eS-Mbs">
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeD-eS-Mbs">
                     <rect key="frame" x="0.0" y="280" width="403" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="e5S-iF-Ny3"/>
@@ -66,4 +68,7 @@
             <point key="canvasLocation" x="360.5" y="299"/>
         </view>
     </objects>
+    <resources>
+        <image name="beijing" width="375" height="256"/>
+    </resources>
 </document>

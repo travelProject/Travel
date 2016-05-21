@@ -46,7 +46,6 @@
 		2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18C1CDC2BF900B4989C /* HomeViewController.m */; };
 		2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18F1CDC2C0E00B4989C /* MainViewController.m */; };
 		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
-		2B9946A61CEC943A00D21942 /* CYTableViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9946A51CEC943A00D21942 /* CYTableViewData.m */; };
 		2B9946A91CEC98F500D21942 /* CYPoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */; };
 		2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */; };
 		2B9B48571CEDE9F900FB2169 /* CYDoDizhuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B48561CEDE9F900FB2169 /* CYDoDizhuView.m */; };
@@ -217,8 +216,6 @@
 		2B97A18F1CDC2C0E00B4989C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2B97A1911CDC2C4B00B4989C /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		2B97A1921CDC2C4B00B4989C /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
-		2B9946A41CEC943A00D21942 /* CYTableViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTableViewData.h; sourceTree = "<group>"; };
-		2B9946A51CEC943A00D21942 /* CYTableViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYTableViewData.m; sourceTree = "<group>"; };
 		2B9946A71CEC98F500D21942 /* CYPoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPoHeaderView.h; sourceTree = "<group>"; };
 		2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPoHeaderView.m; sourceTree = "<group>"; };
 		2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYPoHeaderView.xib; sourceTree = "<group>"; };
@@ -419,8 +416,6 @@
 				2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */,
 				2B8D540B1CEA18E400AF43CA /* CYPoViewController.h */,
 				2B8D540C1CEA18E400AF43CA /* CYPoViewController.m */,
-				2B9946A41CEC943A00D21942 /* CYTableViewData.h */,
-				2B9946A51CEC943A00D21942 /* CYTableViewData.m */,
 			);
 			path = "发布";
 			sourceTree = "<group>";
@@ -1479,7 +1474,6 @@
 				2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */,
 				CBF61C001CEDE7CF00311C3F /* FYMoreChoose.m in Sources */,
 				7A2FD8361CE86E330049267C /* BLTempController.m in Sources */,
-				2B9946A61CEC943A00D21942 /* CYTableViewData.m in Sources */,
 				7A2FD84D1CE870470049267C /* MMDrawerBarButtonItem.m in Sources */,
 				CB6BAC8A1CE4584A006457BC /* FYCollectionHeader.m in Sources */,
 				2B8D542E1CEA18E400AF43CA /* CYDizhuTableView.m in Sources */,

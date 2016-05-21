@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CYParCellChildViewController : UIViewController
+@interface CYParCellChildViewController : BLBackViewController
 
 @end

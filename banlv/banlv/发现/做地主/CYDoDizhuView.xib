@@ -16,7 +16,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="288" id="3M9-kt-Aa1"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="选择图片" backgroundImage="newpublich"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年龄性别" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y54-fW-5ob">
                     <rect key="frame" x="0.0" y="326" width="381" height="26"/>
@@ -51,4 +51,7 @@
             <point key="canvasLocation" x="382.5" y="267"/>
         </view>
     </objects>
+    <resources>
+        <image name="newpublich" width="750" height="500"/>
+    </resources>
 </document>

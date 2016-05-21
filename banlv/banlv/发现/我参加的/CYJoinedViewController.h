@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CYJoinedViewController : UIViewController
+@interface CYJoinedViewController : BLBackViewController
 
 @end
