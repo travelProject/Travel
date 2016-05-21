@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,7 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYMoreChooseVC">
             <connections>
+                <outlet property="HostSex" destination="Pth-Gd-KP3" id="6mK-n3-tkz"/>
+                <outlet property="choosePeopleNum" destination="e82-PQ-c8B" id="hM0-aO-Yaq"/>
+                <outlet property="divBtn" destination="vQ2-Y6-xaB" id="zlJ-tc-6Nx"/>
+                <outlet property="peopleNumLimmit" destination="plD-cz-MGJ" id="cZr-cP-i24"/>
+                <outlet property="plusBtn" destination="Mqj-HP-ZLs" id="aSm-XT-J6s"/>
                 <outlet property="scrollViewH" destination="J9K-Dc-bgO" id="yg4-mj-r4C"/>
+                <outlet property="searchBtn" destination="7Dk-Kc-ay4" id="dgz-9Q-zB9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,10 +36,10 @@
                                         <constraint firstAttribute="width" constant="40" id="6bA-Lg-LL9"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnn-8Y-2Kp" userLabel="选择日期">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnn-8Y-2Kp" userLabel="选择日期" customClass="FYChooseDateView">
                                     <rect key="frame" x="0.0" y="45" width="600" height="64"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -134,6 +140,9 @@
                                             <state key="normal" title="选择房源所在县/区">
                                                 <color key="titleColor" red="0.16078431372549021" green="0.67843137254901964" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="chooseHouseLocation:" destination="-1" eventType="touchUpInside" id="ef3-32-wJb"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,6 +169,9 @@
                                             <state key="normal" title="&lt;">
                                                 <color key="titleColor" red="0.28627450980392155" green="0.71764705882352942" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="leftArrow:" destination="-1" eventType="touchUpInside" id="B06-nh-5x8"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyZ-bO-Csl" userLabel="&gt;">
                                             <rect key="frame" x="540" y="5" width="30" height="46"/>
@@ -167,6 +179,9 @@
                                             <state key="normal" title="&gt;">
                                                 <color key="titleColor" red="0.2196078431372549" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="rightArrow:" destination="-1" eventType="touchUpInside" id="Wv5-o5-0Ef"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男女不限" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pth-Gd-KP3">
                                             <rect key="frame" x="262" y="16" width="76" height="23"/>
@@ -209,12 +224,18 @@
                                             <state key="normal" title="-">
                                                 <color key="titleColor" red="0.34509803919999998" green="0.72156862749999995" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="divBtn:" destination="-1" eventType="touchUpInside" id="dPX-1e-0vS"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqj-HP-ZLs" userLabel="➕">
                                             <rect key="frame" x="540" y="13" width="30" height="30"/>
                                             <state key="normal" title="+">
                                                 <color key="titleColor" red="0.34509803921568627" green="0.72156862745098038" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="plusBtn:" destination="-1" eventType="touchUpInside" id="qVG-l3-7jT"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plD-cz-MGJ" userLabel="人数">
                                             <rect key="frame" x="296" y="17" width="8" height="21"/>
@@ -312,7 +333,7 @@
                     <exclude reference="Q83-ir-gvv"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="391" y="404"/>
+            <point key="canvasLocation" x="160" y="412"/>
         </view>
     </objects>
     <resources>
