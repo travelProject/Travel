@@ -9,7 +9,9 @@
             <connections>
                 <outlet property="HostSex" destination="Pth-Gd-KP3" id="6mK-n3-tkz"/>
                 <outlet property="choosePeopleNum" destination="e82-PQ-c8B" id="hM0-aO-Yaq"/>
+                <outlet property="divBtn" destination="vQ2-Y6-xaB" id="zlJ-tc-6Nx"/>
                 <outlet property="peopleNumLimmit" destination="plD-cz-MGJ" id="cZr-cP-i24"/>
+                <outlet property="plusBtn" destination="Mqj-HP-ZLs" id="aSm-XT-J6s"/>
                 <outlet property="scrollViewH" destination="J9K-Dc-bgO" id="yg4-mj-r4C"/>
                 <outlet property="searchBtn" destination="7Dk-Kc-ay4" id="dgz-9Q-zB9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

@@ -18,6 +18,8 @@
 @property(nonatomic,strong)NSArray *sexArr;
 
 @property(nonatomic,assign) NSUInteger sexCount;
+@property (weak, nonatomic) IBOutlet UIButton *divBtn;
+@property (weak, nonatomic) IBOutlet UIButton *plusBtn;
 
 @property(nonatomic,assign)NSInteger peopleCount;
 
@@ -57,6 +59,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.divBtn.enabled = NO;
+    [self.divBtn setTitleColor:[UIColor colorWithRed:0.70 green:0.70 blue:0.70 alpha:1.0] forState:UIControlStateNormal];
 }
 - (IBAction)chooseHouseLocation:(id)sender {
     
@@ -79,27 +84,46 @@
 }
 - (IBAction)divBtn:(id)sender {
     
+    if (self.plusBtn.enabled == NO) {
+        
+        self.plusBtn.enabled = YES;
+        
+        [self.plusBtn setTitleColor:[UIColor colorWithRed:0.24 green:0.51 blue:0.52 alpha:1.0] forState:UIControlStateNormal];
+    }
+    
     UIButton *divBtn = (UIButton *)sender;
     
     self.peopleCount--;
-    
+    NSLog(@"减的数量:%ld",self.peopleCount);
     self.peopleNumLimmit.text = [NSString stringWithFormat:@"%ld",self.peopleCount];
     
     if (self.peopleCount == 1) {
         
         divBtn.enabled = NO;
+        
+        [divBtn setTitleColor:[UIColor colorWithRed:0.70 green:0.70 blue:0.70 alpha:1.0] forState:UIControlStateNormal];
     }
     
 }
 - (IBAction)plusBtn:(id)sender {
     
+    if (self.divBtn.enabled == NO) {
+        
+        self.divBtn.enabled = YES;
+        
+        [self.divBtn setTitleColor:[UIColor colorWithRed:0.24 green:0.51 blue:0.52 alpha:1.0] forState:UIControlStateNormal];
+    }
+    
     UIButton *divBtn = (UIButton *)sender;
     self.peopleCount++;
+    
+    NSLog(@"加的数量:%ld",self.peopleCount);
     self.peopleNumLimmit.text = [NSString stringWithFormat:@"%ld",self.peopleCount];
     
     if (self.peopleCount == 4) {
         
         divBtn.enabled = NO;
+        [divBtn setTitleColor:[UIColor colorWithRed:0.70 green:0.70 blue:0.70 alpha:1.0] forState:UIControlStateNormal];
     }
     
 }
