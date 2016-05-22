@@ -29,6 +29,9 @@
 
 @property(nonatomic,strong) NSArray<FYLookMoreCityData *> *cityArr;
 
+@property(nonatomic,strong) UIView *searchView;
+@property(nonatomic,strong) UIImageView *searchImgView;
+
 //透明的蒙版
 @property(nonatomic,strong) UIView *maskView;
 
@@ -62,6 +65,9 @@
     
     [self.maskView addGestureRecognizer:tap];
     
+    //右边取消按钮
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:nil highlitImageName:nil withAction:@selector(cancel) target:self itemTitle:@"取消" offset:UIControlContentHorizontalAlignmentRight];
+    
     
     [self initNavCenterView];
     
@@ -71,6 +77,11 @@
     
     [self requestCityData];
     
+}
+
+- (void)cancel
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //退出键盘
@@ -85,15 +96,35 @@
 //搜索框
 - (void)initNavCenterView
 {
-    self.searchField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
+    
+    self.searchView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 25)];
+    self.searchView.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.0];
+    
+    self.searchImgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 15, 15)];
+    self.searchImgView.image = [UIImage imageNamed:@"sousuo"];
+    [self.searchView addSubview:self.searchImgView];
+    
+    UILabel *seperateLine = [[UILabel alloc] initWithFrame:CGRectMake(25, 5, 1, 15)];
+    seperateLine.backgroundColor = [UIColor colorWithRed:0.80 green:0.80 blue:0.80 alpha:1.0];
+    [self.searchView addSubview:seperateLine];
+    
+    self.searchField = [[UITextField alloc] initWithFrame:CGRectMake(30, 5, 270, 15)];
     
     self.searchField.placeholder = @"搜索城市";
+//    self.searchField.backgroundColor = [UIColor yellowColor];
+    
+    //placeHolder的属性设置
+//    [self.searchField setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"];修改颜色
+    
+//    [self.searchField setValue:[UIFont boldSystemFontOfSize:13.f] forKeyPath:@"_placeholderLabel.font"];//修改字体大小
     
     self.searchField.delegate = self;
     
+    [self.searchView addSubview:self.searchField];
+    
     [self.searchField addTarget:self action:@selector(textFieldEditChanged:) forControlEvents:UIControlEventEditingChanged];
     
-    self.navigationItem.titleView = self.searchField;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.searchView];
     
 
 }
@@ -129,7 +160,9 @@
     
     self.cityTableView.sectionIndexColor = [UIColor colorWithRed:0.33 green:0.33 blue:0.33 alpha:1.0];
     
-//    self.cityTableView.sectionIndexBackgroundColor = [UIColor redColor];
+    
+    
+    self.cityTableView.sectionIndexBackgroundColor = [UIColor clearColor];
     
     [self.cityTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cityCell"];
     

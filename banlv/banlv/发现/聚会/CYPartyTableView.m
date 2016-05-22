@@ -94,6 +94,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"点击了%@",self.dataArr[indexPath.row]);
+    
+
+        
+        self.partyRow(indexPath.row);
+        
+        
+        
+        
+        
+    
 }
 
 - (void)request{

@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
+typedef void(^SelectRowBlock)(NSInteger);
+
 typedef void(^xuanfu)(UIButton *xuanfuBtn);
 
 @interface CYDizhuTableView : UITableView
 @property(nonatomic, copy)xuanfu xuanfuBtn;
+
+@property (nonatomic ,copy)SelectRowBlock selectRowBlock;
 
 @end

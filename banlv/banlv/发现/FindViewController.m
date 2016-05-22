@@ -21,6 +21,9 @@
 #import "CYDoDiViewController.h"
 #import "CYPoViewController.h"
 
+#import "CYDizCellChildViewController.h"
+#import "CYParCellChildViewController.h"
+
 
 @interface FindViewController ()<UIScrollViewDelegate>
 
@@ -73,6 +76,8 @@
     [self setDizhuBtn];
     
     [self setPartyBtn];
+    
+    
     
     
 }
@@ -340,6 +345,17 @@
     dizhuTableView.frame = CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
     [self.mainScrollView addSubview:dizhuTableView];
     
+    CYDizCellChildViewController *new = [[CYDizCellChildViewController alloc] init];
+    __weak typeof(self) mySelf = self;
+    dizhuTableView.selectRowBlock = ^(NSInteger row){
+        
+        NSLog(@"%ld",(long)row);
+        
+        
+        [mySelf.navigationController pushViewController:new animated:YES];
+        
+    };
+    
    
     
     self.dizhuTableView = dizhuTableView;
@@ -355,7 +371,23 @@
     
     [self.mainScrollView addSubview:partyTableView];
     
+   
+    
     self.partyTableView = partyTableView;
+    
+    
+    CYParCellChildViewController *new = [[CYParCellChildViewController alloc ] init];
+    
+    __weak typeof(self) mySelf = self;
+    partyTableView.partyRow =^(NSInteger row){
+        
+        NSLog(@"%ld",(long)row);
+        
+        
+        [mySelf.navigationController pushViewController:new animated:YES];
+        
+    };
+
     
     
 }

@@ -83,9 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"点击了%@",self.dataArr[indexPath.row]);
-    
-    CYDizCellChildViewController *new = [[CYDizCellChildViewController alloc] init];
+  self.selectRowBlock(indexPath.row);
     
     
     
