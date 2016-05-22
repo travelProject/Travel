@@ -108,6 +108,7 @@
 		CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB741F2F1CE4D744002FA686 /* FYLookMoreCityVC.m */; };
 		CB7CF5021CE4BB4100716F5D /* FYHomeWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7CF5001CE4BB4100716F5D /* FYHomeWebViewVC.m */; };
 		CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB902C5B1CE2DDA500DCE806 /* Assets.xcassets */; };
+		CBD476DE1CF150A8005418F0 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD476DD1CF150A8005418F0 /* UIColor+HexColor.m */; };
 		CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6548E1CE3591500499922 /* FYHomeViewData.m */; };
 		CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654911CE35A9B00499922 /* FYHomeViewBannerData.m */; };
 		CBD654951CE35B4B00499922 /* FYHomeViewCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654941CE35B4B00499922 /* FYHomeViewCityData.m */; };
@@ -318,6 +319,8 @@
 		CB7CF4FF1CE4BB4100716F5D /* FYHomeWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeWebViewVC.h; sourceTree = "<group>"; };
 		CB7CF5001CE4BB4100716F5D /* FYHomeWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeWebViewVC.m; sourceTree = "<group>"; };
 		CB902C5B1CE2DDA500DCE806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBD476DC1CF150A8005418F0 /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
+		CBD476DD1CF150A8005418F0 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
 		CBD6548D1CE3591500499922 /* FYHomeViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeViewData.h; sourceTree = "<group>"; };
 		CBD6548E1CE3591500499922 /* FYHomeViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeViewData.m; sourceTree = "<group>"; };
 		CBD654901CE35A9B00499922 /* FYHomeViewBannerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeViewBannerData.h; sourceTree = "<group>"; };
@@ -660,6 +663,8 @@
 				2B97A1781CDC2B0400B4989C /* ViewFrame */,
 				CB038E3B1CE6F0F30090839D /* NSString+FYURLEncode.h */,
 				CB038E3C1CE6F0F30090839D /* NSString+FYURLEncode.m */,
+				CBD476DC1CF150A8005418F0 /* UIColor+HexColor.h */,
+				CBD476DD1CF150A8005418F0 /* UIColor+HexColor.m */,
 			);
 			path = "类别";
 			sourceTree = "<group>";
@@ -1463,6 +1468,7 @@
 				CB0A76901CE5B6E700EB6E7D /* FYCityHouseListVC.m in Sources */,
 				CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */,
 				7A2FD8501CE870470049267C /* UIViewController+MMDrawerController.m in Sources */,
+				CBD476DE1CF150A8005418F0 /* UIColor+HexColor.m in Sources */,
 				2B91677A1CEF4723009D2A48 /* CYFristView.m in Sources */,
 				CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */,
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
