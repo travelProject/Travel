@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CYParCellChildViewController : BLBackViewController
-
+@property (nonatomic, copy)NSString *i;
 @end

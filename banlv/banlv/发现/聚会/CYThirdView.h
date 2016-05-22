@@ -10,4 +10,8 @@
 
 @interface CYThirdView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UILabel *jianjie;
+
 @end

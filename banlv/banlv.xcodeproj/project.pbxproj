@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		127437573AB123E2BCE39558 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E8EF9BBE4402875978F035 /* libPods.a */; };
+		2B875E1A1CF14AE900F6D51F /* CYParCellChildData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B875E191CF14AE900F6D51F /* CYParCellChildData.m */; };
+		2B875E1C1CF14DC100F6D51F /* CYFristView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B875E1B1CF14DC100F6D51F /* CYFristView.xib */; };
+		2B875E1E1CF151EE00F6D51F /* CYSecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B875E1D1CF151EE00F6D51F /* CYSecondView.xib */; };
+		2B875E201CF1547B00F6D51F /* CYThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B875E1F1CF1547B00F6D51F /* CYThirdView.xib */; };
+		2B875E221CF15E1800F6D51F /* CYFourthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B875E211CF15E1800F6D51F /* CYFourthView.xib */; };
 		2B8D54241CEA18E400AF43CA /* CYXuanfuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54031CEA18E400AF43CA /* CYXuanfuView.m */; };
 		2B8D54251CEA18E400AF43CA /* CYXuanfuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D54041CEA18E400AF43CA /* CYXuanfuView.xib */; };
 		2B8D54261CEA18E400AF43CA /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D54061CEA18E400AF43CA /* FindViewController.m */; };
@@ -141,6 +146,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B875E181CF14AE900F6D51F /* CYParCellChildData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYParCellChildData.h; sourceTree = "<group>"; };
+		2B875E191CF14AE900F6D51F /* CYParCellChildData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYParCellChildData.m; sourceTree = "<group>"; };
+		2B875E1B1CF14DC100F6D51F /* CYFristView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYFristView.xib; sourceTree = "<group>"; };
+		2B875E1D1CF151EE00F6D51F /* CYSecondView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYSecondView.xib; sourceTree = "<group>"; };
+		2B875E1F1CF1547B00F6D51F /* CYThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYThirdView.xib; sourceTree = "<group>"; };
+		2B875E211CF15E1800F6D51F /* CYFourthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYFourthView.xib; sourceTree = "<group>"; };
 		2B8D54021CEA18E400AF43CA /* CYXuanfuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYXuanfuView.h; sourceTree = "<group>"; };
 		2B8D54031CEA18E400AF43CA /* CYXuanfuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYXuanfuView.m; sourceTree = "<group>"; };
 		2B8D54041CEA18E400AF43CA /* CYXuanfuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYXuanfuView.xib; sourceTree = "<group>"; };
@@ -383,6 +394,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B875E171CF14ABB00F6D51F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2B875E181CF14AE900F6D51F /* CYParCellChildData.h */,
+				2B875E191CF14AE900F6D51F /* CYParCellChildData.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		2B8D54011CEA18E400AF43CA /* 发现 */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +536,7 @@
 		2B9167631CEF4440009D2A48 /* 子页面 */ = {
 			isa = PBXGroup;
 			children = (
+				2B875E171CF14ABB00F6D51F /* model */,
 				2B9167771CEF46C8009D2A48 /* view */,
 				2B9167641CEF4483009D2A48 /* CYParCellChildViewController.h */,
 				2B9167651CEF4483009D2A48 /* CYParCellChildViewController.m */,
@@ -548,12 +569,16 @@
 			children = (
 				2B9167781CEF4723009D2A48 /* CYFristView.h */,
 				2B9167791CEF4723009D2A48 /* CYFristView.m */,
+				2B875E1B1CF14DC100F6D51F /* CYFristView.xib */,
 				2B91677B1CEF479C009D2A48 /* CYSecondView.h */,
 				2B91677C1CEF479C009D2A48 /* CYSecondView.m */,
+				2B875E1D1CF151EE00F6D51F /* CYSecondView.xib */,
 				2B91677E1CEF47C9009D2A48 /* CYThirdView.h */,
 				2B91677F1CEF47C9009D2A48 /* CYThirdView.m */,
+				2B875E1F1CF1547B00F6D51F /* CYThirdView.xib */,
 				2B9167811CEF4853009D2A48 /* CYFourthView.h */,
 				2B9167821CEF4853009D2A48 /* CYFourthView.m */,
+				2B875E211CF15E1800F6D51F /* CYFourthView.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -1314,6 +1339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B875E1E1CF151EE00F6D51F /* CYSecondView.xib in Resources */,
 				7A2FD8391CE86E330049267C /* BLIconView.xib in Resources */,
 				7A2FD8311CE86E330049267C /* BLMyCollectController.xib in Resources */,
 				CB6BAC8F1CE45912006457BC /* FYHeaderViewCell.xib in Resources */,
@@ -1321,17 +1347,20 @@
 				CB4EF9651CE388DD008046EF /* FYHomeViewCell.xib in Resources */,
 				7A2FD8421CE86E330049267C /* BLMyWalletController.xib in Resources */,
 				2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */,
+				2B875E221CF15E1800F6D51F /* CYFourthView.xib in Resources */,
 				7A2FD8401CE86E330049267C /* BLBannerView.xib in Resources */,
 				2B9167701CEF457B009D2A48 /* CYDCCTableViewCell.xib in Resources */,
 				7A2FD83E1CE86E330049267C /* BLBannerCell.xib in Resources */,
 				CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */,
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
 				2B9B48591CEDEA1400FB2169 /* CYDoDizhuView.xib in Resources */,
+				2B875E201CF1547B00F6D51F /* CYThirdView.xib in Resources */,
 				2B8D54311CEA18E400AF43CA /* CYPartyCell.xib in Resources */,
 				CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */,
 				7A2FD83B1CE86E330049267C /* BLLogoView.xib in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
 				CB1AA75E1CEC3339009C18E2 /* mapapi.bundle in Resources */,
+				2B875E1C1CF14DC100F6D51F /* CYFristView.xib in Resources */,
 				2B8D54251CEA18E400AF43CA /* CYXuanfuView.xib in Resources */,
 				2B8D542A1CEA18E400AF43CA /* CYDizhuCell.xib in Resources */,
 			);
@@ -1482,6 +1511,7 @@
 				CBD654951CE35B4B00499922 /* FYHomeViewCityData.m in Sources */,
 				7A2FD83D1CE86E330049267C /* BLBannerCell.m in Sources */,
 				7A2FD84F1CE870470049267C /* MMDrawerVisualState.m in Sources */,
+				2B875E1A1CF14AE900F6D51F /* CYParCellChildData.m in Sources */,
 				2B97A17E1CDC2B0400B4989C /* UIView+GroupAnimation.m in Sources */,
 				2B9167831CEF4853009D2A48 /* CYFourthView.m in Sources */,
 				2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */,

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CYFourthView : UIView
+@property (weak, nonatomic) IBOutlet UIView *map;
+@property (weak, nonatomic) IBOutlet UILabel *joinCount;
 
 @end

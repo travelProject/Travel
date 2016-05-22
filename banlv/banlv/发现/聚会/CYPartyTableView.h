@@ -7,14 +7,16 @@
 //
 
 
-typedef void(^SelectRowBlock)(NSInteger);
+
 #import <UIKit/UIKit.h>
+
+typedef void(^PartyIdBlock)(NSString *row);
 
 @interface CYPartyTableView : UITableView
 
 
 
-@property (nonatomic ,copy)SelectRowBlock partyRow;
+@property (nonatomic ,copy)PartyIdBlock partyIdBlock;
 
 
 
