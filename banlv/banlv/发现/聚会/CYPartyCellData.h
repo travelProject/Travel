@@ -27,4 +27,6 @@
 
 @property(nonatomic,copy)NSString *avatar;
 
+@property(nonatomic,copy)NSString *partyId;
+
 @end

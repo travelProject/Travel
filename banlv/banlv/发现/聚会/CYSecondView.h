@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CYSecondView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *deciption1;
 
 @end

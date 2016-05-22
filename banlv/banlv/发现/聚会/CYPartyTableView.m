@@ -93,11 +93,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"点击了%@",self.dataArr[indexPath.row]);
+    NSLog(@"点击了%@",self.dataArr[indexPath.row].partyId);
     
 
         
-        self.partyRow(indexPath.row);
+        self.partyIdBlock(self.dataArr[indexPath.row].partyId);
         
         
         

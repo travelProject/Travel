@@ -379,9 +379,14 @@
     CYParCellChildViewController *new = [[CYParCellChildViewController alloc ] init];
     
     __weak typeof(self) mySelf = self;
-    partyTableView.partyRow =^(NSInteger row){
+    
+    partyTableView.partyIdBlock = ^(NSString *row){
         
-        NSLog(@"%ld",(long)row);
+       
+        
+        new.i = row;
+        
+        NSLog(@"%@",new.i);
         
         
         [mySelf.navigationController pushViewController:new animated:YES];
