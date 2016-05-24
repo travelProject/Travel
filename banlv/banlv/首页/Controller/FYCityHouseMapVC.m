@@ -42,6 +42,8 @@
 //存放模型的数组
 @property(nonatomic,strong) NSArray<FYCityHouseListData *> *cityHouseArr;
 
+@property(nonatomic,strong)BMKAnnotationView *lastAnnoView;
+
 @end
 
 @implementation FYCityHouseMapVC
@@ -243,16 +245,16 @@
             newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
         }
         
+        newAnnotationView.image = [UIImage imageNamed:@"mapHouse_normal"];
+        
         newAnnotationView.canShowCallout = NO;
         newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(-10, 0, 40, 15)];
-        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(-5, 0, 40, 15)];
         label.text = newAnnotationView.annotation.title;
-        
+        label.textColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;
-        
-        label.font = [UIFont systemFontOfSize:10.f];
+        label.font = [UIFont systemFontOfSize:9.f];
         
         [newAnnotationView addSubview:label];
         
@@ -264,6 +266,20 @@
 
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view
 {
+    if (self.lastAnnoView) {
+        
+        self.lastAnnoView.image = [UIImage imageNamed:@"mapHouse_history"];
+        
+        UILabel *priceLab = (UILabel *)self.lastAnnoView.subviews[0];
+        priceLab.textColor = [UIColor whiteColor];
+    }
+    
+    view.image = [UIImage imageNamed:@"mapHouse_select"];
+    
+     UILabel *priceLab = (UILabel *)view.subviews[0];
+    priceLab.textColor = [UIColor colorWithHexString:@"#58BDC0"];
+    
+    self.lastAnnoView = view;
     
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:view.annotation.subtitle.integerValue inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     

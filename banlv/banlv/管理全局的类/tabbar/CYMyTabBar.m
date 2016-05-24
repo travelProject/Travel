@@ -8,9 +8,6 @@
 
 #import "CYMyTabBar.h"
 
-#import "UIView+frame.h"
-
-#import "SearchViewController.h"
 
 @interface CYMyTabBar ()
 
@@ -58,9 +55,6 @@
     
     CGFloat space = self.width/5;
     
-    CGFloat centerY = self.height/2;
-    
-    
     self.searchView.frame = CGRectMake(space * 2, -10, space, TabBarH + 10);
     
     self.btnBgView.frame = CGRectMake((self.searchView.width - 45)/2, 0, 45, 45);
@@ -77,30 +71,6 @@
     self.searchLab.textAlignment = NSTextAlignmentCenter;
     self.searchLab.textColor = [UIColor grayColor];
     self.searchLab.font = [UIFont systemFontOfSize:10.f];
-    
-    int index = 0;
-    
-    for (UIView *aView in self.subviews) {
-        
-        if ([aView isKindOfClass:[UIImageView class]] && aView.bounds.size.height <= 1) {
-            
-            aView.hidden = YES;
-            
-        }
-        
-        if ([aView isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-            
-            if (index == 2) {
-                index ++;
-            }
-            
-            aView.center = CGPointMake(space/2 + index * space,centerY);
-            
-            index ++;
-            
-        }
-    }
-    
     
 }
 

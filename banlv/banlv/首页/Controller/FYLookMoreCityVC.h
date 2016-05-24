@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SelectedIdBlock)(NSString *cityId,NSString *cityName);
+
 @interface FYLookMoreCityVC : UIViewController
 
+@property (nonatomic,copy)SelectedIdBlock selectedIdBlock;
+
+@property(nonatomic,assign)BOOL flag;
 
 @end

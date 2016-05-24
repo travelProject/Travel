@@ -118,6 +118,7 @@
 		CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654911CE35A9B00499922 /* FYHomeViewBannerData.m */; };
 		CBD654951CE35B4B00499922 /* FYHomeViewCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654941CE35B4B00499922 /* FYHomeViewCityData.m */; };
 		CBD6E4051CEF29C9003BFA5F /* FYMoreChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61C021CEDF12500311C3F /* FYMoreChooseVC.m */; };
+		CBDE03051CF4691200642A24 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE03041CF4691200642A24 /* SearchViewController.xib */; };
 		CBDF7DE41CEB4BDC00762867 /* FYCityHouseMapData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DE31CEB4BDC00762867 /* FYCityHouseMapData.m */; };
 		CBDF7DE81CEB4C3300762867 /* FYCityHouseMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DE61CEB4C3300762867 /* FYCityHouseMapCell.m */; };
 		CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDF7DE71CEB4C3300762867 /* FYCityHouseMapCell.xib */; };
@@ -338,6 +339,7 @@
 		CBD654911CE35A9B00499922 /* FYHomeViewBannerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeViewBannerData.m; sourceTree = "<group>"; };
 		CBD654931CE35B4B00499922 /* FYHomeViewCityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeViewCityData.h; sourceTree = "<group>"; };
 		CBD654941CE35B4B00499922 /* FYHomeViewCityData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeViewCityData.m; sourceTree = "<group>"; };
+		CBDE03041CF4691200642A24 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		CBDF7DE21CEB4BDC00762867 /* FYCityHouseMapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseMapData.h; sourceTree = "<group>"; };
 		CBDF7DE31CEB4BDC00762867 /* FYCityHouseMapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseMapData.m; sourceTree = "<group>"; };
 		CBDF7DE51CEB4C3300762867 /* FYCityHouseMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseMapCell.h; sourceTree = "<group>"; };
@@ -754,6 +756,7 @@
 			children = (
 				2B97A1881CDC2BE200B4989C /* SearchViewController.h */,
 				2B97A1891CDC2BE200B4989C /* SearchViewController.m */,
+				CBDE03041CF4691200642A24 /* SearchViewController.xib */,
 			);
 			path = "搜索";
 			sourceTree = "<group>";
@@ -1355,6 +1358,7 @@
 				2B875E221CF15E1800F6D51F /* CYFourthView.xib in Resources */,
 				7A2FD8401CE86E330049267C /* BLBannerView.xib in Resources */,
 				2B9167701CEF457B009D2A48 /* CYDCCTableViewCell.xib in Resources */,
+				CBDE03051CF4691200642A24 /* SearchViewController.xib in Resources */,
 				7A2FD83E1CE86E330049267C /* BLBannerCell.xib in Resources */,
 				CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */,
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,

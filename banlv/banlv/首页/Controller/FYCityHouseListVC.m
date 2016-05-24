@@ -62,6 +62,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //设置标题文字样式
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#666666"]}];
+    
     self.title = self.cityName;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"dizhi"] style:UIBarButtonItemStyleDone target:self action:@selector(swithToMapStyle)];
@@ -76,6 +79,7 @@
 
 - (void)initTableView
 {
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -113,13 +117,14 @@
     self.tableView.dataSource = self;
     
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downRefresh)];
-    header.stateLabel.textColor = [UIColor colorWithHexString:@"#C6C6C6"];
-    header.lastUpdatedTimeLabel.textColor = [UIColor colorWithHexString:@"#C6C6C6"];
+    header.stateLabel.textColor = [UIColor colorWithHexString:@"#676767"];
+    header.lastUpdatedTimeLabel.textColor = [UIColor colorWithHexString:@"##676767"];
+    
     
     self.tableView.mj_header = header;
     
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(upRefresh)];
-    footer.stateLabel.textColor = [UIColor colorWithHexString:@"#C6C6C6"];
+    footer.stateLabel.textColor = [UIColor colorWithHexString:@"##676767"];
     [footer setTitle:@"正在加载 ..." forState:MJRefreshStateRefreshing];
     footer.automaticallyHidden = NO;
     

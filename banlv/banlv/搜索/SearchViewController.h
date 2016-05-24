@@ -10,4 +10,8 @@
 
 @interface SearchViewController : UIViewController
 
+@property (nonatomic,copy)NSString *cityId;
+
+@property (nonatomic,copy)NSString *cityName;
+
 @end

@@ -232,12 +232,22 @@
     //点击cell退出键盘
     [self.searchField resignFirstResponder];
     
-    FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
+    if (self.flag) {
+        
+        FYCityHouseListVC *cityHouseListVC = [[FYCityHouseListVC alloc] init];
+        
+        cityHouseListVC.cityId = self.cityArr[indexPath.section].city[indexPath.row].ID;
+        cityHouseListVC.cityName = self.cityArr[indexPath.section].city[indexPath.row].cityNameCh;
+        
+        [self.navigationController pushViewController:cityHouseListVC animated:YES];
+    }else if (!self.flag)
+    {
+        self.selectedIdBlock(self.cityArr[indexPath.section].city[indexPath.row].ID,self.cityArr[indexPath.section].city[indexPath.row].cityNameCh);
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
     
-    cityHouseListVC.cityId = self.cityArr[indexPath.section].city[indexPath.row].ID;
-    cityHouseListVC.cityName = self.cityArr[indexPath.section].city[indexPath.row].cityNameCh;
     
-    [self.navigationController pushViewController:cityHouseListVC animated:YES];
     
 }
 
@@ -310,6 +320,11 @@
     [self.searchField resignFirstResponder];
     
     return YES;
+}
+
+- (void)setFlag:(BOOL)flag
+{
+    _flag = flag;
 }
 
 - (void)didReceiveMemoryWarning {

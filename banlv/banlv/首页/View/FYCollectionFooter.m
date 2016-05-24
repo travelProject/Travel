@@ -58,6 +58,7 @@
 - (void)lookMoreCity
 {
     FYLookMoreCityVC *lookMoreCityVC = [[FYLookMoreCityVC alloc] init];
+    lookMoreCityVC.flag = YES;
     
     [self.myHostVC.navigationController pushViewController:lookMoreCityVC animated:YES];
 }
