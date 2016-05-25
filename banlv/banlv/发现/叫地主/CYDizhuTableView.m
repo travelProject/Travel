@@ -66,7 +66,7 @@
        
         NSArray *jsonArr = [[responseObject objectForKey:@"data"]objectForKey:@"result"];
 
-        
+//        NSLog(@"%@",jsonArr);
         self.dataArr = [CYDizhuResultData mj_objectArrayWithKeyValuesArray:jsonArr];
         
         [self reloadData];
