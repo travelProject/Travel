@@ -127,7 +127,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"点击了%@",self.dataArr[indexPath.row].partyId);
+//    NSLog(@"点击了%@",self.dataArr[indexPath.row].partyId);
     
 
         

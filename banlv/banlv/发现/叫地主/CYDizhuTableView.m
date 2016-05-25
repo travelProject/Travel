@@ -116,7 +116,7 @@
 
 - (void)upRefresh{
     
-    NSLog(@"%ld",(long)self.totalPageNum);
+//    NSLog(@"%ld",(long)self.totalPageNum);
     
     if (self.page > self.totalPageNum) {
         [self.mj_footer endRefreshingWithNoMoreData];
@@ -155,7 +155,7 @@
         
     }];
     
-    NSLog(@"page%ld",  self.dataArr.count);
+//    NSLog(@"page%ld",  self.dataArr.count);
     
 }
 
