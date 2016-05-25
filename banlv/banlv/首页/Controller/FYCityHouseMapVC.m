@@ -17,8 +17,21 @@
 //cell模型
 #import "FYCityHouseMapCell.h"
 
+//选择日期的View
+#import "FYChooseDateView.h"
+
+//更多选择
+#import "FYMoreChoose.h"
+
+//筛选条件控制器
+#import "FYMoreChooseVC.h"
+
 
 @interface FYCityHouseMapVC () <BMKMapViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
+@property(nonatomic,strong) FYChooseDateView *chooseDateView;
+
+@property(nonatomic,strong) FYMoreChoose *moreChoose;
 
 @property(nonatomic,strong) BMKMapView *mapView;
 
@@ -28,6 +41,8 @@
 
 //存放模型的数组
 @property(nonatomic,strong) NSArray<FYCityHouseListData *> *cityHouseArr;
+
+@property(nonatomic,strong)BMKAnnotationView *lastAnnoView;
 
 @end
 
@@ -64,9 +79,35 @@
     // Do any additional setup after loading the view.
     
     self.title = self.cityName;
-
+    
     [self initMap];
     
+    self.chooseDateView = [[FYChooseDateView alloc] initWithFrame:CGRectMake(0, NavH, self.view.width, 55.f)];
+    
+    __weak typeof(self) mySelf = self;
+    
+    self.chooseDateView.chooseDateBlock = ^{
+        
+        ZFChooseTimeViewController *chooseDateVC = [[ZFChooseTimeViewController alloc] init];
+        
+        [mySelf presentViewController:chooseDateVC animated:YES completion:nil];
+    };
+    
+    [self.view addSubview:self.chooseDateView];
+    
+    self.moreChoose = [[FYMoreChoose alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.chooseDateView.frame), self.view.width, 40)];
+    [self.view addSubview:self.moreChoose];
+    
+    self.moreChoose.moreChooseBlock = ^(){
+        
+        FYMoreChooseVC *moreChooseVC = [[FYMoreChooseVC alloc] initWithNibName:@"FYMoreChooseVC" bundle:nil];
+        
+        moreChooseVC.view.frame = mySelf.view.bounds;
+        
+        [mySelf.navigationController pushViewController:moreChooseVC animated:YES];
+        
+    };
+
     [self initCollectionView];
     
     [self requestData];
@@ -89,7 +130,7 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, self.view.height - 160, self.view.width, 100) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, self.view.height - 110, self.view.width, 100) collectionViewLayout:flowLayout];
     
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.pagingEnabled = YES;
@@ -212,16 +253,16 @@
             newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
         }
         
+        newAnnotationView.image = [UIImage imageNamed:@"mapHouse_normal"];
+        
         newAnnotationView.canShowCallout = NO;
         newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(-10, 0, 40, 15)];
-        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(-5, 0, 40, 15)];
         label.text = newAnnotationView.annotation.title;
-        
+        label.textColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;
-        
-        label.font = [UIFont systemFontOfSize:10.f];
+        label.font = [UIFont systemFontOfSize:9.f];
         
         [newAnnotationView addSubview:label];
         
@@ -233,6 +274,20 @@
 
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view
 {
+    if (self.lastAnnoView) {
+        
+        self.lastAnnoView.image = [UIImage imageNamed:@"mapHouse_history"];
+        
+        UILabel *priceLab = (UILabel *)self.lastAnnoView.subviews[0];
+        priceLab.textColor = [UIColor whiteColor];
+    }
+    
+    view.image = [UIImage imageNamed:@"mapHouse_select"];
+    
+     UILabel *priceLab = (UILabel *)view.subviews[0];
+    priceLab.textColor = [UIColor colorWithHexString:@"#58BDC0"];
+    
+    self.lastAnnoView = view;
     
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:view.annotation.subtitle.integerValue inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     

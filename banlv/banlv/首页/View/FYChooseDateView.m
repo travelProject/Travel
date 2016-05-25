@@ -10,9 +10,21 @@
 
 @implementation FYChooseDateView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        [self awakeFromNib];
+    }
+    return self;
+}
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    
+    self.backgroundColor = [UIColor whiteColor];
     
     self.liveIn = [[UILabel alloc] init];
     [self setAttributeWithLabel:self.liveIn Title:@"入住" TextColor:[UIColor colorWithRed:0.38 green:0.38 blue:0.38 alpha:1.0]];
@@ -44,7 +56,7 @@
 
 - (void)chooseDateAct
 {
-    NSLog(@"开始选择日期");
+    self.chooseDateBlock();
 }
 
 

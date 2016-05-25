@@ -8,15 +8,13 @@
 
 #import "CYTabBarController.h"
 
-#import "CYMyTabBar.h"
-
-#import "BLMineViewController.h"
-#import "BLTempController.h"
-#import "BLOrdersViewController.h"
-#import "SearchViewController.h"
-
-#import "FindViewController.h"
 #import "HomeViewController.h"
+#import "FindViewController.h"
+#import "SearchViewController.h"
+#import "BLOrdersViewController.h"
+#import "BLTempController.h"
+
+#import "CYMyTabBar.h"
 
 @interface CYTabBarController ()
 
@@ -39,17 +37,13 @@
     
     [self addViewController:[[FindViewController alloc]init] withImage:@"faxian" withSelectImage:@"faxian_click" withItemTitle:@"发现"];
     
+    [self addViewController:[[SearchViewController alloc]init] withImage:nil withSelectImage:nil withItemTitle:@"搜索"];
+    
     [self addViewController:[[BLOrdersViewController alloc]init] withImage:@"dingdan" withSelectImage:@"dingdan_click" withItemTitle:@"订单"];
     
     [self addViewController:[[BLTempController alloc]init] withImage:@"wode" withSelectImage:@"wode_click" withItemTitle:@"我的"];
     
-    CYMyTabBar *newTabBar = [[CYMyTabBar alloc] init];
-    
-    [newTabBar.searchBtn addTarget:self action:@selector(showSearchVC) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self setValue:newTabBar forKey:@"tabBar"];
-    
-    
+    [self setValue:[[CYMyTabBar alloc] init] forKey:@"tabBar"];
     
     
 }
@@ -59,11 +53,12 @@
     
     vc.tabBarItem.title = title;
     
-    vc.tabBarItem.image = [UIImage imageNamed:imageName];
-    
-    vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectImageName]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
-    
- 
+    if (imageName && selectImageName) {
+        
+        vc.tabBarItem.image = [UIImage imageNamed:imageName];
+        
+        vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectImageName]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
     
     BLNavigationController *nav = [[BLNavigationController alloc]initWithRootViewController:vc];
     
@@ -71,24 +66,6 @@
     
 }
 
-- (void)showSearchVC{
-    
-//    SearchViewController *new = [[SearchViewController alloc] init];
-//
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:new];
-//    
-//    [self setSelectedViewController:nav];
-    
-    SearchViewController *new = [[SearchViewController alloc] init];
-    
-    
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:new];
-    
-    [window.rootViewController presentViewController:nav animated:NO completion:nil];
-    
-    
-}
 
 
 
