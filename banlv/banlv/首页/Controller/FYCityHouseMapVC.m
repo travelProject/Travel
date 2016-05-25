@@ -44,6 +44,8 @@
 
 @property(nonatomic,strong)BMKAnnotationView *lastAnnoView;
 
+@property(nonatomic,strong)ZFChooseTimeViewController *chooseDateVC;
+
 @end
 
 @implementation FYCityHouseMapVC
@@ -88,9 +90,10 @@
     
     self.chooseDateView.chooseDateBlock = ^{
         
-        ZFChooseTimeViewController *chooseDateVC = [[ZFChooseTimeViewController alloc] init];
-        
-        [mySelf presentViewController:chooseDateVC animated:YES completion:nil];
+        [UIView animateWithDuration:0.2f animations:^{
+            
+            mySelf.chooseDateVC.frame = CGRectMake(0, 0, mySelf.view.width, mySelf.view.height);
+        }];
     };
     
     [self.view addSubview:self.chooseDateView];
@@ -109,6 +112,9 @@
     };
 
     [self initCollectionView];
+    
+    self.chooseDateVC = [[ZFChooseTimeViewController alloc] initWithFrame:CGRectMake(0, self.view.height, self.view.width, self.view.height)];
+    [[UIApplication sharedApplication].keyWindow addSubview:self.chooseDateVC];
     
     [self requestData];
     

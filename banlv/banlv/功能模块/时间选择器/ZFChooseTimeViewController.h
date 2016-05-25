@@ -11,7 +11,7 @@
 /**
  *  时间选择器
  */
-@interface ZFChooseTimeViewController : UIViewController
+@interface ZFChooseTimeViewController : UIView
 
 
 

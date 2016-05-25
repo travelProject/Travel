@@ -45,6 +45,8 @@
 
 @property(nonatomic,assign)NSInteger hasNext;
 
+@property(nonatomic,strong)ZFChooseTimeViewController *chooseDateVC;
+
 @end
 
 @implementation FYCityHouseListVC
@@ -71,6 +73,10 @@
     
     [self initTableView];
     
+    self.chooseDateVC = [[ZFChooseTimeViewController alloc] initWithFrame:CGRectMake(0, self.view.height, self.view.width, self.view.height)];
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:self.chooseDateVC];
+    
     self.manager = [FYAFNetworkingManager manager];
     
     [self requestData];
@@ -84,15 +90,18 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
     self.chooseDateView = [[FYChooseDateView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 55)];
     
     __weak typeof(self) mySelf = self;
     
     self.chooseDateView.chooseDateBlock = ^{
         
-        ZFChooseTimeViewController *chooseDateVC = [[ZFChooseTimeViewController alloc] init];
+        [UIView animateWithDuration:0.2f animations:^{
+            
+            mySelf.chooseDateVC.frame = CGRectMake(0, 0, mySelf.view.width, mySelf.view.height);
+        }];
         
-        [mySelf presentViewController:chooseDateVC animated:YES completion:nil];
     };
     
     self.moreChoose = [[FYMoreChoose alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.chooseDateView.frame), self.view.width, 40)];
