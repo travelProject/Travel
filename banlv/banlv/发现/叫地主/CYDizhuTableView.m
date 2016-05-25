@@ -19,15 +19,33 @@
 
 @interface CYDizhuTableView ()<UITableViewDelegate ,UITableViewDataSource>
 
-@property(nonatomic, strong)NSArray<CYDizhuResultData *> *dataArr;
+@property(nonatomic, strong)NSMutableArray<CYDizhuResultData *> *dataArr;
+
+@property(nonatomic ,strong)AFHTTPSessionManager *manager;
+
+//当前页
+@property(nonatomic,assign)NSInteger page;
+
+//总页数
+@property(nonatomic,assign)NSInteger totalPageNum;
 
 @end
 
 @implementation CYDizhuTableView
 
-- (NSArray *)dataArr{
+- (NSInteger)page
+{
+    if (!_page) {
+        
+        _page = 1;
+    }
+    
+    return _page;
+}
+
+- (NSMutableArray *)dataArr{
     if (!_dataArr) {
-        _dataArr = [[NSArray alloc] init];
+        _dataArr = [[NSMutableArray alloc] init];
     }
     return _dataArr;
 }
@@ -37,47 +55,159 @@
     if (self) {
         self.dataSource = self;
         self.delegate = self;
-        [self request];
+        self.manager = [AFHTTPSessionManager manager];
+        
+        [self requestData];
+        
+        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downRefresh)];
+        header.stateLabel.textColor = [UIColor colorWithHexString:@"#676767"];
+        header.lastUpdatedTimeLabel.textColor = [UIColor colorWithHexString:@"##676767"];
+        
+        
+        self.mj_header = header;
+        
+        MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(upRefresh)];
+        footer.stateLabel.textColor = [UIColor colorWithHexString:@"##676767"];
+        [footer setTitle:@"正在加载 ..." forState:MJRefreshStateRefreshing];
+        footer.automaticallyHidden = NO;
+        
+        self.mj_footer = footer;
+
 
     }
     return self;
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    
-}
 
-
-- (void)request{
-    NSString *search = nil;
+- (NSString *)getURLStrWithPage:(NSInteger)page
+{
     
-    FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
-    
-    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"key\":\"%@\",\n\"userToken\":\"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2\"\n}",search];
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"userToken\":\"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2\",\n\"page\":%ld}",self.page];
     
     NSString *urlStr = @"http://www.shafalvxing.com/channel/getLocalServiceList.do?";
-    //http://www.shafalvxing.com/channel/getLocalServiceList.do
-    //    bizParams：{
-    //          "userToken" : "MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2",
-    //          "page" : 1
-    //    }
     
-    [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
-       
-        NSArray *jsonArr = [[responseObject objectForKey:@"data"]objectForKey:@"result"];
+    return [urlStr encodeURLWithParams:params];
+}
 
-//        NSLog(@"%@",jsonArr);
+- (void)requestData
+{
+    
+    [self.manager GET:[self getURLStrWithPage:self.page] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       
+        
+        self.totalPageNum = [self getHasNext:responseObject];
+        [self.mj_footer resetNoMoreData];
+        self.mj_footer.hidden = NO;
+        
+        NSArray *jsonArr = [[responseObject objectForKey:@"data"]objectForKey:@"result"];
+        
+        
         self.dataArr = [CYDizhuResultData mj_objectArrayWithKeyValuesArray:jsonArr];
+        [self isHiddenFooter];
         
         [self reloadData];
         
-        
-    } failur:^(NSError *error) {
-        
-        NSLog(@"error : %@",error);
+        [self.mj_header endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
+    
 }
+
+- (void)upRefresh{
+    
+    NSLog(@"%ld",(long)self.totalPageNum);
+    
+    if (self.page > self.totalPageNum) {
+        [self.mj_footer endRefreshingWithNoMoreData];
+        
+        __weak typeof(self) mySelf = self;
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:0.5f animations:^{
+                
+                mySelf.mj_footer.hidden = YES;
+            }];
+            
+        });
+        
+        return;
+    }
+    
+    self.page++;
+    
+    [self.manager GET:[self getURLStrWithPage:self.page] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.mj_footer resetNoMoreData];
+        self.mj_footer.hidden = NO;
+        
+        self.totalPageNum = [self getHasNext:responseObject];
+        
+        NSArray *jsonArr = [[responseObject objectForKey:@"data"]objectForKey:@"result"];
+        
+        NSArray *newArr = [CYDizhuResultData mj_objectArrayWithKeyValuesArray:jsonArr];
+        
+        [self.dataArr addObjectsFromArray:newArr];
+        
+        [self reloadData];
+        
+        [self.mj_header endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+    NSLog(@"page%ld",  self.dataArr.count);
+    
+}
+
+
+
+
+- (void)downRefresh{
+    self.page = 1;
+    
+    [self.manager GET:[self getURLStrWithPage:self.page] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.mj_footer resetNoMoreData];
+        self.mj_footer.hidden = NO;
+        
+        self.totalPageNum = [self getHasNext:responseObject];
+        
+        NSArray *jsonArr = [[responseObject objectForKey:@"data"]objectForKey:@"result"];
+        
+        
+        self.dataArr = [CYDizhuResultData mj_objectArrayWithKeyValuesArray:jsonArr];
+        [self isHiddenFooter];
+        
+        [self reloadData];
+        
+        [self.mj_header endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+}
+
+
+
+- (NSInteger)getHasNext:(id)responseObject
+{
+    NSString *hasNext = [[responseObject objectForKey:@"data"]objectForKey:@"totalPageNum"];
+    
+    return hasNext.integerValue;
+}
+
+- (void)isHiddenFooter
+{
+    if (self.dataArr.count < 2) {
+        
+        if (self.page>=self.totalPageNum) {
+            
+            self.mj_footer.hidden = YES;
+        }
+    }
+}
+
+
+
 
 #pragma mark --UITableViewDelegate
 
