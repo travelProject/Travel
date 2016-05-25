@@ -86,6 +86,15 @@
     
     self.chooseDateView = [[FYChooseDateView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 55)];
     
+    __weak typeof(self) mySelf = self;
+    
+    self.chooseDateView.chooseDateBlock = ^{
+        
+        ZFChooseTimeViewController *chooseDateVC = [[ZFChooseTimeViewController alloc] init];
+        
+        [mySelf presentViewController:chooseDateVC animated:YES completion:nil];
+    };
+    
     self.moreChoose = [[FYMoreChoose alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.chooseDateView.frame), self.view.width, 40)];
     
     self.bothView = [[UIView alloc] initWithFrame:CGRectMake(0, NavH, self.view.width, self.chooseDateView.height + self.moreChoose.height)];
@@ -95,7 +104,6 @@
     
     [self.bothView addSubview:self.moreChoose];
     
-    __weak typeof(self) mySelf = self;
     self.moreChoose.moreChooseBlock = ^(){
         
         FYMoreChooseVC *moreChooseVC = [[FYMoreChooseVC alloc] initWithNibName:@"FYMoreChooseVC" bundle:nil];

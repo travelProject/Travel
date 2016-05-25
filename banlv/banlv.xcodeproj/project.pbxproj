@@ -125,6 +125,11 @@
 		CBDF7DEC1CEB4C7100762867 /* FYCityHouseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DEB1CEB4C7100762867 /* FYCityHouseMapVC.m */; };
 		CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */; };
 		CBEE47A21CF000E0007CE329 /* BLBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEE47A11CF000E0007CE329 /* BLBackViewController.m */; };
+		CBF584001CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF583F91CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m */; };
+		CBF584011CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF583FA1CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.xib */; };
+		CBF584021CF59DC500AE3C67 /* ZFChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF583FC1CF59DC500AE3C67 /* ZFChooseTimeViewController.m */; };
+		CBF584031CF59DC500AE3C67 /* ZFTimerCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF583FE1CF59DC500AE3C67 /* ZFTimerCollectionReusableView.m */; };
+		CBF584041CF59DC500AE3C67 /* ZFTimerCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF583FF1CF59DC500AE3C67 /* ZFTimerCollectionReusableView.xib */; };
 		CBF61BFD1CEDD57400311C3F /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61BFC1CEDD57400311C3F /* BLNavigationController.m */; };
 		CBF61C001CEDE7CF00311C3F /* FYMoreChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61BFF1CEDE7CF00311C3F /* FYMoreChoose.m */; };
 		CBF61C051CEDF12500311C3F /* FYMoreChooseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF61C031CEDF12500311C3F /* FYMoreChooseVC.xib */; };
@@ -351,6 +356,14 @@
 		CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAFNetworkingManager.m; sourceTree = "<group>"; };
 		CBEE47A01CF000E0007CE329 /* BLBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBackViewController.h; sourceTree = "<group>"; };
 		CBEE47A11CF000E0007CE329 /* BLBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLBackViewController.m; sourceTree = "<group>"; };
+		CBF583F81CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFChooseTimeCollectionViewCell.h; sourceTree = "<group>"; };
+		CBF583F91CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFChooseTimeCollectionViewCell.m; sourceTree = "<group>"; };
+		CBF583FA1CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZFChooseTimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		CBF583FB1CF59DC500AE3C67 /* ZFChooseTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFChooseTimeViewController.h; sourceTree = "<group>"; };
+		CBF583FC1CF59DC500AE3C67 /* ZFChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFChooseTimeViewController.m; sourceTree = "<group>"; };
+		CBF583FD1CF59DC500AE3C67 /* ZFTimerCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTimerCollectionReusableView.h; sourceTree = "<group>"; };
+		CBF583FE1CF59DC500AE3C67 /* ZFTimerCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTimerCollectionReusableView.m; sourceTree = "<group>"; };
+		CBF583FF1CF59DC500AE3C67 /* ZFTimerCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZFTimerCollectionReusableView.xib; sourceTree = "<group>"; };
 		CBF61BFB1CEDD57400311C3F /* BLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLNavigationController.h; sourceTree = "<group>"; };
 		CBF61BFC1CEDD57400311C3F /* BLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLNavigationController.m; sourceTree = "<group>"; };
 		CBF61BFE1CEDE7CE00311C3F /* FYMoreChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYMoreChoose.h; sourceTree = "<group>"; };
@@ -1217,6 +1230,7 @@
 		CBE1DA991CE2191C00B36A18 /* 功能模块 */ = {
 			isa = PBXGroup;
 			children = (
+				CBF583F71CF59D8700AE3C67 /* 时间选择器 */,
 				CB038E3E1CE6F9B40090839D /* 轮播图 */,
 				CBE1DA9A1CE2196800B36A18 /* 网络 */,
 				CBE1DA9B1CE2197E00B36A18 /* 数据库 */,
@@ -1238,6 +1252,21 @@
 			children = (
 			);
 			path = "数据库";
+			sourceTree = "<group>";
+		};
+		CBF583F71CF59D8700AE3C67 /* 时间选择器 */ = {
+			isa = PBXGroup;
+			children = (
+				CBF583FB1CF59DC500AE3C67 /* ZFChooseTimeViewController.h */,
+				CBF583FC1CF59DC500AE3C67 /* ZFChooseTimeViewController.m */,
+				CBF583F81CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.h */,
+				CBF583F91CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m */,
+				CBF583FA1CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.xib */,
+				CBF583FD1CF59DC500AE3C67 /* ZFTimerCollectionReusableView.h */,
+				CBF583FE1CF59DC500AE3C67 /* ZFTimerCollectionReusableView.m */,
+				CBF583FF1CF59DC500AE3C67 /* ZFTimerCollectionReusableView.xib */,
+			);
+			path = "时间选择器";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1361,6 +1390,7 @@
 				CBDE03051CF4691200642A24 /* SearchViewController.xib in Resources */,
 				7A2FD83E1CE86E330049267C /* BLBannerCell.xib in Resources */,
 				CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */,
+				CBF584041CF59DC500AE3C67 /* ZFTimerCollectionReusableView.xib in Resources */,
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
 				2B9B48591CEDEA1400FB2169 /* CYDoDizhuView.xib in Resources */,
 				2B875E201CF1547B00F6D51F /* CYThirdView.xib in Resources */,
@@ -1368,6 +1398,7 @@
 				CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */,
 				7A2FD83B1CE86E330049267C /* BLLogoView.xib in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
+				CBF584011CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.xib in Resources */,
 				CB1AA75E1CEC3339009C18E2 /* mapapi.bundle in Resources */,
 				2B875E1C1CF14DC100F6D51F /* CYFristView.xib in Resources */,
 				2B8D54251CEA18E400AF43CA /* CYXuanfuView.xib in Resources */,
@@ -1493,6 +1524,7 @@
 				2B8D54261CEA18E400AF43CA /* FindViewController.m in Sources */,
 				2B8D54271CEA18E400AF43CA /* CYDoDiViewController.m in Sources */,
 				CB038E471CE717780090839D /* FYCityHouseListData.m in Sources */,
+				CBF584021CF59DC500AE3C67 /* ZFChooseTimeViewController.m in Sources */,
 				CB038E411CE6FA100090839D /* FYCarouselPic.m in Sources */,
 				CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */,
 				2B9B48571CEDE9F900FB2169 /* CYDoDizhuView.m in Sources */,
@@ -1507,6 +1539,7 @@
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
 				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,
 				7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */,
+				CBF584031CF59DC500AE3C67 /* ZFTimerCollectionReusableView.m in Sources */,
 				2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */,
 				CB2503351CE57CA2007004AB /* FYSingleCityData.m in Sources */,
 				2B8D542F1CEA18E400AF43CA /* CYJoinedViewController.m in Sources */,
@@ -1516,6 +1549,7 @@
 				7A2FD84D1CE870470049267C /* MMDrawerBarButtonItem.m in Sources */,
 				CB6BAC8A1CE4584A006457BC /* FYCollectionHeader.m in Sources */,
 				2B8D542E1CEA18E400AF43CA /* CYDizhuTableView.m in Sources */,
+				CBF584001CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m in Sources */,
 				7A2FD8411CE86E330049267C /* BLMyWalletController.m in Sources */,
 				7A2FD8331CE86E330049267C /* BLFeedbackController.m in Sources */,
 				CBD654951CE35B4B00499922 /* FYHomeViewCityData.m in Sources */,
