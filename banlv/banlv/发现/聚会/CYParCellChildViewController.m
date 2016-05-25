@@ -20,7 +20,12 @@
 @interface CYParCellChildViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic ,strong)CYParCellChildData  *myData;
+@property(nonatomic, strong)CYFristView *view1;
+@property(nonatomic, strong)CYSecondView *view2;
 
+@property(nonatomic, strong)CYThirdView *view3;
+
+@property(nonatomic, strong)CYFourthView *view4;
 
 
 
@@ -46,7 +51,7 @@
     
     
 //    NSLog(@"%@",self.myData.title);
-    self.i = nil;
+    
    
 }
 
@@ -69,7 +74,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    [self request];
-    
+    [self setViews];
     self.view.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
     self.title = @"活动详情";
     
@@ -88,6 +93,7 @@
     [baomingBtn setTitle:@"报名" forState:UIControlStateNormal];
     [self.view addSubview:baomingBtn];
 
+    
     
 }
 
@@ -110,25 +116,58 @@
         
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//                NSLog(@"%@",[urlStr encodeURLWithParams:params]);
         
         NSArray *jsonArr =[responseObject objectForKey:@"data"];
-//        NSLog(@"%@",jsonArr);
         
        CYParCellChildData *myData  = [CYParCellChildData  mj_objectWithKeyValues:jsonArr];
         
         self.myData = myData;
+        [self addIfo];
         
-        [self setViews];
-        
-//
-//        [self reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
 
 
+    
+}
+
+- (void)addIfo{
+     self.view1.frame = CGRectMake(0, -64, kScreenFrameW, 390);
+    self.view1.lunbo.picArr  = self.myData.pics;
+    self.view1.title.text = self.myData.title;
+    self.view1.price.text = [NSString stringWithFormat:@"¥%@/人",self.myData.price];
+    self.view1.dizhi.text = [NSString stringWithFormat:@"%@ - %@",self.myData.cityName,self.myData.address];
+    NSString *s = self.myData.description1;
+    
+    self.view2.deciption1.lineBreakMode = NSLineBreakByWordWrapping;
+    self.view2.deciption1.text = s;
+    
+    CGSize size = [self.view2.deciption1 sizeThatFits:CGSizeMake(self.view2.deciption1.frame.size.width, MAXFLOAT)];
+    self.view2.deciption1.size = CGSizeMake(size.width, size.height);
+    
+    
+    self.view2.frame = CGRectMake(0, CGRectGetMaxY(self.view1.frame)+3, kScreenFrameW, 40 + self.view2.deciption1.size.height);
+
+    
+    self.view3.frame = CGRectMake(0, CGRectGetMaxY(self.view2.frame)+3, kScreenFrameW, 187);
+    self.view3.userName.text = self.myData.ownerName;
+    
+    NSString *uuu = self.myData.avatar;
+    
+    [self.view3.icon sd_setImageWithURL:[NSURL URLWithString: uuu]];
+    NSString *iii = nil;
+    if (self.myData.sex ==1) {
+        iii = @"男";
+    }else{
+        iii = @"女";
+    }
+    
+    self.view3.jianjie.text = [NSString stringWithFormat:@"%@岁 %@",self.myData.age,iii];
+    
+    self.view4.frame = CGRectMake(0, CGRectGetMaxY(self.view3.frame)+3, kScreenFrameW, 308);
+    self.view4.joinCount.text = [NSString stringWithFormat:@"%@人参加",self.myData.joinUserCount];
     
 }
 
@@ -147,58 +186,34 @@
     [self.view addSubview:mainScrollView];
     
     CYFristView *view1 = [[CYFristView alloc] init];
-    view1.frame = CGRectMake(0, -64, kScreenFrameW, 390);
-    view1.lunbo.picArr  = self.myData.pics;
-    view1.title.text = self.myData.title;
-    view1.price.text = [NSString stringWithFormat:@"¥%@/人",self.myData.price];
-    view1.dizhi.text = [NSString stringWithFormat:@"%@ - %@",self.myData.cityName,self.myData.address];
+   
+    
     [mainScrollView addSubview:view1];
+    self.view1 = view1;
+    
+    
     
     CYSecondView *view2 = [[CYSecondView alloc] init];
     
-    NSString *s = self.myData.description1;
-    //    UIFont *font = [UIFont fontWithName:@"Arial" size:12];
-    //    CGSize size = CGSizeMake(kScreenFrameW,2000);
-    view2.deciption1.lineBreakMode = NSLineBreakByWordWrapping;
-    view2.deciption1.text = s;
-    //    view2.deciption1.font =font;
-    CGSize size = [view2.deciption1 sizeThatFits:CGSizeMake(view2.deciption1.frame.size.width, MAXFLOAT)];
-    view2.deciption1.size = CGSizeMake(size.width, size.height);
-    
-    
-    view2.frame = CGRectMake(0, CGRectGetMaxY(view1.frame)+3, kScreenFrameW, 40 + view2.deciption1.size.height);
-//    NSLog(@"%f",view2.frame.size.height);
+//    view2.frame = CGRectMake(0, 0, kScreenFrameW, 500);
     
     [mainScrollView addSubview:view2];
+    self.view2 = view2;
     
     CYThirdView *view3 = [[CYThirdView alloc] init];
-    view3.frame = CGRectMake(0, CGRectGetMaxY(view2.frame)+3, kScreenFrameW, 187);
-    view3.userName.text = self.myData.ownerName;
-    
-    NSString *uuu = self.myData.avatar;
-    
-    [view3.icon sd_setImageWithURL:[NSURL URLWithString: uuu]];
-    NSString *iii = nil;
-    if (self.myData.sex ==1) {
-        iii = @"男";
-    }else{
-        iii = @"女";
-    }
     
     
-    
-    view3.jianjie.text = [NSString stringWithFormat:@"%@岁 %@",self.myData.age,iii];
     [mainScrollView addSubview:view3];
+    self.view3 = view3;
     
     
     CYFourthView *view4 = [[CYFourthView alloc] init];
-    view4.frame = CGRectMake(0, CGRectGetMaxY(view3.frame)+3, kScreenFrameW, 308);
-    view4.joinCount.text = [NSString stringWithFormat:@"%@人参加",self.myData.joinUserCount];
+    
+    
     [mainScrollView addSubview:view4];
+    self.view4 = view4;
     
-    
-//    NSLog(@"%@",self.myData.title);
-//    NSLog(@"%@",view1.title.text);
+
 
 }
 
