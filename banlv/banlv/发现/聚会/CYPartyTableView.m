@@ -12,16 +12,33 @@
 
 @interface CYPartyTableView ()<UITableViewDelegate,UITableViewDataSource>
 
-@property(nonatomic ,strong)NSArray<CYPartyCellData *> *dataArr;
+@property(nonatomic ,strong)NSMutableArray<CYPartyCellData *> *dataArr;
+
+@property(nonatomic ,strong)AFHTTPSessionManager *manager;
+
+@property(nonatomic,assign)NSInteger page;
+
+@property(nonatomic,assign)NSInteger hasNext;
 
 @end
 
 @implementation CYPartyTableView
 
-- (NSArray *)dataArr{
+
+- (NSInteger)page
+{
+    if (!_page) {
+        
+        _page = 1;
+    }
+    
+    return _page;
+}
+
+- (NSMutableArray *)dataArr{
     
     if (!_dataArr) {
-        _dataArr  = [[NSArray alloc] init];
+        _dataArr  = [[NSMutableArray alloc] init];
     }
     return _dataArr;
 }
@@ -32,13 +49,30 @@
         self.delegate = self;
             self.dataSource = self;
         self.backgroundColor = ThemeColor;
+        self.manager = [AFHTTPSessionManager manager];
         
-        [self request];
+        [self requestData];
+        
+        
+        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downRefresh)];
+        header.stateLabel.textColor = [UIColor colorWithHexString:@"#676767"];
+        header.lastUpdatedTimeLabel.textColor = [UIColor colorWithHexString:@"##676767"];
+        
+        
+        self.mj_header = header;
+        
+        MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(upRefresh)];
+        footer.stateLabel.textColor = [UIColor colorWithHexString:@"##676767"];
+        [footer setTitle:@"正在加载 ..." forState:MJRefreshStateRefreshing];
+        footer.automaticallyHidden = NO;
+        
+        self.mj_footer = footer;
     }
     
     return self;
     
 }
+
 
 #pragma mark --UITableViewDataSource
 
@@ -93,7 +127,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"点击了%@",self.dataArr[indexPath.row].partyId);
+//    NSLog(@"点击了%@",self.dataArr[indexPath.row].partyId);
     
 
         
@@ -106,35 +140,127 @@
     
 }
 
-- (void)request{
-//    NSString *search = nil;
-    
-//    FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"userToken\":\"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2\",\n\"page\":1}"];
+
+- (NSString *)getURLStrWithPage:(NSInteger)page
+{
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"userToken\":\"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2\",\n\"page\":%ld}",self.page];
     
     NSString *urlStr = @"http://www.shafalvxing.com/party/queryPartyWithPage.do?";
     
-    [manager GET:[urlStr encodeURLWithParams:params] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    return [urlStr encodeURLWithParams:params];
+}
+
+
+- (void)requestData
+{
+    
+    [self.manager GET:[self getURLStrWithPage:self.page] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"%@",responseObject);
+        [self.mj_footer resetNoMoreData];
+        self.mj_footer.hidden = NO;
         
-        
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"%@",[urlStr encodeURLWithParams:params]);
+        self.hasNext = [self getHasNext:responseObject];
         
         NSArray *jsonArr = [[[responseObject objectForKey:@"data"]objectForKey:@"parties" ] objectForKey:@"result"];
         
-        
         self.dataArr = [CYPartyCellData mj_objectArrayWithKeyValuesArray:jsonArr];
+        [self isHiddenFooter];
         
         [self reloadData];
         
+        [self.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
     
+}
+
+
+- (void)upRefresh{
+    
+    if (!self.hasNext) {
+        [self.mj_footer endRefreshingWithNoMoreData];
+        
+        __weak typeof(self) mySelf = self;
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:0.5f animations:^{
+                
+                mySelf.mj_footer.hidden = YES;
+            }];
+            
+        });
+        
+        return;
+    }
+    
+    self.page++;
+    
+    [self.manager GET:[self getURLStrWithPage:self.page] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.mj_footer resetNoMoreData];
+        self.mj_footer.hidden = NO;
+        
+        self.hasNext = [self getHasNext:responseObject];
+        
+        NSArray *jsonArr = [[[responseObject objectForKey:@"data"]objectForKey:@"parties" ] objectForKey:@"result"];
+        
+        NSArray *newArr = [CYPartyCellData mj_objectArrayWithKeyValuesArray:jsonArr];
+        
+        [self.dataArr addObjectsFromArray:newArr];
+        
+        [self reloadData];
+        
+        [self.mj_header endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+
+}
+
+
+
+
+- (void)downRefresh{
+    self.page = 1;
+    
+    [self.manager GET:[self getURLStrWithPage:self.page] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.mj_footer resetNoMoreData];
+        self.mj_footer.hidden = NO;
+        
+        self.hasNext = [self getHasNext:responseObject];
+        
+        NSArray *jsonArr = [[[responseObject objectForKey:@"data"]objectForKey:@"parties" ] objectForKey:@"result"];
+        
+       self.dataArr = [CYPartyCellData mj_objectArrayWithKeyValuesArray:jsonArr];
+        [self isHiddenFooter];
+        
+        [self reloadData];
+        
+        [self.mj_header endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+}
+
+
+
+- (NSInteger)getHasNext:(id)responseObject
+{
+    NSString *hasNext = [[[responseObject objectForKey:@"data"]objectForKey:@"parties" ] objectForKey:@"hasNext"];
+    
+    return hasNext.integerValue;
+}
+
+- (void)isHiddenFooter
+{
+    if (self.dataArr.count < 1) {
+        
+        if (!self.hasNext) {
+            
+            self.mj_footer.hidden = YES;
+        }
+    }
 }
 
 
