@@ -214,6 +214,16 @@ static NSString * const headerIdentifier = @"headerIdentifier";
 #pragma mark ---
 #pragma mark --- 视图初始化
 
+- (NSMutableArray *)selectedDateArr
+{
+    if (!_selectedDateArr) {
+        
+        _selectedDateArr = [NSMutableArray array];
+    }
+    
+    return _selectedDateArr;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -394,11 +404,16 @@ static NSString * const headerIdentifier = @"headerIdentifier";
             selectedCell.number.backgroundColor = [UIColor greenColor];
         });
         
+        [self.selectedDateArr addObject:cell.dateForCell];
+        
     }
     
     if (self.clickCount == 2) {
         
         cell.number.backgroundColor = [UIColor greenColor];
+        [self.selectedDateArr addObject:cell.dateForCell];
+        
+        self.returnDateBlock(self.selectedDateArr);
         
         [UIView animateWithDuration:0.2f animations:^{
             

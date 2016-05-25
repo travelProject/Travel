@@ -22,7 +22,7 @@
     
     self.timerLabel.textColor = [UIColor colorWithHexString:@"#79D0D2"];
     
-    self.timerLabel.backgroundColor = [UIColor yellowColor];
+//    self.timerLabel.backgroundColor = [UIColor yellowColor];
 }
 
 @end
