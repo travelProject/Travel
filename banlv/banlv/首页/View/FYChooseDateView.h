@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ChooseDateBlock)();
+
 @interface FYChooseDateView : UIView
 
 @property(nonatomic,strong)UILabel *liveIn;
@@ -17,5 +19,7 @@
 
 @property(nonatomic,strong)UILabel *liveOut;
 @property(nonatomic,strong)UILabel *dateOut;
+
+@property(nonatomic,copy) ChooseDateBlock chooseDateBlock;
 
 @end

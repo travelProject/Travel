@@ -56,7 +56,7 @@
 
 - (void)chooseDateAct
 {
-    NSLog(@"开始选择日期");
+    self.chooseDateBlock();
 }
 
 
