@@ -45,6 +45,8 @@
 
 @property(nonatomic,assign)NSInteger hasNext;
 
+@property(nonatomic,strong)ZFChooseTimeViewController *chooseDateVC;
+
 @end
 
 @implementation FYCityHouseListVC
@@ -59,9 +61,27 @@
     return _page;
 }
 
+- (NSMutableArray *)selectDateArr
+{
+    if (!_selectDateArr) {
+        
+        _selectDateArr = [NSMutableArray arrayWithObjects:[NSNumber numberWithInteger:0],[NSNumber numberWithInteger:0], nil];
+    }
+    
+    return _selectDateArr;
+}
+
+- (NSDate *)getDateFromString:(NSString *)dateStr
+{
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    
+    return [format dateFromString:dateStr];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     //设置标题文字样式
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#666666"]}];
     
@@ -70,6 +90,35 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"dizhi"] style:UIBarButtonItemStyleDone target:self action:@selector(swithToMapStyle)];
     
     [self initTableView];
+    
+    self.chooseDateVC = [[ZFChooseTimeViewController alloc] initWithFrame:CGRectMake(0, self.view.height, self.view.width, self.view.height)];
+    
+    __weak typeof(self) mySelf = self;
+    
+    self.chooseDateVC.returnDateBlock = ^(NSMutableArray *selectedDateArr)
+    {
+        mySelf.selectDateArr = selectedDateArr;
+        
+        NSString *dateInStr = [NSString stringWithFormat:@"%@-%@-%@",mySelf.selectDateArr[0][0],mySelf.selectDateArr[0][1],mySelf.selectDateArr[0][2]];
+        NSDate *dateIn = [mySelf getDateFromString:dateInStr];
+        
+        NSInteger liveIn = (NSInteger)[dateIn timeIntervalSince1970];
+        
+        NSString *dateOutStr = [NSString stringWithFormat:@"%@-%@-%@",mySelf.selectDateArr[1][0],mySelf.selectDateArr[1][1],mySelf.selectDateArr[1][2]];
+        NSDate *dateOut = [mySelf getDateFromString:dateOutStr];
+        
+        NSInteger liveOut = (NSInteger)[dateOut timeIntervalSince1970];
+        
+        [mySelf.selectDateArr removeAllObjects];
+        
+        [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveIn]];
+        [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveOut]];
+        
+        [mySelf.tableView.mj_header beginRefreshing];
+        
+    };
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:self.chooseDateVC];
     
     self.manager = [FYAFNetworkingManager manager];
     
@@ -84,15 +133,18 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
     self.chooseDateView = [[FYChooseDateView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 55)];
     
     __weak typeof(self) mySelf = self;
     
     self.chooseDateView.chooseDateBlock = ^{
         
-        ZFChooseTimeViewController *chooseDateVC = [[ZFChooseTimeViewController alloc] init];
+        [UIView animateWithDuration:0.2f animations:^{
+            
+            mySelf.chooseDateVC.frame = CGRectMake(0, 0, mySelf.view.width, mySelf.view.height);
+        }];
         
-        [mySelf presentViewController:chooseDateVC animated:YES completion:nil];
     };
     
     self.moreChoose = [[FYMoreChoose alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.chooseDateView.frame), self.view.width, 40)];
@@ -145,13 +197,16 @@
     
     [self.view addSubview:self.bothView];
     
+    [self.tableView.mj_header beginRefreshing];
+    
 }
 
 - (void)downRefresh
 {
+    
     self.page = 1;
     
-    [self.manager GET:[self getURLStrWithPage:self.page] parameters:nil success:^(id responseObject) {
+    [self.manager GET:[self getURLStrWithPage:self.page DateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]] parameters:nil success:^(id responseObject) {
         
         [self.tableView.mj_footer resetNoMoreData];
         self.tableView.mj_footer.hidden = NO;
@@ -197,7 +252,7 @@
     
     self.page++;
     
-    [self.manager GET:[self getURLStrWithPage:self.page] parameters:nil success:^(id responseObject) {
+    [self.manager GET:[self getURLStrWithPage:self.page DateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]] parameters:nil success:^(id responseObject) {
         
         self.hasNext = [self getHasNext:responseObject];;
         
@@ -219,11 +274,13 @@
     }];
 }
 
-- (NSString *)getURLStrWithPage:(NSInteger)page
+- (NSString *)getURLStrWithPage:(NSInteger)page DateIn:(NSNumber *)dateIn DateOut:(NSNumber *)dateOut
 {
-    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%@,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"page\":%ld,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":0}",self.cityId,page];
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%ld,\n\"limitGuestsNum\":0,\n\"checkOutDate\":%ld,\n\"page\":%ld,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":%ld}",self.cityId.integerValue,dateOut.integerValue,page,(long)dateIn.integerValue];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
+    
+//    NSLog(@"url : %@",[urlStr encodeURLWithParams:params]);
     
     return [urlStr encodeURLWithParams:params];
 }
@@ -232,7 +289,7 @@
 - (void)requestData
 {
 
-    [self.manager GET:[self getURLStrWithPage:self.page] parameters:nil success:^(id responseObject) {
+    [self.manager GET:[self getURLStrWithPage:self.page DateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]] parameters:nil success:^(id responseObject) {
         
         self.hasNext = [self getHasNext:responseObject];
         

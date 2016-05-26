@@ -14,4 +14,6 @@
 
 @property(nonatomic,copy) NSString *cityName;
 
+@property(nonatomic,strong)NSMutableArray *selectDateArr;
+
 @end

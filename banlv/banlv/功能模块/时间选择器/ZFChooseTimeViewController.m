@@ -214,90 +214,106 @@ static NSString * const headerIdentifier = @"headerIdentifier";
 #pragma mark ---
 #pragma mark --- 视图初始化
 
-- (void)viewDidAppear:(BOOL)animated
+- (NSMutableArray *)selectedDateArr
 {
-    [super viewDidAppear:animated];
-    
-    self.view.backgroundColor = [UIColor clearColor] ;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.clickCount = 0;
-    
-    newDate =[NSDate date];
-    
-    self.currentDate = [self timeString:newDate many:0];
-    
-    self.title = @"日期选择";
-    
-    float cellw =(kDeviceWidth - 110)/7;
-    
-    UIView *DateView = [[UIView alloc] initWithFrame:CGRectMake(40, NavH, kDeviceWidth - 80, kDeviceHeight - 2.5f * NavH)];
-    DateView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:DateView];
-    
-    //初始化头部（标题和星期）
-    UILabel *inAndOutLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 15.f, kDeviceWidth - 80, 40.f)];
-    inAndOutLab.text = @"入住时间/离开时间";
-    inAndOutLab.textColor = [UIColor colorWithHexString:@"#82CED1"];
-    inAndOutLab.textAlignment = NSTextAlignmentCenter;
-    [DateView addSubview:inAndOutLab];
-    
-    UILabel *line1 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(inAndOutLab.frame) + 15.f, self.view.width - 55 * 2, 1)];
-    line1.backgroundColor = [UIColor colorWithHexString:@"#F3F3F3"];
-    [DateView addSubview:line1];
-    
-    CGFloat weekWidth = (kDeviceWidth - 110) / 7;
-    CGFloat leftMargin = 15.f;
-    CGFloat yFromLine1 = CGRectGetMaxY(line1.frame);
-    
-    UILabel *tempLab = nil;
-    
-    for (NSInteger i = 0; i < 7; i++) {
+    if (!_selectedDateArr) {
         
-        tempLab = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin + i * weekWidth, yFromLine1 + 5, weekWidth, 30)];
-        tempLab.text = self.weekdays[i+1];
-        tempLab.textColor = [UIColor colorWithHexString:@"#AEAEAE"];
-        tempLab.textAlignment = NSTextAlignmentCenter;
-        tempLab.font = [UIFont systemFontOfSize:15.f];
-        [DateView addSubview:tempLab];
+        _selectedDateArr = [NSMutableArray array];
     }
     
-    UILabel *line2 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(tempLab.frame) + 5.f, self.view.width - 55 * 2, 1)];
-    line2.backgroundColor = [UIColor colorWithHexString:@"#F3F3F3"];
-    [DateView addSubview:line2];
-
-    
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    [flowLayout setItemSize:CGSizeMake(cellw, cellw*4/3)];//设置cell的尺寸
-    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
-    [flowLayout setHeaderReferenceSize:CGSizeMake(kDeviceWidth - 110, 10)];
-    [flowLayout setMinimumInteritemSpacing:0]; //设置 y 间距
-    [flowLayout setMinimumLineSpacing:0]; //设置 x 间距
-    flowLayout.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);//设置其边界
-    //UIEdgeInsetsMake(设置上下cell的上间距,设置cell左距离,设置上下cell的下间距,设置cell右距离);
-    
-    //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定
-    
-    datecollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(line2.frame) + 10, DateView.width, DateView.height - CGRectGetMaxY(line2.frame) - 10) collectionViewLayout:flowLayout];
-    datecollectionView.dataSource = self;
-    datecollectionView.delegate = self;
-    datecollectionView.backgroundColor = [UIColor whiteColor];
-    
-     //    注册cell
-    [datecollectionView registerNib:[UINib nibWithNibName:@"ZFTimerCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier];
-    
-    [datecollectionView registerNib:[UINib nibWithNibName:@"ZFChooseTimeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    [DateView addSubview:datecollectionView];
-    
-    
-    
+    return _selectedDateArr;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.85f];
+        
+        self.clickCount = 0;
+        
+        newDate =[NSDate date];
+        
+        self.currentDate = [self timeString:newDate many:0];
+        
+        float cellw =(kDeviceWidth - 110)/7;
+        
+        UIView *DateView = [[UIView alloc] initWithFrame:CGRectMake(40, NavH, kDeviceWidth - 80, kDeviceHeight - 2.5f * NavH)];
+        DateView.backgroundColor = [UIColor whiteColor];
+        [self addSubview:DateView];
+        
+        //初始化头部（标题和星期）
+        UILabel *inAndOutLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 15.f, kDeviceWidth - 80, 40.f)];
+        inAndOutLab.text = @"入住时间/离开时间";
+        inAndOutLab.textColor = [UIColor colorWithHexString:@"#82CED1"];
+        inAndOutLab.textAlignment = NSTextAlignmentCenter;
+        [DateView addSubview:inAndOutLab];
+        
+        UILabel *line1 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(inAndOutLab.frame) + 15.f, self.width - 55 * 2, 1)];
+        line1.backgroundColor = [UIColor colorWithHexString:@"#F3F3F3"];
+        [DateView addSubview:line1];
+        
+        CGFloat weekWidth = (kDeviceWidth - 110) / 7;
+        CGFloat leftMargin = 15.f;
+        CGFloat yFromLine1 = CGRectGetMaxY(line1.frame);
+        
+        UILabel *tempLab = nil;
+        
+        for (NSInteger i = 0; i < 7; i++) {
+            
+            tempLab = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin + i * weekWidth, yFromLine1 + 5, weekWidth, 30)];
+            tempLab.text = self.weekdays[i+1];
+            tempLab.textColor = [UIColor colorWithHexString:@"#AEAEAE"];
+            tempLab.textAlignment = NSTextAlignmentCenter;
+            tempLab.font = [UIFont systemFontOfSize:15.f];
+            [DateView addSubview:tempLab];
+        }
+        
+        UILabel *line2 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(tempLab.frame) + 5.f, self.width - 55 * 2, 1)];
+        line2.backgroundColor = [UIColor colorWithHexString:@"#F3F3F3"];
+        [DateView addSubview:line2];
+        
+        
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+        [flowLayout setItemSize:CGSizeMake(cellw, cellw*4/3)];//设置cell的尺寸
+        [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
+        [flowLayout setHeaderReferenceSize:CGSizeMake(kDeviceWidth - 110, 10)];
+        [flowLayout setMinimumInteritemSpacing:0]; //设置 y 间距
+        [flowLayout setMinimumLineSpacing:0]; //设置 x 间距
+        flowLayout.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);//设置其边界
+        //UIEdgeInsetsMake(设置上下cell的上间距,设置cell左距离,设置上下cell的下间距,设置cell右距离);
+        
+        //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定
+        
+        datecollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(line2.frame) + 10, DateView.width, DateView.height - CGRectGetMaxY(line2.frame) - 10) collectionViewLayout:flowLayout];
+        datecollectionView.dataSource = self;
+        datecollectionView.delegate = self;
+        datecollectionView.backgroundColor = [UIColor whiteColor];
+        
+        //    注册cell
+        [datecollectionView registerNib:[UINib nibWithNibName:@"ZFTimerCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier];
+        
+        [datecollectionView registerNib:[UINib nibWithNibName:@"ZFChooseTimeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+        
+        [DateView addSubview:datecollectionView];
+        
+        UIButton *exitBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.width - 40) / 2, self.height - 60, 40, 40)];
+        [exitBtn addTarget:self action:@selector(exitAction) forControlEvents:UIControlEventTouchUpInside];
+        [exitBtn setImage:[UIImage imageNamed:@"exitBtn"] forState:UIControlStateNormal];
+        [self addSubview:exitBtn];
+        
+    }
+    return self;
+}
 
+- (void)exitAction
+{
+    [UIView animateWithDuration:0.2f animations:^{
+        
+        self.frame = CGRectMake(0, self.height, self.width, 0);
+    }];
+}
 
 #pragma mark ---
 #pragma mark --- <UICollectionViewDataSource>
@@ -388,13 +404,21 @@ static NSString * const headerIdentifier = @"headerIdentifier";
             selectedCell.number.backgroundColor = [UIColor greenColor];
         });
         
+        [self.selectedDateArr addObject:cell.dateForCell];
+        
     }
     
     if (self.clickCount == 2) {
         
         cell.number.backgroundColor = [UIColor greenColor];
+        [self.selectedDateArr addObject:cell.dateForCell];
         
-        [self dismissViewControllerAnimated:YES completion:nil];
+        self.returnDateBlock(self.selectedDateArr);
+        
+        [UIView animateWithDuration:0.2f animations:^{
+            
+            self.frame = CGRectMake(0, self.height, self.width, 0);
+        }];
     }
     
     
@@ -406,7 +430,7 @@ static NSString * const headerIdentifier = @"headerIdentifier";
 {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         
-        ZFTimerCollectionReusableView * headerCell = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier forIndexPath:indexPath];
+        ZFTimerCollectionReusableView *headerCell = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier forIndexPath:indexPath];
         
         [headerCell updateTimer:[self timeString:newDate many:indexPath.section]];
         
@@ -416,10 +440,6 @@ static NSString * const headerIdentifier = @"headerIdentifier";
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 @end

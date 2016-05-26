@@ -54,7 +54,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
+    self.navigationItem.leftBarButtonItem = nil;
+    
+    
     
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     
