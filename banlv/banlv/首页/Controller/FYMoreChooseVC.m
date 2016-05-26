@@ -166,6 +166,9 @@
         
         NSInteger liveOut = (NSInteger)[dateOut timeIntervalSince1970];
         
+        mySelf.chooseDateView.dateIn.text = dateInStr;
+        mySelf.chooseDateView.dateOut.text = dateOutStr;
+        
         [mySelf.selectDateArr removeAllObjects];
         
         [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveIn]];
@@ -185,7 +188,7 @@
 
 - (void)getSelectDate:(NSMutableArray *)selectDateArr
 {
-    self.tempChooseDateArr = selectDateArr;
+    self.tempChooseDateArr = [selectDateArr mutableCopy];
 }
 
 - (void)sliderDragUp
@@ -279,7 +282,7 @@
         self.sex = 2;
     }
     
-    self.returnMoreChooses(self.peopleCount,self.sex,self.spaceTypes,self.startPrice,self.endPrice);
+    self.returnMoreChooses(self.peopleCount,self.sex,self.spaceTypes,self.startPrice,self.endPrice,self.tempChooseDateArr,self.chooseDateView.dateIn.text,self.chooseDateView.dateOut.text);
   
 //    NSLog(@"选择的日期:%@",self.tempChooseDateArr);
 //    NSLog(@"房主男女:%ld",self.sex);

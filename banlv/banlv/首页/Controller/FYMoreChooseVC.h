@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^ReturnMoreChooses)(NSInteger limitGuestsNum,NSInteger sex,NSMutableArray *spaceTypes,CGFloat startPrice,CGFloat endPrice);
+typedef void(^ReturnMoreChooses)(NSInteger limitGuestsNum,NSInteger sex,NSMutableArray *spaceTypes,CGFloat startPrice,CGFloat endPrice,NSMutableArray *tempChooseDateArr,NSString *dateIn,NSString *dateOut);
 
 @interface FYMoreChooseVC : BLBackViewController
 

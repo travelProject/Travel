@@ -18,4 +18,19 @@
 
 @property(nonatomic,strong) NSMutableArray<BMKPointAnnotation *> *annotationArr;
 
+@property(nonatomic,assign) NSInteger limitGuestsNum;
+
+@property(nonatomic,strong) NSMutableArray *spaceTypes;
+
+@property(nonatomic,assign) NSInteger sex;
+
+@property(nonatomic,assign) CGFloat startPrice;
+
+@property(nonatomic,assign) CGFloat endPrice;
+
+@property(nonatomic,strong) NSMutableArray *tempChooseDateArr;
+
+//判断选择条件类型
+@property(nonatomic,assign) NSInteger chooseType;
+
 @end

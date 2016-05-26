@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+//城市房间数据模型
+#import "FYCityHouseListData.h"
+
 @interface FYCityHouseListVC : BLBackViewController
+
+//存放城市房间的数组
+@property(nonatomic,strong) NSMutableArray<FYCityHouseListData *> *cityHouseArr;
 
 @property(nonatomic,copy) NSString *cityId;
 
@@ -25,6 +31,8 @@
 @property(nonatomic,assign) CGFloat startPrice;
 
 @property(nonatomic,assign) CGFloat endPrice;
+
+@property(nonatomic,strong) NSMutableArray *tempChooseDateArr;
 
 //判断选择条件类型
 @property(nonatomic,assign) NSInteger chooseType;

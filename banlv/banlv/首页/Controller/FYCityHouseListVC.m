@@ -8,9 +8,6 @@
 
 #import "FYCityHouseListVC.h"
 
-//城市房间数据模型
-#import "FYCityHouseListData.h"
-
 //城市房间cell
 #import "FYCityHouseListCell.h"
 
@@ -36,9 +33,6 @@
 
 @property(nonatomic,strong)UIView *bothView;
 
-//存放城市房间的数组
-@property(nonatomic,strong) NSMutableArray<FYCityHouseListData *> *cityHouseArr;
-
 @property(nonatomic,strong) FYAFNetworkingManager *manager;
 
 @property(nonatomic,assign)NSInteger page;
@@ -50,6 +44,16 @@
 @end
 
 @implementation FYCityHouseListVC
+
+- (NSMutableArray<FYCityHouseListData *> *)cityHouseArr
+{
+    if (!_cityHouseArr) {
+        
+        _cityHouseArr = [NSMutableArray array];
+    }
+    
+    return _cityHouseArr;
+}
 
 - (NSInteger)page
 {
@@ -141,13 +145,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     //设置标题文字样式
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#666666"]}];
     
     self.title = self.cityName;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"dizhi"] style:UIBarButtonItemStyleDone target:self action:@selector(swithToMapStyle)];
+    
+    self.manager = [FYAFNetworkingManager manager];
     
     [self initTableView];
     
@@ -169,10 +175,17 @@
         
         NSInteger liveOut = (NSInteger)[dateOut timeIntervalSince1970];
         
+        mySelf.chooseDateView.dateIn.text = dateInStr;
+        mySelf.chooseDateView.dateOut.text = dateOutStr;
+        
         [mySelf.selectDateArr removeAllObjects];
         
         [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveIn]];
         [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveOut]];
+        
+        mySelf.chooseType = 1;
+        
+        [mySelf getSelectDate:mySelf.selectDateArr];
         
         [mySelf.tableView.mj_header beginRefreshing];
         
@@ -180,11 +193,12 @@
     
     [[UIApplication sharedApplication].keyWindow addSubview:self.chooseDateVC];
     
-    self.manager = [FYAFNetworkingManager manager];
-    
-    [self requestData];
-    
-    }
+}
+
+- (void)getSelectDate:(NSMutableArray *)selectDateArr
+{
+    self.tempChooseDateArr = [selectDateArr mutableCopy];
+}
 
 - (void)initTableView
 {
@@ -222,15 +236,18 @@
         
         moreChooseVC.view.frame = mySelf.view.bounds;
         
-        moreChooseVC.returnMoreChooses = ^(NSInteger limitGuestsNum,NSInteger sex,NSMutableArray *spaceTypes,CGFloat startPrice,CGFloat endPrice){
+        moreChooseVC.returnMoreChooses = ^(NSInteger limitGuestsNum,NSInteger sex,NSMutableArray *spaceTypes,CGFloat startPrice,CGFloat endPrice,NSMutableArray *tempChooseDateArr,NSString *dateIn,NSString *dateOut){
         
+            mySelf.chooseDateView.dateIn.text = dateIn;
+            mySelf.chooseDateView.dateOut.text = dateOut;
+            
             mySelf.sex = sex;
             mySelf.limitGuestsNum = limitGuestsNum;
             mySelf.spaceTypes = spaceTypes;
             mySelf.startPrice = startPrice;
             mySelf.endPrice = endPrice;
-            
             mySelf.chooseType = 2;
+            [mySelf getSelectDate:tempChooseDateArr];
             
             [mySelf.tableView.mj_header beginRefreshing];
         };
@@ -283,10 +300,11 @@
     
     if (self.chooseType == 1) {
         
-        url = [self getURLStrWithPage:self.page DateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]];
+        url = [self getURLStrWithPage:self.page DateIn:self.tempChooseDateArr[0] DateOut:self.tempChooseDateArr[1]];
+        
     }else if (self.chooseType == 2)
     {
-        url = [self getURLWith:self.limitGuestsNum :self.selectDateArr[1] :self.page :self.spaceTypes :self.sex :self.selectDateArr[0] :self.startPrice :self.endPrice];
+        url = [self getURLWith:self.limitGuestsNum :self.tempChooseDateArr[1] :self.page :self.spaceTypes :self.sex :self.tempChooseDateArr[0] :self.startPrice :self.endPrice];
     }
 
     
@@ -336,7 +354,18 @@
     
     self.page++;
     
-    [self.manager GET:[self getURLStrWithPage:self.page DateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]] parameters:nil success:^(id responseObject) {
+    NSString *url = nil;
+    
+    if (self.chooseType == 1) {
+        
+        url = [self getURLStrWithPage:self.page DateIn:self.tempChooseDateArr[0] DateOut:self.tempChooseDateArr[1]];
+        
+    }else if (self.chooseType == 2)
+    {
+        url = [self getURLWith:self.limitGuestsNum :self.tempChooseDateArr[1] :self.page :self.spaceTypes :self.sex :self.tempChooseDateArr[0] :self.startPrice :self.endPrice];
+    }
+    
+    [self.manager GET:url parameters:nil success:^(id responseObject) {
         
         self.hasNext = [self getHasNext:responseObject];;
         
@@ -363,8 +392,6 @@
     NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%ld,\n\"limitGuestsNum\":0,\n\"checkOutDate\":%ld,\n\"page\":%ld,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":%ld}",self.cityId.integerValue,dateOut.integerValue,page,(long)dateIn.integerValue];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
-    
-//    NSLog(@"url : %@",[urlStr encodeURLWithParams:params]);
     
     return [urlStr encodeURLWithParams:params];
 }
@@ -397,7 +424,7 @@
     
     
     
-    NSLog(@"最高价格:%f",endPrice);
+//    NSLog(@"最高价格:%f",endPrice);
     
     
     
@@ -405,44 +432,44 @@
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
     
-    NSLog(@"url : %@",[urlStr encodeURLWithParams:params]);
+//    NSLog(@"url : %@",[urlStr encodeURLWithParams:params]);
     
     return [urlStr encodeURLWithParams:params];
 }
 
-- (void)requestData
-{
-    NSString *url = nil;
-    
-    if (self.chooseType == 1) {
-        
-        url = [self getURLStrWithPage:self.page DateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]];
-    }else if (self.chooseType == 2)
-    {
-        url = [self getURLWith:self.limitGuestsNum :self.selectDateArr[1] :self.page :self.spaceTypes :self.sex :self.selectDateArr[0] :self.startPrice :self.endPrice];
-    }
-
-    [self.manager GET:url parameters:nil success:^(id responseObject) {
-        
-        self.hasNext = [self getHasNext:responseObject];
-        
-        NSArray *cityHouseArr = [[responseObject objectForKey:@"data"] objectForKey:@"result"];
-        
-        self.cityHouseArr = [FYCityHouseListData mj_objectArrayWithKeyValuesArray:cityHouseArr];
-        
-        [self isHiddenFooter];
-        
-        [self.tableView reloadData];
-        
-        
-    } failur:^(NSError *error) {
-        
-        CYLog(@"error : %@",error);
-        
-    }];
-    
-    
-}
+//- (void)requestData
+//{
+//    NSString *url = nil;
+//    
+//    if (self.chooseType == 1) {
+//        
+//        url = [self getURLStrWithPage:self.page DateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]];
+//    }else if (self.chooseType == 2)
+//    {
+//        url = [self getURLWith:self.limitGuestsNum :self.selectDateArr[1] :self.page :self.spaceTypes :self.sex :self.selectDateArr[0] :self.startPrice :self.endPrice];
+//    }
+//
+//    [self.manager GET:url parameters:nil success:^(id responseObject) {
+//        
+//        self.hasNext = [self getHasNext:responseObject];
+//        
+//        NSArray *cityHouseArr = [[responseObject objectForKey:@"data"] objectForKey:@"result"];
+//        
+//        self.cityHouseArr = [FYCityHouseListData mj_objectArrayWithKeyValuesArray:cityHouseArr];
+//        
+//        [self isHiddenFooter];
+//        
+//        [self.tableView reloadData];
+//        
+//        
+//    } failur:^(NSError *error) {
+//        
+//        CYLog(@"error : %@",error);
+//        
+//    }];
+//    
+//    
+//}
 
 - (NSInteger)getHasNext:(id)responseObject
 {

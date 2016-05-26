@@ -46,6 +46,8 @@
 
 @property(nonatomic,strong)ZFChooseTimeViewController *chooseDateVC;
 
+@property(nonatomic,strong) FYAFNetworkingManager *manager;
+
 @end
 
 @implementation FYCityHouseMapVC
@@ -60,20 +62,64 @@
     return _pinArr;
 }
 
-
-- (void)viewWillAppear:(BOOL)animated
+- (NSInteger)limitGuestsNum
 {
-    [super viewWillAppear:animated];
+    if (!_limitGuestsNum) {
+        
+        _limitGuestsNum = 0;
+    }
     
-    self.mapView.delegate = self;
-    
+    return _limitGuestsNum;
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (NSMutableArray *)spaceTypes
 {
-    [super viewWillDisappear:animated];
+    if (!_spaceTypes) {
+        
+        _spaceTypes = [NSMutableArray array];
+    }
     
-    self.mapView.delegate = nil;
+    return _spaceTypes;
+}
+
+- (NSInteger)sex
+{
+    if (!_sex) {
+        
+        _sex = 0;
+    }
+    
+    return _sex;
+}
+
+- (NSInteger)chooseType
+{
+    if (!_chooseType) {
+        
+        _chooseType = 1;
+    }
+    
+    return _chooseType;
+}
+
+- (CGFloat)startPrice
+{
+    if (!_startPrice) {
+        
+        _startPrice = 0.0;
+    }
+    
+    return _startPrice;
+}
+
+- (CGFloat)endPrice
+{
+    if (!_endPrice) {
+        
+        _endPrice = 199.9;
+    }
+    
+    return _endPrice;
 }
 
 - (NSMutableArray<BMKPointAnnotation *> *)annotationArr
@@ -104,11 +150,28 @@
     return [format dateFromString:dateStr];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.mapView.delegate = self;
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.mapView.delegate = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.title = self.cityName;
+    
+    self.manager = [FYAFNetworkingManager manager];
     
     [self initMap];
     
@@ -135,6 +198,24 @@
         
         moreChooseVC.view.frame = mySelf.view.bounds;
         
+        moreChooseVC.returnMoreChooses = ^(NSInteger limitGuestsNum,NSInteger sex,NSMutableArray *spaceTypes,CGFloat startPrice,CGFloat endPrice,NSMutableArray *tempChooseDateArr,NSString *dateIn,NSString *dateOut){
+            
+            mySelf.chooseDateView.dateIn.text = dateIn;
+            mySelf.chooseDateView.dateOut.text = dateOut;
+            
+            mySelf.sex = sex;
+            mySelf.limitGuestsNum = limitGuestsNum;
+            mySelf.spaceTypes = spaceTypes;
+            mySelf.startPrice = startPrice;
+            mySelf.endPrice = endPrice;
+            mySelf.chooseType = 2;
+            [mySelf getSelectDate:tempChooseDateArr];
+            
+            [mySelf.mapView removeAnnotations:mySelf.annotationArr];
+            [mySelf requestData];
+        };
+
+        
         [mySelf.navigationController pushViewController:moreChooseVC animated:YES];
         
     };
@@ -158,11 +239,19 @@
         
         NSInteger liveOut = (NSInteger)[dateOut timeIntervalSince1970];
         
+        mySelf.chooseDateView.dateIn.text = dateInStr;
+        mySelf.chooseDateView.dateOut.text = dateOutStr;
+        
         [mySelf.selectDateArr removeAllObjects];
         
         [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveIn]];
         [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveOut]];
         [mySelf.mapView removeAnnotations:mySelf.annotationArr];
+        
+        mySelf.chooseType = 1;
+        
+        [mySelf getSelectDate:mySelf.selectDateArr];
+        
         [mySelf requestData];
     };
     
@@ -171,6 +260,11 @@
     [self requestData];
     
     
+}
+
+- (void)getSelectDate:(NSMutableArray *)selectDateArr
+{
+    self.tempChooseDateArr = [selectDateArr mutableCopy];
 }
 
 - (void)initMap
@@ -267,12 +361,35 @@
     return [urlStr encodeURLWithParams:params];
 }
 
-- (void)requestData
+- (NSString *)getURLWith:(NSInteger)limitNum :(NSNumber *)checkOutDate :(NSArray *)spaceTypes :(NSInteger)sex :(NSNumber *)checkInDate :(CGFloat)startPrice :(CGFloat)endPrice
 {
     
-    FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%ld,\n\"limitGuestsNum\":%ld,\n\"checkOutDate\":%ld,\n\"checkInDate\":%ld,\n\"startPrice\":%f,\n\"spaceTypes\":%@,\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\",\n\"sex\":%ld,\n\"districtId\":0,\n\"endPrice\":%f}",self.cityId.integerValue,limitNum,checkOutDate.integerValue,(long)checkInDate.integerValue,startPrice,spaceTypes.mj_JSONString,sex,endPrice];
     
-    [manager GET:[self getURLStrWithDateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]] parameters:nil success:^(id responseObject) {
+    NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
+    
+    //    NSLog(@"url : %@",[urlStr encodeURLWithParams:params]);
+    
+    return [urlStr encodeURLWithParams:params];
+}
+
+
+- (void)requestData
+{
+    NSString *url = nil;
+    
+    if (self.chooseType == 1) {
+        
+        url = [self getURLStrWithDateIn:self.tempChooseDateArr[0] DateOut:self.tempChooseDateArr[1]];
+        
+    }else if (self.chooseType == 2)
+    {
+        url = [self getURLWith:self.limitGuestsNum :self.tempChooseDateArr[1] :self.spaceTypes :self.sex :self.tempChooseDateArr[0] :self.startPrice :self.endPrice];
+
+    }
+
+    
+    [self.manager GET:url parameters:nil success:^(id responseObject) {
         
         NSArray *cityHouseArr = [[responseObject objectForKey:@"data"] objectForKey:@"result"];
         
