@@ -126,6 +126,9 @@
 		CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654911CE35A9B00499922 /* FYHomeViewBannerData.m */; };
 		CBD654951CE35B4B00499922 /* FYHomeViewCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654941CE35B4B00499922 /* FYHomeViewCityData.m */; };
 		CBD6E4051CEF29C9003BFA5F /* FYMoreChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF61C021CEDF12500311C3F /* FYMoreChooseVC.m */; };
+		CBDA28ED1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDA28EB1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.m */; };
+		CBDA28EE1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDA28EC1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.xib */; };
+		CBDA28F11CF7313700CDC3B7 /* FYSingleHouseDetailData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDA28F01CF7313700CDC3B7 /* FYSingleHouseDetailData.m */; };
 		CBDE03051CF4691200642A24 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE03041CF4691200642A24 /* SearchViewController.xib */; };
 		CBDF7DE41CEB4BDC00762867 /* FYCityHouseMapData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DE31CEB4BDC00762867 /* FYCityHouseMapData.m */; };
 		CBDF7DE81CEB4C3300762867 /* FYCityHouseMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DE61CEB4C3300762867 /* FYCityHouseMapCell.m */; };
@@ -364,6 +367,11 @@
 		CBD654911CE35A9B00499922 /* FYHomeViewBannerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeViewBannerData.m; sourceTree = "<group>"; };
 		CBD654931CE35B4B00499922 /* FYHomeViewCityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeViewCityData.h; sourceTree = "<group>"; };
 		CBD654941CE35B4B00499922 /* FYHomeViewCityData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeViewCityData.m; sourceTree = "<group>"; };
+		CBDA28EA1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYSingleHouseDetailVC.h; sourceTree = "<group>"; };
+		CBDA28EB1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSingleHouseDetailVC.m; sourceTree = "<group>"; };
+		CBDA28EC1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYSingleHouseDetailVC.xib; sourceTree = "<group>"; };
+		CBDA28EF1CF7313700CDC3B7 /* FYSingleHouseDetailData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYSingleHouseDetailData.h; sourceTree = "<group>"; };
+		CBDA28F01CF7313700CDC3B7 /* FYSingleHouseDetailData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSingleHouseDetailData.m; sourceTree = "<group>"; };
 		CBDE03041CF4691200642A24 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		CBDF7DE21CEB4BDC00762867 /* FYCityHouseMapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseMapData.h; sourceTree = "<group>"; };
 		CBDF7DE31CEB4BDC00762867 /* FYCityHouseMapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseMapData.m; sourceTree = "<group>"; };
@@ -1202,6 +1210,9 @@
 				CBF61C031CEDF12500311C3F /* FYMoreChooseVC.xib */,
 				CBDF7DEA1CEB4C7100762867 /* FYCityHouseMapVC.h */,
 				CBDF7DEB1CEB4C7100762867 /* FYCityHouseMapVC.m */,
+				CBDA28EA1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.h */,
+				CBDA28EB1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.m */,
+				CBDA28EC1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1252,6 +1263,8 @@
 				CB038E461CE717780090839D /* FYCityHouseListData.m */,
 				CBDF7DE21CEB4BDC00762867 /* FYCityHouseMapData.h */,
 				CBDF7DE31CEB4BDC00762867 /* FYCityHouseMapData.m */,
+				CBDA28EF1CF7313700CDC3B7 /* FYSingleHouseDetailData.h */,
+				CBDA28F01CF7313700CDC3B7 /* FYSingleHouseDetailData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1443,6 +1456,7 @@
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
 				CBF584011CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.xib in Resources */,
 				CB1AA75E1CEC3339009C18E2 /* mapapi.bundle in Resources */,
+				CBDA28EE1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.xib in Resources */,
 				2B851FDE1CF335770037F39B /* CYDView4.xib in Resources */,
 				2B875E1C1CF14DC100F6D51F /* CYFristView.xib in Resources */,
 				2B8D54251CEA18E400AF43CA /* CYXuanfuView.xib in Resources */,
@@ -1547,6 +1561,7 @@
 				2B851FD31CF334ED0037F39B /* CYDView3.m in Sources */,
 				7A2FD83C1CE86E330049267C /* BLProfilesController.m in Sources */,
 				7A2FD8381CE86E330049267C /* BLIconView.m in Sources */,
+				CBDA28ED1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.m in Sources */,
 				CBF61BFD1CEDD57400311C3F /* BLNavigationController.m in Sources */,
 				CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */,
 				2B97A1661CDC2A6300B4989C /* CYMyTabBar.m in Sources */,
@@ -1584,6 +1599,7 @@
 				CBD476DE1CF150A8005418F0 /* UIColor+HexColor.m in Sources */,
 				2B91677A1CEF4723009D2A48 /* CYFristView.m in Sources */,
 				CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */,
+				CBDA28F11CF7313700CDC3B7 /* FYSingleHouseDetailData.m in Sources */,
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
 				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,
 				7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */,

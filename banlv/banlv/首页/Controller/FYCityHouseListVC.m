@@ -23,6 +23,9 @@
 //选择日期
 #import "FYChooseDateView.h"
 
+//房间详细信息类
+#import "FYSingleHouseDetailVC.h"
+
 @interface FYCityHouseListVC () <UITableViewDelegate ,UITableViewDataSource ,UIScrollViewDelegate>
 
 @property(nonatomic,strong) UITableView *tableView;
@@ -262,6 +265,8 @@
     
     self.tableView.showsVerticalScrollIndicator = NO;
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     self.tableView.delegate = self;
     
     self.tableView.dataSource = self;
@@ -280,6 +285,7 @@
     
     self.tableView.mj_footer = footer;
     
+    self.tableView.mj_footer.hidden = YES;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FYCityHouseListCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"houseCell"];
     
@@ -324,6 +330,8 @@
         [self.tableView reloadData];
         
         [self.tableView.mj_header endRefreshing];
+        
+        self.tableView.mj_footer.hidden = NO;
         
     } failur:^(NSError *error) {
         
@@ -512,7 +520,12 @@
     //设为不选中（不变灰色）
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSLog(@"点击的房间ID:%@",self.cityHouseArr[indexPath.row].spaceId);
+    FYSingleHouseDetailVC *singleHouseDetailVC = [[FYSingleHouseDetailVC alloc] init];
+    
+    singleHouseDetailVC.spaceId = self.cityHouseArr[indexPath.row].spaceId;
+    
+    [self.navigationController pushViewController:singleHouseDetailVC animated:YES];
+    
 }
 
 #pragma mark -- UITableViewDataSource
