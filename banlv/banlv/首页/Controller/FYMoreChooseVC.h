@@ -8,6 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ReturnMoreChooses)(NSInteger limitGuestsNum,NSInteger sex,NSMutableArray *spaceTypes,CGFloat startPrice,CGFloat endPrice);
+
 @interface FYMoreChooseVC : BLBackViewController
+
+@property(nonatomic,strong)NSMutableArray *selectDateArr;
+
+@property(nonatomic,assign) NSInteger limitGuestsNum;
+
+@property(nonatomic,strong) NSMutableArray *spaceTypes;
+
+@property(nonatomic,assign) NSInteger sex;
+
+@property(nonatomic,assign) CGFloat startPrice;
+
+@property(nonatomic,assign) CGFloat endPrice;
+
+@property(nonatomic,strong) NSMutableArray *tempChooseDateArr;
+
+@property(nonatomic,copy) ReturnMoreChooses returnMoreChooses;
 
 @end

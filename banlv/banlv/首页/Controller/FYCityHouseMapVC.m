@@ -76,6 +76,34 @@
     self.mapView.delegate = nil;
 }
 
+- (NSMutableArray<BMKPointAnnotation *> *)annotationArr
+{
+    if (!_annotationArr) {
+        
+        _annotationArr = [NSMutableArray array];
+    }
+    
+    return _annotationArr;
+}
+
+- (NSMutableArray *)selectDateArr
+{
+    if (!_selectDateArr) {
+        
+        _selectDateArr = [NSMutableArray arrayWithObjects:[NSNumber numberWithInteger:0],[NSNumber numberWithInteger:0], nil];
+    }
+    
+    return _selectDateArr;
+}
+
+- (NSDate *)getDateFromString:(NSString *)dateStr
+{
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    
+    return [format dateFromString:dateStr];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -114,6 +142,30 @@
     [self initCollectionView];
     
     self.chooseDateVC = [[ZFChooseTimeViewController alloc] initWithFrame:CGRectMake(0, self.view.height, self.view.width, self.view.height)];
+    
+    
+    self.chooseDateVC.returnDateBlock = ^(NSMutableArray *selectedDateArr)
+    {
+        mySelf.selectDateArr = selectedDateArr;
+        
+        NSString *dateInStr = [NSString stringWithFormat:@"%@-%@-%@",mySelf.selectDateArr[0][0],mySelf.selectDateArr[0][1],mySelf.selectDateArr[0][2]];
+        NSDate *dateIn = [mySelf getDateFromString:dateInStr];
+        
+        NSInteger liveIn = (NSInteger)[dateIn timeIntervalSince1970];
+        
+        NSString *dateOutStr = [NSString stringWithFormat:@"%@-%@-%@",mySelf.selectDateArr[1][0],mySelf.selectDateArr[1][1],mySelf.selectDateArr[1][2]];
+        NSDate *dateOut = [mySelf getDateFromString:dateOutStr];
+        
+        NSInteger liveOut = (NSInteger)[dateOut timeIntervalSince1970];
+        
+        [mySelf.selectDateArr removeAllObjects];
+        
+        [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveIn]];
+        [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveOut]];
+        [mySelf.mapView removeAnnotations:mySelf.annotationArr];
+        [mySelf requestData];
+    };
+    
     [[UIApplication sharedApplication].keyWindow addSubview:self.chooseDateVC];
     
     [self requestData];
@@ -201,18 +253,26 @@
     annotation.title = [NSString stringWithFormat:@"¥%.1f",price.floatValue];
     annotation.subtitle = index;
     
+    [self.annotationArr addObject:annotation];
+    
     [_mapView addAnnotation:annotation];
+}
+
+- (NSString *)getURLStrWithDateIn:(NSNumber *)dateIn DateOut:(NSNumber *)dateOut
+{
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%@,\n\"limitGuestsNum\":0,\n\"checkOutDate\":%ld,\n\"districtId\":0,\n\"sex\":0,\n\"checkInDate\":%ld,\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}",self.cityId,dateOut.integerValue,(long)dateIn.integerValue];
+    
+    NSString *urlStr = @"http://www.shafalvxing.com/space/getSpaceByLatLng.do?";
+    
+    return [urlStr encodeURLWithParams:params];
 }
 
 - (void)requestData
 {
+    
     FYAFNetworkingManager *manager = [FYAFNetworkingManager manager];
     
-    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%@,\n\"limitGuestsNum\":0,\n\"checkOutDate\":0,\n\"districtId\":0,\n\"sex\":0,\n\"sex\":0,\n\"checkInDate\":0,\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\"\n}",self.cityId];
-    
-    NSString *urlStr = @"http://www.shafalvxing.com/space/getSpaceByLatLng.do?";
-    
-    [manager GET:[urlStr encodeURLWithParams:params] parameters:nil success:^(id responseObject) {
+    [manager GET:[self getURLStrWithDateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]] parameters:nil success:^(id responseObject) {
         
         NSArray *cityHouseArr = [[responseObject objectForKey:@"data"] objectForKey:@"result"];
         

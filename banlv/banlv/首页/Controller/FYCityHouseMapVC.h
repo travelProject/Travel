@@ -14,4 +14,8 @@
 
 @property (nonatomic,copy)NSString *cityName;
 
+@property(nonatomic,strong)NSMutableArray *selectDateArr;
+
+@property(nonatomic,strong) NSMutableArray<BMKPointAnnotation *> *annotationArr;
+
 @end

@@ -418,6 +418,11 @@ static NSString * const headerIdentifier = @"headerIdentifier";
         [UIView animateWithDuration:0.2f animations:^{
             
             self.frame = CGRectMake(0, self.height, self.width, 0);
+            
+            [self.selectedDateArr removeAllObjects];
+            self.clickCount = 0;
+            
+            [self.collectionView reloadData];
         }];
     }
     

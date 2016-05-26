@@ -16,4 +16,17 @@
 
 @property(nonatomic,strong)NSMutableArray *selectDateArr;
 
+@property(nonatomic,assign) NSInteger limitGuestsNum;
+
+@property(nonatomic,strong) NSMutableArray *spaceTypes;
+
+@property(nonatomic,assign) NSInteger sex;
+
+@property(nonatomic,assign) CGFloat startPrice;
+
+@property(nonatomic,assign) CGFloat endPrice;
+
+//判断选择条件类型
+@property(nonatomic,assign) NSInteger chooseType;
+
 @end
