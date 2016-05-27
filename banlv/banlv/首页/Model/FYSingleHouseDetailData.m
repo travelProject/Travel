@@ -10,4 +10,20 @@
 
 @implementation FYSingleHouseDetailData
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        [FYSingleHouseDetailData mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+            
+            return @{
+                     @"descrip" : @"description",
+                     };
+        }];
+        
+    }
+    return self;
+}
+
 @end

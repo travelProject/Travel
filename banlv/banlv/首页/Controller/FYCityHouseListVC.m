@@ -589,6 +589,11 @@
     _cityId = cityId;
 }
 
+- (void)setTempChooseDateArr:(NSMutableArray *)tempChooseDateArr
+{
+    _tempChooseDateArr = tempChooseDateArr;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
