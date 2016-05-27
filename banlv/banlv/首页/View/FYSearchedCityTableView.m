@@ -57,6 +57,7 @@
     
     self.searchedTableView.delegate = self;
     self.searchedTableView.dataSource = self;
+    self.searchedTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.searchedTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"searchedCell"];
     
