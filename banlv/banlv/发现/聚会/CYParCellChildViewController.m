@@ -135,7 +135,7 @@
     [manager GET:[urlStr encodeURLWithParams:params] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@",[urlStr encodeURLWithParams:params] );
+//        NSLog(@"%@",[urlStr encodeURLWithParams:params] );
         NSArray *jsonArr =[responseObject objectForKey:@"data"];
         
        CYParCellChildData *myData  = [CYParCellChildData  mj_objectWithKeyValues:jsonArr];
@@ -158,6 +158,33 @@
     self.view1.title.text = self.myData.title;
     self.view1.price.text = [NSString stringWithFormat:@"¥%@/人",self.myData.price];
     self.view1.dizhi.text = [NSString stringWithFormat:@"%@ - %@",self.myData.cityName,self.myData.address];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM月dd日"];
+    //HH:mm:ss
+    //    NSString *dateLoca = self.dataArr[indexPath.row].startTime;
+    
+    NSTimeInterval time=[self.myData.startTime doubleValue];
+    
+    NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+    
+    
+    NSString *timestr = [formatter stringFromDate:detaildate];
+    
+    
+    
+    NSString *endTime = self.myData.endTime;
+    time=[endTime doubleValue];
+    
+    detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+    
+    
+    NSString *timestr1 = [formatter stringFromDate:detaildate];
+    
+    
+    
+    self.view1.time.text = [NSString stringWithFormat:@"%@ ~ %@",timestr,timestr1];
+
     
     
     NSString *s = self.myData.description1;

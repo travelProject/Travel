@@ -30,7 +30,7 @@
 
 @property (nonatomic, assign) CGFloat lng;
 
-@property (nonatomic, assign) long long endTime;
+@property (nonatomic, copy) NSString *endTime;
 
 @property (nonatomic, copy) NSString *ownerDescription;
 
@@ -62,7 +62,7 @@
 
 @property (nonatomic, copy) NSString *cityName;
 
-@property (nonatomic, assign) long long startTime;
+@property (nonatomic, copy) NSString *startTime;
 
 @property (nonatomic, copy) NSString *address;
 

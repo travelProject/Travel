@@ -104,9 +104,33 @@
     
     NSString *startTime = self.dataArr[indexPath.row].startTime;
     
-    NSString *endTime = self.dataArr[indexPath.row].endTime;
     
-    cell.time.text = [NSString stringWithFormat:@"%@ ~ %@",startTime,endTime];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM月dd日"];
+    //HH:mm:ss
+//    NSString *dateLoca = self.dataArr[indexPath.row].startTime;
+    
+    NSTimeInterval time=[startTime doubleValue];
+    
+    NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+
+    
+    NSString *timestr = [formatter stringFromDate:detaildate];
+
+    
+    
+    NSString *endTime = self.dataArr[indexPath.row].endTime;
+     time=[endTime doubleValue];
+    
+    detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+
+    
+    NSString *timestr1 = [formatter stringFromDate:detaildate];
+    
+    
+    
+    cell.time.text = [NSString stringWithFormat:@"%@ ~ %@",timestr,timestr1];
     
 //    NSLog(@"%@",cell.time.text);
     
