@@ -22,7 +22,7 @@
                             <attributedString key="attributedText">
                                 <fragment content="Label">
                                     <attributes>
-                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="17" name="STKaiti"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
@@ -55,35 +55,49 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fma-a2-e5d">
-                    <rect key="frame" x="105" y="329" width="200" height="21"/>
+                    <rect key="frame" x="0.0" y="329" width="410" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="THj-te-ewL"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="THj-te-ewL"/>
+                        </mask>
+                    </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHi-jt-H6w">
-                    <rect key="frame" x="105" y="288" width="200" height="30"/>
+                    <rect key="frame" x="0.0" y="288" width="410" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="LVN-DA-gVE"/>
-                        <constraint firstAttribute="width" constant="200" id="U6m-EA-JyN"/>
+                        <constraint firstAttribute="width" constant="300" id="U6m-EA-JyN"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="U6m-EA-JyN"/>
+                        </mask>
+                    </variation>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Fma-a2-e5d" firstAttribute="top" secondItem="dHi-jt-H6w" secondAttribute="bottom" constant="11" id="6aH-Ps-1Ao"/>
+                <constraint firstItem="Fma-a2-e5d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AET-Tw-WEQ"/>
                 <constraint firstItem="dHi-jt-H6w" firstAttribute="top" secondItem="5Js-an-dUc" secondAttribute="bottom" constant="8" id="GcM-ch-UOC"/>
                 <constraint firstItem="Fma-a2-e5d" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Jxk-JI-dO4"/>
                 <constraint firstItem="bgw-Cx-IFY" firstAttribute="top" secondItem="Fma-a2-e5d" secondAttribute="bottom" constant="11" id="NBQ-Kc-Nei"/>
+                <constraint firstItem="dHi-jt-H6w" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QEn-vK-g3j"/>
                 <constraint firstAttribute="trailing" secondItem="5Js-an-dUc" secondAttribute="trailing" id="Uxb-i3-TOA"/>
                 <constraint firstItem="bgw-Cx-IFY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WLC-kV-ZTg"/>
+                <constraint firstAttribute="trailing" secondItem="dHi-jt-H6w" secondAttribute="trailing" id="WmK-aA-VFk"/>
                 <constraint firstItem="dHi-jt-H6w" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="XRN-E3-GKC"/>
                 <constraint firstItem="5Js-an-dUc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jL5-ni-WOy"/>
+                <constraint firstAttribute="trailing" secondItem="Fma-a2-e5d" secondAttribute="trailing" id="qI4-aC-SL1"/>
                 <constraint firstItem="5Js-an-dUc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tcd-Az-fLH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

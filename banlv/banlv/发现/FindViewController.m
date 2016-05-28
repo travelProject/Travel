@@ -351,7 +351,7 @@
     __weak typeof(self) mySelf = self;
     dizhuTableView.selectRowBlock = ^(NSInteger row){
         
-        NSLog(@"%ld",(long)row);
+//        NSLog(@"%ld",(long)row);
         
         
         [mySelf.navigationController pushViewController:new animated:YES];
@@ -388,7 +388,7 @@
         
         new.i = row;
         
-        NSLog(@"%@",new.i);
+//        NSLog(@"%@",new.i);
         
         
         [mySelf.navigationController pushViewController:new animated:YES];

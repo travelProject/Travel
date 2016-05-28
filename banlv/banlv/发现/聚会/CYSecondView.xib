@@ -8,11 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CYSecondView">
-            <rect key="frame" x="0.0" y="0.0" width="365" height="476"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="476"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9h-eM-rjr">
-                    <rect key="frame" x="0.0" y="0.0" width="365" height="40"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="UXl-uH-8HZ"/>
                     </constraints>
@@ -21,9 +21,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDI-uX-IR8">
-                    <rect key="frame" x="0.0" y="40" width="365" height="436"/>
+                    <rect key="frame" x="0.0" y="40" width="414" height="436"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -40,8 +40,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="deciption1" destination="GDI-uX-IR8" id="GFT-ZW-eVL"/>
+                <outlet property="xiangqing" destination="p9h-eM-rjr" id="ifi-4B-zeA"/>
             </connections>
-            <point key="canvasLocation" x="225.5" y="359"/>
+            <point key="canvasLocation" x="192" y="346"/>
         </view>
     </objects>
 </document>

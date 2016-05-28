@@ -14,7 +14,10 @@
     self = [super init];
     if (self) {
         self = kLoadViewWithNIB(@"CYSecondView");
-//        self.deciption1.VerticalAlignment = 
+        
+        
+//        self.deciption1.VerticalAlignment =
+//        self.size.width = kScreenFrameW;
     }
     return self;
 }

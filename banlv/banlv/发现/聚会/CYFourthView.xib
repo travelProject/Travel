@@ -20,7 +20,7 @@
                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMt-6Z-Jgo">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMt-6Z-Jgo" customClass="BMKMapView">
                     <rect key="frame" x="0.0" y="40" width="355" height="308"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -38,9 +38,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="joinCount" destination="XuT-KC-bxW" id="MeD-h7-3Ml"/>
-                <outlet property="map" destination="OMt-6Z-Jgo" id="cwK-Hb-gsq"/>
+                <outlet property="map" destination="OMt-6Z-Jgo" id="GxM-Wi-vL4"/>
             </connections>
-            <point key="canvasLocation" x="244.5" y="322"/>
+            <point key="canvasLocation" x="137.5" y="305"/>
         </view>
     </objects>
 </document>
