@@ -98,9 +98,7 @@
     [self setViews];
     self.view.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
     self.title = @"活动详情";
-    
-    
-    
+        
     UIButton *sixinBtn = [[UIButton alloc] init];
     sixinBtn.frame = CGRectMake(0, kScreenFrameH - sixinH, kScreenFrameW/2, sixinH);
     sixinBtn.backgroundColor = [UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1];
@@ -114,8 +112,6 @@
     [baomingBtn setTitle:@"报名" forState:UIControlStateNormal];
     [self.view addSubview:baomingBtn];
 
-    
-    
 }
 
 
@@ -143,17 +139,52 @@
         self.myData = myData;
         [self addIfo];
         
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
 
-
+}
+- (void)setViews{
+    
+    UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, kScreenFrameW, kScreenFrameH - sixinH+64)];
+    mainScrollView.showsVerticalScrollIndicator = NO;
+    //    self.mainScrollView = mainScrollView;
+    mainScrollView.delegate = self;
+    
+    //    mainScrollView.pagingEnabled = YES;
+    
+    mainScrollView.contentSize = CGSizeMake(kScreenFrameW ,4*50+44*6+400  +456);
+    
+    mainScrollView.bounces = NO;
+    [self.view addSubview:mainScrollView];
+    
+    CYFristView *view1 = [[CYFristView alloc] init];
+    
+    [mainScrollView addSubview:view1];
+    self.view1 = view1;
+    
+    CYSecondView *view2 = [[CYSecondView alloc] init];
+    
+    [mainScrollView addSubview:view2];
+    self.view2 = view2;
+    
+    CYThirdView *view3 = [[CYThirdView alloc] init];
+    
+    [mainScrollView addSubview:view3];
+    self.view3 = view3;
+    
+    CYFourthView *view4 = [[CYFourthView alloc] init];
+    
+    [mainScrollView addSubview:view4];
+    self.view4 = view4;
+    
+    self.mainScrollView = mainScrollView;
     
 }
 
+
 - (void)addIfo{
-     self.view1.frame = CGRectMake(0, -64, kScreenFrameW, 390);
+    self.view1.frame = CGRectMake(0, -44, kScreenFrameW, 390);
     self.view1.lunbo.picArr  = self.myData.pics;
     self.view1.title.text = self.myData.title;
     self.view1.price.text = [NSString stringWithFormat:@"¥%@/人",self.myData.price];
@@ -171,8 +202,6 @@
     
     NSString *timestr = [formatter stringFromDate:detaildate];
     
-    
-    
     NSString *endTime = self.myData.endTime;
     time=[endTime doubleValue];
     
@@ -181,18 +210,15 @@
     
     NSString *timestr1 = [formatter stringFromDate:detaildate];
     
-    
-    
     self.view1.time.text = [NSString stringWithFormat:@"%@ ~ %@",timestr,timestr1];
 
-    
-    
     NSString *s = self.myData.description1;
     
-
     self.view2.deciption1.text = s;
  
     self.view2.origin = CGPointMake(0, CGRectGetMaxY(self.view1.frame)+3);
+    
+    
     
 //    self.view2.deciption1.lineBreakMode = NSLineBreakByCharWrapping;
     [self.view2.deciption1 sizeToFit];
@@ -218,12 +244,9 @@
     self.view4.frame = CGRectMake(0, CGRectGetMaxY(self.view3.frame)+3, kScreenFrameW, 308);
     self.view4.joinCount.text = [NSString stringWithFormat:@"%@人参加",self.myData.joinUserCount];
     
-    
     [self.view4.map setCenterCoordinate:CLLocationCoordinate2DMake(self.myData.lat, self.myData.lng) animated:NO];
     
     [self insertPinWithLat:self.myData.lat Lng:self.myData.lng Address:self.myData.address];
-    
-    
     
 }
 
@@ -240,58 +263,6 @@
     
     [self.view4.map addAnnotation:annotation];
 }
-
-- (void)setViews{
-    
-    UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, kScreenFrameW, kScreenFrameH - sixinH+64)];
-    mainScrollView.showsVerticalScrollIndicator = NO;
-    //    self.mainScrollView = mainScrollView;
-    mainScrollView.delegate = self;
-    
-    //    mainScrollView.pagingEnabled = YES;
-    
-    mainScrollView.contentSize = CGSizeMake(kScreenFrameW ,4*50+44*6+400  +456);
-    
-    mainScrollView.bounces = NO;
-    [self.view addSubview:mainScrollView];
-    
-    CYFristView *view1 = [[CYFristView alloc] init];
-   
-    
-    [mainScrollView addSubview:view1];
-    self.view1 = view1;
-    
-    
-    
-    CYSecondView *view2 = [[CYSecondView alloc] init];
-    
-
-    
-    [mainScrollView addSubview:view2];
-    self.view2 = view2;
-    
-    CYThirdView *view3 = [[CYThirdView alloc] init];
-    
-    
-    [mainScrollView addSubview:view3];
-    self.view3 = view3;
-    
-    
-    CYFourthView *view4 = [[CYFourthView alloc] init];
-    
-    
-    
-    
-    [mainScrollView addSubview:view4];
-    self.view4 = view4;
-    
-    self.mainScrollView = mainScrollView;
-    
-
-
-}
-
-
 
 
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation

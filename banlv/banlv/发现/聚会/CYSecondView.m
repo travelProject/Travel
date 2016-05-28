@@ -16,7 +16,7 @@
         self = kLoadViewWithNIB(@"CYSecondView");
         
         
-//        self.deciption1.VerticalAlignment =
+//        [self.deciption1 setFont:[UIFont fontWithName:@"CourierNewPS-ItalicMT" size:17 ]];
 //        self.size.width = kScreenFrameW;
     }
     return self;

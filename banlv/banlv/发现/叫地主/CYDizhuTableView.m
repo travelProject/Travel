@@ -240,9 +240,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-
     static NSString *indentifier = @"CYDizhuCell";
-    
     
     CYDizhuCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
     if (!cell) {
@@ -279,7 +277,6 @@
     
     cell.serve2.text = serve2;
     
-
     cell.jiage.text =[NSString stringWithFormat:@"%@/天  %@  ",self.dataArr[indexPath.row].price,self.dataArr[indexPath.row].cityName];
     cell.userName.text = self.dataArr[indexPath.row].ownerName;
     

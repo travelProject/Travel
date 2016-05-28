@@ -12,7 +12,7 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        self = kLoadViewWithNIB(@"CYDView3");
+        self = kLoadViewWithNIB(@"CYDView2");
     }
     return self;
 }

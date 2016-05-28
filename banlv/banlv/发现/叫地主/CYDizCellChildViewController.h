@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CYDizCellChildViewController : BLBackViewController
+
 @property (nonatomic, copy)NSString *i;
+
 @end

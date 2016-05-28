@@ -14,6 +14,7 @@
     [super awakeFromNib];
     // Initialization code
     self.backgroundColor = [UIColor cyanColor];
+    [self.userName setFont:[UIFont fontWithName:@"STHeitiK-Medium" size:17 ]];
     
 }
 
