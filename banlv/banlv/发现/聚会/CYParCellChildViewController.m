@@ -27,18 +27,39 @@
 
 @property(nonatomic, strong)CYFourthView *view4;
 
-
+@property(nonatomic, strong) UIView *barView;
+@property(nonatomic, strong)UIScrollView *mainScrollView;
 
 
 @end
 
 @implementation CYParCellChildViewController
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    if (self.mainScrollView.contentOffset.y < 0) {
+        
+        self.barView.hidden = YES;
+        
+    }else if (self.mainScrollView.contentOffset.y < 280){
+        
+        self.barView.hidden = NO;
+        self.barView.backgroundColor=[UIColor colorWithRed:0.95f green:0.95f blue:0.95f  alpha:self.mainScrollView.contentOffset.y / 500];
+        
+    }else{
+        
+        self.barView.hidden = NO;
+        self.barView.backgroundColor=[UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1];
+    }
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    self.barView = self.navigationController.navigationBar;
     
 }
 
@@ -82,7 +103,7 @@
     
     UIButton *sixinBtn = [[UIButton alloc] init];
     sixinBtn.frame = CGRectMake(0, kScreenFrameH - sixinH, kScreenFrameW/2, sixinH);
-    sixinBtn.backgroundColor = [UIColor whiteColor];
+    sixinBtn.backgroundColor = [UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1];
     [sixinBtn setTitle:@"私信" forState:UIControlStateNormal];
     [sixinBtn setTitleColor:[UIColor colorWithRed:0.29 green:0.29 blue:0.29 alpha:1] forState:UIControlStateNormal];
     [self.view addSubview:sixinBtn];
@@ -113,10 +134,8 @@
     
     [manager GET:[urlStr encodeURLWithParams:params] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
-        
-        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        NSLog(@"%@",[urlStr encodeURLWithParams:params] );
         NSArray *jsonArr =[responseObject objectForKey:@"data"];
         
        CYParCellChildData *myData  = [CYParCellChildData  mj_objectWithKeyValues:jsonArr];
@@ -139,17 +158,20 @@
     self.view1.title.text = self.myData.title;
     self.view1.price.text = [NSString stringWithFormat:@"¥%@/人",self.myData.price];
     self.view1.dizhi.text = [NSString stringWithFormat:@"%@ - %@",self.myData.cityName,self.myData.address];
+    
+    
     NSString *s = self.myData.description1;
     
-    self.view2.deciption1.lineBreakMode = NSLineBreakByWordWrapping;
-    self.view2.deciption1.text = s;
-    
-    CGSize size = [self.view2.deciption1 sizeThatFits:CGSizeMake(self.view2.deciption1.frame.size.width, MAXFLOAT)];
-    self.view2.deciption1.size = CGSizeMake(size.width, size.height);
-    
-    
-    self.view2.frame = CGRectMake(0, CGRectGetMaxY(self.view1.frame)+3, kScreenFrameW, 40 + self.view2.deciption1.size.height);
 
+    self.view2.deciption1.text = s;
+ 
+    self.view2.origin = CGPointMake(0, CGRectGetMaxY(self.view1.frame)+3);
+    
+//    self.view2.deciption1.lineBreakMode = NSLineBreakByCharWrapping;
+    [self.view2.deciption1 sizeToFit];
+//    CGSize size1 = [self.view2.deciption1 sizeThatFits:CGSizeMake(kScreenFrameW, MAXFLOAT)];
+    
+//    self.view2.size = CGSizeMake(kScreenFrameW, 40 + size1.height);
     
     self.view3.frame = CGRectMake(0, CGRectGetMaxY(self.view2.frame)+3, kScreenFrameW, 187);
     self.view3.userName.text = self.myData.ownerName;
@@ -169,11 +191,32 @@
     self.view4.frame = CGRectMake(0, CGRectGetMaxY(self.view3.frame)+3, kScreenFrameW, 308);
     self.view4.joinCount.text = [NSString stringWithFormat:@"%@人参加",self.myData.joinUserCount];
     
+    
+    [self.view4.map setCenterCoordinate:CLLocationCoordinate2DMake(self.myData.lat, self.myData.lng) animated:NO];
+    
+    [self insertPinWithLat:self.myData.lat Lng:self.myData.lng Address:self.myData.address];
+    
+    
+    
+}
+
+- (void)insertPinWithLat:(CLLocationDegrees)lat Lng:(CLLocationDegrees)lng Address:(NSString *)address;
+{
+    // 添加一个PointAnnotation
+    BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+    CLLocationCoordinate2D coor;
+    coor.latitude = lat;
+    coor.longitude = lng;
+    annotation.coordinate = coor;
+    
+    annotation.title = address;
+    
+    [self.view4.map addAnnotation:annotation];
 }
 
 - (void)setViews{
     
-    UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - sixinH+64)];
+    UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, kScreenFrameW, kScreenFrameH - sixinH+64)];
     mainScrollView.showsVerticalScrollIndicator = NO;
     //    self.mainScrollView = mainScrollView;
     mainScrollView.delegate = self;
@@ -195,7 +238,7 @@
     
     CYSecondView *view2 = [[CYSecondView alloc] init];
     
-//    view2.frame = CGRectMake(0, 0, kScreenFrameW, 500);
+
     
     [mainScrollView addSubview:view2];
     self.view2 = view2;
@@ -210,11 +253,32 @@
     CYFourthView *view4 = [[CYFourthView alloc] init];
     
     
+    
+    
     [mainScrollView addSubview:view4];
     self.view4 = view4;
     
+    self.mainScrollView = mainScrollView;
+    
 
 
+}
+
+
+
+
+- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
+        
+        BMKAnnotationView *newAnnotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
+        
+        newAnnotationView.image = [UIImage imageNamed:@"dizhi"];
+        
+        return newAnnotationView;
+        
+    }
+    return nil;
 }
 
 @end

@@ -8,14 +8,21 @@
 
 #import "CYFourthView.h"
 
+@interface CYFourthView () <BMKMapViewDelegate>
+
+@end
+
 @implementation CYFourthView
 
 - (instancetype)init{
     self = [super init];
     if (self) {
         self = kLoadViewWithNIB(@"CYFourthView");
+        self.map.delegate = self;
     }
     return self;
 }
+
+
 
 @end

@@ -10,5 +10,6 @@
 
 @interface CYSecondView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *deciption1;
+@property (weak, nonatomic) IBOutlet UILabel *xiangqing;
 
 @end
