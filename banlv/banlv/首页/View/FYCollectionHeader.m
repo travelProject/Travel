@@ -24,6 +24,40 @@
 
 @implementation FYCollectionHeader
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    self.bannerCollecView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) collectionViewLayout:flowLayout];
+    self.bannerCollecView.backgroundColor = [UIColor clearColor];
+    self.bannerCollecView.showsHorizontalScrollIndicator = NO;
+    self.bannerCollecView.pagingEnabled = YES;
+    self.bannerCollecView.delegate = self;
+    self.bannerCollecView.dataSource = self;
+    
+    //注册cell的方法（注意加载Nib的方法）
+    [self.bannerCollecView registerNib:[UINib nibWithNibName:@"FYHeaderViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"headerCell"];
+    
+    /*------NSTimer完美的解决了一开始self.bannerArr.count为0（为0会crash）的头疼问题----*/
+    //默认显示滚到最中间的那组
+    //        [self.bannerCollecView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:MaxSection / 2] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    
+    [self addSubview:self.bannerCollecView];
+    
+    self.bannerPage = [[UIPageControl alloc] initWithFrame:CGRectMake((self.width - 150) / 2, self.height - 20, 150, 10)];
+    self.bannerPage.currentPage = 0;
+    self.bannerPage.currentPageIndicatorTintColor = [UIColor whiteColor];
+    self.bannerPage.pageIndicatorTintColor = [UIColor lightGrayColor];
+    [self addSubview:self.bannerPage];
+    
+    self.bannerPage.hidden = YES;
+    
+    [self addTimer];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -121,8 +155,16 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-
-    return self.bannerArr.count;
+    if (self.bannerType == 1) {
+        
+        return self.bannerArr.count;
+        
+    }else if (self.bannerType ==2)
+    {
+        return self.topPicArr.count;
+    }
+    
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -130,7 +172,14 @@
     
     FYHeaderViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"headerCell" forIndexPath:indexPath];
     
-    cell.picUrl = self.bannerArr[indexPath.row].advPic;
+    if (self.bannerType == 1) {
+       
+        cell.picUrl = self.bannerArr[indexPath.row].advPic;
+    }else if (self.bannerType == 2)
+    {
+        cell.picUrl = self.topPicArr[indexPath.row];
+    }
+    
     
     return cell;
 }
@@ -175,9 +224,23 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSInteger index = (int)(self.bannerCollecView.contentOffset.x / self.width + 0.5) % self.bannerArr.count;
+    if (self.bannerType == 1) {
+        
+        NSInteger index = (int)(self.bannerCollecView.contentOffset.x / self.width + 0.5) % self.bannerArr.count;
+        
+        self.bannerPage.currentPage = index;
+        
+    }else if (self.bannerType == 2)
+    {
+        NSInteger index = (int)(self.bannerCollecView.contentOffset.x / self.width + 0.5) % self.topPicArr.count;
+        
+        self.bannerPage.currentPage = index;
+        
+        NSString *page = [NSString stringWithFormat:@"%ld/%ld",self.bannerPage.currentPage + 1,self.bannerPage.numberOfPages];
+        
+        self.returnCurrentPageAndTotal(page);
+    }
     
-    self.bannerPage.currentPage = index;
 }
 
 //bannerArr属性的setter方法
@@ -202,6 +265,28 @@
 - (void)setMyHostVC:(UIViewController *)myHostVC
 {
     _myHostVC = myHostVC;
+}
+
+- (void)setTopPicArr:(NSArray *)topPicArr
+{
+    _topPicArr = topPicArr;
+    
+    if (_topPicArr.count > 0) {
+        
+        
+        //设置pageControl页数
+        self.bannerPage.numberOfPages = _topPicArr.count;
+        
+        //一定要reloadData一下（不然代理方法只会执行一次）
+        [self.bannerCollecView reloadData];
+    }
+}
+
+- (void)setBannerType:(NSInteger)bannerType
+{
+    _bannerType = bannerType;
+    
+    NSLog(@"");
 }
 
 

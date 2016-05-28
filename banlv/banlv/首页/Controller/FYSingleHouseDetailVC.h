@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FYSingleHouseDetailVC : UIViewController
+@interface FYSingleHouseDetailVC : BLBackViewController
 
 @property (nonatomic,copy)NSString *spaceId;
 

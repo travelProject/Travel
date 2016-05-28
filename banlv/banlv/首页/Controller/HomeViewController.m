@@ -75,6 +75,10 @@
 - (void)initCollectionView
 {
     self.header = [[FYCollectionHeader alloc] initWithFrame:CGRectMake(0, -0.55f * kScreenFrameW, kScreenFrameW, 0.55f * kScreenFrameW)];
+    
+    //设置轮播图片的数据源类型
+    self.header.bannerType = 1;
+    
     self.header.backgroundColor = [UIColor grayColor];
     
     self.flowLayout = [[UICollectionViewFlowLayout alloc] init];

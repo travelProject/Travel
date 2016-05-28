@@ -10,7 +10,9 @@
 
 #import "FYHomeViewBannerData.h"
 
-@interface FYCollectionHeader : UICollectionReusableView
+typedef void(^ReturnCurrentPageAndTotal)(NSString *page);
+
+@interface FYCollectionHeader : UIView
 
 @property(nonatomic,strong) UICollectionView *bannerCollecView;
 
@@ -19,5 +21,12 @@
 @property(nonatomic,strong) NSArray<FYHomeViewBannerData *> *bannerArr;
 
 @property(nonatomic,strong) UIViewController *myHostVC;
+
+@property(nonatomic,copy) ReturnCurrentPageAndTotal returnCurrentPageAndTotal;
+
+//单个房间顶部轮播图
+@property(nonatomic,strong) NSArray *topPicArr;
+
+@property(nonatomic,assign) NSInteger bannerType;
 
 @end

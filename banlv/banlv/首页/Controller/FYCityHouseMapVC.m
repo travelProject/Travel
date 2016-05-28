@@ -487,6 +487,11 @@
     _cityName = cityName;
 }
 
+- (void)setTempChooseDateArr:(NSMutableArray *)tempChooseDateArr
+{
+    _tempChooseDateArr = tempChooseDateArr;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
