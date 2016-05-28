@@ -42,7 +42,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@",[urlStr encodeURLWithParams:params]);
         
-        NSArray *jsonArr =[responseObject objectForKey:@"data"];
+//        NSArray *jsonArr =[responseObject objectForKey:@"data"];
         
 //        CYParCellChildData *myData  = [CYParCellChildData  mj_objectWithKeyValues:jsonArr];
 //        

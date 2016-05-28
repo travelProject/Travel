@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ReturnDateBlock)(NSMutableArray *dateArr);
+
 /**
  *  时间选择器
  */
 @interface ZFChooseTimeViewController : UIView
 
+@property (nonatomic,copy)ReturnDateBlock returnDateBlock;
 
+@property(nonatomic,strong)NSMutableArray *selectedDateArr;
 
 @end
