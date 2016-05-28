@@ -19,9 +19,11 @@ PODS:
   - FMDB/standard (2.6)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
+  - MOBFoundation_IDFA (1.3.1)
   - SDWebImage (3.7.4):
     - SDWebImage/Core (= 3.7.4)
   - SDWebImage/Core (3.7.4)
+  - SMSSDK (2.0.0)
   - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
@@ -29,7 +31,9 @@ DEPENDENCIES:
   - FMDB
   - MJExtension
   - MJRefresh
+  - MOBFoundation_IDFA
   - SDWebImage
+  - SMSSDK
   - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -37,7 +41,9 @@ SPEC CHECKSUMS:
   FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  MOBFoundation_IDFA: 0b4f8248e12384fc32b861a9b75a83825e8fb444
   SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
+  SMSSDK: 3be0004bddcfdc86c305fc96e77d3a724eab1b18
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
 COCOAPODS: 0.39.0

@@ -59,10 +59,14 @@ install_resource()
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "SMSSDK/SMS_SDK/en.lproj"
+  install_resource "SMSSDK/SMS_SDK/zh-Hans.lproj"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "SMSSDK/SMS_SDK/en.lproj"
+  install_resource "SMSSDK/SMS_SDK/zh-Hans.lproj"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 

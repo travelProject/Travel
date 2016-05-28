@@ -17,6 +17,9 @@
 //地图模式
 #import "FYCityHouseMapVC.h"
 
+//登陆界面
+#import "BLLoginVC.h"
+
 @interface SearchViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
@@ -24,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *mapStyle;
 
 @property(nonatomic,strong)ZFChooseTimeViewController *chooseDateVC;
+@property (weak, nonatomic) IBOutlet UIImageView *iconPic;
 
 @end
 
@@ -51,6 +55,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.frame = [UIScreen mainScreen].bounds;
+    
+    self.iconPic.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLoginVC)];
+    
+    [self.iconPic addGestureRecognizer:tap];
     
     self.searchBtn.layer.cornerRadius = 10.f;
     self.searchBtn.layer.masksToBounds = YES;
@@ -88,6 +98,14 @@
     [[UIApplication sharedApplication].keyWindow addSubview:self.chooseDateVC];
     
 }
+
+- (void)showLoginVC
+{
+    BLLoginVC *loginVC = [[BLLoginVC alloc] initWithNibName:@"BLLoginVC" bundle:nil];
+    
+    [self.navigationController pushViewController:loginVC animated:YES];
+}
+
 
 - (void)getSelectDate:(NSMutableArray *)selectDateArr
 {
