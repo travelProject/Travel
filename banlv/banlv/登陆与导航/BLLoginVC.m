@@ -20,15 +20,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"18848962892" zone:@"86" customIdentifier:nil result:^(NSError *error) {
-        
-        if (!error) {
-            NSLog(@"获取验证码成功");
-        } else {
-            NSLog(@"错误信息：%@",error);
-        }
-        
-    }];
+//    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"18848962892" zone:@"86" customIdentifier:nil result:^(NSError *error) {
+//        
+//        if (!error) {
+//            NSLog(@"获取验证码成功");
+//        } else {
+//            NSLog(@"错误信息：%@",error);
+//        }
+//        
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
