@@ -96,6 +96,8 @@
 		CB0A76901CE5B6E700EB6E7D /* FYCityHouseListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0A768F1CE5B6E700EB6E7D /* FYCityHouseListVC.m */; };
 		CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB120DB01CE73F99007D71C6 /* FYCityHouseListCell.m */; };
 		CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB120DB11CE73F99007D71C6 /* FYCityHouseListCell.xib */; };
+		CB183C0C1CF9460D00F70A0A /* BLLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB183C0A1CF9460D00F70A0A /* BLLoginVC.m */; };
+		CB183C0D1CF9460D00F70A0A /* BLLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB183C0B1CF9460D00F70A0A /* BLLoginVC.xib */; };
 		CB1AA7481CEC323F009C18E2 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1AA7451CEC323F009C18E2 /* BaiduMapAPI_Base.framework */; };
 		CB1AA7491CEC323F009C18E2 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1AA7461CEC323F009C18E2 /* BaiduMapAPI_Location.framework */; };
 		CB1AA74A1CEC323F009C18E2 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1AA7471CEC323F009C18E2 /* BaiduMapAPI_Map.framework */; };
@@ -325,6 +327,9 @@
 		CB120DAF1CE73F99007D71C6 /* FYCityHouseListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseListCell.h; sourceTree = "<group>"; };
 		CB120DB01CE73F99007D71C6 /* FYCityHouseListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseListCell.m; sourceTree = "<group>"; };
 		CB120DB11CE73F99007D71C6 /* FYCityHouseListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYCityHouseListCell.xib; sourceTree = "<group>"; };
+		CB183C091CF9460D00F70A0A /* BLLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLLoginVC.h; sourceTree = "<group>"; };
+		CB183C0A1CF9460D00F70A0A /* BLLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLLoginVC.m; sourceTree = "<group>"; };
+		CB183C0B1CF9460D00F70A0A /* BLLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLLoginVC.xib; sourceTree = "<group>"; };
 		CB1AA7451CEC323F009C18E2 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
 		CB1AA7461CEC323F009C18E2 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
 		CB1AA7471CEC323F009C18E2 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
@@ -678,6 +683,7 @@
 				CBE1DA991CE2191C00B36A18 /* 功能模块 */,
 				2B97A16B1CDC2B0400B4989C /* 类别 */,
 				CBE1DA961CE1FAB600B36A18 /* 其他 */,
+				CB183C081CF9458600F70A0A /* 登陆与导航 */,
 				2B97A1801CDC2B3100B4989C /* 首页 */,
 				2B8D54011CEA18E400AF43CA /* 发现 */,
 				2B97A1821CDC2B4D00B4989C /* 搜索 */,
@@ -1194,6 +1200,16 @@
 			path = "轮播图";
 			sourceTree = "<group>";
 		};
+		CB183C081CF9458600F70A0A /* 登陆与导航 */ = {
+			isa = PBXGroup;
+			children = (
+				CB183C091CF9460D00F70A0A /* BLLoginVC.h */,
+				CB183C0A1CF9460D00F70A0A /* BLLoginVC.m */,
+				CB183C0B1CF9460D00F70A0A /* BLLoginVC.xib */,
+			);
+			path = "登陆与导航";
+			sourceTree = "<group>";
+		};
 		CBD6548A1CE3581A00499922 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1458,6 +1474,7 @@
 				CB1AA75E1CEC3339009C18E2 /* mapapi.bundle in Resources */,
 				CBDA28EE1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.xib in Resources */,
 				2B851FDE1CF335770037F39B /* CYDView4.xib in Resources */,
+				CB183C0D1CF9460D00F70A0A /* BLLoginVC.xib in Resources */,
 				2B875E1C1CF14DC100F6D51F /* CYFristView.xib in Resources */,
 				2B8D54251CEA18E400AF43CA /* CYXuanfuView.xib in Resources */,
 				2B8D542A1CEA18E400AF43CA /* CYDizhuCell.xib in Resources */,
@@ -1563,6 +1580,7 @@
 				7A2FD8381CE86E330049267C /* BLIconView.m in Sources */,
 				CBDA28ED1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.m in Sources */,
 				CBF61BFD1CEDD57400311C3F /* BLNavigationController.m in Sources */,
+				CB183C0C1CF9460D00F70A0A /* BLLoginVC.m in Sources */,
 				CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */,
 				2B97A1661CDC2A6300B4989C /* CYMyTabBar.m in Sources */,
 				CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */,

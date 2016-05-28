@@ -181,7 +181,7 @@ typedef enum : NSUInteger {
         
         BMKAnnotationView *newAnnotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
         
-        newAnnotationView.image = [UIImage imageNamed:@"dizhi"];
+        newAnnotationView.image = [UIImage imageNamed:@"place"];
         
         return newAnnotationView;
         

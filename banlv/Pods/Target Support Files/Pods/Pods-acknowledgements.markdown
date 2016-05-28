@@ -101,6 +101,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## MOBFoundation_IDFA
+
+Copyright © 2012-2015 mob
+
 ## SDWebImage
 
 Copyright (c) 2009 Olivier Poitrey <rs@dailymotion.com>
@@ -124,6 +128,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+
+## SMSSDK
+
+Copyright © 2012-2015 mob.com
 
 ## SVProgressHUD
 

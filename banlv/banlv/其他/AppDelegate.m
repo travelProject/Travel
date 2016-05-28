@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "CYTabBarController.h"
 
+//短信验证码
+#import <SMS_SDK/SMSSDK.h>
+
 @interface AppDelegate ()
 
 {
@@ -22,6 +25,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [SMSSDK registerApp:@"134293659e2b6" withSecret:@"9ef80f31fe000f5471c2f62e0a850ab3"];
     
     // 要使用百度地图，请先启动BaiduMapManager 
     _mapManager = [[BMKMapManager alloc]init];
