@@ -8,6 +8,8 @@
 
 # define sixinH 50.f
 
+#import "CYViewPageView.h"
+
 #import "CYParCellChildViewController.h"
 
 #import "CYParCellChildData.h"
@@ -17,7 +19,7 @@
 #import "CYThirdView.h"
 #import "CYFourthView.h"
 
-@interface CYParCellChildViewController ()<UIScrollViewDelegate>
+@interface CYParCellChildViewController ()<UIScrollViewDelegate,CYViewPagerDelegate>
 
 @property (nonatomic ,strong)CYParCellChildData  *myData;
 @property(nonatomic, strong)CYFristView *view1;
@@ -34,6 +36,7 @@
 @end
 
 @implementation CYParCellChildViewController
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
@@ -153,12 +156,14 @@
     
     //    mainScrollView.pagingEnabled = YES;
     
-    mainScrollView.contentSize = CGSizeMake(kScreenFrameW ,4*50+44*6+400  +456);
+    mainScrollView.contentSize = CGSizeMake(kScreenFrameW ,4*50+44*6+400+80+456);
     
     mainScrollView.bounces = NO;
     [self.view addSubview:mainScrollView];
     
     CYFristView *view1 = [[CYFristView alloc] init];
+   
+    
     
     [mainScrollView addSubview:view1];
     self.view1 = view1;
@@ -184,8 +189,15 @@
 
 
 - (void)addIfo{
-    self.view1.frame = CGRectMake(0, -44, kScreenFrameW, 390);
-    self.view1.lunbo.picArr  = self.myData.pics;
+    self.view1.frame = CGRectMake(0, -44, kScreenFrameW, 470);
+    
+
+    CYViewPageView *pageview = [[CYViewPageView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, 360)];
+    pageview.delegate = self;
+    pageview.imageAry = self.myData.pics ;
+    [self.view1.lunbo addSubview:pageview];
+
+    
     self.view1.title.text = self.myData.title;
     self.view1.price.text = [NSString stringWithFormat:@"¥%@/人",self.myData.price];
     self.view1.dizhi.text = [NSString stringWithFormat:@"%@ - %@",self.myData.cityName,self.myData.address];
@@ -278,5 +290,10 @@
     }
     return nil;
 }
+
+- (void)didViewPagerViewClick:(NSInteger)tag{
+    
+}
+
 
 @end

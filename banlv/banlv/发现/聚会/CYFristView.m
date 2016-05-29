@@ -7,6 +7,11 @@
 //
 
 #import "CYFristView.h"
+#import "CYViewPageView.h"
+
+@interface CYFristView ()
+
+@end
 
 @implementation CYFristView
 
@@ -14,6 +19,8 @@
     self = [super init];
     if (self) {
         self = kLoadViewWithNIB(@"CYFristView");
+        
+        
         
     }
     return self;
