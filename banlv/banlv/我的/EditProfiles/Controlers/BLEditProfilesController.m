@@ -16,15 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"个人资料";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:(UIBarButtonItemStylePlain) target:self action:@selector(done:)];
-    
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
 
     BLBannerView *bannerView = [[[NSBundle mainBundle] loadNibNamed:@"BLBannerView" owner:nil options:nil] firstObject];
     
-    bannerView.frame = CGRectMake(0.f, 64.f, kScreenFrameW, 200);
+    bannerView.frame = CGRectMake(0.f, 64.f, kScreenFrameW, 300);
     
     [self.view addSubview:bannerView];
 }

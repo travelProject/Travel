@@ -1,9 +1,9 @@
 //
 //  BLAboutUsView.h
-//  伴旅
+//  banlv
 //
-//  Created by scjy on 16/5/15.
-//  Copyright © 2016年 scjy. All rights reserved.
+//  Created by scjy on 16/5/21.
+//  Copyright © 2016年 llz. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

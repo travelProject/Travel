@@ -1,24 +1,23 @@
 //
-//  MainViewController.m
+//  BLMoneyInOutController.m
 //  banlv
 //
-//  Created by lcy on 16/5/6.
+//  Created by scjy on 16/5/20.
 //  Copyright © 2016年 llz. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "BLMoneyInOutController.h"
 
-@interface MainViewController ()
+@interface BLMoneyInOutController ()
 
 @end
 
-@implementation MainViewController
+@implementation BLMoneyInOutController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    //光棍节刚回家后
+    self.navigationItem.title = @"收支明细";
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,14 +1,14 @@
 //
-//  BLAboutUsView.m
-//  伴旅
+//  BLIntroductionView.m
+//  banlv
 //
-//  Created by scjy on 16/5/15.
-//  Copyright © 2016年 scjy. All rights reserved.
+//  Created by scjy on 16/5/18.
+//  Copyright © 2016年 llz. All rights reserved.
 //
 
-#import "BLAboutUsView.h"
+#import "BLIntroductionView.h"
 
-@implementation BLAboutUsView
+@implementation BLIntroductionView
 
 /*
 // Only override drawRect: if you perform custom drawing.

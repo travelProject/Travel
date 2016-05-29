@@ -1,5 +1,5 @@
 //
-//  BLTempController.h
+//  BLSetController.h
 //  伴旅
 //
 //  Created by scjy on 16/5/11.
@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MMDrawerController.h"
-@interface BLTempController : MMDrawerController
+
+@interface BLSetController : BLBackViewController
 
 @end
