@@ -10,8 +10,16 @@
 
 #import <SMS_SDK/SMSSDK.h>
 
-@interface BLLoginVC ()
+@interface BLLoginVC () <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconPic;
+@property (weak, nonatomic) IBOutlet UITextField *phoneText;
+@property (weak, nonatomic) IBOutlet UILabel *getCodeLab;
+@property (weak, nonatomic) IBOutlet UITextField *codeText;
+@property (weak, nonatomic) IBOutlet UILabel *voiceLab;
+@property (weak, nonatomic) IBOutlet UIButton *startBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *exitBtn;
 @end
 
 @implementation BLLoginVC
@@ -20,16 +28,63 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"18848962892" zone:@"86" customIdentifier:nil result:^(NSError *error) {
-//        
-//        if (!error) {
-//            NSLog(@"获取验证码成功");
-//        } else {
-//            NSLog(@"错误信息：%@",error);
-//        }
-//        
-//    }];
+    self.view.frame = [UIScreen mainScreen].bounds;
+    
+    UITapGestureRecognizer *getCodeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(getCodeAct)];
+    
+    self.getCodeLab.userInteractionEnabled = YES;
+    
+    [self.getCodeLab addGestureRecognizer:getCodeTap];
+    
+    UITapGestureRecognizer *exitKeyBoardTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(exitKeyBoard)];
+    
+    [self.view addGestureRecognizer:exitKeyBoardTap];
+    
+    self.phoneText.delegate = self;
+    self.codeText.delegate = self;
+    
+    
+
+    
 }
+
+- (void)getCodeAct
+{
+    
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.phoneText.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
+        
+        if (!error) {
+            NSLog(@"获取验证码成功");
+        } else {
+            NSLog(@"错误信息：%@",error);
+        }
+        
+    }];
+}
+
+- (void)exitKeyBoard
+{
+    [self.phoneText resignFirstResponder];
+    
+    [self.codeText resignFirstResponder];
+}
+
+- (IBAction)startBtnAct:(id)sender {
+}
+- (IBAction)exitBtnAct:(id)sender {
+}
+
+#pragma mark -- UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
