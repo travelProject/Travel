@@ -9,6 +9,7 @@
 # define sixinH 50.f
 
 #import "CYViewPageView.h"
+#import "CYBaomingViewController.h"
 
 #import "CYParCellChildViewController.h"
 
@@ -112,8 +113,10 @@
     UIButton *baomingBtn = [[UIButton alloc] init];
     baomingBtn.frame = CGRectMake(kScreenFrameW/2, kScreenFrameH - sixinH, kScreenFrameW/2, sixinH);
     baomingBtn.backgroundColor = [UIColor colorWithRed:0.28 green:0.79 blue:0.78 alpha:1];
+    [baomingBtn addTarget:self action:@selector(baomingAction:) forControlEvents:UIControlEventTouchUpInside];
     [baomingBtn setTitle:@"报名" forState:UIControlStateNormal];
     [self.view addSubview:baomingBtn];
+    
 
 }
 
@@ -290,6 +293,15 @@
     }
     return nil;
 }
+
+- (void)baomingAction:(id)sender{
+    CYBaomingViewController *new = [[CYBaomingViewController alloc] init];
+    __weak typeof(self) mySelf = self;
+    new.myData = mySelf.myData;
+    [self.navigationController pushViewController:new animated:YES];
+    
+}
+
 
 - (void)didViewPagerViewClick:(NSInteger)tag{
     

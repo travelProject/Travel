@@ -8,6 +8,8 @@
 # define sixinH 50.f
 #import "CYDizCellChildViewController.h"
 
+#import "CYContextDZViewController.h"
+
 #import "CYDView1.h"
 #import "CYDView2.h"
 #import "CYDView3.h"
@@ -83,7 +85,9 @@
     UIButton *baomingBtn = [[UIButton alloc] init];
     baomingBtn.frame = CGRectMake(0, kScreenFrameH - sixinH, kScreenFrameW, sixinH);
     baomingBtn.backgroundColor = [UIColor colorWithRed:0.28 green:0.79 blue:0.78 alpha:1];
-    [baomingBtn setTitle:@"报名" forState:UIControlStateNormal];
+    [baomingBtn addTarget:self action:@selector(lianxiAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [baomingBtn setTitle:@"联系地主" forState:UIControlStateNormal];
     [self.view addSubview:baomingBtn];
     
     
@@ -166,6 +170,16 @@
     [mainScrollView addSubview:view4];
     self.view4 = view4;
 
+    
+}
+
+- (void)lianxiAction:(id)sender{
+    CYContextDZViewController *new = [[CYContextDZViewController alloc] init];
+    
+    
+    
+    [self.navigationController pushViewController:new animated:YES];
+    
     
 }
 
