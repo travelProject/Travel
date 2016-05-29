@@ -9,7 +9,7 @@
 #import "BLBannerView.h"
 #import "BLBannerCell.h"
 #define Width [UIScreen mainScreen].bounds.size.width
-#define CellHeight 200
+#define CellHeight 300
 @implementation BLBannerView
 
 - (void)awakeFromNib{

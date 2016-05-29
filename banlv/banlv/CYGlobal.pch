@@ -36,9 +36,6 @@
 //导入全局的ViewController,用来设置左侧的返回按钮
 #import "BLBackViewController.h"
 
-//侧滑
-#import "MMDrawerController.h"
-
 //网络头文件
 #import "FYAFNetworkingManager.h"
 
@@ -68,6 +65,9 @@ return idValue;\
 
 //主题颜色
 #define ThemeColor [UIColor colorWithRed:0.45f green:0.77f blue:0.78f alpha:1]
+
+//屏幕宽高
+#define kScreenFrame [UIScreen mainScreen].bounds
 
 //屏幕宽高
 #define kScreenFrameW [UIScreen mainScreen].bounds.size.width

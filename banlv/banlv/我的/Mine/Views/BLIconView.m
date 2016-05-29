@@ -24,8 +24,6 @@
     [super awakeFromNib];
     self.midView.backgroundColor = [UIColor clearColor];
     //设置成圆形，用到layer属性
-//    self.layer.cornerRadius = 40.f;
-//    self.iconBtn.layer.masksToBounds = YES;
     self.iconImg.layer.cornerRadius = 45.f;
     self.iconImg.layer.masksToBounds = YES;
 //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToUserInfo:)];

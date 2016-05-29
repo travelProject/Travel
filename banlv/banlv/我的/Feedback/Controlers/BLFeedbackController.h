@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BLFeedbackController :UIViewController
+@interface BLFeedbackController :BLBackViewController
 
 @end

@@ -8,6 +8,8 @@
 # define sixinH 50.f
 #import "CYDizCellChildViewController.h"
 
+#import "CYContextDZViewController.h"
+
 #import "CYDView1.h"
 #import "CYDView2.h"
 #import "CYDView3.h"
@@ -83,7 +85,9 @@
     UIButton *baomingBtn = [[UIButton alloc] init];
     baomingBtn.frame = CGRectMake(0, kScreenFrameH - sixinH, kScreenFrameW, sixinH);
     baomingBtn.backgroundColor = [UIColor colorWithRed:0.28 green:0.79 blue:0.78 alpha:1];
-    [baomingBtn setTitle:@"报名" forState:UIControlStateNormal];
+    [baomingBtn addTarget:self action:@selector(lianxiAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [baomingBtn setTitle:@"联系地主" forState:UIControlStateNormal];
     [self.view addSubview:baomingBtn];
     
     
@@ -107,14 +111,14 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     //    NSLog(@"%@".self.i);
     self.i = @"262";
-    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"userToken\":\"MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2\",\n\"localServiceId\":%@}",self.i];
+    NSString *params = [NSString stringWithFormat:@"bizParams={\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\",\n\"localServiceId\":%ld}",self.i.integerValue];
     
     NSString *urlStr = @"http://www.shafalvxing.com/channel/localServiceDetail.do?";
     
     [manager GET:[urlStr encodeURLWithParams:params] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"%@",[urlStr encodeURLWithParams:params]);
+        NSLog(@"%@",[urlStr encodeURLWithParams:params]);
         
 //        NSArray *jsonArr =[responseObject objectForKey:@"data"];
         
@@ -166,6 +170,16 @@
     [mainScrollView addSubview:view4];
     self.view4 = view4;
 
+    
+}
+
+- (void)lianxiAction:(id)sender{
+    CYContextDZViewController *new = [[CYContextDZViewController alloc] init];
+    
+    
+    
+    [self.navigationController pushViewController:new animated:YES];
+    
     
 }
 

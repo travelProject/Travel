@@ -39,6 +39,11 @@ typedef enum : NSUInteger {
 
 @property (weak, nonatomic) IBOutlet UIButton *applyBooking;
 
+@property (weak, nonatomic) IBOutlet UILabel *spaceTypeLab;
+@property (weak, nonatomic) IBOutlet UILabel *bedTypeLab;
+@property (weak, nonatomic) IBOutlet UILabel *sexLimitLab;
+@property (weak, nonatomic) IBOutlet UILabel *peopleNumLimitLab;
+@property (weak, nonatomic) IBOutlet UILabel *liveDayNumLab;
 @end
 
 @implementation FYSingleHouseDetailVC
@@ -112,19 +117,22 @@ typedef enum : NSUInteger {
             case SpaceTypeLivingRoom:
                 
                 self.houseTypeLab.text = @"客厅·沙发·";
-                
+                self.spaceTypeLab.text = @"客厅";
+                self.bedTypeLab.text = @"沙发";
                 break;
                 
             case SpaceTypeJointRent:
                 
                 self.houseTypeLab.text = @"合租房间·榻榻米·";
-                
+                self.spaceTypeLab.text = @"合租房间";
+                self.bedTypeLab.text = @"榻榻米";
                 break;
                 
             case SpaceTypeSeparateHouse:
                 
                 self.houseTypeLab.text = @"独立房间·双人床·";
-                
+                self.spaceTypeLab.text = @"独立房间";
+                self.bedTypeLab.text = @"双人床";
                 break;
                 
             default:
@@ -132,9 +140,21 @@ typedef enum : NSUInteger {
                 break;
         }
         
+        
         if ([singlehouseData.sexLimit isEqualToString:@"1"]) {
             
+            self.sexLimitLab.text = @"男女不限";
+            
             self.houseTypeLab.text = [NSString stringWithFormat:@"%@男女不限",self.houseTypeLab.text];
+            
+        }else if ([singlehouseData.sexLimit isEqualToString:@"2"])
+        {
+            self.sexLimitLab.text = @"男";
+            self.houseTypeLab.text = [NSString stringWithFormat:@"%@男",self.houseTypeLab.text];
+        }else if ([singlehouseData.sexLimit isEqualToString:@"3"])
+        {
+            self.sexLimitLab.text = @"女";
+            self.houseTypeLab.text = [NSString stringWithFormat:@"%@女",self.houseTypeLab.text];
         }
         
         [self.ownerPic sd_setImageWithURL:[NSURL URLWithString:singlehouseData.ownerPic] placeholderImage:nil];
@@ -144,9 +164,39 @@ typedef enum : NSUInteger {
         self.ageLab.text = [NSString stringWithFormat:@"%@岁",singlehouseData
                             .age];
         
+        if ([singlehouseData.sex isEqualToString:@"1"]) {
+            
+            self.ageLab.text = [NSString stringWithFormat:@"%@·男",self.ageLab.text];
+            
+        }else if ([singlehouseData.sex isEqualToString:@"2"])
+        {
+            self.ageLab.text = [NSString stringWithFormat:@"%@·女",self.ageLab.text];
+        }
+        
+        self.ageLab.text = [NSString stringWithFormat:@"%@·%@",self.ageLab.text,singlehouseData.profession];
+        
+        
         self.ownerIntroduceLab.text = [NSString stringWithFormat:@"  %@",singlehouseData.ownerDescription];
         
         self.sapceIntroduceLab.text = singlehouseData.descrip;
+        
+        
+        
+        
+        if ([singlehouseData.sexLimit isEqualToString:@"1"]) {
+            self.sexLimitLab.text = @"男女不限";
+        }
+        
+        self.peopleNumLimitLab.text = [NSString stringWithFormat:@"%@人",singlehouseData.limitGuestsNum];
+        
+        if ([singlehouseData.limitNightsNum isEqualToString:@"0"]) {
+            
+            self.liveDayNumLab.text = @"可议";
+        }else
+        {
+            self.liveDayNumLab.text = [NSString stringWithFormat:@"%@天",singlehouseData.limitNightsNum];
+        }
+        
         
         [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(singlehouseData.lat.doubleValue, singlehouseData.lng.doubleValue) animated:NO];
         
