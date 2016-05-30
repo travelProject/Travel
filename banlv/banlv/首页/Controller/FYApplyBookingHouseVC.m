@@ -10,6 +10,9 @@
 
 #import "FYChooseDateView.h"
 
+//发布数据模型
+#import "FYApplyBookingHouseData.h"
+
 @interface FYApplyBookingHouseVC () <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet FYChooseDateView *chooseDateView;
@@ -38,6 +41,9 @@
     
     self.introduceYourselfLab.text = [NSString stringWithFormat:@"向%@介绍下你自己",self.ownerName];
     
+    
+    NSLog(@"发布的数据%@",self.publishDic);
+    
 }
 
 - (void)exitKeyBoard
@@ -59,6 +65,8 @@
     [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
         //进行操作
     }];
+    
+    
 }
 
 #pragma mark -- UITextViewDelegate
@@ -96,6 +104,11 @@
 - (void)setOwnerName:(NSString *)ownerName
 {
     _ownerName = ownerName;
+}
+
+- (void)setpublishDic:(NSMutableDictionary *)publishDic
+{
+    _publishDic = publishDic;
 }
 
 - (void)didReceiveMemoryWarning {

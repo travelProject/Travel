@@ -10,6 +10,8 @@
 
 @interface FYApplyBookingHouseVC : BLBackViewController
 
+@property(nonatomic,strong)NSMutableDictionary *publishDic;
+
 @property(nonatomic,copy) NSString *ownerName;
 
 @end

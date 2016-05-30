@@ -156,6 +156,7 @@
 		CBDF7DE81CEB4C3300762867 /* FYCityHouseMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DE61CEB4C3300762867 /* FYCityHouseMapCell.m */; };
 		CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDF7DE71CEB4C3300762867 /* FYCityHouseMapCell.xib */; };
 		CBDF7DEC1CEB4C7100762867 /* FYCityHouseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DEB1CEB4C7100762867 /* FYCityHouseMapVC.m */; };
+		CBE14B481CFC77E900A1D14E /* FYApplyBookingHouseData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE14B471CFC77E900A1D14E /* FYApplyBookingHouseData.m */; };
 		CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */; };
 		CBEE47A21CF000E0007CE329 /* BLBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEE47A11CF000E0007CE329 /* BLBackViewController.m */; };
 		CBF584001CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF583F91CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m */; };
@@ -434,6 +435,8 @@
 		CBDF7DE71CEB4C3300762867 /* FYCityHouseMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYCityHouseMapCell.xib; sourceTree = "<group>"; };
 		CBDF7DEA1CEB4C7100762867 /* FYCityHouseMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseMapVC.h; sourceTree = "<group>"; };
 		CBDF7DEB1CEB4C7100762867 /* FYCityHouseMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseMapVC.m; sourceTree = "<group>"; };
+		CBE14B461CFC77E900A1D14E /* FYApplyBookingHouseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYApplyBookingHouseData.h; sourceTree = "<group>"; };
+		CBE14B471CFC77E900A1D14E /* FYApplyBookingHouseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYApplyBookingHouseData.m; sourceTree = "<group>"; };
 		CBE1DA9C1CE21A5E00B36A18 /* FYAFNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAFNetworkingManager.h; sourceTree = "<group>"; };
 		CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAFNetworkingManager.m; sourceTree = "<group>"; };
 		CBEE47A01CF000E0007CE329 /* BLBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBackViewController.h; sourceTree = "<group>"; };
@@ -1407,6 +1410,8 @@
 				CBDF7DE31CEB4BDC00762867 /* FYCityHouseMapData.m */,
 				CBDA28EF1CF7313700CDC3B7 /* FYSingleHouseDetailData.h */,
 				CBDA28F01CF7313700CDC3B7 /* FYSingleHouseDetailData.m */,
+				CBE14B461CFC77E900A1D14E /* FYApplyBookingHouseData.h */,
+				CBE14B471CFC77E900A1D14E /* FYApplyBookingHouseData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1752,6 +1757,7 @@
 				CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */,
 				CB29DC941CFB032400364C3D /* BLPaymentMethodsController.m in Sources */,
 				CB29DC8B1CFB032400364C3D /* BLShareTableViewCell.m in Sources */,
+				CBE14B481CFC77E900A1D14E /* FYApplyBookingHouseData.m in Sources */,
 				2B9B48571CEDE9F900FB2169 /* CYDoDizhuView.m in Sources */,
 				CB29DC721CFB032400364C3D /* BLEditProfilesController.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,

@@ -69,6 +69,16 @@ typedef enum : NSUInteger {
     self.mapView.delegate = nil;
 }
 
+- (NSMutableDictionary *)publishDic
+{
+    if (!_publishDic) {
+        
+        _publishDic = [[NSMutableDictionary alloc] init];
+    }
+    
+    return _publishDic;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -205,6 +215,13 @@ typedef enum : NSUInteger {
         
         [self insertPinWithLat:singlehouseData.lat.doubleValue Lng:singlehouseData.lng.doubleValue Address:singlehouseData.address];
         
+        [self.publishDic setObject:self.priceLab.text forKey:@"price"];
+        [self.publishDic setObject:self.houseTypeLab.text forKey:@"houseType"];
+        [self.publishDic setObject:self.titleLab.text forKey:@"title"];
+        [self.publishDic setObject:banner[0] forKey:@"housePic"];
+        [self.publishDic setObject:singlehouseData.reviewScore forKey:@"starLV"];
+        
+        
         
     } failur:^(NSError *error) {
         
@@ -245,6 +262,11 @@ typedef enum : NSUInteger {
 - (IBAction)applyBookingAct:(id)sender {
     
     FYApplyBookingHouseVC *applyBookingHouseVC = [[FYApplyBookingHouseVC alloc] initWithNibName:@"FYApplyBookingHouseVC" bundle:nil];
+    
+    if ([self.publishDic objectForKey:@"price"]) {
+        
+        applyBookingHouseVC.publishDic = self.publishDic;
+    }
     
     applyBookingHouseVC.ownerName = self.ownerNameLab.text;
     
