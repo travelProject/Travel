@@ -14,6 +14,9 @@
 //房间数据模型
 #import "FYSingleHouseDetailData.h"
 
+//申请预订
+#import "FYApplyBookingHouseVC.h"
+
 typedef enum : NSUInteger {
     SpaceTypeLivingRoom = 1,
     SpaceTypeJointRent = 2,
@@ -241,7 +244,11 @@ typedef enum : NSUInteger {
 
 - (IBAction)applyBookingAct:(id)sender {
     
-    NSLog(@"申请预定");
+    FYApplyBookingHouseVC *applyBookingHouseVC = [[FYApplyBookingHouseVC alloc] initWithNibName:@"FYApplyBookingHouseVC" bundle:nil];
+    
+    applyBookingHouseVC.ownerName = self.ownerNameLab.text;
+    
+    [self.navigationController pushViewController:applyBookingHouseVC animated:YES];
 }
 
 - (void)setSpaceId:(NSString *)spaceId

@@ -17,6 +17,9 @@
 #import <UIImageView+WebCache.h>
 #import <SVProgressHUD.h>
 
+//Bmob后端云
+#import <BmobSDK/Bmob.h>
+
 //导入地图头文件
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件

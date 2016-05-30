@@ -12,6 +12,7 @@
 //短信验证码
 #import <SMS_SDK/SMSSDK.h>
 
+
 @interface AppDelegate ()
 
 {
@@ -25,6 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Bmob registerWithAppKey:@"96670d94525fd56d34affb410c010ef5"];
+    
     
     [SMSSDK registerApp:@"134293659e2b6" withSecret:@"9ef80f31fe000f5471c2f62e0a850ab3"];
     
