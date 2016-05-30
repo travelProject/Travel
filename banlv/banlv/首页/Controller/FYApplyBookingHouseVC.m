@@ -50,6 +50,15 @@
 - (IBAction)plusAct:(id)sender {
 }
 - (IBAction)decideAct:(id)sender {
+    
+    //往GameScore表添加一条playerName为小明，分数为78的数据
+    BmobObject *gameScore = [BmobObject objectWithClassName:@"GameScore"];
+    [gameScore setObject:@"小明" forKey:@"playerName"];
+    [gameScore setObject:@78 forKey:@"score"];
+    [gameScore setObject:[NSNumber numberWithBool:YES] forKey:@"cheatMode"];
+    [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        //进行操作
+    }];
 }
 
 #pragma mark -- UITextViewDelegate
