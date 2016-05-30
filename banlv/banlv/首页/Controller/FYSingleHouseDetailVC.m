@@ -15,7 +15,7 @@
 #import "FYSingleHouseDetailData.h"
 
 //申请预订
-//#import "FYApplyBookingHouseVC.h"
+#import "FYApplyBookingHouseVC.h"
 
 typedef enum : NSUInteger {
     SpaceTypeLivingRoom = 1,
@@ -244,11 +244,11 @@ typedef enum : NSUInteger {
 
 - (IBAction)applyBookingAct:(id)sender {
     
-//    FYApplyBookingHouseVC *applyBookingHouseVC = [[FYApplyBookingHouseVC alloc] initWithNibName:@"FYApplyBookingHouseVC" bundle:nil];
-//    
-//    applyBookingHouseVC.ownerName = self.ownerNameLab.text;
-//    
-//    [self.navigationController pushViewController:applyBookingHouseVC animated:YES];
+    FYApplyBookingHouseVC *applyBookingHouseVC = [[FYApplyBookingHouseVC alloc] initWithNibName:@"FYApplyBookingHouseVC" bundle:nil];
+    
+    applyBookingHouseVC.ownerName = self.ownerNameLab.text;
+    
+    [self.navigationController pushViewController:applyBookingHouseVC animated:YES];
 }
 
 - (void)setSpaceId:(NSString *)spaceId

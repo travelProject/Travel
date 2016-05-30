@@ -398,18 +398,6 @@
 - (NSString *)getURLStrWithPage:(NSInteger)page DateIn:(NSNumber *)dateIn DateOut:(NSNumber *)dateOut
 {
     
-    
-//http://www.shafalvxing.com/channel/localServiceDetail.do
-//    bizParams：{
-//        "userToken" : "MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2",
-//        "localServiceId" : 262
-//    }
-    
-    NSString *param = [NSString stringWithFormat:@"bizParams={\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"localServiceId\":262}"];
-    NSString *s = @"http://www.shafalvxing.com/channel/localServiceDetail.do?";
-    
-    NSLog(@"接口是:%@",[s encodeURLWithParams:param]);
-    
     NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%ld,\n\"limitGuestsNum\":0,\n\"checkOutDate\":%ld,\n\"page\":%ld,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":%ld}",self.cityId.integerValue,dateOut.integerValue,page,(long)dateIn.integerValue];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
@@ -420,77 +408,14 @@
 - (NSString *)getURLWith:(NSInteger)limitNum :(NSNumber *)checkOutDate :(NSInteger)page :(NSArray *)spaceTypes :(NSInteger)sex :(NSNumber *)checkInDate :(CGFloat)startPrice :(CGFloat)endPrice
 {
 
-    
-//    {
-//        "cityId" : 73,
-//        "limitGuestsNum" : 1,
-//        "checkOutDate" : 1464969600000,
-//        "checkInDate" : 1464710400000,
-//        "page" : 1,
-//        "startPrice" : "0",
-//        "spaceTypes" : [
-//                        "3",
-//                        "1",
-//                        "2"
-//                        ],
-//        "userToken" : "NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4",
-//        "sex" : 1,
-//        "districtId" : 0,
-//        "endPrice" : "169.9"
-//    }
-    
-//    http://www.shafalvxing.com/space/getSharedSpaceByCity.do?bizParams=%7B%0A%20%20%22cityId%22%20%3A%2073%2C%0A%20%20%22limitGuestsNum%22%20%3A%201%2C%0A%20%20%22checkOutDate%22%20%3A%201464969600000%2C%0A%20%20%22checkInDate%22%20%3A%201464710400000%2C%0A%20%20%22page%22%20%3A%201%2C%0A%20%20%22startPrice%22%20%3A%20%220%22%2C%0A%20%20%22spaceTypes%22%20%3A%20%5B%0A%20%20%20%20%223%22%2C%0A%20%20%20%20%221%22%2C%0A%20%20%20%20%222%22%0A%20%20%5D%2C%0A%20%20%22userToken%22%20%3A%20%22NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4%22%2C%0A%20%20%22sex%22%20%3A%201%2C%0A%20%20%22districtId%22%20%3A%200%2C%0A%20%20%22endPrice%22%20%3A%20%22169.9%22%0A%7D
-    
-//    http://www.shafalvxing.com/space/getSharedSpaceByCity.do?bizParams=%7B%0A%22cityId%22:73,%0A%22limitGuestsNum%22:1,%0A%22checkOutDate%22:0,%0A%22checkInDate%22:0,%0A%22page%22:1,%0A%22startPrice%22:0.000000,%0A%22spaceTypes%22:(%0A%20%20%20%201%0A),%0A%22userToken%22:%22NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4%22,%0A%22sex%22:1,%0A%22districtId%22:0,%0A%22endPrice%22:149.645808%7D
-    
-    
-    
-//    NSLog(@"最高价格:%f",endPrice);
-    
-    
-    
     NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%ld,\n\"limitGuestsNum\":%ld,\n\"checkOutDate\":%ld,\n\"checkInDate\":%ld,\n\"page\":%ld,\n\"startPrice\":%f,\n\"spaceTypes\":%@,\n\"userToken\":\"NTE1MmUyODM3N2U5ZDQxYTk0NTQwNDM1OTUxNmI4M2Y2YjJkYzEyOGY1MjM0YTg4\",\n\"sex\":%ld,\n\"districtId\":0,\n\"endPrice\":%f}",self.cityId.integerValue,limitNum,checkOutDate.integerValue,(long)checkInDate.integerValue,page,startPrice,spaceTypes.mj_JSONString,sex,endPrice];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
     
-//    NSLog(@"url : %@",[urlStr encodeURLWithParams:params]);
-    
     return [urlStr encodeURLWithParams:params];
 }
 
-//- (void)requestData
-//{
-//    NSString *url = nil;
-//    
-//    if (self.chooseType == 1) {
-//        
-//        url = [self getURLStrWithPage:self.page DateIn:self.selectDateArr[0] DateOut:self.selectDateArr[1]];
-//    }else if (self.chooseType == 2)
-//    {
-//        url = [self getURLWith:self.limitGuestsNum :self.selectDateArr[1] :self.page :self.spaceTypes :self.sex :self.selectDateArr[0] :self.startPrice :self.endPrice];
-//    }
-//
-//    [self.manager GET:url parameters:nil success:^(id responseObject) {
-//        
-//        self.hasNext = [self getHasNext:responseObject];
-//        
-//        NSArray *cityHouseArr = [[responseObject objectForKey:@"data"] objectForKey:@"result"];
-//        
-//        self.cityHouseArr = [FYCityHouseListData mj_objectArrayWithKeyValuesArray:cityHouseArr];
-//        
-//        [self isHiddenFooter];
-//        
-//        [self.tableView reloadData];
-//        
-//        
-//    } failur:^(NSError *error) {
-//        
-//        CYLog(@"error : %@",error);
-//        
-//    }];
-//    
-//    
-//}
+
 
 - (NSInteger)getHasNext:(id)responseObject
 {
