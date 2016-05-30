@@ -397,6 +397,19 @@
 
 - (NSString *)getURLStrWithPage:(NSInteger)page DateIn:(NSNumber *)dateIn DateOut:(NSNumber *)dateOut
 {
+    
+    
+//http://www.shafalvxing.com/channel/localServiceDetail.do
+//    bizParams：{
+//        "userToken" : "MDM5ZmM2MTVlMDY2MWJiZDhjNTVlNmQ0OThiY2VjOTlhNmU4M2YyYjQyNGNhMmQ2",
+//        "localServiceId" : 262
+//    }
+    
+    NSString *param = [NSString stringWithFormat:@"bizParams={\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"localServiceId\":262}"];
+    NSString *s = @"http://www.shafalvxing.com/channel/localServiceDetail.do?";
+    
+    NSLog(@"接口是:%@",[s encodeURLWithParams:param]);
+    
     NSString *params = [NSString stringWithFormat:@"bizParams={\n\"cityId\":%ld,\n\"limitGuestsNum\":0,\n\"checkOutDate\":%ld,\n\"page\":%ld,\n\"userToken\":\"NDRjYmJiZWJlZWJjMmE1NjQ2NmVhNzUxMjY2YzRhMWQ4NDE0MjBhMjMyNjEyZTQ3\",\n\"sex\":0,\n\"districtId\":0,\n\"checkInDate\":%ld}",self.cityId.integerValue,dateOut.integerValue,page,(long)dateIn.integerValue];
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
