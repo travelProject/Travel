@@ -118,7 +118,7 @@
     [manager GET:[urlStr encodeURLWithParams:params] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@",[urlStr encodeURLWithParams:params]);
+//        NSLog(@"%@",[urlStr encodeURLWithParams:params]);
         
 //        NSArray *jsonArr =[responseObject objectForKey:@"data"];
         

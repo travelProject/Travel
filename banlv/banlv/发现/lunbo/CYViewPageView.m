@@ -68,7 +68,7 @@
     _pageControl = [[UIPageControl alloc]init];
     _pageControl.center = CGPointMake(kScreemWidth* 0.5, self.frame.size.height *0.9);
     
-    [self addSubview:_pageControl];
+//    [self addSubview:_pageControl];
 }
 #pragma mark - 初始化ImageView
 - (void)initImageViews
