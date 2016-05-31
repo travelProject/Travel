@@ -69,35 +69,63 @@ typedef enum : NSUInteger {
 - (IBAction)xinCollection:(id)sender {
     
     self.xinImageView.selected = !self.xinImageView.isSelected;
-  
-
-    BmobObject *gameScore = [BmobObject objectWithClassName:@"CollHouse"];
     
-    NSDictionary *dic = self.cityHouseData.mj_keyValues;
+    BmobObject *gameScore = nil;
     
-    NSLog(@"%@",dic);
-    
-//    NSDictionary *dic = @{@"playerName":@"小黑",@"score":@18};
-    
-    [gameScore saveAllWithDictionary:dic];
-    
-    
-    [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-        //进行操作
-        if (isSuccessful) {
-            
-            NSLog(@"上传成功");
-        }
+    if (self.xinImageView.isSelected) {
         
-        if (error) {
-            
-            NSLog(@"上传失败:%@",error);
-        }
+        gameScore = [BmobObject objectWithClassName:@"CollectionHouse"];
+
+        NSMutableDictionary *dic = self.cityHouseData.mj_keyValues;
         
-    }];
+        [dic setValue:self.cityHouseData.userIdentificationStatus forKey:@"userIdentiStatus"];
+        
+        [dic setValue:@"1" forKey:@"collectionStatus"];
+
+        [dic removeObjectForKey:@"userIdentificationStatus"];//键值对一起删除
+        
+        [gameScore saveAllWithDictionary:dic];
+        
+        [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+            //进行操作
+            if (isSuccessful) {
+                
+                NSLog(@"上传成功");
+            }
+            
+            if (error) {
+                
+                NSLog(@"上传失败:%@",error);
+            }
+            
+        }];
+
+    }else if (!self.xinImageView.isSelected)
+    {
+        
+        BmobQuery   *bquery = [BmobQuery queryWithClassName:@"CollectionHouse"];
+        
+        [bquery whereKey:@"spaceId" equalTo:self.cityHouseData.spaceId];
+        
+        [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            
+            
+            if (error)
+            {
+                //进行错误处理
+            }else if (array)
+            {
+                //异步删除object
+                [array[0] deleteInBackground];
+            }
+            
+                
+            }];
+        
 
     
-    
+
+    }
     
     
     
@@ -109,6 +137,15 @@ typedef enum : NSUInteger {
     
     //轮播图数据
     self.carouselView.picArr = _cityHouseData.pictureList;
+    
+    if ([self.cityHouseData.collectionStatus isEqualToString:@"0"]) {
+        
+        [self.xinImageView setBackgroundImage:[UIImage imageNamed:@"xin_white"] forState:UIControlStateNormal];
+    }else if ([self.cityHouseData.collectionStatus isEqualToString:@"1"])
+    {
+        self.xinImageView.selected = YES;
+        [self.xinImageView setBackgroundImage:[UIImage imageNamed:@"hongxin"] forState:UIControlStateNormal];
+    }
     
 //    spaceType;//房间类型（1.客厅沙发 2.合租房间 榻榻米 3.独立房间 双人床）
     switch (_cityHouseData.spaceType.integerValue) {
@@ -153,7 +190,7 @@ typedef enum : NSUInteger {
     self.replyRateLabel.text = [replyStr stringByAppendingString:@"%"];
     
     //添加实名认证、芝麻信用
-    if ([_cityHouseData.userIdenStatus isEqualToString:@"2"]) {
+    if ([_cityHouseData.userIdentificationStatus isEqualToString:@"2"]) {
         
         
         self.userIdentification.image = [UIImage imageNamed:@"shenfenzheng"];

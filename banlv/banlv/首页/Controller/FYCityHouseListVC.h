@@ -16,6 +16,9 @@
 //存放城市房间的数组
 @property(nonatomic,strong) NSMutableArray<FYCityHouseListData *> *cityHouseArr;
 
+
+
+
 @property(nonatomic,copy) NSString *cityId;
 
 @property(nonatomic,copy) NSString *cityName;
