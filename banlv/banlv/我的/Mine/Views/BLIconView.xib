@@ -17,7 +17,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebk-dy-jvA">
                     <rect key="frame" x="167" y="60" width="90" height="140"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Z" translatesAutoresizingMaskIntoConstraints="NO" id="HzW-Ug-L60">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_icon_cat" translatesAutoresizingMaskIntoConstraints="NO" id="HzW-Ug-L60">
                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="90" id="amu-HY-PfT"/>
@@ -58,11 +58,11 @@
                 <outlet property="midView" destination="ebk-dy-jvA" id="2OZ-Hy-gVu"/>
                 <outlet property="nameLab" destination="6Hf-qC-xvu" id="Ckx-Xp-lJz"/>
             </connections>
-            <point key="canvasLocation" x="503.5" y="154.5"/>
+            <point key="canvasLocation" x="255.5" y="199.5"/>
         </view>
     </objects>
     <resources>
-        <image name="Z" width="176" height="110"/>
+        <image name="mine_icon_cat" width="89" height="89"/>
         <image name="profile_iconView_bacground" width="375" height="210"/>
     </resources>
 </document>

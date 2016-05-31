@@ -12,7 +12,7 @@
 #import "FindViewController.h"
 #import "SearchViewController.h"
 #import "BLOrdersViewController.h"
-#import "BLTempController.h"
+#import "BLMineViewController.h"
 
 #import "CYMyTabBar.h"
 
@@ -41,7 +41,7 @@
     
     [self addViewController:[[BLOrdersViewController alloc]init] withImage:@"dingdan" withSelectImage:@"dingdan_click" withItemTitle:@"订单"];
     
-    [self addViewController:[[BLTempController alloc]init] withImage:@"wode" withSelectImage:@"wode_click" withItemTitle:@"我的"];
+    [self addViewController:[[BLMineViewController alloc]init] withImage:@"wode" withSelectImage:@"wode_click" withItemTitle:@"我的"];
     
     [self setValue:[[CYMyTabBar alloc] init] forKey:@"tabBar"];
     

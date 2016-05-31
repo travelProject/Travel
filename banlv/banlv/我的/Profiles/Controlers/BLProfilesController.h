@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BLProfilesController : UIViewController
+@interface BLProfilesController : BLBackViewController
 
 @end

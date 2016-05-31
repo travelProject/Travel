@@ -59,7 +59,6 @@
 		2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A17A1CDC2B0400B4989C /* UIView+frame.m */; };
 		2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1891CDC2BE200B4989C /* SearchViewController.m */; };
 		2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18C1CDC2BF900B4989C /* HomeViewController.m */; };
-		2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18F1CDC2C0E00B4989C /* MainViewController.m */; };
 		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
 		2B9946A91CEC98F500D21942 /* CYPoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */; };
 		2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */; };
@@ -69,29 +68,6 @@
 		2BCB038B1CFC761200878DD6 /* CYBMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB038A1CFC761200878DD6 /* CYBMView.m */; };
 		2BCB038D1CFC768C00878DD6 /* CYBMView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB038C1CFC768C00878DD6 /* CYBMView.xib */; };
 		7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */; };
-		7A2FD8301CE86E330049267C /* BLMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7F61CE86E330049267C /* BLMyCollectController.m */; };
-		7A2FD8311CE86E330049267C /* BLMyCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2FD7F71CE86E330049267C /* BLMyCollectController.xib */; };
-		7A2FD8321CE86E330049267C /* BLEditProfilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD7FD1CE86E330049267C /* BLEditProfilesController.m */; };
-		7A2FD8331CE86E330049267C /* BLFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD8031CE86E330049267C /* BLFeedbackController.m */; };
-		7A2FD8341CE86E330049267C /* BLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD8091CE86E330049267C /* BLMineViewController.m */; };
-		7A2FD8351CE86E330049267C /* BLSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD80B1CE86E330049267C /* BLSetController.m */; };
-		7A2FD8361CE86E330049267C /* BLTempController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD80D1CE86E330049267C /* BLTempController.m */; };
-		7A2FD8371CE86E330049267C /* BLAboutUsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD8111CE86E330049267C /* BLAboutUsView.m */; };
-		7A2FD8381CE86E330049267C /* BLIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD8131CE86E330049267C /* BLIconView.m */; };
-		7A2FD8391CE86E330049267C /* BLIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2FD8141CE86E330049267C /* BLIconView.xib */; };
-		7A2FD83A1CE86E330049267C /* BLLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD8161CE86E330049267C /* BLLogoView.m */; };
-		7A2FD83B1CE86E330049267C /* BLLogoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2FD8171CE86E330049267C /* BLLogoView.xib */; };
-		7A2FD83C1CE86E330049267C /* BLProfilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD81B1CE86E330049267C /* BLProfilesController.m */; };
-		7A2FD83D1CE86E330049267C /* BLBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD81F1CE86E330049267C /* BLBannerCell.m */; };
-		7A2FD83E1CE86E330049267C /* BLBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2FD8201CE86E330049267C /* BLBannerCell.xib */; };
-		7A2FD83F1CE86E330049267C /* BLBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD8221CE86E330049267C /* BLBannerView.m */; };
-		7A2FD8401CE86E330049267C /* BLBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2FD8231CE86E330049267C /* BLBannerView.xib */; };
-		7A2FD8411CE86E330049267C /* BLMyWalletController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD82C1CE86E330049267C /* BLMyWalletController.m */; };
-		7A2FD8421CE86E330049267C /* BLMyWalletController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2FD82D1CE86E330049267C /* BLMyWalletController.xib */; };
-		7A2FD84D1CE870470049267C /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD8451CE870470049267C /* MMDrawerBarButtonItem.m */; };
-		7A2FD84E1CE870470049267C /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD8481CE870470049267C /* MMDrawerController.m */; };
-		7A2FD84F1CE870470049267C /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD84A1CE870470049267C /* MMDrawerVisualState.m */; };
-		7A2FD8501CE870470049267C /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FD84C1CE870470049267C /* UIViewController+MMDrawerController.m */; };
 		CB038E3D1CE6F0F30090839D /* NSString+FYURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E3C1CE6F0F30090839D /* NSString+FYURLEncode.m */; };
 		CB038E411CE6FA100090839D /* FYCarouselPic.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E401CE6FA100090839D /* FYCarouselPic.m */; };
 		CB038E441CE6FD910090839D /* FYCarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB038E431CE6FD910090839D /* FYCarouselCell.m */; };
@@ -118,8 +94,48 @@
 		CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503311CE579FF007004AB /* FYLookMoreCityData.m */; };
 		CB2503351CE57CA2007004AB /* FYSingleCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503341CE57CA2007004AB /* FYSingleCityData.m */; };
 		CB2503381CE58F2C007004AB /* FYSearchedCityTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503371CE58F2C007004AB /* FYSearchedCityTableView.m */; };
+		CB29DC701CFB032400364C3D /* BLMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC131CFB032300364C3D /* BLMyCollectController.m */; };
+		CB29DC711CFB032400364C3D /* BLMyCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC141CFB032300364C3D /* BLMyCollectController.xib */; };
+		CB29DC721CFB032400364C3D /* BLEditProfilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC1A1CFB032300364C3D /* BLEditProfilesController.m */; };
+		CB29DC731CFB032400364C3D /* BLTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC1E1CFB032300364C3D /* BLTagCell.m */; };
+		CB29DC741CFB032400364C3D /* BLTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC1F1CFB032300364C3D /* BLTagCell.xib */; };
+		CB29DC751CFB032400364C3D /* BLFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC231CFB032300364C3D /* BLFeedbackController.m */; };
+		CB29DC761CFB032400364C3D /* BLFeedbackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC241CFB032300364C3D /* BLFeedbackController.xib */; };
+		CB29DC771CFB032400364C3D /* BLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC2A1CFB032300364C3D /* BLMineViewController.m */; };
+		CB29DC781CFB032400364C3D /* BLIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC2E1CFB032300364C3D /* BLIconView.m */; };
+		CB29DC791CFB032400364C3D /* BLIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC2F1CFB032300364C3D /* BLIconView.xib */; };
+		CB29DC7A1CFB032400364C3D /* BLLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC311CFB032300364C3D /* BLLogoView.m */; };
+		CB29DC7B1CFB032400364C3D /* BLLogoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC321CFB032300364C3D /* BLLogoView.xib */; };
+		CB29DC7C1CFB032400364C3D /* BLMineTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC341CFB032300364C3D /* BLMineTableView.m */; };
+		CB29DC7D1CFB032400364C3D /* BLProfilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC391CFB032400364C3D /* BLProfilesController.m */; };
+		CB29DC7E1CFB032400364C3D /* BLBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC3D1CFB032400364C3D /* BLBannerCell.m */; };
+		CB29DC7F1CFB032400364C3D /* BLBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC3E1CFB032400364C3D /* BLBannerCell.xib */; };
+		CB29DC801CFB032400364C3D /* BLBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC401CFB032400364C3D /* BLBannerView.m */; };
+		CB29DC811CFB032400364C3D /* BLBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC411CFB032400364C3D /* BLBannerView.xib */; };
+		CB29DC821CFB032400364C3D /* BLIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC431CFB032400364C3D /* BLIntroductionView.m */; };
+		CB29DC831CFB032400364C3D /* BLIntroductionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC441CFB032400364C3D /* BLIntroductionView.xib */; };
+		CB29DC841CFB032400364C3D /* BLRoomSoyrceController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC481CFB032400364C3D /* BLRoomSoyrceController.m */; };
+		CB29DC851CFB032400364C3D /* BLRoomSoyrceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC491CFB032400364C3D /* BLRoomSoyrceController.xib */; };
+		CB29DC861CFB032400364C3D /* BLSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC4F1CFB032400364C3D /* BLSetController.m */; };
+		CB29DC871CFB032400364C3D /* BLAboutUsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC531CFB032400364C3D /* BLAboutUsView.m */; };
+		CB29DC881CFB032400364C3D /* BLSetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC551CFB032400364C3D /* BLSetTableView.m */; };
+		CB29DC891CFB032400364C3D /* BLShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC591CFB032400364C3D /* BLShareController.m */; };
+		CB29DC8A1CFB032400364C3D /* BLShareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC5A1CFB032400364C3D /* BLShareController.xib */; };
+		CB29DC8B1CFB032400364C3D /* BLShareTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC5D1CFB032400364C3D /* BLShareTableViewCell.m */; };
+		CB29DC8C1CFB032400364C3D /* BLShareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC5E1CFB032400364C3D /* BLShareTableViewCell.xib */; };
+		CB29DC8D1CFB032400364C3D /* BLCashAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC611CFB032400364C3D /* BLCashAccountView.m */; };
+		CB29DC8E1CFB032400364C3D /* BLCashAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC621CFB032400364C3D /* BLCashAccountView.xib */; };
+		CB29DC8F1CFB032400364C3D /* BLCouponView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC641CFB032400364C3D /* BLCouponView.m */; };
+		CB29DC901CFB032400364C3D /* BLCouponView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC651CFB032400364C3D /* BLCouponView.xib */; };
+		CB29DC911CFB032400364C3D /* BLMoneyInOutController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC691CFB032400364C3D /* BLMoneyInOutController.m */; };
+		CB29DC921CFB032400364C3D /* BLMyWalletController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC6B1CFB032400364C3D /* BLMyWalletController.m */; };
+		CB29DC931CFB032400364C3D /* BLMyWalletController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC6C1CFB032400364C3D /* BLMyWalletController.xib */; };
+		CB29DC941CFB032400364C3D /* BLPaymentMethodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC6E1CFB032400364C3D /* BLPaymentMethodsController.m */; };
+		CB29DC951CFB032400364C3D /* BLPaymentMethodsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC6F1CFB032400364C3D /* BLPaymentMethodsController.xib */; };
 		CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4EF9621CE388DD008046EF /* FYHomeViewCell.m */; };
 		CB4EF9651CE388DD008046EF /* FYHomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4EF9631CE388DD008046EF /* FYHomeViewCell.xib */; };
+		CB5661B91CFB2A1400AABD2A /* FYApplyBookingHouseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5661B71CFB2A1400AABD2A /* FYApplyBookingHouseVC.m */; };
+		CB5661BA1CFB2A1400AABD2A /* FYApplyBookingHouseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5661B81CFB2A1400AABD2A /* FYApplyBookingHouseVC.xib */; };
 		CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC811CE4461B006457BC /* FYCollectionFooter.m */; };
 		CB6BAC8A1CE4584A006457BC /* FYCollectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC891CE4584A006457BC /* FYCollectionHeader.m */; };
 		CB6BAC8E1CE45912006457BC /* FYHeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC8C1CE45912006457BC /* FYHeaderViewCell.m */; };
@@ -140,6 +156,7 @@
 		CBDF7DE81CEB4C3300762867 /* FYCityHouseMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DE61CEB4C3300762867 /* FYCityHouseMapCell.m */; };
 		CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDF7DE71CEB4C3300762867 /* FYCityHouseMapCell.xib */; };
 		CBDF7DEC1CEB4C7100762867 /* FYCityHouseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF7DEB1CEB4C7100762867 /* FYCityHouseMapVC.m */; };
+		CBE14B481CFC77E900A1D14E /* FYApplyBookingHouseData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE14B471CFC77E900A1D14E /* FYApplyBookingHouseData.m */; };
 		CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */; };
 		CBEE47A21CF000E0007CE329 /* BLBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEE47A11CF000E0007CE329 /* BLBackViewController.m */; };
 		CBF584001CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF583F91CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m */; };
@@ -264,8 +281,6 @@
 		2B97A1891CDC2BE200B4989C /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		2B97A18B1CDC2BF900B4989C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2B97A18C1CDC2BF900B4989C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		2B97A18E1CDC2C0E00B4989C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		2B97A18F1CDC2C0E00B4989C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2B97A1911CDC2C4B00B4989C /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		2B97A1921CDC2C4B00B4989C /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		2B9946A71CEC98F500D21942 /* CYPoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPoHeaderView.h; sourceTree = "<group>"; };
@@ -282,47 +297,6 @@
 		32E8EF9BBE4402875978F035 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2FD7ED1CE86DE40049267C /* BLOrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLOrdersViewController.h; sourceTree = "<group>"; };
 		7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLOrdersViewController.m; sourceTree = "<group>"; };
-		7A2FD7F51CE86E330049267C /* BLMyCollectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMyCollectController.h; sourceTree = "<group>"; };
-		7A2FD7F61CE86E330049267C /* BLMyCollectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMyCollectController.m; sourceTree = "<group>"; };
-		7A2FD7F71CE86E330049267C /* BLMyCollectController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLMyCollectController.xib; sourceTree = "<group>"; };
-		7A2FD7FC1CE86E330049267C /* BLEditProfilesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEditProfilesController.h; sourceTree = "<group>"; };
-		7A2FD7FD1CE86E330049267C /* BLEditProfilesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEditProfilesController.m; sourceTree = "<group>"; };
-		7A2FD8021CE86E330049267C /* BLFeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLFeedbackController.h; sourceTree = "<group>"; };
-		7A2FD8031CE86E330049267C /* BLFeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLFeedbackController.m; sourceTree = "<group>"; };
-		7A2FD8081CE86E330049267C /* BLMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMineViewController.h; sourceTree = "<group>"; };
-		7A2FD8091CE86E330049267C /* BLMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMineViewController.m; sourceTree = "<group>"; };
-		7A2FD80A1CE86E330049267C /* BLSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSetController.h; sourceTree = "<group>"; };
-		7A2FD80B1CE86E330049267C /* BLSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSetController.m; sourceTree = "<group>"; };
-		7A2FD80C1CE86E330049267C /* BLTempController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLTempController.h; sourceTree = "<group>"; };
-		7A2FD80D1CE86E330049267C /* BLTempController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLTempController.m; sourceTree = "<group>"; };
-		7A2FD8101CE86E330049267C /* BLAboutUsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAboutUsView.h; sourceTree = "<group>"; };
-		7A2FD8111CE86E330049267C /* BLAboutUsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAboutUsView.m; sourceTree = "<group>"; };
-		7A2FD8121CE86E330049267C /* BLIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLIconView.h; sourceTree = "<group>"; };
-		7A2FD8131CE86E330049267C /* BLIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLIconView.m; sourceTree = "<group>"; };
-		7A2FD8141CE86E330049267C /* BLIconView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLIconView.xib; sourceTree = "<group>"; };
-		7A2FD8151CE86E330049267C /* BLLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLLogoView.h; sourceTree = "<group>"; };
-		7A2FD8161CE86E330049267C /* BLLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLLogoView.m; sourceTree = "<group>"; };
-		7A2FD8171CE86E330049267C /* BLLogoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLLogoView.xib; sourceTree = "<group>"; };
-		7A2FD81A1CE86E330049267C /* BLProfilesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLProfilesController.h; sourceTree = "<group>"; };
-		7A2FD81B1CE86E330049267C /* BLProfilesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLProfilesController.m; sourceTree = "<group>"; };
-		7A2FD81E1CE86E330049267C /* BLBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBannerCell.h; sourceTree = "<group>"; };
-		7A2FD81F1CE86E330049267C /* BLBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLBannerCell.m; sourceTree = "<group>"; };
-		7A2FD8201CE86E330049267C /* BLBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLBannerCell.xib; sourceTree = "<group>"; };
-		7A2FD8211CE86E330049267C /* BLBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBannerView.h; sourceTree = "<group>"; };
-		7A2FD8221CE86E330049267C /* BLBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLBannerView.m; sourceTree = "<group>"; };
-		7A2FD8231CE86E330049267C /* BLBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLBannerView.xib; sourceTree = "<group>"; };
-		7A2FD82B1CE86E330049267C /* BLMyWalletController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMyWalletController.h; sourceTree = "<group>"; };
-		7A2FD82C1CE86E330049267C /* BLMyWalletController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMyWalletController.m; sourceTree = "<group>"; };
-		7A2FD82D1CE86E330049267C /* BLMyWalletController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLMyWalletController.xib; sourceTree = "<group>"; };
-		7A2FD8441CE870470049267C /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		7A2FD8451CE870470049267C /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
-		7A2FD8461CE870470049267C /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		7A2FD8471CE870470049267C /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
-		7A2FD8481CE870470049267C /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
-		7A2FD8491CE870470049267C /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
-		7A2FD84A1CE870470049267C /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
-		7A2FD84B1CE870470049267C /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
-		7A2FD84C1CE870470049267C /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		84B32E114A75699846B69112 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CB038E3B1CE6F0F30090839D /* NSString+FYURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FYURLEncode.h"; sourceTree = "<group>"; };
 		CB038E3C1CE6F0F30090839D /* NSString+FYURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FYURLEncode.m"; sourceTree = "<group>"; };
@@ -361,9 +335,73 @@
 		CB2503341CE57CA2007004AB /* FYSingleCityData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSingleCityData.m; sourceTree = "<group>"; };
 		CB2503361CE58F2C007004AB /* FYSearchedCityTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYSearchedCityTableView.h; path = "banlv/首页/View/FYSearchedCityTableView.h"; sourceTree = SOURCE_ROOT; };
 		CB2503371CE58F2C007004AB /* FYSearchedCityTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYSearchedCityTableView.m; path = "banlv/首页/View/FYSearchedCityTableView.m"; sourceTree = SOURCE_ROOT; };
+		CB29DC121CFB032300364C3D /* BLMyCollectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMyCollectController.h; sourceTree = "<group>"; };
+		CB29DC131CFB032300364C3D /* BLMyCollectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMyCollectController.m; sourceTree = "<group>"; };
+		CB29DC141CFB032300364C3D /* BLMyCollectController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLMyCollectController.xib; sourceTree = "<group>"; };
+		CB29DC191CFB032300364C3D /* BLEditProfilesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEditProfilesController.h; sourceTree = "<group>"; };
+		CB29DC1A1CFB032300364C3D /* BLEditProfilesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEditProfilesController.m; sourceTree = "<group>"; };
+		CB29DC1D1CFB032300364C3D /* BLTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLTagCell.h; sourceTree = "<group>"; };
+		CB29DC1E1CFB032300364C3D /* BLTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLTagCell.m; sourceTree = "<group>"; };
+		CB29DC1F1CFB032300364C3D /* BLTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLTagCell.xib; sourceTree = "<group>"; };
+		CB29DC221CFB032300364C3D /* BLFeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLFeedbackController.h; sourceTree = "<group>"; };
+		CB29DC231CFB032300364C3D /* BLFeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLFeedbackController.m; sourceTree = "<group>"; };
+		CB29DC241CFB032300364C3D /* BLFeedbackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLFeedbackController.xib; sourceTree = "<group>"; };
+		CB29DC291CFB032300364C3D /* BLMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMineViewController.h; sourceTree = "<group>"; };
+		CB29DC2A1CFB032300364C3D /* BLMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMineViewController.m; sourceTree = "<group>"; };
+		CB29DC2D1CFB032300364C3D /* BLIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLIconView.h; sourceTree = "<group>"; };
+		CB29DC2E1CFB032300364C3D /* BLIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLIconView.m; sourceTree = "<group>"; };
+		CB29DC2F1CFB032300364C3D /* BLIconView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLIconView.xib; sourceTree = "<group>"; };
+		CB29DC301CFB032300364C3D /* BLLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLLogoView.h; sourceTree = "<group>"; };
+		CB29DC311CFB032300364C3D /* BLLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLLogoView.m; sourceTree = "<group>"; };
+		CB29DC321CFB032300364C3D /* BLLogoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLLogoView.xib; sourceTree = "<group>"; };
+		CB29DC331CFB032300364C3D /* BLMineTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMineTableView.h; sourceTree = "<group>"; };
+		CB29DC341CFB032300364C3D /* BLMineTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMineTableView.m; sourceTree = "<group>"; };
+		CB29DC381CFB032300364C3D /* BLProfilesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLProfilesController.h; sourceTree = "<group>"; };
+		CB29DC391CFB032400364C3D /* BLProfilesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLProfilesController.m; sourceTree = "<group>"; };
+		CB29DC3C1CFB032400364C3D /* BLBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBannerCell.h; sourceTree = "<group>"; };
+		CB29DC3D1CFB032400364C3D /* BLBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLBannerCell.m; sourceTree = "<group>"; };
+		CB29DC3E1CFB032400364C3D /* BLBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLBannerCell.xib; sourceTree = "<group>"; };
+		CB29DC3F1CFB032400364C3D /* BLBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBannerView.h; sourceTree = "<group>"; };
+		CB29DC401CFB032400364C3D /* BLBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLBannerView.m; sourceTree = "<group>"; };
+		CB29DC411CFB032400364C3D /* BLBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLBannerView.xib; sourceTree = "<group>"; };
+		CB29DC421CFB032400364C3D /* BLIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLIntroductionView.h; sourceTree = "<group>"; };
+		CB29DC431CFB032400364C3D /* BLIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLIntroductionView.m; sourceTree = "<group>"; };
+		CB29DC441CFB032400364C3D /* BLIntroductionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLIntroductionView.xib; sourceTree = "<group>"; };
+		CB29DC471CFB032400364C3D /* BLRoomSoyrceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLRoomSoyrceController.h; sourceTree = "<group>"; };
+		CB29DC481CFB032400364C3D /* BLRoomSoyrceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLRoomSoyrceController.m; sourceTree = "<group>"; };
+		CB29DC491CFB032400364C3D /* BLRoomSoyrceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLRoomSoyrceController.xib; sourceTree = "<group>"; };
+		CB29DC4E1CFB032400364C3D /* BLSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSetController.h; sourceTree = "<group>"; };
+		CB29DC4F1CFB032400364C3D /* BLSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSetController.m; sourceTree = "<group>"; };
+		CB29DC521CFB032400364C3D /* BLAboutUsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAboutUsView.h; sourceTree = "<group>"; };
+		CB29DC531CFB032400364C3D /* BLAboutUsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAboutUsView.m; sourceTree = "<group>"; };
+		CB29DC541CFB032400364C3D /* BLSetTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSetTableView.h; sourceTree = "<group>"; };
+		CB29DC551CFB032400364C3D /* BLSetTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSetTableView.m; sourceTree = "<group>"; };
+		CB29DC581CFB032400364C3D /* BLShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLShareController.h; sourceTree = "<group>"; };
+		CB29DC591CFB032400364C3D /* BLShareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLShareController.m; sourceTree = "<group>"; };
+		CB29DC5A1CFB032400364C3D /* BLShareController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLShareController.xib; sourceTree = "<group>"; };
+		CB29DC5C1CFB032400364C3D /* BLShareTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLShareTableViewCell.h; sourceTree = "<group>"; };
+		CB29DC5D1CFB032400364C3D /* BLShareTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLShareTableViewCell.m; sourceTree = "<group>"; };
+		CB29DC5E1CFB032400364C3D /* BLShareTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLShareTableViewCell.xib; sourceTree = "<group>"; };
+		CB29DC601CFB032400364C3D /* BLCashAccountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCashAccountView.h; sourceTree = "<group>"; };
+		CB29DC611CFB032400364C3D /* BLCashAccountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCashAccountView.m; sourceTree = "<group>"; };
+		CB29DC621CFB032400364C3D /* BLCashAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLCashAccountView.xib; sourceTree = "<group>"; };
+		CB29DC631CFB032400364C3D /* BLCouponView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCouponView.h; sourceTree = "<group>"; };
+		CB29DC641CFB032400364C3D /* BLCouponView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCouponView.m; sourceTree = "<group>"; };
+		CB29DC651CFB032400364C3D /* BLCouponView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLCouponView.xib; sourceTree = "<group>"; };
+		CB29DC681CFB032400364C3D /* BLMoneyInOutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMoneyInOutController.h; sourceTree = "<group>"; };
+		CB29DC691CFB032400364C3D /* BLMoneyInOutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMoneyInOutController.m; sourceTree = "<group>"; };
+		CB29DC6A1CFB032400364C3D /* BLMyWalletController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMyWalletController.h; sourceTree = "<group>"; };
+		CB29DC6B1CFB032400364C3D /* BLMyWalletController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMyWalletController.m; sourceTree = "<group>"; };
+		CB29DC6C1CFB032400364C3D /* BLMyWalletController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLMyWalletController.xib; sourceTree = "<group>"; };
+		CB29DC6D1CFB032400364C3D /* BLPaymentMethodsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLPaymentMethodsController.h; sourceTree = "<group>"; };
+		CB29DC6E1CFB032400364C3D /* BLPaymentMethodsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLPaymentMethodsController.m; sourceTree = "<group>"; };
+		CB29DC6F1CFB032400364C3D /* BLPaymentMethodsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLPaymentMethodsController.xib; sourceTree = "<group>"; };
 		CB4EF9611CE388DD008046EF /* FYHomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeViewCell.h; sourceTree = "<group>"; };
 		CB4EF9621CE388DD008046EF /* FYHomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeViewCell.m; sourceTree = "<group>"; };
 		CB4EF9631CE388DD008046EF /* FYHomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHomeViewCell.xib; sourceTree = "<group>"; };
+		CB5661B61CFB2A1400AABD2A /* FYApplyBookingHouseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYApplyBookingHouseVC.h; sourceTree = "<group>"; };
+		CB5661B71CFB2A1400AABD2A /* FYApplyBookingHouseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYApplyBookingHouseVC.m; sourceTree = "<group>"; };
+		CB5661B81CFB2A1400AABD2A /* FYApplyBookingHouseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYApplyBookingHouseVC.xib; sourceTree = "<group>"; };
 		CB6BAC801CE4461B006457BC /* FYCollectionFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCollectionFooter.h; sourceTree = "<group>"; };
 		CB6BAC811CE4461B006457BC /* FYCollectionFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCollectionFooter.m; sourceTree = "<group>"; };
 		CB6BAC881CE4584A006457BC /* FYCollectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCollectionHeader.h; sourceTree = "<group>"; };
@@ -397,6 +435,8 @@
 		CBDF7DE71CEB4C3300762867 /* FYCityHouseMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYCityHouseMapCell.xib; sourceTree = "<group>"; };
 		CBDF7DEA1CEB4C7100762867 /* FYCityHouseMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCityHouseMapVC.h; sourceTree = "<group>"; };
 		CBDF7DEB1CEB4C7100762867 /* FYCityHouseMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCityHouseMapVC.m; sourceTree = "<group>"; };
+		CBE14B461CFC77E900A1D14E /* FYApplyBookingHouseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYApplyBookingHouseData.h; sourceTree = "<group>"; };
+		CBE14B471CFC77E900A1D14E /* FYApplyBookingHouseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYApplyBookingHouseData.m; sourceTree = "<group>"; };
 		CBE1DA9C1CE21A5E00B36A18 /* FYAFNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAFNetworkingManager.h; sourceTree = "<group>"; };
 		CBE1DA9D1CE21A5E00B36A18 /* FYAFNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAFNetworkingManager.m; sourceTree = "<group>"; };
 		CBEE47A01CF000E0007CE329 /* BLBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBackViewController.h; sourceTree = "<group>"; };
@@ -724,7 +764,7 @@
 				2B8D54011CEA18E400AF43CA /* 发现 */,
 				2B97A1821CDC2B4D00B4989C /* 搜索 */,
 				2B97A1831CDC2B5200B4989C /* 订单 */,
-				2B97A1841CDC2B5900B4989C /* 我的 */,
+				CB29DC0F1CFB032300364C3D /* 我的 */,
 				2B97A12D1CDC264700B4989C /* Supporting Files */,
 			);
 			path = banlv;
@@ -734,7 +774,6 @@
 			isa = PBXGroup;
 			children = (
 				CB1AA75D1CEC3339009C18E2 /* mapapi.bundle */,
-				7A2FD8431CE870470049267C /* MMDrawerController */,
 				2B97A13E1CDC264700B4989C /* Info.plist */,
 				2B97A12E1CDC264700B4989C /* main.m */,
 				2B97A1601CDC270600B4989C /* CYGlobal.pch */,
@@ -876,24 +915,6 @@
 			path = "订单";
 			sourceTree = "<group>";
 		};
-		2B97A1841CDC2B5900B4989C /* 我的 */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD8061CE86E330049267C /* Mine */,
-				7A2FD7F21CE86E330049267C /* AboutUs */,
-				7A2FD7F31CE86E330049267C /* Collect */,
-				7A2FD7FA1CE86E330049267C /* EditProfiles */,
-				7A2FD8001CE86E330049267C /* Feedback */,
-				7A2FD8181CE86E330049267C /* Profiles */,
-				7A2FD8241CE86E330049267C /* RoomSource */,
-				7A2FD8281CE86E330049267C /* Share */,
-				7A2FD8291CE86E330049267C /* Wallet */,
-				2B97A18E1CDC2C0E00B4989C /* MainViewController.h */,
-				2B97A18F1CDC2C0E00B4989C /* MainViewController.m */,
-			);
-			path = "我的";
-			sourceTree = "<group>";
-		};
 		7A2FD7EC1CE86DE40049267C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -915,285 +936,6 @@
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		7A2FD7F21CE86E330049267C /* AboutUs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AboutUs;
-			sourceTree = "<group>";
-		};
-		7A2FD7F31CE86E330049267C /* Collect */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD7F41CE86E330049267C /* Controlers */,
-				7A2FD7F81CE86E330049267C /* Model */,
-				7A2FD7F91CE86E330049267C /* Views */,
-			);
-			path = Collect;
-			sourceTree = "<group>";
-		};
-		7A2FD7F41CE86E330049267C /* Controlers */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD7F51CE86E330049267C /* BLMyCollectController.h */,
-				7A2FD7F61CE86E330049267C /* BLMyCollectController.m */,
-				7A2FD7F71CE86E330049267C /* BLMyCollectController.xib */,
-			);
-			path = Controlers;
-			sourceTree = "<group>";
-		};
-		7A2FD7F81CE86E330049267C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7A2FD7F91CE86E330049267C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		7A2FD7FA1CE86E330049267C /* EditProfiles */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD7FB1CE86E330049267C /* Controlers */,
-				7A2FD7FE1CE86E330049267C /* Model */,
-				7A2FD7FF1CE86E330049267C /* Views */,
-			);
-			path = EditProfiles;
-			sourceTree = "<group>";
-		};
-		7A2FD7FB1CE86E330049267C /* Controlers */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD7FC1CE86E330049267C /* BLEditProfilesController.h */,
-				7A2FD7FD1CE86E330049267C /* BLEditProfilesController.m */,
-			);
-			path = Controlers;
-			sourceTree = "<group>";
-		};
-		7A2FD7FE1CE86E330049267C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7A2FD7FF1CE86E330049267C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		7A2FD8001CE86E330049267C /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD8011CE86E330049267C /* Controlers */,
-				7A2FD8041CE86E330049267C /* Model */,
-				7A2FD8051CE86E330049267C /* Views */,
-			);
-			path = Feedback;
-			sourceTree = "<group>";
-		};
-		7A2FD8011CE86E330049267C /* Controlers */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD8021CE86E330049267C /* BLFeedbackController.h */,
-				7A2FD8031CE86E330049267C /* BLFeedbackController.m */,
-			);
-			path = Controlers;
-			sourceTree = "<group>";
-		};
-		7A2FD8041CE86E330049267C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7A2FD8051CE86E330049267C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		7A2FD8061CE86E330049267C /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD8071CE86E330049267C /* Controlers */,
-				7A2FD80E1CE86E330049267C /* Model */,
-				7A2FD80F1CE86E330049267C /* Views */,
-			);
-			path = Mine;
-			sourceTree = "<group>";
-		};
-		7A2FD8071CE86E330049267C /* Controlers */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD8081CE86E330049267C /* BLMineViewController.h */,
-				7A2FD8091CE86E330049267C /* BLMineViewController.m */,
-				7A2FD80A1CE86E330049267C /* BLSetController.h */,
-				7A2FD80B1CE86E330049267C /* BLSetController.m */,
-				7A2FD80C1CE86E330049267C /* BLTempController.h */,
-				7A2FD80D1CE86E330049267C /* BLTempController.m */,
-			);
-			path = Controlers;
-			sourceTree = "<group>";
-		};
-		7A2FD80E1CE86E330049267C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7A2FD80F1CE86E330049267C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD8101CE86E330049267C /* BLAboutUsView.h */,
-				7A2FD8111CE86E330049267C /* BLAboutUsView.m */,
-				7A2FD8121CE86E330049267C /* BLIconView.h */,
-				7A2FD8131CE86E330049267C /* BLIconView.m */,
-				7A2FD8141CE86E330049267C /* BLIconView.xib */,
-				7A2FD8151CE86E330049267C /* BLLogoView.h */,
-				7A2FD8161CE86E330049267C /* BLLogoView.m */,
-				7A2FD8171CE86E330049267C /* BLLogoView.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		7A2FD8181CE86E330049267C /* Profiles */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD8191CE86E330049267C /* Controlers */,
-				7A2FD81C1CE86E330049267C /* Model */,
-				7A2FD81D1CE86E330049267C /* Views */,
-			);
-			path = Profiles;
-			sourceTree = "<group>";
-		};
-		7A2FD8191CE86E330049267C /* Controlers */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD81A1CE86E330049267C /* BLProfilesController.h */,
-				7A2FD81B1CE86E330049267C /* BLProfilesController.m */,
-			);
-			path = Controlers;
-			sourceTree = "<group>";
-		};
-		7A2FD81C1CE86E330049267C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7A2FD81D1CE86E330049267C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD81E1CE86E330049267C /* BLBannerCell.h */,
-				7A2FD81F1CE86E330049267C /* BLBannerCell.m */,
-				7A2FD8201CE86E330049267C /* BLBannerCell.xib */,
-				7A2FD8211CE86E330049267C /* BLBannerView.h */,
-				7A2FD8221CE86E330049267C /* BLBannerView.m */,
-				7A2FD8231CE86E330049267C /* BLBannerView.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		7A2FD8241CE86E330049267C /* RoomSource */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD8251CE86E330049267C /* Controlers */,
-				7A2FD8261CE86E330049267C /* Model */,
-				7A2FD8271CE86E330049267C /* Views */,
-			);
-			path = RoomSource;
-			sourceTree = "<group>";
-		};
-		7A2FD8251CE86E330049267C /* Controlers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controlers;
-			sourceTree = "<group>";
-		};
-		7A2FD8261CE86E330049267C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7A2FD8271CE86E330049267C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		7A2FD8281CE86E330049267C /* Share */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Share;
-			sourceTree = "<group>";
-		};
-		7A2FD8291CE86E330049267C /* Wallet */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD82A1CE86E330049267C /* Controlers */,
-				7A2FD82E1CE86E330049267C /* Model */,
-				7A2FD82F1CE86E330049267C /* Views */,
-			);
-			path = Wallet;
-			sourceTree = "<group>";
-		};
-		7A2FD82A1CE86E330049267C /* Controlers */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD82B1CE86E330049267C /* BLMyWalletController.h */,
-				7A2FD82C1CE86E330049267C /* BLMyWalletController.m */,
-				7A2FD82D1CE86E330049267C /* BLMyWalletController.xib */,
-			);
-			path = Controlers;
-			sourceTree = "<group>";
-		};
-		7A2FD82E1CE86E330049267C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7A2FD82F1CE86E330049267C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		7A2FD8431CE870470049267C /* MMDrawerController */ = {
-			isa = PBXGroup;
-			children = (
-				7A2FD8441CE870470049267C /* MMDrawerBarButtonItem.h */,
-				7A2FD8451CE870470049267C /* MMDrawerBarButtonItem.m */,
-				7A2FD8461CE870470049267C /* MMDrawerController+Subclass.h */,
-				7A2FD8471CE870470049267C /* MMDrawerController.h */,
-				7A2FD8481CE870470049267C /* MMDrawerController.m */,
-				7A2FD8491CE870470049267C /* MMDrawerVisualState.h */,
-				7A2FD84A1CE870470049267C /* MMDrawerVisualState.m */,
-				7A2FD84B1CE870470049267C /* UIViewController+MMDrawerController.h */,
-				7A2FD84C1CE870470049267C /* UIViewController+MMDrawerController.m */,
-			);
-			path = MMDrawerController;
 			sourceTree = "<group>";
 		};
 		938E96DF1B047757F4B0CBE1 /* Frameworks */ = {
@@ -1246,6 +988,354 @@
 			path = "登陆与导航";
 			sourceTree = "<group>";
 		};
+		CB29DC0F1CFB032300364C3D /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC101CFB032300364C3D /* Collect */,
+				CB29DC171CFB032300364C3D /* EditProfiles */,
+				CB29DC201CFB032300364C3D /* Feedback */,
+				CB29DC271CFB032300364C3D /* Mine */,
+				CB29DC351CFB032300364C3D /* Model */,
+				CB29DC361CFB032300364C3D /* Profiles */,
+				CB29DC451CFB032400364C3D /* RoomSource */,
+				CB29DC4C1CFB032400364C3D /* Set */,
+				CB29DC561CFB032400364C3D /* Share */,
+				CB29DC5F1CFB032400364C3D /* Views */,
+				CB29DC661CFB032400364C3D /* Wallet */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		CB29DC101CFB032300364C3D /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC111CFB032300364C3D /* Controlers */,
+				CB29DC151CFB032300364C3D /* Model */,
+				CB29DC161CFB032300364C3D /* Views */,
+			);
+			path = Collect;
+			sourceTree = "<group>";
+		};
+		CB29DC111CFB032300364C3D /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC121CFB032300364C3D /* BLMyCollectController.h */,
+				CB29DC131CFB032300364C3D /* BLMyCollectController.m */,
+				CB29DC141CFB032300364C3D /* BLMyCollectController.xib */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		CB29DC151CFB032300364C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB29DC161CFB032300364C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB29DC171CFB032300364C3D /* EditProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC181CFB032300364C3D /* Controlers */,
+				CB29DC1B1CFB032300364C3D /* Model */,
+				CB29DC1C1CFB032300364C3D /* Views */,
+			);
+			path = EditProfiles;
+			sourceTree = "<group>";
+		};
+		CB29DC181CFB032300364C3D /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC191CFB032300364C3D /* BLEditProfilesController.h */,
+				CB29DC1A1CFB032300364C3D /* BLEditProfilesController.m */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		CB29DC1B1CFB032300364C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB29DC1C1CFB032300364C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC1D1CFB032300364C3D /* BLTagCell.h */,
+				CB29DC1E1CFB032300364C3D /* BLTagCell.m */,
+				CB29DC1F1CFB032300364C3D /* BLTagCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB29DC201CFB032300364C3D /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC211CFB032300364C3D /* Controlers */,
+				CB29DC251CFB032300364C3D /* Model */,
+				CB29DC261CFB032300364C3D /* Views */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		CB29DC211CFB032300364C3D /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC221CFB032300364C3D /* BLFeedbackController.h */,
+				CB29DC231CFB032300364C3D /* BLFeedbackController.m */,
+				CB29DC241CFB032300364C3D /* BLFeedbackController.xib */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		CB29DC251CFB032300364C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB29DC261CFB032300364C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB29DC271CFB032300364C3D /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC281CFB032300364C3D /* Controlers */,
+				CB29DC2B1CFB032300364C3D /* Model */,
+				CB29DC2C1CFB032300364C3D /* Views */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		CB29DC281CFB032300364C3D /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC291CFB032300364C3D /* BLMineViewController.h */,
+				CB29DC2A1CFB032300364C3D /* BLMineViewController.m */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		CB29DC2B1CFB032300364C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB29DC2C1CFB032300364C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC2D1CFB032300364C3D /* BLIconView.h */,
+				CB29DC2E1CFB032300364C3D /* BLIconView.m */,
+				CB29DC2F1CFB032300364C3D /* BLIconView.xib */,
+				CB29DC301CFB032300364C3D /* BLLogoView.h */,
+				CB29DC311CFB032300364C3D /* BLLogoView.m */,
+				CB29DC321CFB032300364C3D /* BLLogoView.xib */,
+				CB29DC331CFB032300364C3D /* BLMineTableView.h */,
+				CB29DC341CFB032300364C3D /* BLMineTableView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB29DC351CFB032300364C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB29DC361CFB032300364C3D /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC371CFB032300364C3D /* Controlers */,
+				CB29DC3A1CFB032400364C3D /* Model */,
+				CB29DC3B1CFB032400364C3D /* Views */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
+		CB29DC371CFB032300364C3D /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC381CFB032300364C3D /* BLProfilesController.h */,
+				CB29DC391CFB032400364C3D /* BLProfilesController.m */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		CB29DC3A1CFB032400364C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB29DC3B1CFB032400364C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC3C1CFB032400364C3D /* BLBannerCell.h */,
+				CB29DC3D1CFB032400364C3D /* BLBannerCell.m */,
+				CB29DC3E1CFB032400364C3D /* BLBannerCell.xib */,
+				CB29DC3F1CFB032400364C3D /* BLBannerView.h */,
+				CB29DC401CFB032400364C3D /* BLBannerView.m */,
+				CB29DC411CFB032400364C3D /* BLBannerView.xib */,
+				CB29DC421CFB032400364C3D /* BLIntroductionView.h */,
+				CB29DC431CFB032400364C3D /* BLIntroductionView.m */,
+				CB29DC441CFB032400364C3D /* BLIntroductionView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB29DC451CFB032400364C3D /* RoomSource */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC461CFB032400364C3D /* Controlers */,
+				CB29DC4A1CFB032400364C3D /* Model */,
+				CB29DC4B1CFB032400364C3D /* Views */,
+			);
+			path = RoomSource;
+			sourceTree = "<group>";
+		};
+		CB29DC461CFB032400364C3D /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC471CFB032400364C3D /* BLRoomSoyrceController.h */,
+				CB29DC481CFB032400364C3D /* BLRoomSoyrceController.m */,
+				CB29DC491CFB032400364C3D /* BLRoomSoyrceController.xib */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		CB29DC4A1CFB032400364C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB29DC4B1CFB032400364C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB29DC4C1CFB032400364C3D /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC4D1CFB032400364C3D /* Controllers */,
+				CB29DC501CFB032400364C3D /* Model */,
+				CB29DC511CFB032400364C3D /* Views */,
+			);
+			path = Set;
+			sourceTree = "<group>";
+		};
+		CB29DC4D1CFB032400364C3D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC4E1CFB032400364C3D /* BLSetController.h */,
+				CB29DC4F1CFB032400364C3D /* BLSetController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CB29DC501CFB032400364C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB29DC511CFB032400364C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC521CFB032400364C3D /* BLAboutUsView.h */,
+				CB29DC531CFB032400364C3D /* BLAboutUsView.m */,
+				CB29DC541CFB032400364C3D /* BLSetTableView.h */,
+				CB29DC551CFB032400364C3D /* BLSetTableView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB29DC561CFB032400364C3D /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC571CFB032400364C3D /* Controllers */,
+				CB29DC5B1CFB032400364C3D /* Views */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		CB29DC571CFB032400364C3D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC581CFB032400364C3D /* BLShareController.h */,
+				CB29DC591CFB032400364C3D /* BLShareController.m */,
+				CB29DC5A1CFB032400364C3D /* BLShareController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CB29DC5B1CFB032400364C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC5C1CFB032400364C3D /* BLShareTableViewCell.h */,
+				CB29DC5D1CFB032400364C3D /* BLShareTableViewCell.m */,
+				CB29DC5E1CFB032400364C3D /* BLShareTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB29DC5F1CFB032400364C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC601CFB032400364C3D /* BLCashAccountView.h */,
+				CB29DC611CFB032400364C3D /* BLCashAccountView.m */,
+				CB29DC621CFB032400364C3D /* BLCashAccountView.xib */,
+				CB29DC631CFB032400364C3D /* BLCouponView.h */,
+				CB29DC641CFB032400364C3D /* BLCouponView.m */,
+				CB29DC651CFB032400364C3D /* BLCouponView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB29DC661CFB032400364C3D /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC671CFB032400364C3D /* Controlers */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		CB29DC671CFB032400364C3D /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				CB29DC681CFB032400364C3D /* BLMoneyInOutController.h */,
+				CB29DC691CFB032400364C3D /* BLMoneyInOutController.m */,
+				CB29DC6A1CFB032400364C3D /* BLMyWalletController.h */,
+				CB29DC6B1CFB032400364C3D /* BLMyWalletController.m */,
+				CB29DC6C1CFB032400364C3D /* BLMyWalletController.xib */,
+				CB29DC6D1CFB032400364C3D /* BLPaymentMethodsController.h */,
+				CB29DC6E1CFB032400364C3D /* BLPaymentMethodsController.m */,
+				CB29DC6F1CFB032400364C3D /* BLPaymentMethodsController.xib */,
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
 		CBD6548A1CE3581A00499922 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1265,6 +1355,9 @@
 				CBDA28EA1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.h */,
 				CBDA28EB1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.m */,
 				CBDA28EC1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.xib */,
+				CB5661B61CFB2A1400AABD2A /* FYApplyBookingHouseVC.h */,
+				CB5661B71CFB2A1400AABD2A /* FYApplyBookingHouseVC.m */,
+				CB5661B81CFB2A1400AABD2A /* FYApplyBookingHouseVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1317,6 +1410,8 @@
 				CBDF7DE31CEB4BDC00762867 /* FYCityHouseMapData.m */,
 				CBDA28EF1CF7313700CDC3B7 /* FYSingleHouseDetailData.h */,
 				CBDA28F01CF7313700CDC3B7 /* FYSingleHouseDetailData.m */,
+				CBE14B461CFC77E900A1D14E /* FYApplyBookingHouseData.h */,
+				CBE14B471CFC77E900A1D14E /* FYApplyBookingHouseData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1486,32 +1581,43 @@
 				7A2FD8311CE86E330049267C /* BLMyCollectController.xib in Resources */,
 				CB6BAC8F1CE45912006457BC /* FYHeaderViewCell.xib in Resources */,
 				2B851FDA1CF3355A0037F39B /* CYDView2.xib in Resources */,
+				CB29DC711CFB032400364C3D /* BLMyCollectController.xib in Resources */,
+				CB29DC791CFB032400364C3D /* BLIconView.xib in Resources */,
 				CBF61C051CEDF12500311C3F /* FYMoreChooseVC.xib in Resources */,
 				CB4EF9651CE388DD008046EF /* FYHomeViewCell.xib in Resources */,
-				7A2FD8421CE86E330049267C /* BLMyWalletController.xib in Resources */,
 				2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */,
 				2B875E221CF15E1800F6D51F /* CYFourthView.xib in Resources */,
-				7A2FD8401CE86E330049267C /* BLBannerView.xib in Resources */,
+				CB29DC951CFB032400364C3D /* BLPaymentMethodsController.xib in Resources */,
 				2B851FD81CF335200037F39B /* CYDView1.xib in Resources */,
 				CBDE03051CF4691200642A24 /* SearchViewController.xib in Resources */,
-				7A2FD83E1CE86E330049267C /* BLBannerCell.xib in Resources */,
 				CBDF7DE91CEB4C3300762867 /* FYCityHouseMapCell.xib in Resources */,
 				CBF584041CF59DC500AE3C67 /* ZFTimerCollectionReusableView.xib in Resources */,
 				CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */,
+				CB29DC8A1CFB032400364C3D /* BLShareController.xib in Resources */,
+				CB29DC7F1CFB032400364C3D /* BLBannerCell.xib in Resources */,
 				2B9B48591CEDEA1400FB2169 /* CYDoDizhuView.xib in Resources */,
+				CB29DC8E1CFB032400364C3D /* BLCashAccountView.xib in Resources */,
 				2B851FDC1CF335680037F39B /* CYDView3.xib in Resources */,
+				CB29DC761CFB032400364C3D /* BLFeedbackController.xib in Resources */,
+				CB29DC741CFB032400364C3D /* BLTagCell.xib in Resources */,
+				CB29DC811CFB032400364C3D /* BLBannerView.xib in Resources */,
 				2B875E201CF1547B00F6D51F /* CYThirdView.xib in Resources */,
+				CB29DC851CFB032400364C3D /* BLRoomSoyrceController.xib in Resources */,
 				2B8D54311CEA18E400AF43CA /* CYPartyCell.xib in Resources */,
 				CB120DB31CE73F99007D71C6 /* FYCityHouseListCell.xib in Resources */,
-				7A2FD83B1CE86E330049267C /* BLLogoView.xib in Resources */,
 				2B97A13D1CDC264700B4989C /* LaunchScreen.storyboard in Resources */,
 				CBF584011CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.xib in Resources */,
 				CB1AA75E1CEC3339009C18E2 /* mapapi.bundle in Resources */,
+				CB29DC7B1CFB032400364C3D /* BLLogoView.xib in Resources */,
+				CB29DC8C1CFB032400364C3D /* BLShareTableViewCell.xib in Resources */,
 				CBDA28EE1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.xib in Resources */,
 				2B851FDE1CF335770037F39B /* CYDView4.xib in Resources */,
 				CB183C0D1CF9460D00F70A0A /* BLLoginVC.xib in Resources */,
 				2B875E1C1CF14DC100F6D51F /* CYFristView.xib in Resources */,
+				CB5661BA1CFB2A1400AABD2A /* FYApplyBookingHouseVC.xib in Resources */,
+				CB29DC931CFB032400364C3D /* BLMyWalletController.xib in Resources */,
 				2B8D54251CEA18E400AF43CA /* CYXuanfuView.xib in Resources */,
+				CB29DC901CFB032400364C3D /* BLCouponView.xib in Resources */,
 				2B8D542A1CEA18E400AF43CA /* CYDizhuCell.xib in Resources */,
 				2BCB038D1CFC768C00878DD6 /* CYBMView.xib in Resources */,
 			);
@@ -1586,29 +1692,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB29DC911CFB032400364C3D /* BLMoneyInOutController.m in Sources */,
 				2B91677D1CEF479C009D2A48 /* CYSecondView.m in Sources */,
 				CBD6E4051CEF29C9003BFA5F /* FYMoreChooseVC.m in Sources */,
 				2B9167801CEF47C9009D2A48 /* CYThirdView.m in Sources */,
 				CB6BAC8E1CE45912006457BC /* FYHeaderViewCell.m in Sources */,
-				7A2FD83A1CE86E330049267C /* BLLogoView.m in Sources */,
 				CB06A9251CF03C1B009CFD17 /* FYChooseDateView.m in Sources */,
-				7A2FD84E1CE870470049267C /* MMDrawerController.m in Sources */,
 				CBDF7DE41CEB4BDC00762867 /* FYCityHouseMapData.m in Sources */,
+				CB5661B91CFB2A1400AABD2A /* FYApplyBookingHouseVC.m in Sources */,
+				CB29DC871CFB032400364C3D /* BLAboutUsView.m in Sources */,
 				CBDF7DEC1CEB4C7100762867 /* FYCityHouseMapVC.m in Sources */,
+				CB29DC771CFB032400364C3D /* BLMineViewController.m in Sources */,
 				2B8D54301CEA18E400AF43CA /* CYPartyCell.m in Sources */,
-				7A2FD8351CE86E330049267C /* BLSetController.m in Sources */,
+				CB29DC7D1CFB032400364C3D /* BLProfilesController.m in Sources */,
 				2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */,
-				7A2FD8341CE86E330049267C /* BLMineViewController.m in Sources */,
 				CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */,
+				CB29DC821CFB032400364C3D /* BLIntroductionView.m in Sources */,
 				2B8D54321CEA18E400AF43CA /* CYPartyCellData.m in Sources */,
+				CB29DC891CFB032400364C3D /* BLShareController.m in Sources */,
 				2B8D54291CEA18E400AF43CA /* CYDizhuCell.m in Sources */,
 				2B851FCD1CF334C10037F39B /* CYDView1.m in Sources */,
-				7A2FD8371CE86E330049267C /* BLAboutUsView.m in Sources */,
 				2B97A17D1CDC2B0400B4989C /* UINavigationController+Jump.m in Sources */,
 				2B851FD61CF335020037F39B /* CYDView4.m in Sources */,
 				CB038E441CE6FD910090839D /* FYCarouselCell.m in Sources */,
 				2B8D54241CEA18E400AF43CA /* CYXuanfuView.m in Sources */,
-				7A2FD8321CE86E330049267C /* BLEditProfilesController.m in Sources */,
 				CBDF7DE81CEB4C3300762867 /* FYCityHouseMapCell.m in Sources */,
 				2B851FD31CF334ED0037F39B /* CYDView3.m in Sources */,
 				7A2FD83C1CE86E330049267C /* BLProfilesController.m in Sources */,
@@ -1620,7 +1727,9 @@
 				CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */,
 				2B97A1661CDC2A6300B4989C /* CYMyTabBar.m in Sources */,
 				CBE1DA9E1CE21A5E00B36A18 /* FYAFNetworkingManager.m in Sources */,
+				CB29DC7C1CFB032400364C3D /* BLMineTableView.m in Sources */,
 				2B8D54331CEA18E400AF43CA /* CYPartyTableView.m in Sources */,
+				CB29DC861CFB032400364C3D /* BLSetController.m in Sources */,
 				2B8D542D1CEA18E400AF43CA /* CYDizhuResultData.m in Sources */,
 				CB2503381CE58F2C007004AB /* FYSearchedCityTableView.m in Sources */,
 				2B97A1671CDC2A6300B4989C /* CYTabBarController.m in Sources */,
@@ -1628,55 +1737,60 @@
 				CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */,
 				2B91676A1CEF44E0009D2A48 /* CYDizCellChildViewController.m in Sources */,
 				2B3BD1191CFAE93800595454 /* CYBaomingViewController.m in Sources */,
-				7A2FD83F1CE86E330049267C /* BLBannerView.m in Sources */,
 				CB7CF5021CE4BB4100716F5D /* FYHomeWebViewVC.m in Sources */,
 				2B9946A91CEC98F500D21942 /* CYPoHeaderView.m in Sources */,
 				2B851FD01CF334D70037F39B /* CYDView2.m in Sources */,
 				2B9404991CFA95D300CCBA17 /* CYViewPageView.m in Sources */,
 				2BB006181CEB39A00076485D /* CYMySegment.m in Sources */,
+				CB29DC921CFB032400364C3D /* BLMyWalletController.m in Sources */,
 				2B9167661CEF4483009D2A48 /* CYParCellChildViewController.m in Sources */,
 				2B97A17C1CDC2B0400B4989C /* UIStoryboard+IndentifierVC.m in Sources */,
 				2B97A1321CDC264700B4989C /* AppDelegate.m in Sources */,
-				7A2FD8301CE86E330049267C /* BLMyCollectController.m in Sources */,
 				CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */,
+				CB29DC8F1CFB032400364C3D /* BLCouponView.m in Sources */,
 				CB038E3D1CE6F0F30090839D /* NSString+FYURLEncode.m in Sources */,
 				2B8D54261CEA18E400AF43CA /* FindViewController.m in Sources */,
 				2B8D54271CEA18E400AF43CA /* CYDoDiViewController.m in Sources */,
 				2B9404981CFA95D300CCBA17 /* CYViewPageImgView.m in Sources */,
+				CB29DC7A1CFB032400364C3D /* BLLogoView.m in Sources */,
 				CB038E471CE717780090839D /* FYCityHouseListData.m in Sources */,
 				CBF584021CF59DC500AE3C67 /* ZFChooseTimeViewController.m in Sources */,
 				CB038E411CE6FA100090839D /* FYCarouselPic.m in Sources */,
 				CB120DB21CE73F99007D71C6 /* FYCityHouseListCell.m in Sources */,
+				CB29DC941CFB032400364C3D /* BLPaymentMethodsController.m in Sources */,
+				CB29DC8B1CFB032400364C3D /* BLShareTableViewCell.m in Sources */,
+				CBE14B481CFC77E900A1D14E /* FYApplyBookingHouseData.m in Sources */,
 				2B9B48571CEDE9F900FB2169 /* CYDoDizhuView.m in Sources */,
+				CB29DC721CFB032400364C3D /* BLEditProfilesController.m in Sources */,
 				2B97A12F1CDC264700B4989C /* main.m in Sources */,
 				CBEE47A21CF000E0007CE329 /* BLBackViewController.m in Sources */,
+				CB29DC701CFB032400364C3D /* BLMyCollectController.m in Sources */,
 				CB0A76901CE5B6E700EB6E7D /* FYCityHouseListVC.m in Sources */,
+				CB29DC8D1CFB032400364C3D /* BLCashAccountView.m in Sources */,
 				2B3BD1151CFAE6F800595454 /* CYContextDZViewController.m in Sources */,
 				CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */,
-				7A2FD8501CE870470049267C /* UIViewController+MMDrawerController.m in Sources */,
 				CBD476DE1CF150A8005418F0 /* UIColor+HexColor.m in Sources */,
 				2B91677A1CEF4723009D2A48 /* CYFristView.m in Sources */,
 				CB4EF9641CE388DD008046EF /* FYHomeViewCell.m in Sources */,
 				CBDA28F11CF7313700CDC3B7 /* FYSingleHouseDetailData.m in Sources */,
 				2B97A17B1CDC2B0400B4989C /* UIBarButtonItem+CustomButton.m in Sources */,
+				CB29DC731CFB032400364C3D /* BLTagCell.m in Sources */,
+				CB29DC881CFB032400364C3D /* BLSetTableView.m in Sources */,
 				2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */,
 				7A2FD7EF1CE86DE40049267C /* BLOrdersViewController.m in Sources */,
+				CB29DC841CFB032400364C3D /* BLRoomSoyrceController.m in Sources */,
 				CBF584031CF59DC500AE3C67 /* ZFTimerCollectionReusableView.m in Sources */,
 				2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */,
 				CB2503351CE57CA2007004AB /* FYSingleCityData.m in Sources */,
 				2B8D542F1CEA18E400AF43CA /* CYJoinedViewController.m in Sources */,
-				2B97A1901CDC2C0E00B4989C /* MainViewController.m in Sources */,
 				CBF61C001CEDE7CF00311C3F /* FYMoreChoose.m in Sources */,
-				7A2FD8361CE86E330049267C /* BLTempController.m in Sources */,
-				7A2FD84D1CE870470049267C /* MMDrawerBarButtonItem.m in Sources */,
 				CB6BAC8A1CE4584A006457BC /* FYCollectionHeader.m in Sources */,
 				2B8D542E1CEA18E400AF43CA /* CYDizhuTableView.m in Sources */,
+				CB29DC7E1CFB032400364C3D /* BLBannerCell.m in Sources */,
+				CB29DC801CFB032400364C3D /* BLBannerView.m in Sources */,
+				CB29DC781CFB032400364C3D /* BLIconView.m in Sources */,
 				CBF584001CF59DC500AE3C67 /* ZFChooseTimeCollectionViewCell.m in Sources */,
-				7A2FD8411CE86E330049267C /* BLMyWalletController.m in Sources */,
-				7A2FD8331CE86E330049267C /* BLFeedbackController.m in Sources */,
 				CBD654951CE35B4B00499922 /* FYHomeViewCityData.m in Sources */,
-				7A2FD83D1CE86E330049267C /* BLBannerCell.m in Sources */,
-				7A2FD84F1CE870470049267C /* MMDrawerVisualState.m in Sources */,
 				2B875E1A1CF14AE900F6D51F /* CYParCellChildData.m in Sources */,
 				2B97A17E1CDC2B0400B4989C /* UIView+GroupAnimation.m in Sources */,
 				2B9167831CEF4853009D2A48 /* CYFourthView.m in Sources */,

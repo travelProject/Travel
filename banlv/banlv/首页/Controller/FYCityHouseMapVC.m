@@ -26,6 +26,9 @@
 //筛选条件控制器
 #import "FYMoreChooseVC.h"
 
+//房间详细信息类
+#import "FYSingleHouseDetailVC.h"
+
 
 @interface FYCityHouseMapVC () <BMKMapViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -301,7 +304,13 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"点击的item的索引为:%ld",indexPath.row);
+    
+    FYSingleHouseDetailVC *singleHouseDetailVC = [[FYSingleHouseDetailVC alloc] init];
+    
+    singleHouseDetailVC.spaceId = self.cityHouseArr[indexPath.row].spaceId;
+    
+    [self.navigationController pushViewController:singleHouseDetailVC animated:YES];
+    
 }
 
 #pragma mark -- UICollectionViewDataSource

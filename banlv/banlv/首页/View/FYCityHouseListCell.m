@@ -69,6 +69,35 @@ typedef enum : NSUInteger {
 - (IBAction)xinCollection:(id)sender {
     
     self.xinImageView.selected = !self.xinImageView.isSelected;
+  
+
+    BmobObject *gameScore = [BmobObject objectWithClassName:@"CollHouse"];
+    
+    NSDictionary *dic = self.cityHouseData.mj_keyValues;
+    
+    NSLog(@"%@",dic);
+    
+//    NSDictionary *dic = @{@"playerName":@"小黑",@"score":@18};
+    
+    [gameScore saveAllWithDictionary:dic];
+    
+    
+    [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        //进行操作
+        if (isSuccessful) {
+            
+            NSLog(@"上传成功");
+        }
+        
+        if (error) {
+            
+            NSLog(@"上传失败:%@",error);
+        }
+        
+    }];
+
+    
+    
     
     
     
@@ -124,7 +153,7 @@ typedef enum : NSUInteger {
     self.replyRateLabel.text = [replyStr stringByAppendingString:@"%"];
     
     //添加实名认证、芝麻信用
-    if ([_cityHouseData.userIdentificationStatus isEqualToString:@"2"]) {
+    if ([_cityHouseData.userIdenStatus isEqualToString:@"2"]) {
         
         
         self.userIdentification.image = [UIImage imageNamed:@"shenfenzheng"];

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BLMyWalletController : UIViewController
+@interface BLMyWalletController : BLBackViewController
 
 @end

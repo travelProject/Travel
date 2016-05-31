@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MMDrawerController.h"
-@interface BLMineViewController : MMDrawerController
+
+@interface BLMineViewController : BLBackViewController
 
 @end

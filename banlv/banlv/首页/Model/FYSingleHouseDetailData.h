@@ -36,6 +36,8 @@
 
 @property(nonatomic,copy) NSString *limitNightsNum;//可租天数
 
+@property(nonatomic,copy) NSString *reviewScore;//评分
+
 
 @property(nonatomic,copy) NSString *lat;
 @property(nonatomic,copy) NSString *lng;

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BLShareController">
+            <connections>
+                <outlet property="shareTableView" destination="x7P-FT-oJo" id="VAB-aK-Iz2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beijing2" translatesAutoresizingMaskIntoConstraints="NO" id="Gbj-9j-961">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享给好友" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0H-se-tdt">
+                    <rect key="frame" x="240" y="150" width="120" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Clw-qk-4b2"/>
+                        <constraint firstAttribute="width" constant="120" id="Xeo-RV-Aeq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRw-wr-eNr">
+                    <rect key="frame" x="280" y="520" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Ivq-Tm-Ex2"/>
+                        <constraint firstAttribute="width" constant="40" id="kJa-bp-cSH"/>
+                    </constraints>
+                    <state key="normal" title="取消"/>
+                    <connections>
+                        <action selector="cancelBtn:" destination="-1" eventType="touchUpInside" id="PQF-KK-1nH"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x7P-FT-oJo">
+                    <rect key="frame" x="50" y="240" width="500" height="400"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="oWe-SL-DHf"/>
+                    </constraints>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="r0H-se-tdt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6RS-d5-dZm"/>
+                <constraint firstAttribute="trailing" secondItem="Gbj-9j-961" secondAttribute="trailing" id="6xy-Vx-Z2k"/>
+                <constraint firstAttribute="bottom" secondItem="Gbj-9j-961" secondAttribute="bottom" id="IFT-V2-kL9"/>
+                <constraint firstItem="TRw-wr-eNr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Lgm-en-h0F"/>
+                <constraint firstItem="x7P-FT-oJo" firstAttribute="top" secondItem="r0H-se-tdt" secondAttribute="bottom" constant="50" id="Oo9-XO-TPu"/>
+                <constraint firstAttribute="bottom" secondItem="TRw-wr-eNr" secondAttribute="bottom" constant="40" id="ZCb-UT-dCv"/>
+                <constraint firstItem="Gbj-9j-961" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jfg-El-uls"/>
+                <constraint firstItem="Gbj-9j-961" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qrx-Aw-6We"/>
+                <constraint firstItem="x7P-FT-oJo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rN9-qF-I6O"/>
+                <constraint firstItem="r0H-se-tdt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="uVg-GD-z0m"/>
+                <constraint firstItem="x7P-FT-oJo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="y3c-aR-wBf"/>
+            </constraints>
+            <point key="canvasLocation" x="-72" y="266"/>
+        </view>
+        <view contentMode="scaleToFill" id="DLq-ri-saT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GLb-RW-uKZ">
+                    <rect key="frame" x="201" y="207" width="240" height="128"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="-154" y="430"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="beijing2" width="375" height="667"/>
+    </resources>
+</document>

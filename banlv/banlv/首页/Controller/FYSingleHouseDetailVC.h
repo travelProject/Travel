@@ -10,6 +10,8 @@
 
 @interface FYSingleHouseDetailVC : BLBackViewController
 
+@property(nonatomic,strong)NSMutableDictionary *publishDic;
+
 @property (nonatomic,copy)NSString *spaceId;
 
 @end
