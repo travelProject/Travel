@@ -70,7 +70,7 @@
     
     left1.frame = CGRectMake((kScreenFrameW - 150)/2, 3, 150, 38);
     left1.textAlignment = NSTextAlignmentCenter;
-    left1.text = @"开始时间";
+    left1.text = @"城市和价格";
     
     [view1 addSubview:left1];
     

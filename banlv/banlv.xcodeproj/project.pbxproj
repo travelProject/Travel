@@ -95,6 +95,7 @@
 		CB2503321CE579FF007004AB /* FYLookMoreCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503311CE579FF007004AB /* FYLookMoreCityData.m */; };
 		CB2503351CE57CA2007004AB /* FYSingleCityData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503341CE57CA2007004AB /* FYSingleCityData.m */; };
 		CB2503381CE58F2C007004AB /* FYSearchedCityTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2503371CE58F2C007004AB /* FYSearchedCityTableView.m */; };
+		CB25DF1D1CFD838300EB7596 /* BLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB25DF1C1CFD838300EB7596 /* BLScrollView.m */; };
 		CB29DC701CFB032400364C3D /* BLMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC131CFB032300364C3D /* BLMyCollectController.m */; };
 		CB29DC711CFB032400364C3D /* BLMyCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC141CFB032300364C3D /* BLMyCollectController.xib */; };
 		CB29DC721CFB032400364C3D /* BLEditProfilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC1A1CFB032300364C3D /* BLEditProfilesController.m */; };
@@ -334,6 +335,8 @@
 		CB2503341CE57CA2007004AB /* FYSingleCityData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSingleCityData.m; sourceTree = "<group>"; };
 		CB2503361CE58F2C007004AB /* FYSearchedCityTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYSearchedCityTableView.h; path = "banlv/首页/View/FYSearchedCityTableView.h"; sourceTree = SOURCE_ROOT; };
 		CB2503371CE58F2C007004AB /* FYSearchedCityTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYSearchedCityTableView.m; path = "banlv/首页/View/FYSearchedCityTableView.m"; sourceTree = SOURCE_ROOT; };
+		CB25DF1B1CFD838300EB7596 /* BLScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLScrollView.h; sourceTree = "<group>"; };
+		CB25DF1C1CFD838300EB7596 /* BLScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLScrollView.m; sourceTree = "<group>"; };
 		CB29DC121CFB032300364C3D /* BLMyCollectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMyCollectController.h; sourceTree = "<group>"; };
 		CB29DC131CFB032300364C3D /* BLMyCollectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMyCollectController.m; sourceTree = "<group>"; };
 		CB29DC141CFB032300364C3D /* BLMyCollectController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLMyCollectController.xib; sourceTree = "<group>"; };
@@ -983,6 +986,8 @@
 				CB183C091CF9460D00F70A0A /* BLLoginVC.h */,
 				CB183C0A1CF9460D00F70A0A /* BLLoginVC.m */,
 				CB183C0B1CF9460D00F70A0A /* BLLoginVC.xib */,
+				CB25DF1B1CFD838300EB7596 /* BLScrollView.h */,
+				CB25DF1C1CFD838300EB7596 /* BLScrollView.m */,
 			);
 			path = "登陆与导航";
 			sourceTree = "<group>";
@@ -1705,6 +1710,7 @@
 				CB29DC7D1CFB032400364C3D /* BLProfilesController.m in Sources */,
 				2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */,
 				CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */,
+				CB25DF1D1CFD838300EB7596 /* BLScrollView.m in Sources */,
 				CB29DC821CFB032400364C3D /* BLIntroductionView.m in Sources */,
 				2B8D54321CEA18E400AF43CA /* CYPartyCellData.m in Sources */,
 				CB29DC891CFB032400364C3D /* BLShareController.m in Sources */,
