@@ -246,15 +246,15 @@
         [self.divBtn setTitleColor:[UIColor colorWithRed:0.24 green:0.51 blue:0.52 alpha:1.0] forState:UIControlStateNormal];
     }
     
-    UIButton *divBtn = (UIButton *)sender;
+    UIButton *plusBtn = (UIButton *)sender;
     self.peopleCount++;
     
     self.peopleNumLimmit.text = [NSString stringWithFormat:@"%ld",self.peopleCount];
     
     if (self.peopleCount == 4) {
         
-        divBtn.enabled = NO;
-        [divBtn setTitleColor:[UIColor colorWithRed:0.70 green:0.70 blue:0.70 alpha:1.0] forState:UIControlStateNormal];
+        plusBtn.enabled = NO;
+        [plusBtn setTitleColor:[UIColor colorWithRed:0.70 green:0.70 blue:0.70 alpha:1.0] forState:UIControlStateNormal];
     }
     
 }
@@ -283,13 +283,7 @@
     }
     
     self.returnMoreChooses(self.peopleCount,self.sex,self.spaceTypes,self.startPrice,self.endPrice,self.tempChooseDateArr,self.chooseDateView.dateIn.text,self.chooseDateView.dateOut.text);
-  
-//    NSLog(@"选择的日期:%@",self.tempChooseDateArr);
-//    NSLog(@"房主男女:%ld",self.sex);
-//    NSLog(@"入住人数:%ld",self.peopleCount);
-//    NSLog(@"房源类型:%@",self.spaceTypes);
-//    NSLog(@"初始价格为%f",self.startPrice);
-//    NSLog(@"结束价格为%f",self.endPrice);
+ 
     
     [self.navigationController popViewControllerAnimated:YES];
 }

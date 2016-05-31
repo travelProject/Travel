@@ -23,15 +23,80 @@
 @property (weak, nonatomic) IBOutlet UILabel *placeHolder;
 @property (weak, nonatomic) IBOutlet UILabel *introduceYourselfLab;
 
+@property(nonatomic,assign)NSInteger peopleCount;
+
+@property(nonatomic,strong)ZFChooseTimeViewController *chooseDateVC;
+
 @end
 
 @implementation FYApplyBookingHouseVC
+
+- (NSInteger)peopleCount
+{
+    if (!_peopleCount) {
+        
+        _peopleCount = 1;
+    }
+    return _peopleCount;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     self.view.frame = kScreenFrame;
+    
+    __weak typeof(self) mySelf = self;
+    
+    self.chooseDateView.chooseDateBlock = ^{
+        
+        [UIView animateWithDuration:0.2f animations:^{
+            
+            mySelf.chooseDateVC.frame = CGRectMake(0, 0, mySelf.view.width, mySelf.view.height);
+        }];
+    };
+    
+    self.chooseDateVC = [[ZFChooseTimeViewController alloc] initWithFrame:CGRectMake(0, self.view.height, self.view.width, self.view.height)];
+    
+    
+    self.chooseDateVC.returnDateBlock = ^(NSMutableArray *selectedDateArr)
+    {
+        mySelf.selectDateArr = selectedDateArr;
+        
+        NSString *dateInStr = [NSString stringWithFormat:@"%@-%@-%@",mySelf.selectDateArr[0][0],mySelf.selectDateArr[0][1],mySelf.selectDateArr[0][2]];
+        NSDate *dateIn = [mySelf getDateFromString:dateInStr];
+        
+        NSInteger liveIn = (NSInteger)[dateIn timeIntervalSince1970];
+        
+        NSString *dateOutStr = [NSString stringWithFormat:@"%@-%@-%@",mySelf.selectDateArr[1][0],mySelf.selectDateArr[1][1],mySelf.selectDateArr[1][2]];
+        NSDate *dateOut = [mySelf getDateFromString:dateOutStr];
+        
+        NSInteger liveOut = (NSInteger)[dateOut timeIntervalSince1970];
+        
+        mySelf.chooseDateView.dateIn.text = dateInStr;
+        mySelf.chooseDateView.dateOut.text = dateOutStr;
+        
+        [mySelf.selectDateArr removeAllObjects];
+        
+        [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveIn]];
+        [mySelf.selectDateArr addObject:[NSString stringWithFormat:@"%ld",liveOut]];
+        
+        [mySelf getSelectDate:mySelf.selectDateArr];
+        
+    };
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:self.chooseDateVC];
+    
+    //开始判断是否能-
+    self.divBtn.enabled = NO;
+    [self.divBtn setTitleColor:[UIColor colorWithHexString:@"#D0D0D0"] forState:UIControlStateNormal];
+    //开始判断是否能+
+    if (self.limitGuestsNum == 1) {
+        
+        self.plusBtn.enabled = NO;
+        [self.plusBtn setTitleColor:[UIColor colorWithHexString:@"#D0D0D0"] forState:UIControlStateNormal];
+    }
+    
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(exitKeyBoard)];
     
@@ -41,9 +106,19 @@
     
     self.introduceYourselfLab.text = [NSString stringWithFormat:@"向%@介绍下你自己",self.ownerName];
     
+}
+
+- (NSDate *)getDateFromString:(NSString *)dateStr
+{
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd"];
     
-    NSLog(@"发布的数据%@",self.publishDic);
-    
+    return [format dateFromString:dateStr];
+}
+
+- (void)getSelectDate:(NSMutableArray *)selectDateArr
+{
+    self.tempChooseDateArr = [selectDateArr mutableCopy];
 }
 
 - (void)exitKeyBoard
@@ -52,18 +127,77 @@
 }
 
 - (IBAction)divAct:(id)sender {
+    
+    if (self.plusBtn.enabled == NO) {
+        
+        self.plusBtn.enabled = YES;
+        
+        [self.plusBtn setTitleColor:[UIColor colorWithRed:0.24 green:0.51 blue:0.52 alpha:1.0] forState:UIControlStateNormal];
+    }
+    
+    UIButton *divBtn = (UIButton *)sender;
+    
+    self.peopleCount--;
+    
+    self.peopleNumLab.text = [NSString stringWithFormat:@"%ld",self.peopleCount];
+    
+    if (self.peopleCount == 1) {
+        
+        divBtn.enabled = NO;
+        
+        [divBtn setTitleColor:[UIColor colorWithHexString:@"#D0D0D0"] forState:UIControlStateNormal];
+    }
 }
 - (IBAction)plusAct:(id)sender {
+    
+    NSLog(@"限制人数:%ld",self.limitGuestsNum);
+    
+    if (self.divBtn.enabled == NO) {
+        
+        self.divBtn.enabled = YES;
+        
+        [self.divBtn setTitleColor:[UIColor colorWithRed:0.24 green:0.51 blue:0.52 alpha:1.0] forState:UIControlStateNormal];
+    }
+    
+    UIButton *plusBtn = (UIButton *)sender;
+    self.peopleCount++;
+    
+    self.peopleNumLab.text = [NSString stringWithFormat:@"%ld",self.peopleCount];
+    
+    if (self.peopleCount == self.limitGuestsNum) {
+        
+        plusBtn.enabled = NO;
+        [plusBtn setTitleColor:[UIColor colorWithHexString:@"#D0D0D0"] forState:UIControlStateNormal];
+    }
+    
 }
+
 - (IBAction)decideAct:(id)sender {
     
-    //往GameScore表添加一条playerName为小明，分数为78的数据
-    BmobObject *gameScore = [BmobObject objectWithClassName:@"GameScore"];
-    [gameScore setObject:@"小明" forKey:@"playerName"];
-    [gameScore setObject:@78 forKey:@"score"];
-    [gameScore setObject:[NSNumber numberWithBool:YES] forKey:@"cheatMode"];
+    FYApplyBookingHouseData *applyBookingHouseData = [FYApplyBookingHouseData mj_objectWithKeyValues:self.publishDic];
+    
+    BmobObject *gameScore = [BmobObject objectWithClassName:@"OrderForm"];
+    [gameScore setObject:applyBookingHouseData.price forKey:@"price"];
+    [gameScore setObject:applyBookingHouseData.housePic forKey:@"housePic"];
+    [gameScore setObject:applyBookingHouseData.title forKey:@"title"];
+    [gameScore setObject:applyBookingHouseData.houseType forKey:@"houseType"];
+    [gameScore setObject:[NSString stringWithFormat:@"%@--%@",self.chooseDateView.dateIn.text,self.chooseDateView.dateOut.text] forKey:@"date"];
+    [gameScore setObject:self.peopleNumLab.text forKey:@"peopleNum"];
+    [gameScore setObject:@"待审核" forKey:@"status"];
+    
+    
     [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
         //进行操作
+        if (isSuccessful) {
+            
+            NSLog(@"上传成功");
+        }
+        
+        if (error) {
+            
+            NSLog(@"上传失败:%@",error);
+        }
+        
     }];
     
     
@@ -109,6 +243,11 @@
 - (void)setpublishDic:(NSMutableDictionary *)publishDic
 {
     _publishDic = publishDic;
+}
+
+- (void)setLimitGuestsNum:(NSInteger)limitGuestsNum
+{
+    _limitGuestsNum = limitGuestsNum;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,4 +14,10 @@
 
 @property(nonatomic,copy) NSString *ownerName;
 
+@property(nonatomic,strong)NSMutableArray *selectDateArr;
+
+@property(nonatomic,strong) NSMutableArray *tempChooseDateArr;
+
+@property(nonatomic,assign) NSInteger limitGuestsNum;
+
 @end

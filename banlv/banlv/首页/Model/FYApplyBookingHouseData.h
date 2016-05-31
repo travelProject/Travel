@@ -10,4 +10,10 @@
 
 @interface FYApplyBookingHouseData : NSObject
 
+@property(nonatomic,copy) NSString *price;
+@property(nonatomic,copy) NSString *houseType;
+@property(nonatomic,copy) NSString *title;
+@property(nonatomic,copy) NSString *housePic;
+@property(nonatomic,copy) NSString *starLV;
+
 @end

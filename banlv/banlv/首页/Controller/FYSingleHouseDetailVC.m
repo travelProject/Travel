@@ -263,6 +263,8 @@ typedef enum : NSUInteger {
     
     FYApplyBookingHouseVC *applyBookingHouseVC = [[FYApplyBookingHouseVC alloc] initWithNibName:@"FYApplyBookingHouseVC" bundle:nil];
     
+    applyBookingHouseVC.limitGuestsNum = self.peopleNumLimitLab.text.integerValue;
+    
     if ([self.publishDic objectForKey:@"price"]) {
         
         applyBookingHouseVC.publishDic = self.publishDic;

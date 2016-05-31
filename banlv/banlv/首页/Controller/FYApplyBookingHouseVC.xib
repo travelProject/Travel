@@ -48,7 +48,7 @@
                             <rect key="frame" x="550" y="13" width="40" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="+">
-                                <color key="titleColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.27058823529999998" green="0.56078431370000004" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="plusAct:" destination="-1" eventType="touchUpInside" id="MNm-gN-2hL"/>
@@ -71,7 +71,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="-">
-                                <color key="titleColor" red="0.76078431372549016" green="0.76078431372549016" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.27058823529999998" green="0.56078431370000004" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="divAct:" destination="-1" eventType="touchUpInside" id="7Tc-rN-27G"/>
