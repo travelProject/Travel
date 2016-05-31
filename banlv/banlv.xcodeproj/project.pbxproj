@@ -64,6 +64,7 @@
 		2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */; };
 		2B9B48571CEDE9F900FB2169 /* CYDoDizhuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B48561CEDE9F900FB2169 /* CYDoDizhuView.m */; };
 		2B9B48591CEDEA1400FB2169 /* CYDoDizhuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9B48581CEDEA1400FB2169 /* CYDoDizhuView.xib */; };
+		2BAE32341CFD7FAC008BBBCE /* BLFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC231CFB032300364C3D /* BLFeedbackController.m */; };
 		2BB006181CEB39A00076485D /* CYMySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB006171CEB39A00076485D /* CYMySegment.m */; };
 		2BCB038B1CFC761200878DD6 /* CYBMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB038A1CFC761200878DD6 /* CYBMView.m */; };
 		2BCB038D1CFC768C00878DD6 /* CYBMView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB038C1CFC768C00878DD6 /* CYBMView.xib */; };
@@ -99,7 +100,6 @@
 		CB29DC721CFB032400364C3D /* BLEditProfilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC1A1CFB032300364C3D /* BLEditProfilesController.m */; };
 		CB29DC731CFB032400364C3D /* BLTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC1E1CFB032300364C3D /* BLTagCell.m */; };
 		CB29DC741CFB032400364C3D /* BLTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC1F1CFB032300364C3D /* BLTagCell.xib */; };
-		CB29DC751CFB032400364C3D /* BLFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC231CFB032300364C3D /* BLFeedbackController.m */; };
 		CB29DC761CFB032400364C3D /* BLFeedbackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC241CFB032300364C3D /* BLFeedbackController.xib */; };
 		CB29DC771CFB032400364C3D /* BLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC2A1CFB032300364C3D /* BLMineViewController.m */; };
 		CB29DC781CFB032400364C3D /* BLIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC2E1CFB032300364C3D /* BLIconView.m */; };
@@ -113,7 +113,6 @@
 		CB29DC801CFB032400364C3D /* BLBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC401CFB032400364C3D /* BLBannerView.m */; };
 		CB29DC811CFB032400364C3D /* BLBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC411CFB032400364C3D /* BLBannerView.xib */; };
 		CB29DC821CFB032400364C3D /* BLIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC431CFB032400364C3D /* BLIntroductionView.m */; };
-		CB29DC831CFB032400364C3D /* BLIntroductionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC441CFB032400364C3D /* BLIntroductionView.xib */; };
 		CB29DC841CFB032400364C3D /* BLRoomSoyrceController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC481CFB032400364C3D /* BLRoomSoyrceController.m */; };
 		CB29DC851CFB032400364C3D /* BLRoomSoyrceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29DC491CFB032400364C3D /* BLRoomSoyrceController.xib */; };
 		CB29DC861CFB032400364C3D /* BLSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29DC4F1CFB032400364C3D /* BLSetController.m */; };
@@ -1577,8 +1576,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B875E1E1CF151EE00F6D51F /* CYSecondView.xib in Resources */,
-				7A2FD8391CE86E330049267C /* BLIconView.xib in Resources */,
-				7A2FD8311CE86E330049267C /* BLMyCollectController.xib in Resources */,
 				CB6BAC8F1CE45912006457BC /* FYHeaderViewCell.xib in Resources */,
 				2B851FDA1CF3355A0037F39B /* CYDView2.xib in Resources */,
 				CB29DC711CFB032400364C3D /* BLMyCollectController.xib in Resources */,
@@ -1692,6 +1689,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BAE32341CFD7FAC008BBBCE /* BLFeedbackController.m in Sources */,
 				CB29DC911CFB032400364C3D /* BLMoneyInOutController.m in Sources */,
 				2B91677D1CEF479C009D2A48 /* CYSecondView.m in Sources */,
 				CBD6E4051CEF29C9003BFA5F /* FYMoreChooseVC.m in Sources */,
@@ -1718,9 +1716,7 @@
 				2B8D54241CEA18E400AF43CA /* CYXuanfuView.m in Sources */,
 				CBDF7DE81CEB4C3300762867 /* FYCityHouseMapCell.m in Sources */,
 				2B851FD31CF334ED0037F39B /* CYDView3.m in Sources */,
-				7A2FD83C1CE86E330049267C /* BLProfilesController.m in Sources */,
 				2BCB038B1CFC761200878DD6 /* CYBMView.m in Sources */,
-				7A2FD8381CE86E330049267C /* BLIconView.m in Sources */,
 				CBDA28ED1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.m in Sources */,
 				CBF61BFD1CEDD57400311C3F /* BLNavigationController.m in Sources */,
 				CB183C0C1CF9460D00F70A0A /* BLLoginVC.m in Sources */,
