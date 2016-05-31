@@ -51,10 +51,27 @@
     return [format dateFromString:dateStr];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBar.hidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.frame = [UIScreen mainScreen].bounds;
+    
+    self.iconPic.layer.cornerRadius = 10.f;
+    self.iconPic.layer.masksToBounds = YES;
     
     self.iconPic.userInteractionEnabled = YES;
     

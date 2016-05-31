@@ -402,6 +402,9 @@
     
     NSString *urlStr = @"http://www.shafalvxing.com/space/getSharedSpaceByCity.do?";
     
+    
+    
+    
     return [urlStr encodeURLWithParams:params];
 }
 

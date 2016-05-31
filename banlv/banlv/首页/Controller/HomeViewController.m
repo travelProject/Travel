@@ -93,17 +93,15 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.collectionView.bounces = YES;
     
     //注册cell的方法（注意加载Nib的方法）
     [self.collectionView registerNib:[UINib nibWithNibName:@"FYHomeViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"cell"];
-    
-    //注册Header
-//    [self.collectionView registerClass:[FYCollectionHeader class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:@"header"];
+
     
     //注册Footer
     [self.collectionView registerClass:[FYCollectionFooter class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionFooter" withReuseIdentifier:@"footer"];
-    
-//    self.flowLayout.headerReferenceSize = CGSizeMake(kScreenFrameW, 0.55f * kScreenFrameW);
+
     
     self.flowLayout.footerReferenceSize = CGSizeMake(kScreenFrameW, 0.4526f * kScreenFrameW);
     
@@ -175,18 +173,6 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionReusableView *reusableView = nil;
-    
-//    if (kind == UICollectionElementKindSectionHeader) {
-//        
-//        FYCollectionHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
-//        
-//        //把控制器传到header里
-//        header.myHostVC = self;
-//        
-//        header.bannerArr = self.homeViewData.topBanner;
-//        
-//        reusableView = header;
-//    }
     
     if (kind == UICollectionElementKindSectionFooter) {
         

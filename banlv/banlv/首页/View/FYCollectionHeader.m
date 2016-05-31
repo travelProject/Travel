@@ -41,10 +41,6 @@
     //注册cell的方法（注意加载Nib的方法）
     [self.bannerCollecView registerNib:[UINib nibWithNibName:@"FYHeaderViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"headerCell"];
     
-    /*------NSTimer完美的解决了一开始self.bannerArr.count为0（为0会crash）的头疼问题----*/
-    //默认显示滚到最中间的那组
-    //        [self.bannerCollecView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:MaxSection / 2] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-    
     [self addSubview:self.bannerCollecView];
     
     self.bannerPage = [[UIPageControl alloc] initWithFrame:CGRectMake((self.width - 150) / 2, self.height - 20, 150, 10)];
@@ -75,10 +71,6 @@
         
         //注册cell的方法（注意加载Nib的方法）
         [self.bannerCollecView registerNib:[UINib nibWithNibName:@"FYHeaderViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"headerCell"];
-        
-        /*------NSTimer完美的解决了一开始self.bannerArr.count为0（为0会crash）的头疼问题----*/
-        //默认显示滚到最中间的那组
-//        [self.bannerCollecView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:MaxSection / 2] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
         
         [self addSubview:self.bannerCollecView];
         
@@ -285,8 +277,7 @@
 - (void)setBannerType:(NSInteger)bannerType
 {
     _bannerType = bannerType;
-    
-    NSLog(@"");
+
 }
 
 

@@ -30,6 +30,9 @@
     
     self.view.frame = [UIScreen mainScreen].bounds;
     
+    self.iconPic.layer.cornerRadius = 10.f;
+    self.iconPic.layer.masksToBounds = YES;
+    
     UITapGestureRecognizer *getCodeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(getCodeAct)];
     
     self.getCodeLab.userInteractionEnabled = YES;
