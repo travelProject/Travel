@@ -64,7 +64,7 @@
     
     self.xuanfuImg = xuanfuImg;
     
-    self.view.backgroundColor =  ThemeColor;
+    self.view.backgroundColor =  [UIColor whiteColor];
     
     [self creatSegment];
     
