@@ -31,14 +31,10 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    if (self.mainScrollView.contentOffset.y < 0) {
-        
-        self.barView.hidden = YES;
-        
-    }else if (self.mainScrollView.contentOffset.y < 280){
+    if (self.mainScrollView.contentOffset.y < 280){
         
         self.barView.hidden = NO;
-        self.barView.backgroundColor=[UIColor colorWithRed:0.95f green:0.95f blue:0.95f  alpha:self.mainScrollView.contentOffset.y / 500];
+        self.barView.backgroundColor=[UIColor colorWithRed:0.95f green:0.95f blue:0.95f  alpha:self.mainScrollView.contentOffset.y / 500 + 0.01];
         
     }else{
         
@@ -79,7 +75,7 @@
     
     self.title = @"叫地主";
     
-    self.view.backgroundColor = ThemeColor;
+    self.view.backgroundColor = [UIColor whiteColor];
     [self request];
     
     UIButton *baomingBtn = [[UIButton alloc] init];

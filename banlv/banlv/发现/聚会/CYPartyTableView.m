@@ -48,7 +48,7 @@
     if (self) {
         self.delegate = self;
             self.dataSource = self;
-        self.backgroundColor = ThemeColor;
+        self.backgroundColor = [UIColor whiteColor];
         self.manager = [AFHTTPSessionManager manager];
         
         [self requestData];

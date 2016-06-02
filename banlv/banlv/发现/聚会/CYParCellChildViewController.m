@@ -41,11 +41,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-//    if (self.mainScrollView.contentOffset.y < 0) {
-//        
-//        self.barView.hidden = YES;
-//        
-//    }else
+
         if (self.mainScrollView.contentOffset.y < 280){
         
         self.barView.hidden = NO;
