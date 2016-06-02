@@ -69,7 +69,7 @@
     
     enterApp.layer.cornerRadius = 10.f;
     
-    [self addSubview:enterApp];
+    [self.scrollView addSubview:enterApp];
     
 }
 
