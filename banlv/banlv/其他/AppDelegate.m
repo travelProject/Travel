@@ -12,6 +12,9 @@
 //短信验证码
 #import <SMS_SDK/SMSSDK.h>
 
+//导航图片
+#import "BLScrollView.h"
+
 
 @interface AppDelegate ()
 
@@ -47,6 +50,29 @@
     self.window.rootViewController = tabBar;
 
     [self.window makeKeyAndVisible];
+    
+
+    //设置启动导航图片
+    NSString *key = @"CFBundleShortVersionString";
+    
+    NSDictionary *dict = [NSBundle mainBundle].infoDictionary;
+    
+    NSString *value = dict[key];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    //判断是否是第一次打开
+    NSString *valueStr  = [userDefaults stringForKey:key];
+    
+    if (![value isEqualToString:valueStr]) {
+        //第一次打开
+        
+        BLScrollView *scrollView = [[BLScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        
+        [self.window.rootViewController.view addSubview:scrollView];
+        
+        [userDefaults setObject:value forKey:key];
+    }
     
     return YES;
 }
