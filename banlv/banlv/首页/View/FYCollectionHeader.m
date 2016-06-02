@@ -73,6 +73,7 @@
         [self.bannerCollecView registerNib:[UINib nibWithNibName:@"FYHeaderViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"headerCell"];
         
         [self addSubview:self.bannerCollecView];
+//        self.bannerCollecView.hidden = YES;
         
         self.bannerPage = [[UIPageControl alloc] initWithFrame:CGRectMake((self.width - 150) / 2, self.height - 20, 150, 10)];
         self.bannerPage.currentPage = 0;
@@ -137,6 +138,8 @@
     self.timer = nil;
 }
 
+
+
 #pragma mark -- UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -194,7 +197,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.width, self.height);
+    return CGSizeMake(self.bannerCollecView.width, self.bannerCollecView.height);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section

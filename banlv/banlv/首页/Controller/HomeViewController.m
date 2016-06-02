@@ -231,10 +231,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
-//    [UIView animateWithDuration:0.01f animations:^{
-//        
-//        self.header.frame = CGRectMake(0, self.collectionView.contentOffset.y + 280.f, self.view.width, self.collectionView.contentOffset.y);
-//    }];
+    [UIView animateWithDuration:0.00001f animations:^{
+        
+        self.header.frame = CGRectMake(0, self.collectionView.contentOffset.y, self.view.width, -self.collectionView.contentOffset.y);
+//        self.header.bannerCollecView.frame = self.header.frame;
+        
+        
+    }];
     
     
     
