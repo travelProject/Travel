@@ -28,7 +28,9 @@
         self.picArr = [NSArray arrayWithObjects:@"beijing1",@"beijing2",@"beijing3",@"beijing4", nil];
         
         [self initScrollView];
+        
         [self initPageControl];
+        
     }
     return self;
 }
@@ -58,6 +60,17 @@
     }
     
     [self addSubview:self.scrollView];
+    
+    UIButton *enterApp = [[UIButton alloc] initWithFrame:CGRectMake((self.width - 150) / 2, self.height - 100, 150, 40)];
+    
+    enterApp.layer.borderColor = [UIColor colorWithHexString:@"#1D19FF"].CGColor;
+    
+    enterApp.layer.borderWidth = 1.f;
+    
+    enterApp.layer.cornerRadius = 10.f;
+    
+    [self addSubview:enterApp];
+    
 }
 
 - (void)initPageControl
