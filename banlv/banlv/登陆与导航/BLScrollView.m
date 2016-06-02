@@ -29,15 +29,17 @@
         
         [self initScrollView];
         [self initPageControl];
-        
-        
     }
     return self;
 }
 
+
 - (void)initScrollView
 {
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+    
+    self.scrollView.bounces = NO;
+    
     self.scrollView.delegate = self;
     
     self.scrollView.contentSize = CGSizeMake(self.width * 4, self.height);
@@ -48,7 +50,8 @@
         
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * self.width, 0, self.width, self.height)];
-        imageView.image = self.picArr[i];
+        
+        imageView.image = [UIImage imageNamed:self.picArr[i]];
         
         [self.scrollView addSubview:imageView];
         

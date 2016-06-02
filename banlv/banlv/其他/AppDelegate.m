@@ -51,32 +51,28 @@
 
     [self.window makeKeyAndVisible];
     
-//    BLScrollView *scrollView = [[BLScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    [self.window.rootViewController.view addSubview:scrollView];
-    
 
-//    NSString *key = @"CFBundleShortVersionString";
-//    
-//    
-//    NSDictionary *dict = [NSBundle mainBundle].infoDictionary;
-//    
-//    NSString *value = dict[key];
-//    
-//    
-//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    
-//    //判断是否是第一次打开
-//    NSString *valueStr  = [userDefaults stringForKey:key];
-//    
-//    if (![value isEqualToString:valueStr]) {
-//        //第一次打开
-//        
-//        YLGuideView *guideView = [YLGuideView guideView];
-//        
-//        [self.window.rootViewController.view addSubview:guideView];
-//        
-//        [userDefaults setObject:value forKey:key];
-//    }
+    //设置启动导航图片
+    NSString *key = @"CFBundleShortVersionString";
+    
+    NSDictionary *dict = [NSBundle mainBundle].infoDictionary;
+    
+    NSString *value = dict[key];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    //判断是否是第一次打开
+    NSString *valueStr  = [userDefaults stringForKey:key];
+    
+    if (![value isEqualToString:valueStr]) {
+        //第一次打开
+        
+        BLScrollView *scrollView = [[BLScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        
+        [self.window.rootViewController.view addSubview:scrollView];
+        
+        [userDefaults setObject:value forKey:key];
+    }
     
     return YES;
 }
