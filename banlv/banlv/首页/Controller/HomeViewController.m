@@ -231,13 +231,20 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
-    [UIView animateWithDuration:0.00001f animations:^{
-        
-        self.header.frame = CGRectMake(0, self.collectionView.contentOffset.y, self.view.width, -self.collectionView.contentOffset.y);
-//        self.header.bannerCollecView.frame = self.header.frame;
-        
-        
-    }];
+//    if (self.collectionView.contentOffset.y > -280.f) {
+//        
+//        return;
+//    }
+//    
+//    [UIView animateWithDuration:0.00001f animations:^{
+//        
+//        self.header.frame = CGRectMake(0, self.collectionView.contentOffset.y, self.view.width, -self.collectionView.contentOffset.y);
+//        self.header.bannerCollecView.frame = CGRectMake(0, 0, -(self.header.width - self.view.width) / 2, self.header.height);
+//        
+//        [self.header.bannerCollecView reloadData];
+//        
+//        
+//    }];
     
     
     
