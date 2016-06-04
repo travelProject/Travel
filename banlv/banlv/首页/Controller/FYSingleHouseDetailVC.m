@@ -25,8 +25,9 @@ typedef enum : NSUInteger {
 
 @interface FYSingleHouseDetailVC () <BMKMapViewDelegate>
 
-@property(nonatomic,strong)FYAFNetworkingManager *manager;
-@property (weak, nonatomic) IBOutlet FYCollectionHeader *bannerPic;
+@property(nonatomic,strong) FYAFNetworkingManager *manager;
+@property (weak, nonatomic) IBOutlet UIView *wholeView;
+@property (strong, nonatomic) FYCollectionHeader *bannerPic;
 @property (weak, nonatomic) IBOutlet UILabel *pageNumLab;
 @property (weak, nonatomic) IBOutlet UILabel *priceLab;
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
@@ -88,11 +89,22 @@ typedef enum : NSUInteger {
     
     self.manager = [FYAFNetworkingManager manager];
     
+    self.bannerPic = [[FYCollectionHeader alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 280)];
+    
+    [self.wholeView addSubview:self.bannerPic];
+    
+    [self.wholeView insertSubview:self.priceLab aboveSubview:self.bannerPic];
+    [self.wholeView insertSubview:self.pageNumLab aboveSubview:self.bannerPic];
+    
+    self.bannerPic.bannerPage.hidden = YES;
+    
     self.bannerPic.bannerType = 2;
+    
+    __weak typeof(self) mySelf = self;
     
     self.bannerPic.returnCurrentPageAndTotal = ^(NSString *page){
     
-        self.pageNumLab.text = page;
+        mySelf.pageNumLab.text = page;
     };
     
     self.ownerPic.layer.cornerRadius = 25.f;
@@ -249,9 +261,8 @@ typedef enum : NSUInteger {
 {
     if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
         
-        BMKAnnotationView *newAnnotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
+        BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
         
-        newAnnotationView.image = [UIImage imageNamed:@"place"];
         
         return newAnnotationView;
         

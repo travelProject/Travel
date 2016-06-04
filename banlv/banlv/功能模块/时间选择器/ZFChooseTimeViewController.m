@@ -300,7 +300,7 @@ static NSString * const headerIdentifier = @"headerIdentifier";
         
         UIButton *exitBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.width - 40) / 2, self.height - 60, 40, 40)];
         [exitBtn addTarget:self action:@selector(exitAction) forControlEvents:UIControlEventTouchUpInside];
-        [exitBtn setImage:[UIImage imageNamed:@"exitBtn"] forState:UIControlStateNormal];
+        [exitBtn setImage:[UIImage imageNamed:@"chahao"] forState:UIControlStateNormal];
         [self addSubview:exitBtn];
         
     }

@@ -28,7 +28,7 @@
 {
     _cityData = cityData;
     
-    [self.cityPic sd_setImageWithURL:[NSURL URLWithString:_cityData.mainPic] placeholderImage:nil options:SDWebImageProgressiveDownload];
+    [self.cityPic sd_setImageWithURL:[NSURL URLWithString:_cityData.mainPic] placeholderImage:[UIImage imageNamed:@"placeHolderImg"]];
     
     self.chineseName.text = _cityData.cityNameCh;
     [self fontWithLab:self.chineseName];

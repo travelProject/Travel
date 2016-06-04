@@ -24,35 +24,6 @@
 
 @implementation FYCollectionHeader
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    
-    self.bannerCollecView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) collectionViewLayout:flowLayout];
-    self.bannerCollecView.backgroundColor = [UIColor clearColor];
-    self.bannerCollecView.showsHorizontalScrollIndicator = NO;
-    self.bannerCollecView.pagingEnabled = YES;
-    self.bannerCollecView.delegate = self;
-    self.bannerCollecView.dataSource = self;
-    
-    //注册cell的方法（注意加载Nib的方法）
-    [self.bannerCollecView registerNib:[UINib nibWithNibName:@"FYHeaderViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"headerCell"];
-    
-    [self addSubview:self.bannerCollecView];
-    
-    self.bannerPage = [[UIPageControl alloc] initWithFrame:CGRectMake((self.width - 150) / 2, self.height - 20, 150, 10)];
-    self.bannerPage.currentPage = 0;
-    self.bannerPage.currentPageIndicatorTintColor = [UIColor whiteColor];
-    self.bannerPage.pageIndicatorTintColor = [UIColor lightGrayColor];
-    [self addSubview:self.bannerPage];
-    
-    self.bannerPage.hidden = YES;
-    
-    [self addTimer];
-}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -63,17 +34,17 @@
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
         self.bannerCollecView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) collectionViewLayout:flowLayout];
-        self.bannerCollecView.backgroundColor = [UIColor redColor];
+        
         self.bannerCollecView.showsHorizontalScrollIndicator = NO;
         self.bannerCollecView.pagingEnabled = YES;
         self.bannerCollecView.delegate = self;
         self.bannerCollecView.dataSource = self;
+        self.bannerCollecView.backgroundColor = [UIColor clearColor];
         
         //注册cell的方法（注意加载Nib的方法）
         [self.bannerCollecView registerNib:[UINib nibWithNibName:@"FYHeaderViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"headerCell"];
         
         [self addSubview:self.bannerCollecView];
-//        self.bannerCollecView.hidden = YES;
         
         self.bannerPage = [[UIPageControl alloc] initWithFrame:CGRectMake((self.width - 150) / 2, self.height - 20, 150, 10)];
         self.bannerPage.currentPage = 0;
@@ -99,7 +70,16 @@
     
     //马上显示回最中间那组对应的数据
     NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:MaxSection / 2];
-    [self.bannerCollecView scrollToItemAtIndexPath:currentIndexPathReset atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    
+    
+    if (self.topPicArr.count != 0) {
+        
+        [self.bannerCollecView scrollToItemAtIndexPath:currentIndexPathReset atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        
+    }else if (self.bannerArr.count != 0)
+    {
+        [self.bannerCollecView scrollToItemAtIndexPath:currentIndexPathReset atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    }
     
     //返回重新设置后的索引
     return currentIndexPathReset;
@@ -116,16 +96,27 @@
     NSInteger item = currentIndexPath.item + 1;
     NSInteger section = currentIndexPath.section;
     
-    if (item == self.bannerArr.count) {
+    if (self.bannerType == 1) {
+       
+        if (item == self.bannerArr.count) {
+            
+            item = 0;
+            section += 1;
+        }
         
-        item = 0;
-        section += 1;
+    }else if (self.bannerType == 2)
+    {
+        if (item == self.topPicArr.count) {
+            
+            item = 0;
+            section += 1;
+        }
+        
     }
     
     //生成下一个位置
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:item inSection:section];
     
-    //通过动画滚动到下一个位置
     [self.bannerCollecView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
     
     
@@ -170,6 +161,7 @@
     if (self.bannerType == 1) {
        
         cell.picUrl = self.bannerArr[indexPath.row].advPic;
+        
     }else if (self.bannerType == 2)
     {
         cell.picUrl = self.topPicArr[indexPath.row];
@@ -183,14 +175,15 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    FYHomeWebViewVC *webViewVC = [[FYHomeWebViewVC alloc] init];
+    if (self.bannerType == 1) {
+        
+        FYHomeWebViewVC *webViewVC = [[FYHomeWebViewVC alloc] init];
+        
+        webViewVC.urlString = self.bannerArr[indexPath.row].advUrl;
+        
+        [self.myHostVC.navigationController pushViewController:webViewVC animated:YES];
+    }
     
-    webViewVC.urlString = self.bannerArr[indexPath.row].advUrl;
-    
-    [self.myHostVC.navigationController pushViewController:webViewVC animated:YES];
-    
-
 }
 
 #pragma mark -- UICollectionViewDelegateFlowLayout

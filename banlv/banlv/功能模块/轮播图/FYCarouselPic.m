@@ -80,7 +80,7 @@
 {
     FYCarouselCell *picCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"picCell" forIndexPath:indexPath];
     
-    [picCell.picImageView sd_setImageWithURL:[NSURL URLWithString:self.picArr[indexPath.row]] placeholderImage:nil options:SDWebImageProgressiveDownload];
+    [picCell.picImageView sd_setImageWithURL:[NSURL URLWithString:self.picArr[indexPath.row]] placeholderImage:[UIImage imageNamed:@"placeHolderImg"]];
     
     return picCell;
 }

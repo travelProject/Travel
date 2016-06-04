@@ -23,7 +23,7 @@
 {
     _picUrl = picUrl;
     
-    [self.bannerPic sd_setImageWithURL:[NSURL URLWithString:_picUrl] placeholderImage:nil options:SDWebImageProgressiveDownload];
+    [self.bannerPic sd_setImageWithURL:[NSURL URLWithString:_picUrl] placeholderImage:[UIImage imageNamed:@"placeHolderImg"]];
 }
 
 @end

@@ -212,13 +212,8 @@ typedef enum : NSUInteger {
     //星星评论
     for (NSInteger i = 0; i < _cityHouseData.reviewScore.integerValue; i++) {
         
-        self.starArr[i].image = [UIImage imageNamed:@"hongxin"];
+        self.starArr[i].image = [UIImage imageNamed:@"start_share_high"];
         
-    }
-    
-    for (NSInteger j = _cityHouseData.reviewScore.integerValue; j < 5; j++) {
-        
-        self.starArr[j].image = [UIImage imageNamed:@"shoucang"];
     }
     
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"CollectionHouse"];

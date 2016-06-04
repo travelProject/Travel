@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property(nonatomic,strong) NSArray *dataArr;
+@property(nonatomic,strong) NSArray *picArr;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewH;
 
 @end
@@ -52,6 +54,7 @@
     self.view.frame = kScreenFrame;
     
     self.dataArr = @[@"我的钱包",@"我的房源",@"我的收藏",@"分享给好友",@"设置"];
+    self.picArr = @[@"qianbao",@"fabufangyuan",@"shoucang",@"fenxiang_hui",@"shezhi"];
     
     //给midView添加点击手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToProfiles:)];
@@ -94,7 +97,7 @@
     cell.detailTextLabel.text = self.dataArr[indexPath.row];
     cell.detailTextLabel.font = [UIFont systemFontOfSize:15.f];
     cell.detailTextLabel.textColor = [UIColor colorWithHexString:@"#8C8C8C"];
-    cell.imageView.image = [UIImage imageNamed:@"shoucang"];
+    cell.imageView.image = [UIImage imageNamed:self.picArr[indexPath.row]];
     
     //不显示高亮状态
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -104,6 +107,7 @@
 #pragma mark -- UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     return 50;
 }
 
@@ -141,6 +145,7 @@
             [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:nil];
         }
             break;
+            
         default:
             break;
     }
