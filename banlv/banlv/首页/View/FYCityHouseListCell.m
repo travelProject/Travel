@@ -78,7 +78,7 @@ typedef enum : NSUInteger {
 
         NSMutableDictionary *dic = self.cityHouseData.mj_keyValues;
         
-        [dic setValue:self.cityHouseData.userIdentificationStatus forKey:@"userIdentiStatus"];
+        [dic setValue:self.cityHouseData.userIdentiStatus forKey:@"userIdentiStatus"];
         
         [dic setValue:@"1" forKey:@"collectionStatus"];
 
@@ -90,7 +90,7 @@ typedef enum : NSUInteger {
             //进行操作
             if (isSuccessful) {
                 
-                NSLog(@"上传成功");
+                
             }
             
             if (error) {
@@ -117,13 +117,11 @@ typedef enum : NSUInteger {
             {
                 //异步删除object
                 [array[0] deleteInBackground];
+                
             }
             
-                
-            }];
-        
-
-    
+            
+        }];
 
     }
     
@@ -133,6 +131,8 @@ typedef enum : NSUInteger {
 
 - (void)setCityHouseData:(FYCityHouseListData *)cityHouseData
 {
+    self.xinImageView.selected = NO;
+    
     _cityHouseData = cityHouseData;
     
     //轮播图数据
@@ -190,7 +190,7 @@ typedef enum : NSUInteger {
     self.replyRateLabel.text = [replyStr stringByAppendingString:@"%"];
     
     //添加实名认证、芝麻信用
-    if ([_cityHouseData.userIdentificationStatus isEqualToString:@"2"]) {
+    if ([_cityHouseData.userIdentiStatus isEqualToString:@"2"]) {
         
         
         self.userIdentification.image = [UIImage imageNamed:@"shenfenzheng"];
@@ -221,41 +221,33 @@ typedef enum : NSUInteger {
         self.starArr[j].image = [UIImage imageNamed:@"shoucang"];
     }
     
-//    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"CollectionHouse"];
-//    
-//    [bquery whereKey:@"spaceId" equalTo:self.cityHouseData.spaceId];
-//    
-//    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-//        
-//        
-//        if (error)
-//        {
-//            //进行错误处理
-//        }else if (array)
-//        {
-//            //异步删除object
-//            BmobObject *collecObj = array[0];
-//            
-//            NSString *status = [collecObj objectForKey:@"collectionSattus"];
-//            
-//            NSLog(@"sfhlahl");
-//            
-//            if ([[collecObj objectForKey:@"collectionSattus"] isEqualToString:@"1"]) {
-//                
-//                NSLog(@"收藏状态:%@",[collecObj objectForKey:@"collectionSattus"]);
-//                
-//                self.xinImageView.selected = YES;
-//                
-//                [self.xinImageView setBackgroundImage:[UIImage imageNamed:@"hongxin"] forState:UIControlStateSelected];
-//                
-//            }
-//            
-//        }
-//        
-//        
-//    }];
-
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"CollectionHouse"];
     
+    [bquery whereKey:@"spaceId" equalTo:self.cityHouseData.spaceId];
+    
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        
+        
+        if (error)
+        {
+            //进行错误处理
+        }else if (array.count == 1)
+        {
+            BmobObject *collecObj = array[0];
+
+            if ([[collecObj objectForKey:@"collectionStatus"] isEqualToString:@"1"]) {
+                
+                self.xinImageView.selected = YES;
+                
+                [self.xinImageView setBackgroundImage:[UIImage imageNamed:@"hongxin"] forState:UIControlStateSelected];
+                
+            }
+            
+        }
+        
+        
+    }];
+
     
 }
 

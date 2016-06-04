@@ -7,8 +7,6 @@
 //
 
 #import "BLMineViewController.h"
-#import "BLIconView.h"
-#import "BLMineTableView.h"
 #import "BLProfilesController.h"
 #import "BLSetController.h"
 #import "BLMyWalletController.h"
@@ -17,83 +15,59 @@
 #import "BLNavigationController.h"
 #import "BLShareController.h"
 
+@interface BLMineViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *BGImageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *userPicView;
+
+@property (weak, nonatomic) IBOutlet UILabel *userNameLab;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property(nonatomic,strong) NSArray *dataArr;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewH;
+
+@end
+
 @implementation BLMineViewController
 
 //隐藏NavigationBar
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
-    self.navigationController.hidesBottomBarWhenPushed = YES;
-    [self setUpIconView];
-    [self setUpMineTableView];
-    //设置从navigationBar下缘开始
-    if(iOS7) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars = NO;
-        self.modalPresentationCapturesStatusBarAppearance = NO;
-    }
+    
+    self.navigationController.navigationBar.hidden = YES;
+ 
     
 }
 //退出该控制器时还原,否则会影响到下一级的controlelr
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
-}
-//添加iconView
-- (void)setUpIconView{
-    BLIconView *iconView = [BLIconView loadView];
-    iconView.backgroundColor = [UIColor cyanColor];
-    iconView.frame = CGRectMake(0, 0, self.view.width,250);
-    [self.view addSubview:iconView];
-    //给midView添加点击手势
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToProfiles:)];
-    [iconView.midView addGestureRecognizer:tap];
     
+    self.navigationController.navigationBar.hidden = NO;
 }
-//添加mineTableView
-- (void)setUpMineTableView{
-    BLMineTableView *mineTable = [[BLMineTableView alloc] initWithFrame:CGRectMake(0, 250, kScreenFrameW, kScreenFrameH - 250)];
-    //在block体中,局部变量要用__weak修饰（弱引用）,防止循环引用
-    __weak typeof(self) mySelf = self;
-    mineTable.selectRowBlock = ^(NSInteger row){
-        switch (row) {
-            case 0:
-            {
-                BLMyWalletController *wallet = [[BLMyWalletController alloc] init];
-                
-                [mySelf.navigationController pushViewController:wallet animated:YES];
-            }
-                break;
-            case 3:
-            {
-                BLMyCollectController *collect = [[BLMyCollectController alloc] init];
-                
-                [mySelf.navigationController pushViewController:collect animated:YES];
-                break;
-            }
-            case 4:
-            {
-                BLShareController *share = [[BLShareController alloc] init];
-                [mySelf.navigationController pushViewController:share animated:YES];
-            }
-                break;
-            case 5:
-            {
-                [mySelf dismissViewControllerAnimated:YES completion:nil];
-                BLSetController *set = [[BLSetController alloc] init];
-                BLNavigationController *nav = [[BLNavigationController alloc] initWithRootViewController:set];
-                [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:nil];
-            }
-                break;
-            default:
-                break;
-        }
-    };
-    [self.view addSubview:mineTable];
-   
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.frame = kScreenFrame;
+    
+    self.dataArr = @[@"我的钱包",@"我的房源",@"我的收藏",@"分享给好友",@"设置"];
+    
+    //给midView添加点击手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToProfiles:)];
+    
+    self.userNameLab.userInteractionEnabled = YES;
+    self.userPicView.userInteractionEnabled = YES;
+    
+    self.userPicView.layer.cornerRadius = self.userPicView.width / 2;
+    self.userPicView.layer.masksToBounds = YES;
+    
+    [self.userPicView addGestureRecognizer:tap];
+    [self.userNameLab addGestureRecognizer:tap];
+    
+    
+    
+    
 }
 
 - (void)jumpToProfiles:(id)sender{
@@ -101,6 +75,87 @@
     BLProfilesController *profiles = [[BLProfilesController alloc] init];
     [self.navigationController pushViewController:profiles animated:YES];
 }
+
+#pragma mark --UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.dataArr.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifer = @"cell";
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:identifer];
+    
+    if (!cell) {
+        //设置cell的类型UITableViewCellStyleValue1
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifer];
+        //设置右侧附件类型（箭头）
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    cell.detailTextLabel.text = self.dataArr[indexPath.row];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:15.f];
+    cell.detailTextLabel.textColor = [UIColor colorWithHexString:@"#8C8C8C"];
+    cell.imageView.image = [UIImage imageNamed:@"shoucang"];
+    
+    //不显示高亮状态
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+#pragma mark -- UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+            BLMyWalletController *wallet = [[BLMyWalletController alloc] init];
+            
+            [self.navigationController pushViewController:wallet animated:YES];
+        }
+            break;
+        case 2:
+        {
+            BLMyCollectController *collect = [[BLMyCollectController alloc] init];
+            
+            [self.navigationController pushViewController:collect animated:YES];
+            break;
+        }
+        case 3:
+        {
+            BLShareController *share = [[BLShareController alloc] init];
+            [self.navigationController pushViewController:share animated:YES];
+        }
+            break;
+        case 4:
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            BLSetController *set = [[BLSetController alloc] init];
+            BLNavigationController *nav = [[BLNavigationController alloc] initWithRootViewController:set];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:nil];
+        }
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
+- (void)updateViewConstraints
+{
+    
+    [super updateViewConstraints];
+    
+    self.tableViewH.constant = self.dataArr.count * 50.f;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

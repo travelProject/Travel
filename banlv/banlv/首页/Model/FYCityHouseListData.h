@@ -25,7 +25,7 @@
 @property(nonatomic,copy) NSString *ownerName;//房东名字
 @property(nonatomic,copy) NSString *ownerPic;//房东头像
 
-@property(nonatomic,copy) NSString *userIdentificationStatus;//实名认证状态（2:认证）
+@property(nonatomic,copy) NSString *userIdentiStatus;//实名认证状态（2:认证）
 @property(nonatomic,copy) NSString *zmAuthentication;//芝麻认证状态(1:认证)
 
 @property(nonatomic,copy) NSString *reviewScore;//评论星级(千万不能用int,不是对象，不能key-value赋值)
