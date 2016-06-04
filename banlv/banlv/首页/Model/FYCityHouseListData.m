@@ -10,6 +10,20 @@
 
 @implementation FYCityHouseListData
 
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        [FYCityHouseListData mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+            
+            return @{
+                     @"userIdentiStatus" : @"userIdentificationStatus",
+                     };
+        }];
+        
+    }
+    return self;
+}
 
 @end

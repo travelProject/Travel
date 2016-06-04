@@ -7,7 +7,6 @@
 //
 
 #import "BLSetController.h"
-#import "BLLogoView.h"
 #import "BLFeedbackController.h"
 #import "BLSetTableView.h"
 #import "BLAboutUsView.h"
@@ -43,7 +42,7 @@
    
     
     
-    [self setUpLogoView];
+    
     [self setUpScrollView];
     [self setUPSetTableView];
     [self setUpAboutUsView];
@@ -51,13 +50,7 @@
     
 
 }
-//添加上边的logoView
-- (void)setUpLogoView{
-    BLLogoView *logoView = [BLLogoView loadView];
-    logoView.frame = CGRectMake(0, 0, kScreenFrameW, 300);
-    [self.view addSubview:logoView];
 
-}
 - (void)setUpScrollView{
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 300, kScreenFrameW, 300)];
     _scrollView.contentSize = CGSizeMake(kScreenFrameW *2,0);
