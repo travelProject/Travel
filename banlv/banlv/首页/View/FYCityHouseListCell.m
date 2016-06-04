@@ -221,6 +221,41 @@ typedef enum : NSUInteger {
         self.starArr[j].image = [UIImage imageNamed:@"shoucang"];
     }
     
+//    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"CollectionHouse"];
+//    
+//    [bquery whereKey:@"spaceId" equalTo:self.cityHouseData.spaceId];
+//    
+//    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+//        
+//        
+//        if (error)
+//        {
+//            //进行错误处理
+//        }else if (array)
+//        {
+//            //异步删除object
+//            BmobObject *collecObj = array[0];
+//            
+//            NSString *status = [collecObj objectForKey:@"collectionSattus"];
+//            
+//            NSLog(@"sfhlahl");
+//            
+//            if ([[collecObj objectForKey:@"collectionSattus"] isEqualToString:@"1"]) {
+//                
+//                NSLog(@"收藏状态:%@",[collecObj objectForKey:@"collectionSattus"]);
+//                
+//                self.xinImageView.selected = YES;
+//                
+//                [self.xinImageView setBackgroundImage:[UIImage imageNamed:@"hongxin"] forState:UIControlStateSelected];
+//                
+//            }
+//            
+//        }
+//        
+//        
+//    }];
+
+    
     
 }
 

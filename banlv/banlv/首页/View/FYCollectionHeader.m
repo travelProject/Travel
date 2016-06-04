@@ -63,7 +63,7 @@
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
         self.bannerCollecView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) collectionViewLayout:flowLayout];
-        self.bannerCollecView.backgroundColor = [UIColor clearColor];
+        self.bannerCollecView.backgroundColor = [UIColor redColor];
         self.bannerCollecView.showsHorizontalScrollIndicator = NO;
         self.bannerCollecView.pagingEnabled = YES;
         self.bannerCollecView.delegate = self;
