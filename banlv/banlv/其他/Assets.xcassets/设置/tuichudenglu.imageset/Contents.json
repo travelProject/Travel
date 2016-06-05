@@ -2,17 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tuichudenglu.png",
+      "filename" : "center_exit~iphone.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tuichudenglu@2x.png",
+      "filename" : "center_exit~iphone@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tuichudenglu@3x.png",
       "scale" : "3x"
     }
   ],

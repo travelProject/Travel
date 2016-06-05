@@ -53,20 +53,22 @@
     
     self.view.frame = kScreenFrame;
     
+    self.userPicView.layer.cornerRadius = self.userPicView.width / 2;
+    self.userPicView.layer.masksToBounds = YES;
+    
     self.dataArr = @[@"我的钱包",@"我的房源",@"我的收藏",@"分享给好友",@"设置"];
     self.picArr = @[@"qianbao",@"fabufangyuan",@"shoucang",@"fenxiang_hui",@"shezhi"];
     
-    //给midView添加点击手势
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToProfiles:)];
+    //添加点击手势
+    UITapGestureRecognizer *tapPic = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToProfiles:)];
+    
+    UITapGestureRecognizer *tapLab = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToProfiles:)];
     
     self.userNameLab.userInteractionEnabled = YES;
     self.userPicView.userInteractionEnabled = YES;
     
-    self.userPicView.layer.cornerRadius = self.userPicView.width / 2;
-    self.userPicView.layer.masksToBounds = YES;
-    
-    [self.userPicView addGestureRecognizer:tap];
-    [self.userNameLab addGestureRecognizer:tap];
+    [self.userPicView addGestureRecognizer:tapPic];
+    [self.userNameLab addGestureRecognizer:tapLab];
     
     
     
@@ -134,7 +136,8 @@
         case 3:
         {
             BLShareController *share = [[BLShareController alloc] init];
-            [self.navigationController pushViewController:share animated:YES];
+            [self presentViewController:share animated:YES completion:nil];
+            
         }
             break;
         case 4:

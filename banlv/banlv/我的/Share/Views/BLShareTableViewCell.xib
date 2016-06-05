@@ -17,7 +17,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yh5-Q0-hNH">
                         <rect key="frame" x="0.0" y="0.0" width="380" height="69"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weChatButton" translatesAutoresizingMaskIntoConstraints="NO" id="3TK-Te-kJ2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3TK-Te-kJ2">
                                 <rect key="frame" x="15" y="10" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CKy-Py-9Gj"/>
@@ -61,7 +61,4 @@
             <point key="canvasLocation" x="-232" y="253"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="weChatButton" width="39" height="39"/>
-    </resources>
 </document>

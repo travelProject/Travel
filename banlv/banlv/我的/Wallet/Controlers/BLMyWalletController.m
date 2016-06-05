@@ -33,12 +33,13 @@
 }
 - (void)setUpSegment{
     self.segment = [[UISegmentedControl alloc] initWithFrame:(CGRectMake(0, 0, 160, 30))];
+    
     [self.segment insertSegmentWithTitle:@"现金账户" atIndex:0 animated:YES];
     [self.segment insertSegmentWithTitle:@"优惠券" atIndex:1 animated:YES];
     self.segment.selectedSegmentIndex = 0;
-    //    segment.backgroundColor = [UIColor colorWithHexString:@"#429d96"];
     self.segment.tintColor = ThemeColor;//tintColor属性很强大
     self.navigationItem.titleView = self.segment;
+    
     [self.segment addTarget:self action:@selector(segmentSelected:) forControlEvents:(UIControlEventValueChanged)];
     
 }

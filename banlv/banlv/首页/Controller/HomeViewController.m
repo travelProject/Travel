@@ -34,6 +34,8 @@
 
 @property(nonatomic,strong)FYCollectionHeader *header;
 
+@property(nonatomic,strong) SVProgressHUD *progressHUD;
+
 @end
 
 @implementation HomeViewController
@@ -67,7 +69,10 @@
     
     [self initCollectionView];
     
+    [SVProgressHUD show];
+    
     [self requestData];
+    
     
 }
 
@@ -93,15 +98,14 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    self.collectionView.bounces = YES;
+    self.collectionView.bounces = NO;
+    self.collectionView.hidden = YES;
     
     //注册cell的方法（注意加载Nib的方法）
     [self.collectionView registerNib:[UINib nibWithNibName:@"FYHomeViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"cell"];
 
-    
     //注册Footer
     [self.collectionView registerClass:[FYCollectionFooter class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionFooter" withReuseIdentifier:@"footer"];
-
     
     self.flowLayout.footerReferenceSize = CGSizeMake(kScreenFrameW, 0.4526f * kScreenFrameW);
     
@@ -141,6 +145,9 @@
         self.header.bannerArr = self.homeViewData.topBanner;
         
         [self.collectionView reloadData];
+        self.collectionView.hidden = NO;
+        
+        [SVProgressHUD dismiss];
         
     } failur:^(NSError *error) {
         
@@ -231,7 +238,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
-//    if (self.collectionView.contentOffset.y > -280.f) {
+//    if (self.collectionView.contentOffset.y > -0.55f * kScreenFrameW) {
 //        
 //        return;
 //    }
@@ -239,9 +246,9 @@
 //    [UIView animateWithDuration:0.00001f animations:^{
 //        
 //        self.header.frame = CGRectMake(0, self.collectionView.contentOffset.y, self.view.width, -self.collectionView.contentOffset.y);
-//        self.header.bannerCollecView.frame = CGRectMake(0, 0, -(self.header.width - self.view.width) / 2, self.header.height);
+//        self.header.bannerCollecView.frame = CGRectMake(0, 0, self.header.width , self.header.height);
 //        
-//        [self.header.bannerCollecView reloadData];
+////        [self.header.bannerCollecView reloadData];
 //        
 //        
 //    }];

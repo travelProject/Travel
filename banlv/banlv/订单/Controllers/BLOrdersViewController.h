@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BLOrdersViewController : UIViewController
-- (void)didselectedSegment:(UISegmentedControl *)segment;
+
+
+
 @end

@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-//    self.clickableView.backgroundColor = [UIColor whiteColor];
+
     self.clickableView.layer.cornerRadius = 5.f;
     self.clickableView.layer.masksToBounds = YES;
    

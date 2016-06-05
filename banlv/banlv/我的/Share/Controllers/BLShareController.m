@@ -17,11 +17,13 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *shareTableView;
+
 @end
 
 @implementation BLShareController
+
 - (IBAction)cancelBtn:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
   
 }
 //隐藏NavigationBar
@@ -39,10 +41,13 @@
 
     
     [self.shareTableView registerNib:[UINib nibWithNibName:@"BLShareTableViewCell" bundle:nil] forCellReuseIdentifier:@"shareCell"];
+    
     self.shareTableView.dataSource = self;
     self.shareTableView.delegate = self;
     self.shareTableView.scrollEnabled = NO;
+    
     _iconImgArr = @[@"recommend_weixin",@"recommend_pengyouquan",@"recommend_QQ",@"recommend_QQspace",@"recommend_weibo"];
+    
     _nameArr = @[@"微信好友",@"朋友圈",@"QQ好友",@"QQ空间",@"新浪微博"];
     
 }
@@ -50,7 +55,9 @@
     return _nameArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     BLShareTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"shareCell" forIndexPath:indexPath];
+    
     cell.iconView.image = [UIImage imageNamed:_iconImgArr[indexPath.row]];
     cell.nameLab.text = _nameArr[indexPath.row];
     
@@ -60,6 +67,7 @@
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     switch (indexPath.row) {
         case 0:
             CYLog(@"分享到微信");
@@ -83,9 +91,11 @@
             
         default:
             break;
+            
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     return 60;
 }
 

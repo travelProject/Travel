@@ -26,6 +26,7 @@ typedef enum : NSUInteger {
 @interface FYSingleHouseDetailVC () <BMKMapViewDelegate>
 
 @property(nonatomic,strong) FYAFNetworkingManager *manager;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *wholeView;
 @property (strong, nonatomic) FYCollectionHeader *bannerPic;
 @property (weak, nonatomic) IBOutlet UILabel *pageNumLab;
@@ -284,6 +285,25 @@ typedef enum : NSUInteger {
     applyBookingHouseVC.ownerName = self.ownerNameLab.text;
     
     [self.navigationController pushViewController:applyBookingHouseVC animated:YES];
+}
+
+#pragma mark -- UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+//    if (self.scrollView.contentOffset.y > 0) {
+//        
+//        return;
+//    }
+//    
+//    [UIView animateWithDuration:0.00001f animations:^{
+//        
+//        self.bannerPic.frame = CGRectMake(0, self.scrollView.contentOffset.y, self.view.width, -self.scrollView.contentOffset.y);
+//        
+//        
+//    }];
+    
 }
 
 - (void)setSpaceId:(NSString *)spaceId
