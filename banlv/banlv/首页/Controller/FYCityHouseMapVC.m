@@ -174,6 +174,8 @@
     
     self.title = self.cityName;
     
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"lookListModelButton" highlitImageName:nil withAction:@selector(backToFormer) target:self itemTitle:nil offset:UIControlContentHorizontalAlignmentRight];
+    
     self.manager = [FYAFNetworkingManager manager];
     
     [self initMap];
@@ -499,6 +501,12 @@
 - (void)setTempChooseDateArr:(NSMutableArray *)tempChooseDateArr
 {
     _tempChooseDateArr = tempChooseDateArr;
+}
+
+- (void)backToFormer
+{
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

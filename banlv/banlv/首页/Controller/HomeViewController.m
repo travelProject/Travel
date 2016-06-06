@@ -63,6 +63,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    //上传用户信息测试
+//    NSBundle    *bundle = [NSBundle mainBundle];
+//    NSString *fileString = [NSString stringWithFormat:@"%@/lookListModelButton.png" ,[bundle bundlePath] ];
+//    BmobObject *obj = [[BmobObject alloc] initWithClassName:@"GameScore"];
+//    BmobFile *file1 = [[BmobFile alloc] initwi];
+//    
+//    [file1 saveInBackground:^(BOOL isSuccessful, NSError *error) {
+//        //如果文件保存成功，则把文件添加到filetype列
+//        if (isSuccessful) {
+//            [obj setObject:file1  forKey:@"Pic"];
+//            [obj saveInBackground];
+//            //打印file文件的url地址
+//            NSLog(@"file1 url %@",file1.url);
+//        }else{
+//            //进行处理
+//            NSLog(@"保存失败：%@",error);
+//        }
+//    }];
+    
+    
+    
+    
+    
     self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.96 blue:0.96 alpha:1.0];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
