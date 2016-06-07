@@ -108,10 +108,9 @@
     //设置轮播图片的数据源类型
     self.header.bannerType = 1;
     
-    self.header.backgroundColor = [UIColor grayColor];
-    
     self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
     self.flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    self.flowLayout.itemSize = CGSizeMake((kScreenFrameW - 3) / 2, (kScreenFrameW - 3) / (0.748f * 2));
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - TabBarH) collectionViewLayout:self.flowLayout];
     
@@ -122,7 +121,6 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    self.collectionView.bounces = NO;
     self.collectionView.hidden = YES;
     
     //注册cell的方法（注意加载Nib的方法）
@@ -239,7 +237,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((kScreenFrameW - 3) / 2, (kScreenFrameW - 3) / (0.748f * 2));
+    return self.flowLayout.itemSize;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -262,25 +260,35 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
-//    if (self.collectionView.contentOffset.y > -0.55f * kScreenFrameW) {
-//        
-//        return;
-//    }
-//    
-//    [UIView animateWithDuration:0.00001f animations:^{
-//        
-//        self.header.frame = CGRectMake(0, self.collectionView.contentOffset.y, self.view.width, -self.collectionView.contentOffset.y);
-//        self.header.bannerCollecView.frame = CGRectMake(0, 0, self.header.width , self.header.height);
-//        
-////        [self.header.bannerCollecView reloadData];
-//        
-//        
-//    }];
+    if (self.collectionView.contentOffset.y > -0.55f * kScreenFrameW) {
+        
+        return;
+    }
+    
+    [UIView animateWithDuration:0.00001f animations:^{
+        
+        self.header.frame = CGRectMake(0, self.collectionView.contentOffset.y, self.view.width, -self.collectionView.contentOffset.y);
+        
+        
+    }];
     
     
     
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    
+    //停止定时器
+    [self.header.timer invalidate];
+    self.header.timer = nil;
+
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.header addTimer];
+}
 
 
 - (void)didReceiveMemoryWarning {
