@@ -26,4 +26,9 @@
     [self.bannerPic sd_setImageWithURL:[NSURL URLWithString:_picUrl] placeholderImage:[UIImage imageNamed:@"placeHolderImg"]];
 }
 
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+}
+
 @end

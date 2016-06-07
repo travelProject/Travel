@@ -18,7 +18,7 @@
 
 @interface FYCollectionHeader () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property(nonatomic,strong) NSTimer *timer;
+@property(nonatomic,strong) UICollectionViewFlowLayout *flowLayout;
 
 @end
 
@@ -30,16 +30,18 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
         
-        self.bannerCollecView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) collectionViewLayout:flowLayout];
+        self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        
+        self.bannerCollecView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) collectionViewLayout:self.flowLayout];
         
         self.bannerCollecView.showsHorizontalScrollIndicator = NO;
         self.bannerCollecView.pagingEnabled = YES;
         self.bannerCollecView.delegate = self;
         self.bannerCollecView.dataSource = self;
-        self.bannerCollecView.backgroundColor = [UIColor clearColor];
+        self.bannerCollecView.backgroundColor = [UIColor redColor];
         
         //注册cell的方法（注意加载Nib的方法）
         [self.bannerCollecView registerNib:[UINib nibWithNibName:@"FYHeaderViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"headerCell"];
@@ -55,6 +57,26 @@
         [self addTimer];
     }
     return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+
+    [UIView animateWithDuration:0.00001f animations:^{
+        
+        self.bannerCollecView.frame = CGRectMake((kScreenFrameW - self.width) / 2, 0, self.width, self.height);
+        self.flowLayout.itemSize = self.bannerCollecView.size;
+        
+        self.bannerPage.frame = CGRectMake((self.width - 150) / 2, self.height - 20, 150, 10);
+        
+        FYHeaderViewCell *cell = (FYHeaderViewCell *)[self.bannerCollecView cellForItemAtIndexPath:[[self.bannerCollecView indexPathsForVisibleItems] lastObject]];
+        
+        cell.frame = CGRectMake(cell.frame.origin.x, 0, self.bannerCollecView.size.width, self.bannerCollecView.size.height);
+        
+//        NSLog(@"cell`s size is : %@",[NSValue valueWithCGSize:cell.size]);
+        
+    }];
+    
 }
 
 - (void)addTimer
@@ -161,6 +183,8 @@
     if (self.bannerType == 1) {
        
         cell.picUrl = self.bannerArr[indexPath.row].advPic;
+        
+        cell.backgroundColor = [UIColor yellowColor];
         
     }else if (self.bannerType == 2)
     {
@@ -276,5 +300,9 @@
 
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"frame"];
+}
 
 @end

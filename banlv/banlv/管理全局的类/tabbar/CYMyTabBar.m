@@ -45,6 +45,7 @@
         [self.searchView addSubview:self.searchLab];
         [self addSubview:self.searchView];
         
+        
     }
     return self;
 }
@@ -71,6 +72,8 @@
     self.searchLab.textAlignment = NSTextAlignmentCenter;
     self.searchLab.textColor = [UIColor grayColor];
     self.searchLab.font = [UIFont systemFontOfSize:10.f];
+    
+    
     
 }
 

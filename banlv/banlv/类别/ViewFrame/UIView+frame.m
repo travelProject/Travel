@@ -78,10 +78,10 @@
     self.frame = (CGRect){self.x,self.y,self.size};
 }
 
-- (void)setCenter:(CGPoint)center
-{
-    self.frame = (CGRect){center.x - self.width/2,center.y - self.height/2,self.size};
-}
+//- (void)setCenter:(CGPoint)center
+//{
+//    self.frame = (CGRect){center.x - self.width/2,center.y - self.height/2,self.size};
+//}
 
 
 

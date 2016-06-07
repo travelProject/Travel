@@ -28,6 +28,10 @@
 
 @property(nonatomic,strong)ZFChooseTimeViewController *chooseDateVC;
 @property (weak, nonatomic) IBOutlet UIImageView *iconPic;
+@property (weak, nonatomic) IBOutlet UIView *chooseCityView;
+@property (weak, nonatomic) IBOutlet UIView *chooseDateView;
+@property (weak, nonatomic) IBOutlet UILabel *chooseCityLab;
+@property (weak, nonatomic) IBOutlet UILabel *chooseDateLab;
 
 @end
 
@@ -68,6 +72,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     self.view.frame = [UIScreen mainScreen].bounds;
     
     self.iconPic.layer.cornerRadius = 10.f;
@@ -78,6 +83,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLoginVC)];
     
     [self.iconPic addGestureRecognizer:tap];
+    
+    [self chooseCityAndDate];
     
     self.searchBtn.layer.cornerRadius = 10.f;
     self.searchBtn.layer.masksToBounds = YES;
@@ -92,18 +99,17 @@
     {
         mySelf.selectDateArr = selectedDateArr;
         
-        NSString *dateInStr = [NSString stringWithFormat:@"%@-%@-%@",mySelf.selectDateArr[0][0],mySelf.selectDateArr[0][1],mySelf.selectDateArr[0][2]];
+        NSString *dateInStr = [NSString stringWithFormat:@"%@/%@",mySelf.selectDateArr[0][1],mySelf.selectDateArr[0][2]];
         NSDate *dateIn = [mySelf getDateFromString:dateInStr];
         
         NSInteger liveIn = (NSInteger)[dateIn timeIntervalSince1970];
         
-        NSString *dateOutStr = [NSString stringWithFormat:@"%@-%@-%@",mySelf.selectDateArr[1][0],mySelf.selectDateArr[1][1],mySelf.selectDateArr[1][2]];
+        NSString *dateOutStr = [NSString stringWithFormat:@"%@/%@",mySelf.selectDateArr[1][1],mySelf.selectDateArr[1][2]];
         NSDate *dateOut = [mySelf getDateFromString:dateOutStr];
         
         NSInteger liveOut = (NSInteger)[dateOut timeIntervalSince1970];
         
-//        mySelf.chooseDateView.dateIn.text = dateInStr;
-//        mySelf.chooseDateView.dateOut.text = dateOutStr;
+        mySelf.chooseDateLab.text = [NSString stringWithFormat:@"%@ - %@",dateInStr,dateOutStr];
         
         [mySelf.selectDateArr removeAllObjects];
         
@@ -113,6 +119,18 @@
     };
     
     [[UIApplication sharedApplication].keyWindow addSubview:self.chooseDateVC];
+    
+}
+
+- (void)chooseCityAndDate
+{
+    UITapGestureRecognizer *chooseCity = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseCity)];
+    
+    [self.chooseCityView addGestureRecognizer:chooseCity];
+    
+    UITapGestureRecognizer *chooseDate = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseDate)];
+    
+    [self.chooseDateView addGestureRecognizer:chooseDate];
     
 }
 
@@ -129,7 +147,7 @@
     self.tempChooseDateArr = [selectDateArr mutableCopy];
 }
 
-- (IBAction)chooseCity:(id)sender {
+- (void)chooseCity {
     
     FYLookMoreCityVC *chooseCityVC = [[FYLookMoreCityVC alloc] init];
     chooseCityVC.flag = NO;
@@ -139,18 +157,23 @@
         self.cityId = cityId;
         
         self.cityName = cityName;
+        
+        self.chooseCityLab.text = cityName;
+        
     };
     
     [self.navigationController pushViewController:chooseCityVC animated:YES];
     
 }
-- (IBAction)chooseDate:(id)sender {
+
+- (void)chooseDate {
     
     [UIView animateWithDuration:0.2f animations:^{
         
         self.chooseDateVC.frame = CGRectMake(0, 0, self.view.width, self.view.height);
     }];
 }
+
 - (IBAction)listStyleAction:(id)sender {
     
     self.mapStyle.selected = NO;

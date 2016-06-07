@@ -20,6 +20,7 @@
                 <outlet property="peopleNumLimitLab" destination="0fh-CU-k5b" id="VSA-HF-hHi"/>
                 <outlet property="priceLab" destination="5A6-yq-iAa" id="IAm-VV-3zm"/>
                 <outlet property="sapceIntroduceLab" destination="HGG-4B-edQ" id="Tfy-C8-D0a"/>
+                <outlet property="scrollView" destination="gKe-pe-tLP" id="kkB-Qz-aDF"/>
                 <outlet property="scrollViewH" destination="L1Y-27-u77" id="IfH-oD-7mB"/>
                 <outlet property="sexLimitLab" destination="J8g-fe-OLZ" id="HOL-T0-4MW"/>
                 <outlet property="spaceTypeLab" destination="kgL-DA-V4k" id="sfD-bM-qYc"/>
@@ -390,6 +391,9 @@
                         <constraint firstAttribute="bottom" secondItem="k7l-vz-t3w" secondAttribute="bottom" id="V6k-9S-dXQ"/>
                         <constraint firstItem="k7l-vz-t3w" firstAttribute="centerX" secondItem="gKe-pe-tLP" secondAttribute="centerX" id="vgf-Gh-r9w"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="qcY-xs-VVX"/>
+                    </connections>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTf-gb-zI7">
                     <rect key="frame" x="0.0" y="982" width="476" height="40"/>

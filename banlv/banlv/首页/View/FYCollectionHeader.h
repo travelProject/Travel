@@ -14,6 +14,8 @@ typedef void(^ReturnCurrentPageAndTotal)(NSString *page);
 
 @interface FYCollectionHeader : UIView
 
+@property(nonatomic,strong) NSTimer *timer;
+
 @property(nonatomic,strong) UICollectionView *bannerCollecView;
 
 @property(nonatomic,strong) UIPageControl *bannerPage;
@@ -28,5 +30,7 @@ typedef void(^ReturnCurrentPageAndTotal)(NSString *page);
 @property(nonatomic,strong) NSArray *topPicArr;
 
 @property(nonatomic,assign) NSInteger bannerType;
+
+- (void)addTimer;
 
 @end

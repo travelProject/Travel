@@ -59,7 +59,6 @@
 		2B97A17F1CDC2B0400B4989C /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A17A1CDC2B0400B4989C /* UIView+frame.m */; };
 		2B97A18A1CDC2BE200B4989C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1891CDC2BE200B4989C /* SearchViewController.m */; };
 		2B97A18D1CDC2BF900B4989C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A18C1CDC2BF900B4989C /* HomeViewController.m */; };
-		2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B97A1921CDC2C4B00B4989C /* OrderViewController.m */; };
 		2B9946A91CEC98F500D21942 /* CYPoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */; };
 		2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */; };
 		2B9B48571CEDE9F900FB2169 /* CYDoDizhuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B48561CEDE9F900FB2169 /* CYDoDizhuView.m */; };
@@ -138,6 +137,7 @@
 		CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB741F2F1CE4D744002FA686 /* FYLookMoreCityVC.m */; };
 		CB7CF5021CE4BB4100716F5D /* FYHomeWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7CF5001CE4BB4100716F5D /* FYHomeWebViewVC.m */; };
 		CB902C5C1CE2DDA500DCE806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB902C5B1CE2DDA500DCE806 /* Assets.xcassets */; };
+		CBD139391D041130000C7FF6 /* BLOrdersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD139381D041130000C7FF6 /* BLOrdersViewController.xib */; };
 		CBD476DE1CF150A8005418F0 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD476DD1CF150A8005418F0 /* UIColor+HexColor.m */; };
 		CBD6548F1CE3591500499922 /* FYHomeViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6548E1CE3591500499922 /* FYHomeViewData.m */; };
 		CBD654921CE35A9B00499922 /* FYHomeViewBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD654911CE35A9B00499922 /* FYHomeViewBannerData.m */; };
@@ -276,8 +276,6 @@
 		2B97A1891CDC2BE200B4989C /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		2B97A18B1CDC2BF900B4989C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2B97A18C1CDC2BF900B4989C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		2B97A1911CDC2C4B00B4989C /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
-		2B97A1921CDC2C4B00B4989C /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		2B9946A71CEC98F500D21942 /* CYPoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPoHeaderView.h; sourceTree = "<group>"; };
 		2B9946A81CEC98F500D21942 /* CYPoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPoHeaderView.m; sourceTree = "<group>"; };
 		2B9946AA1CEC992000D21942 /* CYPoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYPoHeaderView.xib; sourceTree = "<group>"; };
@@ -403,6 +401,7 @@
 		CB7CF4FF1CE4BB4100716F5D /* FYHomeWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeWebViewVC.h; sourceTree = "<group>"; };
 		CB7CF5001CE4BB4100716F5D /* FYHomeWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHomeWebViewVC.m; sourceTree = "<group>"; };
 		CB902C5B1CE2DDA500DCE806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBD139381D041130000C7FF6 /* BLOrdersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLOrdersViewController.xib; sourceTree = "<group>"; };
 		CBD476DC1CF150A8005418F0 /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
 		CBD476DD1CF150A8005418F0 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
 		CBD6548D1CE3591500499922 /* FYHomeViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHomeViewData.h; sourceTree = "<group>"; };
@@ -898,8 +897,6 @@
 				7A2FD7EC1CE86DE40049267C /* Controllers */,
 				7A2FD7F01CE86E080049267C /* Model */,
 				7A2FD7F11CE86E080049267C /* Views */,
-				2B97A1911CDC2C4B00B4989C /* OrderViewController.h */,
-				2B97A1921CDC2C4B00B4989C /* OrderViewController.m */,
 			);
 			path = "订单";
 			sourceTree = "<group>";
@@ -909,6 +906,7 @@
 			children = (
 				7A2FD7ED1CE86DE40049267C /* BLOrdersViewController.h */,
 				7A2FD7EE1CE86DE40049267C /* BLOrdersViewController.m */,
+				CBD139381D041130000C7FF6 /* BLOrdersViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1557,6 +1555,7 @@
 				CBF61C051CEDF12500311C3F /* FYMoreChooseVC.xib in Resources */,
 				CB4EF9651CE388DD008046EF /* FYHomeViewCell.xib in Resources */,
 				2B9946AB1CEC992000D21942 /* CYPoHeaderView.xib in Resources */,
+				CBD139391D041130000C7FF6 /* BLOrdersViewController.xib in Resources */,
 				2B875E221CF15E1800F6D51F /* CYFourthView.xib in Resources */,
 				CB29DC951CFB032400364C3D /* BLPaymentMethodsController.xib in Resources */,
 				2B851FD81CF335200037F39B /* CYDView1.xib in Resources */,
@@ -1677,7 +1676,6 @@
 				CB29DC771CFB032400364C3D /* BLMineViewController.m in Sources */,
 				2B8D54301CEA18E400AF43CA /* CYPartyCell.m in Sources */,
 				CB29DC7D1CFB032400364C3D /* BLProfilesController.m in Sources */,
-				2B97A1931CDC2C4B00B4989C /* OrderViewController.m in Sources */,
 				CB741F301CE4D744002FA686 /* FYLookMoreCityVC.m in Sources */,
 				CB25DF1D1CFD838300EB7596 /* BLScrollView.m in Sources */,
 				CB29DC821CFB032400364C3D /* BLIntroductionView.m in Sources */,
