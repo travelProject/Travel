@@ -28,13 +28,15 @@
     [super viewDidLoad];
     
     self.view.frame = kScreenFrame;
+    
     self.navigationItem.title = @"订单";
     
     self.currentOrder.selected = YES;
     
     self.layerLine = [[CALayer alloc] init];
     
-    self.layerLine.frame = CGRectMake(0, CGRectGetMaxY(self.currentOrder.frame) - 2, self.currentOrder.width, 2);
+    self.layerLine.frame = CGRectMake(0, CGRectGetMaxY(self.currentOrder.frame) - 2, self.view.width / 2, 2);
+    
     self.layerLine.backgroundColor = [UIColor colorWithHexString:@"#4FB8BB"].CGColor;
     
     [self.view.layer addSublayer:self.layerLine];

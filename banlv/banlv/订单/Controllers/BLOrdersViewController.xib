@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -24,9 +24,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aq5-sH-oqU" userLabel="进行中">
-                    <rect key="frame" x="0.0" y="64" width="207" height="40"/>
+                    <rect key="frame" x="0.0" y="64" width="208" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="koo-L4-wBa"/>
+                        <constraint firstAttribute="height" constant="60" id="koo-L4-wBa"/>
                     </constraints>
                     <state key="normal" title="进行中">
                         <color key="titleColor" red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,7 +39,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr4-4C-rLq" userLabel="历史订单">
-                    <rect key="frame" x="207" y="64" width="207" height="40"/>
+                    <rect key="frame" x="207" y="64" width="207" height="60"/>
                     <state key="normal" title="历史订单">
                         <color key="titleColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -51,7 +51,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gp2-In-Sik" userLabel="分割线">
-                    <rect key="frame" x="207" y="69" width="1" height="30"/>
+                    <rect key="frame" x="207" y="69" width="1" height="50"/>
                     <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="1" id="sV0-10-UHV"/>
@@ -61,13 +61,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da7-Zt-nvo">
-                    <rect key="frame" x="0.0" y="104" width="414" height="632"/>
+                    <rect key="frame" x="0.0" y="124" width="414" height="612"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-Bv-l8p" userLabel="myView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="632"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="612"/>
                             <subviews>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XnX-lD-Y47" userLabel="current Table View">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="632"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XnX-lD-Y47" userLabel="current Table View">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="612"/>
                                     <color key="backgroundColor" red="0.94117647058823528" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="414" id="5yv-xx-v37"/>
@@ -84,8 +84,8 @@
                                         <constraint firstAttribute="width" constant="100" id="keL-qd-Q5r"/>
                                     </constraints>
                                 </imageView>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yra-a5-1T8" userLabel="history Table View">
-                                    <rect key="frame" x="414" y="0.0" width="0.0" height="632"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yra-a5-1T8" userLabel="history Table View">
+                                    <rect key="frame" x="414" y="0.0" width="0.0" height="612"/>
                                     <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <outlet property="dataSource" destination="-1" id="r4y-gz-5Wa"/>
@@ -155,15 +155,18 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="aq5-sH-oqU" firstAttribute="trailing" secondItem="gp2-In-Sik" secondAttribute="trailing" id="2QL-1x-8Zx"/>
                 <constraint firstItem="gp2-In-Sik" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4Cz-ix-B2U"/>
                 <constraint firstAttribute="trailing" secondItem="Da7-Zt-nvo" secondAttribute="trailing" id="71V-Pv-byz"/>
                 <constraint firstItem="kr4-4C-rLq" firstAttribute="leading" secondItem="aq5-sH-oqU" secondAttribute="trailing" id="ExZ-X5-JcE"/>
                 <constraint firstItem="aq5-sH-oqU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JaX-5e-M6L"/>
                 <constraint firstItem="Da7-Zt-nvo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PL9-Aw-ZYr"/>
                 <constraint firstItem="kr4-4C-rLq" firstAttribute="height" secondItem="aq5-sH-oqU" secondAttribute="height" id="RP5-Pw-NHt"/>
+                <constraint firstItem="Da7-Zt-nvo" firstAttribute="top" secondItem="kr4-4C-rLq" secondAttribute="bottom" id="Vum-lo-wFL"/>
                 <constraint firstItem="gp2-In-Sik" firstAttribute="top" secondItem="aq5-sH-oqU" secondAttribute="top" constant="5" id="ZmJ-8B-taP"/>
                 <constraint firstItem="kr4-4C-rLq" firstAttribute="centerY" secondItem="aq5-sH-oqU" secondAttribute="centerY" id="cvW-WA-RfQ"/>
                 <constraint firstItem="Da7-Zt-nvo" firstAttribute="top" secondItem="kr4-4C-rLq" secondAttribute="bottom" id="e7o-ZO-zoB"/>
+                <constraint firstItem="kr4-4C-rLq" firstAttribute="leading" secondItem="gp2-In-Sik" secondAttribute="leading" id="pLq-nf-iWY"/>
                 <constraint firstAttribute="bottom" secondItem="Da7-Zt-nvo" secondAttribute="bottom" id="pMP-dk-Kjz"/>
                 <constraint firstItem="kr4-4C-rLq" firstAttribute="width" secondItem="aq5-sH-oqU" secondAttribute="width" id="ueg-kx-ySg"/>
                 <constraint firstItem="gp2-In-Sik" firstAttribute="bottom" secondItem="aq5-sH-oqU" secondAttribute="bottom" constant="-5" id="vaB-by-q7R"/>
@@ -171,7 +174,14 @@
                 <constraint firstAttribute="trailing" secondItem="kr4-4C-rLq" secondAttribute="trailing" id="yaQ-TN-NuF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="474" y="245"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="e7o-ZO-zoB"/>
+                    <exclude reference="ExZ-X5-JcE"/>
+                    <exclude reference="ueg-kx-ySg"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="262" y="236"/>
         </view>
     </objects>
     <resources>
