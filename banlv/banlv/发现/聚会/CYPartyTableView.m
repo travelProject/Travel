@@ -48,6 +48,7 @@
     if (self) {
         self.delegate = self;
             self.dataSource = self;
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.backgroundColor = [UIColor whiteColor];
         self.manager = [AFHTTPSessionManager manager];
         
@@ -89,6 +90,7 @@
     
     [cell.iconView sd_setImageWithURL:[NSURL URLWithString:str]];
     cell.iconView.layer.cornerRadius = cell.iconView.size.height/2.f;
+    cell.iconView.layer.masksToBounds = YES;
     
     cell.title.text =self.dataArr[indexPath.row].title;
     
@@ -146,7 +148,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     
-    return 410;
+    return kScreenFrameW * ((float) 657 / 537);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
