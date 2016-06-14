@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"anjian"] forBarMetrics:UIBarMetricsDefault];
+//    self.navigationBar.translucent = NO;
     
 }
 

@@ -55,6 +55,7 @@
     if (self) {
         self.dataSource = self;
         self.delegate = self;
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.manager = [AFHTTPSessionManager manager];
         
         [self requestData];
@@ -223,7 +224,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  364;
+    return  (kScreenFrameW + 10);
 }
 
 

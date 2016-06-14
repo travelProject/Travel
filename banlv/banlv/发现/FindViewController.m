@@ -93,7 +93,7 @@
 #pragma mark --partyBtn
 - (void)setPartyBtn{
     
-    UIButton *partyBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/7+kScreenFrameW, kScreenFrameH*7/10, r, r)];
+    UIButton *partyBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/13+kScreenFrameW, kScreenFrameH*9/12, r, r)];
     
     [partyBtn setImage:self.xuanfuImg forState:UIControlStateNormal];
     
@@ -124,7 +124,7 @@
     //
     //        Button.clipsToBounds = TRUE;//去除边界
     
-    partyXuanfu.frame = CGRectMake(kScreenFrameW*1/7+kScreenFrameW+8,  kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
+    partyXuanfu.frame = CGRectMake(kScreenFrameW*1/13+kScreenFrameW+8,  kScreenFrameH*9/12+4, 0, self.partyBtn.size.height-8);
     
     partyXuanfu.layer.cornerRadius = r/2-8;
     
@@ -168,7 +168,7 @@
         [UIView animateWithDuration:0.2 animations:^{
             
             
-            self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 200, self.partyBtn.size.height-8);
+            self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/13+8, kScreenFrameH*9/12+4, 200, self.partyBtn.size.height-8);
             [self.mainScrollView bringSubviewToFront:self.partyBtn];
             
         }];
@@ -177,7 +177,7 @@
         
         
     }else{
-        self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
+        self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/13+8, kScreenFrameH*9/12+4, 0, self.partyBtn.size.height-8);
         
         self.partyTagNum= NO;
     }
@@ -189,7 +189,7 @@
 
 - (void)setDizhuBtn{
     
-        UIButton *dizhuBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/7, kScreenFrameH*7/10, r, r)];
+        UIButton *dizhuBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenFrameW*1/13, kScreenFrameH*9/12, r, r)];
     
     
         [dizhuBtn setImage:self.xuanfuImg forState:UIControlStateNormal];
@@ -212,7 +212,7 @@
     
     duzhiXuanfu.layer.cornerRadius = r/2-8;
     
-    duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
+    duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/13+8, kScreenFrameH*9/12+4, 0, self.dizhuBtn.size.height-8);
     
     [duzhiXuanfu.leftButton setTitle:@"          我预约的" forState:UIControlStateNormal];
     
@@ -247,7 +247,7 @@
     
     [UIView animateWithDuration:0.2 animations:^{
         
-        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 200, self.dizhuBtn.size.height-8);
+        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/13+8, kScreenFrameH*9/12+4, 200, self.dizhuBtn.size.height-8);
         [self.mainScrollView bringSubviewToFront:self.dizhuBtn];
 
     }];
@@ -256,7 +256,7 @@
         
         
     }else{
-        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
+        self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/13+8, kScreenFrameH*9/12+4, 0, self.dizhuBtn.size.height-8);
      
         self.dizhuTagNum= NO;
     }
@@ -281,8 +281,8 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     self.dizhuBtn.hidden = YES;
     self.partyBtn.hidden = YES;
-    self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.dizhuBtn.size.height-8);
-    self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/7+8, kScreenFrameH*7/10+4, 0, self.partyBtn.size.height-8);
+    self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/13+8, kScreenFrameH*9/12+4, 0, self.dizhuBtn.size.height-8);
+    self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/13+8, kScreenFrameH*9/12+4, 0, self.partyBtn.size.height-8);
 
 }
 
@@ -378,7 +378,7 @@
     self.partyTableView = partyTableView;
     
     
-    CYParCellChildViewController *new = [[CYParCellChildViewController alloc ] init];
+    CYParCellChildViewController *new = [[CYParCellChildViewController alloc ] init];        
     
     __weak typeof(self) mySelf = self;
     
