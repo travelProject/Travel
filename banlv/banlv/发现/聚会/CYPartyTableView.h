@@ -12,9 +12,13 @@
 
 typedef void(^PartyIdBlock)(NSString *row);
 
+typedef void(^xuanfuH)();
+typedef void(^xuanfuS)();
+
 @interface CYPartyTableView : UITableView
 
-
+@property(nonatomic, copy)xuanfuH xuanfuH;
+@property(nonatomic, copy)xuanfuS xuanfuS;
 
 @property (nonatomic ,copy)PartyIdBlock partyIdBlock;
 

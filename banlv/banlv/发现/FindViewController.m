@@ -84,12 +84,6 @@
     
 }
 
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-    self.dizhuBtn.hidden = NO;
-    self.partyBtn.hidden = NO;
-}
-
 #pragma mark --partyBtn
 - (void)setPartyBtn{
     
@@ -279,8 +273,7 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    self.dizhuBtn.hidden = YES;
-    self.partyBtn.hidden = YES;
+    
     self.duzhiXuanfu.frame = CGRectMake(kScreenFrameW*1/13+8, kScreenFrameH*9/12+4, 0, self.dizhuBtn.size.height-8);
     self.partyXuanfu.frame = CGRectMake(kScreenFrameW+kScreenFrameW*1/13+8, kScreenFrameH*9/12+4, 0, self.partyBtn.size.height-8);
 
@@ -347,8 +340,10 @@
     dizhuTableView.frame = CGRectMake(0, 0, kScreenFrameW, kScreenFrameH - self.tabBarController.tabBar.height - kTableViewY );
     [self.mainScrollView addSubview:dizhuTableView];
     
+    
     CYDizCellChildViewController *new = [[CYDizCellChildViewController alloc] init];
     __weak typeof(self) mySelf = self;
+    
     dizhuTableView.selectRowBlock = ^(NSInteger row){
         
 //        NSLog(@"%ld",(long)row);
@@ -362,6 +357,17 @@
     
     self.dizhuTableView = dizhuTableView;
     
+    self.dizhuTableView.xuanfuH = ^{
+    
+        mySelf.dizhuBtn.hidden = YES;
+        
+    };
+    
+    self.dizhuTableView.xuanfuS = ^{
+        
+        mySelf.dizhuBtn.hidden = NO;
+        
+    };
     
 }
 
@@ -394,7 +400,18 @@
         [mySelf.navigationController pushViewController:new animated:YES];
         
     };
-
+    
+    self.partyTableView.xuanfuH = ^{
+        
+        mySelf.partyBtn.hidden = YES;
+        
+    };
+    
+    self.partyTableView.xuanfuS = ^{
+        
+        mySelf.partyBtn.hidden = NO;
+        
+    };
     
     
 }

@@ -17,7 +17,7 @@
 #import "FYCarouselPic.h"
 
 
-@interface CYDizhuTableView ()<UITableViewDelegate ,UITableViewDataSource>
+@interface CYDizhuTableView ()<UITableViewDelegate ,UITableViewDataSource ,UIScrollViewDelegate>
 
 @property(nonatomic, strong)NSMutableArray<CYDizhuResultData *> *dataArr;
 
@@ -282,6 +282,18 @@
     cell.userName.text = self.dataArr[indexPath.row].ownerName;
     
     return cell;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.xuanfuH();
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    self.xuanfuS();
+    
 }
 
 @end

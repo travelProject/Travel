@@ -97,6 +97,13 @@ return idValue;\
 //字符串格式
 #define kStringFormat(...)  [NSString stringWithFormat:__VA_ARGS__]
 
+//用户信息单列
+#import "UserInfo.h"
 
+//登录注册头文件
+#import "BLLoginVC.h"
+
+//全局UITabBar
+#import "CYTabBarController.h"
 
 #endif /* CYGlobal_pch */

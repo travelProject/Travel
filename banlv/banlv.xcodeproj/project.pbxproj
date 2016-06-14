@@ -130,6 +130,7 @@
 		CB5661B91CFB2A1400AABD2A /* FYApplyBookingHouseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5661B71CFB2A1400AABD2A /* FYApplyBookingHouseVC.m */; };
 		CB5661BA1CFB2A1400AABD2A /* FYApplyBookingHouseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5661B81CFB2A1400AABD2A /* FYApplyBookingHouseVC.xib */; };
 		CB5B660B1D02B9D2007BD7B5 /* BLMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5B660A1D02B9D2007BD7B5 /* BLMineViewController.xib */; };
+		CB68D65F1D0FDC2D00DBB3ED /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB68D65E1D0FDC2D00DBB3ED /* UserInfo.m */; };
 		CB6BAC821CE4461B006457BC /* FYCollectionFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC811CE4461B006457BC /* FYCollectionFooter.m */; };
 		CB6BAC8A1CE4584A006457BC /* FYCollectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC891CE4584A006457BC /* FYCollectionHeader.m */; };
 		CB6BAC8E1CE45912006457BC /* FYHeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BAC8C1CE45912006457BC /* FYHeaderViewCell.m */; };
@@ -389,6 +390,8 @@
 		CB5661B71CFB2A1400AABD2A /* FYApplyBookingHouseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYApplyBookingHouseVC.m; sourceTree = "<group>"; };
 		CB5661B81CFB2A1400AABD2A /* FYApplyBookingHouseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYApplyBookingHouseVC.xib; sourceTree = "<group>"; };
 		CB5B660A1D02B9D2007BD7B5 /* BLMineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLMineViewController.xib; sourceTree = "<group>"; };
+		CB68D65D1D0FDC2C00DBB3ED /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		CB68D65E1D0FDC2D00DBB3ED /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		CB6BAC801CE4461B006457BC /* FYCollectionFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCollectionFooter.h; sourceTree = "<group>"; };
 		CB6BAC811CE4461B006457BC /* FYCollectionFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCollectionFooter.m; sourceTree = "<group>"; };
 		CB6BAC881CE4584A006457BC /* FYCollectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCollectionHeader.h; sourceTree = "<group>"; };
@@ -973,6 +976,8 @@
 				CB183C0B1CF9460D00F70A0A /* BLLoginVC.xib */,
 				CB25DF1B1CFD838300EB7596 /* BLScrollView.h */,
 				CB25DF1C1CFD838300EB7596 /* BLScrollView.m */,
+				CB68D65D1D0FDC2C00DBB3ED /* UserInfo.h */,
+				CB68D65E1D0FDC2D00DBB3ED /* UserInfo.m */,
 			);
 			path = "登陆与导航";
 			sourceTree = "<group>";
@@ -1690,6 +1695,7 @@
 				CBDF7DE81CEB4C3300762867 /* FYCityHouseMapCell.m in Sources */,
 				2B851FD31CF334ED0037F39B /* CYDView3.m in Sources */,
 				2BCB038B1CFC761200878DD6 /* CYBMView.m in Sources */,
+				CB68D65F1D0FDC2D00DBB3ED /* UserInfo.m in Sources */,
 				CBDA28ED1CF7310B00CDC3B7 /* FYSingleHouseDetailVC.m in Sources */,
 				CBF61BFD1CEDD57400311C3F /* BLNavigationController.m in Sources */,
 				CB183C0C1CF9460D00F70A0A /* BLLoginVC.m in Sources */,

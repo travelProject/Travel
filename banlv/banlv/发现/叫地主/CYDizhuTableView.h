@@ -13,8 +13,13 @@ typedef void(^SelectRowBlock)(NSInteger);
 
 typedef void(^xuanfu)(UIButton *xuanfuBtn);
 
+typedef void(^xuanfuH)();
+typedef void(^xuanfuS)();
+
 @interface CYDizhuTableView : UITableView
 @property(nonatomic, copy)xuanfu xuanfuBtn;
+@property(nonatomic, copy)xuanfuH xuanfuH;
+@property(nonatomic, copy)xuanfuS xuanfuS;
 
 @property (nonatomic ,copy)SelectRowBlock selectRowBlock;
 

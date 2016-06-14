@@ -10,7 +10,7 @@
 #import "CYPartyCellData.h"
 #import "CYPartyCell.h"
 
-@interface CYPartyTableView ()<UITableViewDelegate,UITableViewDataSource>
+@interface CYPartyTableView ()<UITableViewDelegate,UITableViewDataSource ,UIScrollViewDelegate>
 
 @property(nonatomic ,strong)NSMutableArray<CYPartyCellData *> *dataArr;
 
@@ -287,6 +287,19 @@
             self.mj_footer.hidden = YES;
         }
     }
+}
+
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.xuanfuH();
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    self.xuanfuS();
+    
 }
 
 

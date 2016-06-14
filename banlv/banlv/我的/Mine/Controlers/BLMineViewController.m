@@ -53,6 +53,13 @@
     
     self.view.frame = kScreenFrame;
     
+    if (![UserInfo sharedUserInfo].userId) {
+       
+        self.userPicView.image = [UIImage imageNamed:@"160x160default"];
+        
+        self.userNameLab.text = @"用户名";
+    }
+    
     self.userPicView.layer.cornerRadius = self.userPicView.width / 2;
     self.userPicView.layer.masksToBounds = YES;
     
@@ -70,15 +77,20 @@
     [self.userPicView addGestureRecognizer:tapPic];
     [self.userNameLab addGestureRecognizer:tapLab];
     
-    
-    
-    
 }
 
 - (void)jumpToProfiles:(id)sender{
     
-    BLProfilesController *profiles = [[BLProfilesController alloc] init];
-    [self.navigationController pushViewController:profiles animated:YES];
+    if (![UserInfo sharedUserInfo].userId) {
+        
+        BLLoginVC *loginVC = [[BLLoginVC alloc] init];
+        
+        [self.navigationController pushViewController:loginVC animated:YES];
+    }else
+    {
+        BLProfilesController *profiles = [[BLProfilesController alloc] init];
+        [self.navigationController pushViewController:profiles animated:YES];
+    }
 }
 
 #pragma mark --UITableViewDataSource

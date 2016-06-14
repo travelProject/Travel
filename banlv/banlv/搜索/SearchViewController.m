@@ -80,10 +80,6 @@
     
     self.iconPic.userInteractionEnabled = YES;
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLoginVC)];
-    
-    [self.iconPic addGestureRecognizer:tap];
-    
     [self chooseCityAndDate];
     
     self.searchBtn.layer.cornerRadius = 10.f;
@@ -133,14 +129,6 @@
     [self.chooseDateView addGestureRecognizer:chooseDate];
     
 }
-
-- (void)showLoginVC
-{
-    BLLoginVC *loginVC = [[BLLoginVC alloc] initWithNibName:@"BLLoginVC" bundle:nil];
-    
-    [self.navigationController pushViewController:loginVC animated:YES];
-}
-
 
 - (void)getSelectDate:(NSMutableArray *)selectDateArr
 {

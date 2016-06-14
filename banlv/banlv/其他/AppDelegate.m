@@ -74,6 +74,25 @@
         [userDefaults setObject:value forKey:key];
     }
     
+    //在此取到存储的用户数据
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *userlInfo = [userDefault objectForKey:@"userInfo"];
+    
+    //第一次初始化单例，存储用户的信息
+    UserInfo *userInfoFirst = [UserInfo sharedUserInfo];
+    
+    if (userlInfo != nil) {
+        
+        userInfoFirst.userId = [userlInfo objectForKey:@"id"];
+        userInfoFirst.username = [userlInfo objectForKey:@"username"];
+        userInfoFirst.realname = [userlInfo objectForKey:@"realname"];
+        userInfoFirst.sex = [userlInfo objectForKey:@"sex"];
+        userInfoFirst.email = [userlInfo objectForKey:@"email"];
+        userInfoFirst.logo = [userlInfo objectForKey:@"logo"];
+        
+    }
+    
     return YES;
 }
 

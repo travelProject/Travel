@@ -16,6 +16,8 @@
 
 @property(nonatomic,strong)NSArray *picArr;
 
+@property(nonatomic,strong)NSArray *textArr;
+
 @end
 
 @implementation BLScrollView
@@ -26,6 +28,9 @@
     if (self) {
         
         self.picArr = [NSArray arrayWithObjects:@"beijing1",@"beijing2",@"beijing3",@"beijing4", nil];
+        
+        self.textArr = [NSArray arrayWithObjects:@"guide_bottom_1",@"guide_bottom_2",@"guide_bottom_3",@"guide_bottom_4", nil];
+        
         
         [self initScrollView];
         
@@ -57,20 +62,36 @@
         
         [self.scrollView addSubview:imageView];
         
+        UIImageView *imageText = [[UIImageView alloc] initWithFrame:CGRectMake(i * self.width + (self.width - 56) / 2, 30, 56, 376)];
+        
+        imageText.image = [UIImage imageNamed:self.textArr[i]];
+        
+        [self.scrollView addSubview:imageText];
+        
     }
     
     [self addSubview:self.scrollView];
     
-    UIButton *enterApp = [[UIButton alloc] initWithFrame:CGRectMake((self.width - 150) / 2, self.height - 100, 150, 40)];
+    UIButton *enterApp = [[UIButton alloc] initWithFrame:CGRectMake(self.width * 3 + (self.width - 150) / 2, self.height - 180, 150, 40)];
     
-    enterApp.layer.borderColor = [UIColor colorWithHexString:@"#1D19FF"].CGColor;
+    enterApp.layer.borderColor = [UIColor whiteColor].CGColor;
     
     enterApp.layer.borderWidth = 1.f;
     
     enterApp.layer.cornerRadius = 10.f;
     
+    [enterApp setTitle:@"进入伴旅" forState:UIControlStateNormal];
+    [enterApp setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [enterApp addTarget:self action:@selector(dismissGuideView) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.scrollView addSubview:enterApp];
     
+}
+
+- (void)dismissGuideView
+{
+    [self removeFromSuperview];
 }
 
 - (void)initPageControl

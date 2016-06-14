@@ -20,9 +20,25 @@
 @property (weak, nonatomic) IBOutlet UIButton *startBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *exitBtn;
+@property (weak, nonatomic) IBOutlet UILabel *voiceCode;
+
 @end
 
 @implementation BLLoginVC
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    self.navigationController.navigationBar.hidden = NO;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,7 +62,11 @@
     self.phoneText.delegate = self;
     self.codeText.delegate = self;
     
+    UITapGestureRecognizer *voiceCode = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(getVoiceCode)];
     
+    self.voiceCode.userInteractionEnabled = YES;
+    
+    [self.voiceLab addGestureRecognizer:voiceCode];
 
     
 }
@@ -65,6 +85,22 @@
     }];
 }
 
+- (void)getVoiceCode
+{
+    
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodVoice phoneNumber:self.phoneText.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
+        
+        if (!error) {
+            NSLog(@"获取验证码成功");
+        } else {
+            NSLog(@"错误信息：%@",error);
+        }
+        
+    }];
+    
+}
+
+
 - (void)exitKeyBoard
 {
     [self.phoneText resignFirstResponder];
@@ -73,8 +109,15 @@
 }
 
 - (IBAction)startBtnAct:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    
 }
 - (IBAction)exitBtnAct:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 #pragma mark -- UITextFieldDelegate
